@@ -1,4 +1,4 @@
-<div id="content_left">
+﻿<div id="content_left">
 	<dl class="curved">
 		<dt>RECOMMENDED LINKS</dt>
 		<dd>

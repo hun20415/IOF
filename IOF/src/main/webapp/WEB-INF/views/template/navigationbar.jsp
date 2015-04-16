@@ -1,4 +1,4 @@
-<div id="menu">
+﻿<div id="menu">
 	<ul id="nav">
 		<li id="home" class="activelink"><a href="#">Home 하하</a></li>
 		<li id="who"><a href="#">About</a></li>

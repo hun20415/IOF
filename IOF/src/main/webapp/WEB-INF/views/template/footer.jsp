@@ -1,4 +1,4 @@
-<div id="footer">
+﻿<div id="footer">
 		<p>
 			<a href="#">homepage</a> | <a href="mailto:denise@mitchinson.net">contact</a>
 			| &copy; 2007 Anyone | Design by <a href="http://www.mitchinson.net">
