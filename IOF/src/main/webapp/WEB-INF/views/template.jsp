@@ -1,4 +1,4 @@
-﻿<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 <%
 	String content = request.getParameter("CONTENT");
@@ -19,7 +19,7 @@
 	<div id="container">
 
 		<jsp:include page="template/sidebar.jsp" flush="false"/>
-		<br><br><br><br>
+		
 		<jsp:include page="<%=content%>" flush="false"/>
 		<div id="content">
 			<!-- 본문 content 입력 -->			

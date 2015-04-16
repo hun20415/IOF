@@ -1,11 +1,11 @@
-﻿<div id="content_left">
+<div id="content_left">
 	<dl class="curved">
 		<dt>RECOMMENDED LINKS</dt>
 		<dd>
 			<br />
 			<ul id="navlist">
 				<li><a href="#">Snapp Happy</a></li>
-				<li><a href="#">Open Desi하하gns</a></li>
+				<li><a href="#">Open Designs</a></li>
 				<li><a href="#">Andreas Viklund</a></li>
 				<li><a href="#">James Koster</a></li>
 				<li><a href="#">CSS play</a></li>
