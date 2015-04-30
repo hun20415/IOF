@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping package="kr.ac.iof.model">
+    <class name="kr.ac.iof.model.User" table="sys_user_info">
+        <!-- <id name="useridNum" type="int">
+            <column name="USER_IDNUM" precision="38" scale="0"/>
+            <generator class="assigned"/>
+        </id> -->
+        
+        <id name="userid" type="string">
+            <column name="USER_ID" length="20"/>
+        </id>
+        <property name="username" type="string">
+            <column name="USER_NAME" length="20"/>
+        </property>
+        <property name="userpasswd" type="string">
+            <column name="USER_PASSWD" length="20"/>
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="20"/>
+        </property>
+        <property name="mobilephone" type="string">
+            <column name="MOBILEPHONE" length="20"/>
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="20"/>
+        </property>
+        <property name="home_zipcode" type="string">
+            <column name="HOME_ZIPCODE" length="20"/>
+        </property>
+        <property name="home_addr" type="string">
+            <column name="HOME_ADDR" length="20"/>
+        </property>
+        <property name="sys_datatime" type="string">
+            <column name="SYS_DATE" length="20"/>
+        </property>
+         <property name="active_yn" type="string">
+            <column name="ACTIVE_YN" length="1"/>
+        </property>
+         <property name="usergroup" type="int">
+            <column name="USERGROUP_ID"/>
+        </property>
+        
+        <!-- <many-to-one name="usergroup"
+         	class = "kr.ac.iof.model.UserGroup" 
+         	column = "USERGROUP_ID" 
+         	unique="false"
+         	not-null="true" 
+         	cascade="all"
+         	foreign-key="USERGROUP_ID"
+         /> -->
+        
+    </class>
+</hibernate-mapping>

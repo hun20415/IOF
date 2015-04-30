@@ -2,12 +2,18 @@
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity
+@Table(name = "SYS_USER_GROUP")
 public class UserGroup {
 	//USERGROUP_ID
     //USERGROUP_NAME  
 	
-	@Id @GeneratedValue	
+	@Id
+	@Column(name = "USERGROUP_ID")
 	private int usergroupID;
 	private String usergroupName;
 	

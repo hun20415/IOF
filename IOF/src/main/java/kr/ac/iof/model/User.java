@@ -1,6 +1,5 @@
 ﻿package kr.ac.iof.model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,38 +7,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
- 
- 
- 
+import java.util.Date;
+
 @Entity
-@Table(name = "sysUser")
+@Table(name = "SYS_USER_INFO")
 public class User {
-	User(){
-		
-	}
-    @Id @GeneratedValue(strategy=GenerationType.AUTO) @Column(name = "USER_IDNUM")
-    private Integer useridNum;
-    //User_ID    
-    @NotNull @Column(updatable=false)
-    private String username;
-    //USER_NAME
-    private String userid;
-    private String userpasswd;
-    private String usergroupid;
-    private String email;
-    private String mobilephone;
-    private String phone;
-    private String home_zipzode;
-    private String home_addr;
-    private String sys_datatime;
-    private int active_yn;
-    private UserGroup usergroupID;
-	public Integer getUseridNum() {
+	/*private int useridNum;
+	// User_ID
+*/
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "USER_ID")
+	@NotNull	
+	private String userid;
+	private String username;
+	// USER_NAME
+	
+	private String userpasswd;
+	private String usergroupid;
+	private String email;
+	private String mobilephone;
+	private String phone;
+	private String home_zipcode;
+	private String home_addr;
+	private Date sys_datatime;
+	private String active_yn;
+	private int usergroup;
+	
+	/*public int getUseridNum() {
 		return useridNum;
 	}
-	public void setUseridNum(Integer useridNum) {
+	public void setUseridNum(int useridNum) {
 		this.useridNum = useridNum;
-	}
+	}*/
+	
 	public String getUsername() {
 		return username;
 	}
@@ -82,11 +83,11 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getHome_zipzode() {
-		return home_zipzode;
+	public String getHome_zipcode() {
+		return home_zipcode;
 	}
-	public void setHome_zipzode(String home_zipzode) {
-		this.home_zipzode = home_zipzode;
+	public void setHome_zipcode(String home_zipzode) {
+		this.home_zipcode = home_zipzode;
 	}
 	public String getHome_addr() {
 		return home_addr;
@@ -94,40 +95,35 @@ public class User {
 	public void setHome_addr(String home_addr) {
 		this.home_addr = home_addr;
 	}
-	public String getSys_datatime() {
+	public Date getSys_datatime() {
 		return sys_datatime;
 	}
-	public void setSys_datatime(String sys_datatime) {
+	public void setSys_datatime(Date sys_datatime) {
 		this.sys_datatime = sys_datatime;
 	}
-	public int getActive_yn() {
+	public String getActive_yn() {
 		return active_yn;
 	}
-	public void setActive_yn(int active_yn) {
+	public void setActive_yn(String active_yn) {
 		this.active_yn = active_yn;
+	}	
+
+	public int getUsergroup() {
+		return usergroup;
 	}
-	public UserGroup getUsergroupID() {
-		return usergroupID;
-	}
-	public void setUsergroupID(UserGroup usergroupID) {
-		this.usergroupID = usergroupID;
+
+	public void setUsergroup(int usergroup) {
+		this.usergroup = usergroup;
 	}
 	
-    
-    //USER_IDNUM
-    //USER_NAME
-    //USER_ID
-    //USER_PASSWD
-    //USERGROUO_ID
-    //EMAIL
-    //MOBILEPHONE
-    //PHONE
-    //HOME_ZIPCODE
-    //HOME_ADDR
-    //SYS_DATATIME
-    //ACTIVE_YN
-    
-   
-    
-     
+	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	//public Set<UserRole> getUserRole() {
+	//	return this.userRole;
+	//}
+ 
+	//public void setUserRole(Set<UserRole> userRole) {
+	//	this.userRole = userRole;
+	//}
+	
+
 }

@@ -12,11 +12,9 @@ public class HibernateUtil{
    private static final ServiceRegistry serviceRegistry;
    static {
       try {
-            // Create the SessionFactory from hibernate.cfg.xml
+
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
-            //.addResource("user.hbm.xml")
-            //.addResource("userGroup.hbm.xml");
             
             serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();        
             sessionFactory = configuration.buildSessionFactory(serviceRegistry);

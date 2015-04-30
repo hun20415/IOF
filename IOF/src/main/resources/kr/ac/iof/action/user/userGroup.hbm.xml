@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="kr.ac.iof.model">
+	<class name="kr.ac.iof.model.UserGroup" table="sys_user_group">
+		<id name="usergroupID" type="int">
+			<column name="USERGROUP_ID" />
+		</id>
+		<property name="usergroupName" type="string">
+			<column name="USERGROUP_NAME" length="20"/>
+		</property>
+	</class>
+</hibernate-mapping>
