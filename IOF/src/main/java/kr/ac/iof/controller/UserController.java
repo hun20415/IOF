@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import kr.ac.iof.DBUser;
 import kr.ac.iof.action.user.UserService;
 import kr.ac.iof.action.user.UserServiceImpl;
 import kr.ac.iof.model.User;
+import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.HibernateException;
@@ -24,6 +26,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -33,7 +36,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Controller
 public class UserController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -48,26 +51,28 @@ public class UserController {
 		logger.info("login");		
 		return "login";
 	}
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout() {
+		logger.info("logout");		
+		return "logout";
+	}
+	
+	@RequestMapping(value = "/logoutResult", method = RequestMethod.GET)
+	public String logoutResult() {
+		logger.info("logoutResult");		
+		return "logoutResult";
+	}
+	
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(String id, String passwd, HttpSession session) throws Exception {
+	public String login(String id, String passwd, HttpSession session, HttpServletRequest request) throws Exception {
 		logger.info("login");	
 		
 		logger.info(id);
 		logger.info(passwd);
+		
 		Session session1 = null;
 		
-		//userService.login(id, passwd);
-		
-		/*List<User> loginUser = new ArrayList<User>();
-		
-		String hql = "SELECT USER_ID, USER_PASSWD FROM SYS_USER_INFO where USER_ID=? and USER_PASSWD=?";
-		session1 = HibernateUtil.getSessionFactory().openSession();
-		Query query = session1.createQuery(hql);
-		query.setParameter(0, id);
-		query.setParameter(0, passwd);
-		
-		loginUser =  (User) query.list();*/
 		List<User> users = new ArrayList<User>();
 		 
 		users = HibernateUtil.getCurrentSession()
@@ -76,12 +81,15 @@ public class UserController {
 			.list();
 		session.setAttribute("user", users);
 		logger.info("finish?");
-		
-		return "main";		
+		request.getSession().setAttribute("user", users);
+				
+		return "home";		
 	}
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public String signUp(){
 		logger.info("sigh up(회원 가입 양식 불러옴)");
+		
+		
 		return "signUp";
 	}
 	

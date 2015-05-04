@@ -4,6 +4,7 @@
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
@@ -12,9 +13,9 @@
 		  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
 		  http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.1.xsd
 		  http://www.springframework.org/schema/security
-           http://www.springframework.org/schema/security/spring-security-4.0.xsd
+           http://www.springframework.org/schema/security/spring-security-4.0.xsd          
 		 ">
-
+       
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
@@ -30,6 +31,12 @@
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 	<context:component-scan base-package="kr.ac.iof.controller" />
+	<context:component-scan base-package="kr.ac.iof.main.Service" />
+	<context:component-scan base-package="kr.ac.iof.main.dao" />
+	
+
+	
+	
 	<!-- interceptors 처리 -->
 	<mvc:interceptors>
 
@@ -60,7 +67,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	<resources mapping="/css/**" location="/css/" />
 	<resources mapping="/images/**" location="/images/" />
-	<resources mapping="/message/**" location="/images/" />
+	<resources mapping="/message/**" location="/message/" />
 
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
@@ -71,13 +78,23 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="0" />
 	</beans:bean>
+	
+	
 	<!-- Register the Customer.properties -->
-	<beans:bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<beans:property name="basename" value="message/messages" />
-	</beans:bean>
+	
+	 <!-- 
+   <beans:bean id="cropcateDao" class="kr.ac.iof.main.dao.CropCateDaoIm">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    
+    
+    <beans:bean id="cropcateService" class="kr.ac.iof.main.Service.CropCateServiceIm">
+        <beans:property name="cropCateDAO" ref="cropcateDao"></beans:property>
+    </beans:bean>
+     -->
+    
 
-
+ 
 
 </beans:beans>
 

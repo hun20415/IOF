@@ -9,7 +9,7 @@ public class InterCeportLogin extends HandlerInterceptorAdapter{
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
 		try {
 			//logininfo 세션값이 널일경우
-			if(request.getSession().getAttribute("logininfo") == null ){
+			if(request.getSession().getAttribute("user") == null ){
 					//로그인페이지로 redirect
 					response.sendRedirect("/login");	
 					return false;

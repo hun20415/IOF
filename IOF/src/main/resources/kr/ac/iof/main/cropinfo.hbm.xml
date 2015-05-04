@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="kr.ac.iof.model.Main">
+    <class name="kr.ac.iof.model.Main.CropInfo" table="crop_info">
+        <id name="cropid" type="int">
+            <column name="CROP_ID" length="4"/>
+        </id>
+        <property name="cropcate" type="int">
+            <column name="CROP_CATE_ID" length="2" />
+        </property>
+        <property name="cropname" type="string">
+            <column name="CROP_NAME" length="200" />
+        </property>
+        <property name="crop_info_html" type="string">
+            <column name="CROP_INFO_HTML" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

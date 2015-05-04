@@ -1,36 +1,39 @@
 ﻿<div id="content_left">
 	<dl class="curved">
-		<dt>RECOMMENDED LINKS</dt>
+		<dt>기본 정보</dt>
 		<dd>
 			<br />
 			<ul id="navlist">
-				<li><a href="#">Snapp Happy</a></li>
-				<li><a href="#">Open Designs</a></li>
-				<li><a href="#">Andreas Viklund</a></li>
-				<li><a href="#">James Koster</a></li>
-				<li><a href="#">CSS play</a></li>
-				<li><a href="#">Listamatic</a></li>
+				<li><a href="main">사용자 관리</a></li>
+				<li><a href="#">온실 정보 관리</a></li>
+				<li><a href="#">장비 정보 관리</a></li>
+				<li><a href="#">재배 정보</a></li>
+				<li><a href="#">환경 제어 정보</a></li>
+				<li><a href="#">기상 정보</a></li>
+				<li><a href="#">공지 사항</a></li>
+
 			</ul>
 			<p class="last">&nbsp;</p>
 		</dd>
 	</dl>
 	<dl class="curved">
-		<dt>
-			CURVED CORNERS<span class="small"> by Stu Nicholls</span>
-		</dt>
+		<dt>온실 현황</dt>
 		<dd>
-			<p>Ok, finally a four corner box with no extra markup.</p>
-			<p>No javascript and absolutely no hacks.</p>
-			<p class="last">
-				Examples at <a href="http://www.cssplay.co.uk">&#0187; CSS Play</a>
-			</p>
+		<br/>
+			<ul id="navlist">
+				<li><a href="#">온실 기본 정보</a></li>
+				<li><a href="#">제어 상태</a></li>
+				<li><a href="#">온실별 현황</a></li>
+
+			</ul>
+			<p class="last">&nbsp;</p>
 		</dd>
 	</dl>
-	<dl class="curved">
+	<!-- <dl class="curved">
 		<dt>MORE INFORMATION</dt>
 		<dd>
 			<p>Nulla in urna eu tellus auctor convallis.</p>
 			<p class="last">Morbi sodales vehicula nisi. Donec id tortor.</p>
 		</dd>
-	</dl>
+	</dl> -->
 </div>

@@ -1,28 +1,38 @@
-﻿package kr.ac.iof.model;
+package kr.ac.iof.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "SYS_USER_INFO")
-public class User {
-	/*private int useridNum;
-	// User_ID
-*/
+public class User{// implements UserDetails{
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
-	@NotNull	
 	private String userid;
 	private String username;
-	// USER_NAME
-	
 	private String userpasswd;
 	private String usergroupid;
 	private String email;
@@ -32,14 +42,39 @@ public class User {
 	private String home_addr;
 	private Date sys_datatime;
 	private String active_yn;
-	private int usergroup;
+	@ManyToOne//(cascade = CascadeType.ALL)
+	@JoinColumn(name = "USERGROUP_ID")
+	private UserGroup usergroup;
 	
-	/*public int getUseridNum() {
-		return useridNum;
+	/*@OneToOne(cascade=CascadeType.ALL)
+    @JoinTable(name="user_roles",
+        joinColumns = {@JoinColumn(name="userid", referencedColumnName="id")},
+        inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="id")}
+    )
+    private UserRole userrole;*/
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public void setUseridNum(int useridNum) {
-		this.useridNum = useridNum;
-	}*/
+	public User(String userid, String username, String userpasswd,
+			String usergroupid, String email, String mobilephone, String phone,
+			String home_zipcode, String home_addr, Date sys_datatime,
+			String active_yn, UserGroup usergroup) {
+		super();
+		this.userid = userid;
+		this.username = username;
+		this.userpasswd = userpasswd;
+		this.usergroupid = usergroupid;
+		this.email = email;
+		this.mobilephone = mobilephone;
+		this.phone = phone;
+		this.home_zipcode = home_zipcode;
+		this.home_addr = home_addr;
+		this.sys_datatime = sys_datatime;
+		this.active_yn = active_yn;
+		this.usergroup = usergroup;
+	}
 	
 	public String getUsername() {
 		return username;
@@ -107,23 +142,48 @@ public class User {
 	public void setActive_yn(String active_yn) {
 		this.active_yn = active_yn;
 	}	
-
-	public int getUsergroup() {
+	public UserGroup getUsergroup() {
 		return usergroup;
 	}
-
-	public void setUsergroup(int usergroup) {
+	public void setUsergroup(UserGroup usergroup) {
 		this.usergroup = usergroup;
 	}
-	
-	//@OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-	//public Set<UserRole> getUserRole() {
-	//	return this.userRole;
-	//}
- 
-	//public void setUserRole(Set<UserRole> userRole) {
-	//	this.userRole = userRole;
-	//}
+
+	/*@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
+	}*/
 	
 
 }

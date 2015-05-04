@@ -31,14 +31,16 @@
         
 		 <!-- end  -->
 		
-		<mapping resource="kr/ac/iof/DBUser.hbm.xml"></mapping>
-		 
-  		 <mapping class="kr.ac.iof.model.User"/>
-  		<!--  <mapping class="kr.ac.iof.model.UserGroup"/> -->
+		<mapping class="kr.ac.iof.model.User"/>
+  		<!-- <mapping class="kr.ac.iof.model.UserGroup"/> --> 
   		<mapping resource="kr/ac/iof/action/user/user.hbm.xml"></mapping>
   		<!-- <mapping resource="kr/ac/iof/action/user/userGroup.hbm.xml"></mapping> -->
   		 
+  		 <!-- <mapping class="kr.ac.iof.model.Main"/>
+        <mapping resource="kr/ac/iof/main/cropcate.hbm.xml"></mapping> -->
+         
   
   
  	</session-factory>
+ 	
 </hibernate-configuration>

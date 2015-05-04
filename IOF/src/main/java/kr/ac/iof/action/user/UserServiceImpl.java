@@ -28,8 +28,8 @@ import java.util.Set;
  */
 import kr.ac.iof.dao.UserDAO;
 import kr.ac.iof.model.User;
-@Configurable
-@Service("userService")
+
+@Service
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
