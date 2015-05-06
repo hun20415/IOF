@@ -6,14 +6,14 @@ import kr.ac.iof.model.Main.CropCate;
   
 public interface CropCateService {
  
-	public void addCropCate(CropCate cropcate);
+	public void add(CropCate cropcate);
 
-	public void deleteUser(int cropcateid);
+	public void delete(int cropcateid);
 
-	public void updateUser(CropCate cropcate);
+	public void update(CropCate cropcate);
 
-	public List<CropCate> getAllUsers();
+	public List<CropCate> getAll();
 
-	public CropCate getUserById(int cropcateid);
+	public CropCate getById(int cropcateid);
      
 }
