@@ -42,7 +42,7 @@ public class User{// implements UserDetails{
 	private String home_addr;
 	private Date sys_datatime;
 	private String active_yn;
-	@ManyToOne//(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "USERGROUP_ID")
 	private UserGroup usergroup;
 	

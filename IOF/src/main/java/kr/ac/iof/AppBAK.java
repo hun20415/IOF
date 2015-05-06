@@ -1,6 +1,7 @@
 ﻿package kr.ac.iof;
 
 import java.util.Date;
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,15 +17,24 @@ public class AppBAK {
 		SessionFactory sf = HibernateUtil.getSessionFactoryMain();
         Session session = sf.openSession();
         session.beginTransaction();
- 
-        CropCate department = new CropCate();
-        department.setCropcateid(1);
-        session.save(department);
-         
+        
+        CropCate cat = new CropCate();
+        
+        List<CropCate> cropcateList = session.createQuery("from CropCate").list();
+        for(CropCate p : cropcateList){
+        	if(p.getCropcateid() == 1){
+        		System.out.println(p.getCropcatename());
+        		cat = p;
+        		break;
+        	}
+        }
+       
+        
+        	
         CropInfo emp1 = new CropInfo();
         emp1.setCrop_info_html("html");
         emp1.setCropname("name");
-        emp1.setCropcate(department);
+        emp1.setCropcate(cat);
         
          
         session.save(emp1);

@@ -39,10 +39,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
  * Handles requests for the application user page.
  */
 @Controller
-public class CropController {
+public class CropCateController {
 
 	private static final Logger logger = LoggerFactory
-			.getLogger(CropController.class);
+			.getLogger(CropCateController.class);
 	@Autowired
 	/* @Qualifier(value="cropcateService") */
 	private CropCateService cropcateService;// 이거 나중에 service로 바꿔줘야 한다.
@@ -51,43 +51,43 @@ public class CropController {
 		this.cropcateService = ps;
 	}
 
-	@RequestMapping(value = "/cropcateC", method = RequestMethod.GET)
+	@RequestMapping(value = "/cropcateAdd", method = RequestMethod.GET)
 	public String cropcateC() throws Exception {
 		logger.info("cropcate 입력 View");
 
-		return "cropcateC";
+		return "cropcateAdd";
 	}
 
-	@RequestMapping(value = "/cropcateC", method = RequestMethod.POST)
+	@RequestMapping(value = "/cropcateAdd", method = RequestMethod.POST)
 	public String cropcateC(@ModelAttribute("cropcate") CropCate cropcate) throws Exception {
 		logger.info("cropcate 입력  C ");
 		this.cropcateService.addCropCate(cropcate);
         
-		return "redirect:/cropcateR";
+		return "redirect:/cropcateList";
 	}
 	
-	@RequestMapping(value = "/cropcateM", method = RequestMethod.POST)
+	@RequestMapping(value = "/cropcateModify", method = RequestMethod.POST)
 	public String cropcateM(@ModelAttribute("cropcate")CropCate cropcate) throws Exception {
 		logger.info("cropcate 입력  M ");
 		 this.cropcateService.updateUser(cropcate);
-       return "redirect:/cropcateR";
+       return "redirect:/cropcateList";
 	}
 
-	@RequestMapping(value = "/cropcateR", method = RequestMethod.GET)
+	@RequestMapping(value = "/cropcateList", method = RequestMethod.GET)
 	public String cropcateR(Model model) throws Exception {
 		logger.info("cropcate 리스트");
 
 		model.addAttribute("cropcate", new CropCate());
 		model.addAttribute("listcrop", this.cropcateService.getAllUsers());
 
-		return "cropcateR";
+		return "cropcateList";
 	}
 
 	@RequestMapping("/remove/{id}")
 	public String removePerson(@PathVariable("id") int id) {
 
 		this.cropcateService.deleteUser(id);
-		return "redirect:/cropcateR";
+		return "redirect:/cropcateList";
 	}
 
 	@RequestMapping("/{id}")
@@ -95,7 +95,7 @@ public class CropController {
 		model.addAttribute("cropcate", this.cropcateService.getUserById(id));
 		model.addAttribute("listPersons", this.cropcateService.getAllUsers());	
 		
-		return "cropcateM";
+		return "cropcateModify";
 	}
 
 }

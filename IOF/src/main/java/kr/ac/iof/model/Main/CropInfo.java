@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.IndexColumn;
+
 @Entity
 @Table(name = "crop_info")
 public class CropInfo {
@@ -16,8 +18,7 @@ public class CropInfo {
 	@Column(name = "CROP_ID")
 	private int cropid;
 	@ManyToOne
-	// (cascade = CascadeType.ALL)
-	@JoinColumn(name = "CROP_CATE_ID")
+	@JoinColumn(name = "department_id", insertable = false, updatable = false, nullable = false)
 	private CropCate cropcate;
 
 	public CropInfo(int cropid, CropCate cropcate, String cropname,
@@ -43,13 +44,11 @@ public class CropInfo {
 	public void setCropid(int cropid) {
 		this.cropid = cropid;
 	}
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "AUTHOR_ID")
+
 	public CropCate getCropcate() {
 		return cropcate;
 	}
-	
+
 	public void setCropcate(CropCate cropcate) {
 		this.cropcate = cropcate;
 	}
@@ -65,7 +64,7 @@ public class CropInfo {
 	public String getCrop_info_html() {
 		return crop_info_html;
 	}
-	
+
 	public void setCrop_info_html(String crop_info_html) {
 		this.crop_info_html = crop_info_html;
 	}
