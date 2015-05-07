@@ -6,9 +6,9 @@
 <center><h1>온실 정보 신규 입력</h1></center>
 <table class="type02">
 	<tr>
-		<th scope="row">온실 ID  </th>
+		<th scope="row">*온실 ID  </th>
 		<td><input type="text" size=10 name="farmid"></td>
-		<th scope="row">온실 주</th>
+		<th scope="row">*온실 주</th>
 		<td><input type="text" size=10 name=""></td>
 	</tr>
 	<tr>
@@ -20,7 +20,7 @@
 	<tr>
 		<th scope="row">재배면적(평)</th>
 		<td><input type="text" size=10 name="area_pyung"></td>
-		<th scope="row">재배면적(제곱미터)</th>
+		<th scope="row">*재배면적(제곱미터)</th>
 		<td><input type="text" size=10 name="area_msquare"></td>
 	</tr>
 	<tr>
@@ -44,11 +44,14 @@
 				<option>비닐</option></td>
 	</tr>
 	<tr>
-		<th scope="row">연동/단동</th>
+		<th scope="row">*연동/단동</th>
 		<td><select>
-				<option>test</option></td>
-		<th scope="row">연동/단동 개수</th>
+				<option>연동</option>
+				<option>단동</option></td>
+		<th scope="row">*연동/단동 개수</th>
 		<td><select name="connected_num">
+				<option>1</option>
+				<option>2</option>
 				<option>3</option></td>
 	</tr>
 	<tr>
