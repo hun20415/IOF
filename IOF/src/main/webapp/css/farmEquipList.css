@@ -18,7 +18,7 @@ table.type02 th {
     border-left: 1px solid #fff;
     background: #d2f4ec;
 }
-table.type02 td {
+table.type02 td { 
     width: 350px ;
     padding: 10px;
     vertical-align: top;

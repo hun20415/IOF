@@ -24,7 +24,7 @@
 		<th scope="row">  </th>
 		<th scope="row">No  </th>
 		<th scope="row">컨트롤러  </th>
-		<th scope="row">개수  </th>
+		<th scope="row">개수  </th> 
 	</tr>
 	<tr>
 		<td scope="row">1  </td>

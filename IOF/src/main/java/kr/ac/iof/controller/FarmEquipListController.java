@@ -37,7 +37,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class FarmEquipListController  {
 	
 	private static final Logger logger = LoggerFactory.getLogger(FarmEquipListController.class);
-	
+	 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
