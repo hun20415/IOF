@@ -1,3 +1,9 @@
+/**                                                                             				                **/
+/**                                File Name   : UserDAOIm.java       	                		   			      **/  		
+/**                                Description : User DAO implement                        								**/ 
+/**                                Update      : 2015.05.07(박정훈)                                				**/
+/**                                ETC         :                                                                **/
+/**					                                                                                             **/
 package kr.ac.iof.dao;
 
 import java.util.Date;
@@ -13,12 +19,12 @@ import org.springframework.transaction.annotation.Transactional;
 import kr.ac.iof.model.User;
 
 @Repository("userDao")
-public class UserDAOImpl implements UserDAO {
+public class UserDAOIm implements UserDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public UserDAOImpl(SessionFactory sessionFactory) {
+	public UserDAOIm(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 

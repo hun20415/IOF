@@ -6,12 +6,13 @@
  
  <hibernate-configuration>
     <session-factory>
+    <!-- main db -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">hellobitloe4</property>
         <property name="hibernate.connection.url">jdbc:mysql://220.69.182.99:3306/aict_main_db?useUnicode=yes&amp;characterEncoding=UTF-8</property>
         <property name="hibernate.connection.username">pgmr</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        
+        <!-- 각 컴퓨터에서 데이터베이스에 접속하기 위해서는 localhost를 220.69.182.99로 변경 항여야 한다 -->
         <!-- c3p0 config http://www.hibernate.org/214.html -->
         <property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>        
         <property name="hibernate.c3p0.acquire_increment">1</property>

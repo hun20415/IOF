@@ -1,5 +1,10 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!--                                                                                                    -->
+<!--                                File Name   : cropCateViewList.jsp                                  -->
+<!--                                Description : cropCate 입력페이지                                                                                                        -->
+<!--                                Update      : 2015.05.07                                            -->
+<!--                                ETC         :                                                       -->
+<!--                                                                                                    -->
 <br>
 <h3>crop List</h3>
 <c:if test="${!empty listcrop}">
@@ -11,6 +16,7 @@
         <th width="60">Edit</th>
         <th width="60">Delete</th>
     </tr>
+     <!-- 리스트 객체를 받아서 출력(for문으로 출력) c:forEach 이러한 문법은 JSTL 문ㅂ-->
     <c:forEach items="${listcrop}" var="cropcate">
         <tr>
             <td>${cropcate.cropcateid}</td>
@@ -20,5 +26,6 @@
             <td><a href="<c:url value='/remove/${cropcate.cropcateid}' />" >Delete</a></td>
         </tr>
     </c:forEach>
+    
     </table>
 </c:if>

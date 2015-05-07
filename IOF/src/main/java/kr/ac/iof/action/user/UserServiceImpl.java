@@ -1,3 +1,9 @@
+/**                                                                                             **/
+/**                                File Name   : UserServiceIm.java                               **/  		
+/**                                Description : userservice implement	                         **/ 
+/**                                Update      : 2015.05.07(박정훈)                                **/
+/**                                ETC         :                                                **/
+/**                                                                                             **/
 package kr.ac.iof.action.user;
 
 import org.springframework.beans.factory.annotation.Autowired;

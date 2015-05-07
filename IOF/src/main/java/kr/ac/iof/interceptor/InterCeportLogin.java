@@ -1,3 +1,10 @@
+/**                                                                             				                **/
+/**                                File Name   : InterCeportLogin.java       	                		   			      **/  		
+/**                                Description : 페이지 세션 처리(로그인 되 있으면 메인페이지로 들어가게)                        								**/ 
+/**                                Update      : 2015.05.07(박정훈)                                				**/
+/**                                ETC         :                                                                **/
+/**					                                                                                             **/
+
 package kr.ac.iof.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
