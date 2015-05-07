@@ -4,5 +4,5 @@
 				href="mailto:denise@mitchinson.net"><img src="images/mail.gif"
 				alt="contact"></a>
 		</p>
-		  -->
+		   -->
 </div>
