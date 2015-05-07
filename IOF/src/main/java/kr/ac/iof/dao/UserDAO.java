@@ -1,3 +1,9 @@
+/**                                                                             				                **/
+/**                                File Name   : UserDAO.java       	                		   			      **/  		
+/**                                Description : User DAO                        								**/ 
+/**                                Update      : 2015.05.07(박정훈)                                				**/
+/**                                ETC         :                                                                **/
+/**					                                                                                             **/
 package kr.ac.iof.dao;
 
 import java.util.List;
