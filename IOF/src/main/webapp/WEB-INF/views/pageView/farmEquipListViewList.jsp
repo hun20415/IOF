@@ -26,7 +26,7 @@
 		<th scope="row">컨트롤러  </th>
 		<th scope="row">개수  </th> 
 	</tr>
-	<tr>
+	<tr> 
 		<td scope="row">1  </td>
 		<td scope="row">외부 온도 센서</td>
 		<td scope="row">1</td>
