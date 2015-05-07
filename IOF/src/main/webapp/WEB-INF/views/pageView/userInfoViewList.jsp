@@ -34,7 +34,7 @@
 		<td></td>
 	</tr>
 	<tr>
-		<th scope="row">집주소</th>		
+		<th scope="row">집주소  </th>		
 	</tr>
 </table>
 
