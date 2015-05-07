@@ -60,7 +60,7 @@
 		<td></td>
 		<th scope="row">온실건립일</th>
 		<td></td>
-	</tr>	
+	</tr>	 
 	<tr>
 		<th scope="row">주소</th>
 		<td></td>
