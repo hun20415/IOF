@@ -8,6 +8,9 @@
 <!--                                                                                                    -->
 <div id = cropcateC>
 <!-- 본문 시작 -->
+<!-- 본문 시작 -->
+<!-- 본문 시작 -->
+<!-- 본문 시작 -->
 <h1>cropCView</h1>
 
 <form id="cropForm" action="cropcateAdd" method="post"
