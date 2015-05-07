@@ -268,8 +268,8 @@
 	</tr>
 	<tr>
 		<td scope="row">  18</td>
-		<td scope="row" style="width: 117px; ">폐액 pH 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
+		<td scope="row" style="width: 117px;">폐액 pH 센서</td>
+		<td scope="row" style="width: 35px;">1</td>
 		<td scope="row" style="width: 1px; ">  </td>
 		<td scope="row" style="width: 2px; ">18</td>
 		<td scope="row" style="width: 137px; ">보광등</td>
