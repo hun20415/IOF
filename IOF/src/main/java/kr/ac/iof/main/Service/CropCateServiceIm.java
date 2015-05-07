@@ -1,3 +1,7 @@
+/*********************************************************************************************************/
+/*************************cropcate에 대한 service controller에서 처리되어야 하는 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다*/
+/*************************2015-05-06 박정훈 *****************************************************************/
+/*********************************************************************************************************/
 package kr.ac.iof.main.Service;
 
 import java.util.List;
@@ -24,34 +28,34 @@ public class CropCateServiceIm implements CropCateService{
  
     @Override
     @Transactional
-    public void addCropCate(CropCate p) {
+    public void add(CropCate p) {
     	System.out.println("addserviceimple");
-        this.cropcateDao.addCropCate(p);
+        this.cropcateDao.add(p);
     }
  
     @Override
     @Transactional
-    public void updateUser(CropCate p) {
-        this.cropcateDao.updateUser(p);
+    public void update(CropCate p) {
+        this.cropcateDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<CropCate> getAllUsers() {
+    public List<CropCate> getAll() {
     	System.out.println("cripcateServicelm");
-        return this.cropcateDao.getAllUsers();
+        return this.cropcateDao.getAll();
     }
  
     @Override
     @Transactional
-    public CropCate getUserById(int id) {
-        return this.cropcateDao.getUserById(id);
+    public CropCate getById(int id) {
+        return this.cropcateDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void deleteUser(int cropcateid) {
-        this.cropcateDao.deleteUser(cropcateid);
+    public void delete(int cropcateid) {
+        this.cropcateDao.delete(cropcateid);
     }
 
 }

@@ -1,10 +1,14 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<!-- *********************************************************************************************************/
+/************************modify view 페이지 add 페이지와 동일*******************************************************/
+/*************************2015-05-06 박정훈 *****************************************************************/
+/*********************************************************************************************************/ -->
 <div id = cropcateM>
 <!-- 본문 시작 -->
 <h1>cropCView</h1>
 
-<form id="cropForm" action="cropcateM" method="post"
+<form id="cropForm" action="cropcateModify" method="post"
 	onsubmit="return check()">
 	<table>
 		<tr>

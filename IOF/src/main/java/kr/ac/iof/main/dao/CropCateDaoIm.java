@@ -1,3 +1,7 @@
+/*********************************************************************************************************/
+/*************************cropcate에 대한 Dao, 쿠리문 처리 *********************************************************/
+/*************************2015-05-06 박정훈 *****************************************************************/
+/*********************************************************************************************************/
 package kr.ac.iof.main.dao;
 
 import java.util.ArrayList;
@@ -21,13 +25,14 @@ public class CropCateDaoIm implements CropCateDao {
 
 	
 	@Override
-	public void addCropCate(CropCate cropcate) {
+	public void add(CropCate cropcate) {//insert
 		Transaction trns = null;
 		
-		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();//main db에 대한 session 호출
+		
 		try {
 			trns = session.beginTransaction();
-			session.save(cropcate);
+			session.save(cropcate);//cropcate 객체를 저장(insert 쿼리문)
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -41,15 +46,15 @@ public class CropCateDaoIm implements CropCateDao {
 	}
 
 	@Override
-	public void deleteUser(int cropcateid) {
+	public void delete(int cropcateid) {
 		System.out.println("cripcateDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
 			CropCate cropcate = (CropCate) session.load(CropCate.class,
-					new Integer(cropcateid));
-			session.delete(cropcate);
+					new Integer(cropcateid));//id로 db에서 삭제해야 할 row을 불러온다.
+			session.delete(cropcate);//삭제 쿼리문 
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -63,13 +68,13 @@ public class CropCateDaoIm implements CropCateDao {
 	}
 
 	@Override
-	public void updateUser(CropCate cropcate) {
+	public void update(CropCate cropcate) {
 		System.out.println("update");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			session.update(cropcate);
+			session.update(cropcate);//update 쿼리문
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -82,7 +87,7 @@ public class CropCateDaoIm implements CropCateDao {
 		}
 	}
 	@Override
-	public List<CropCate> getAllUsers() {
+	public List<CropCate> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
 		System.out.println("cripcateDaolm");
 		List<CropCate> cropcates = new ArrayList<CropCate>();
 		
@@ -91,18 +96,18 @@ public class CropCateDaoIm implements CropCateDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			cropcates = session.createQuery("from CropCate").list();
+			cropcates = session.createQuery("from CropCate").list();//list로 호출
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return cropcates;
+		return cropcates;//리스트로 반환
 	}
 
 	@Override
-	public CropCate getUserById(int cropcateid) {
+	public CropCate getById(int cropcateid) {
 		System.out.println("cripcateDaolm");
 		CropCate cropcate = null;
 		Transaction trns = null;
@@ -111,7 +116,7 @@ public class CropCateDaoIm implements CropCateDao {
 			trns = session.beginTransaction();
 			String queryString = "from CropCate where cropcateid = :id";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", cropcateid);
+			query.setInteger("id", cropcateid);//id로 매칭 특정 행을 불러온다.
 			cropcate = (CropCate) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
@@ -121,57 +126,5 @@ public class CropCateDaoIm implements CropCateDao {
 		}
 		return cropcate;
 	}
-
-	
-	/*private SessionFactory sessionFactory;
-
-	public void setSessionFactory(SessionFactory sf) {
-		this.sessionFactory = sf;
-	}*/
-/*
-	 @Override
-	    public void addCropCate(CropCate cropcate){
-	        Session session = this.sessionFactory.getCurrentSession();
-	        session.persist(cropcate);
-	        logger.info("CropCate saved successfully, CropCate Details="+cropcate);
-	    }
-	 
-	    @Override
-	    public void updateUser(CropCate p) {
-	        Session session = this.sessionFactory.getCurrentSession();
-	        session.update(p);
-	        logger.info("CropCate updated successfully, CropCate Details="+p);
-	    }
-	 
-	    @SuppressWarnings("unchecked")
-	    @Override
-	    public List<CropCate> getAllUsers() {
-	        Session session = this.sessionFactory.getCurrentSession();
-	        List<CropCate> personsList = session.createQuery("from Person").list();
-	        for(CropCate p : personsList){
-	            logger.info("Person List::"+p);
-	        }
-	        return personsList;
-	    }
-	 
-	    @Override
-	    public CropCate getUserById(int id) {
-	        Session session = this.sessionFactory.getCurrentSession();      
-	        CropCate p = (CropCate) session.load(CropCate.class, new Integer(id));
-	        logger.info("Person loaded successfully, Person details="+p);
-	        return p;
-	    }
-	 
-	    @Override
-	    public void deleteUser(int id) {
-	        Session session = this.sessionFactory.getCurrentSession();
-	        CropCate p = (CropCate) session.load(CropCate.class, new Integer(id));
-	        if(null != p){
-	            session.delete(p);
-	        }
-	        logger.info("Person deleted successfully, person details="+p);
-	    }*/
-	
-	
 	
 }
