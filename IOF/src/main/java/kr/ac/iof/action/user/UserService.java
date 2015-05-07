@@ -1,3 +1,9 @@
+/**                                                                                             **/
+/**                                File Name   : UserService.java                                **/  		
+/**                                Description : userservice interface                          **/ 
+/**                                Update      : 2015.05.07(박정훈)                                **/
+/**                                ETC         :                                                **/
+/**                                                                                             **/
 package kr.ac.iof.action.user;
 
 import java.util.List;
