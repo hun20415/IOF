@@ -6,7 +6,7 @@
 <center><h1>온실 정보 신규 입력</h1></center>
 <table class="type02">
 	<tr>
-		<th scope="row">온실 ID</th>
+		<th scope="row">온실 ID </th>
 		<td><input type="text" size=10 name="farmid"></td>
 		<th scope="row">온실 주</th>
 		<td><input type="text" size=10 name=""></td>
