@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<jsp:include page="template/header.jsp"  />
+	<jsp:include page="template/header.jsp" />
 <%-- 	<center>
 		<jsp:include page="template/navigationbar.jsp" flush="false"/>
 	</center> --%>
