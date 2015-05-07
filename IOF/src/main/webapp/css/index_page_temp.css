@@ -1,4 +1,4 @@
-﻿html,body {
+﻿html,body { 
 margin:0;
 padding:0;
 }
@@ -11,8 +11,8 @@ color: #666;
 			/*BANNER PROPERTIES*/
 #banner {
 width:100%;
-height:150px;
-background:#bbd9ee url(../images/banner.jpg) top center no-repeat;
+height:50px;
+background:#bbd9ee top center no-repeat;
 }
 #banner h1 {
 margin: 0 0 0 250px;
