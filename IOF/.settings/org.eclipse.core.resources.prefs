@@ -1,11 +1,12 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=refs/remotes/origin/master
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/home.jsp.bak=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
-<<<<<<< HEAD
-encoding//src/main/webapp/WEB-INF/views/pageView/greenHouseViewAdd.jsp=UTF-8
-=======
 encoding//src/main/webapp/WEB-INF/views/pageView/Oak.jsp=UTF-8
->>>>>>> refs/remotes/origin/master
+encoding//src/main/webapp/WEB-INF/views/pageView/farmEquipListViewList.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/pageView/greenHouseViewAdd.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/template.jsp=UTF-8
 encoding/<project>=UTF-8
