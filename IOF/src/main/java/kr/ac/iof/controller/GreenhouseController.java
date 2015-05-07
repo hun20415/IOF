@@ -48,6 +48,12 @@ public class GreenhouseController  {
 		return "greenhouseAdd";
 	}
 	
+	@RequestMapping(value = "/greenHouseInfo", method = RequestMethod.GET)
+	public String greenHouseInfo() {
+		logger.info("greenHouseInfo");		
+		return "greenHouseInfo";
+	}
+	
 	
 	
 }

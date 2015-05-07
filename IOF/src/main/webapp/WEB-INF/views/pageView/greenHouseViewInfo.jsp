@@ -1,44 +1,9 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/userInfoViewList.css" rel="stylesheet" type="text/css">
+<link href="css/greenhouseInfo.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
-<center><h1>사용자 상세 정보</h1></center>
-<left><h2># 개인정보</h2></left>
-<table class="type02">
-	<tr>
-		<th scope="row">사용자 이름  </th>
-		<td></td>
-		<th scope="row">사용자 ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">비밀번호</th>
-		<td></td>
-		<th scope="row">그룹ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">이메일</th>	
-		<td clospan="4"></td>			
-	</tr>
-	<tr>
-		<th scope="row">휴대폰</th>
-		<td></td>
-		<th scope="row">연락처</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">우편번호</th>
-		<td></td>
-		<th scope="row">등록날짜</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">집주소  </th>
-		<td clospan="3"></td>			
-	</tr>
-</table>
+<center><h1>온실 상세 정보</h1></center>
 
 <left><h2># 온실정보</h2></left>
 <table class="type02">
@@ -98,7 +63,7 @@
 	</tr>	
 	<tr>
 		<th scope="row">주소</th>
-		<td clospan="3"></td>	
+		<td></td>
 	</tr>	
 </table>
 
@@ -134,8 +99,9 @@
 		<td></td>
 		<th scope="row">예상 출하일</th>
 		<td></td>
-	</tr>	
+	</tr>
 </table>
+
 
 <!--  본문 끝 -->
 
