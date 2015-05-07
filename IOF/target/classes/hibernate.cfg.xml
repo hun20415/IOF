@@ -8,7 +8,7 @@
  	<session-factory>
   		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   		<property name="hibernate.connection.password">hellobitloe4</property>
-  		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/aict_sys_db?useUnicode=yes&amp;characterEncoding=UTF-8</property>
+  		<property name="hibernate.connection.url">jdbc:mysql://220.69.182.99:3306/aict_sys_db?useUnicode=yes&amp;characterEncoding=UTF-8</property>
   		<property name="hibernate.connection.username">pgmr</property>
   		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
   		
