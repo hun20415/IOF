@@ -146,5 +146,15 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping(value = "/userInfoList", method = RequestMethod.GET)
+	public String userInfoList(){
+		logger.info("userInfoList");
+		
+		return "userInfoList";
+		
+	}
+	
+	
+	
 	
 }
