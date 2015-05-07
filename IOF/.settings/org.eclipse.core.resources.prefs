@@ -10,9 +10,12 @@ encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/home.jsp.bak=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/views/pageView/greenHouseViewAdd.jsp=UTF-8
 =======
 encoding//src/main/webapp/WEB-INF/views/pageView/Oak.jsp=UTF-8
+>>>>>>> refs/remotes/origin/master
 encoding//src/main/webapp/WEB-INF/views/pageView/greenHouseViewAdd.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pageView/greenHouseViewInfo.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pageView/userInfoViewList.jsp=UTF-8
