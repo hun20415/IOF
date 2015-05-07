@@ -1,4 +1,4 @@
-table.type02 {
+﻿table.type02 {
     border-collapse: separate;
     border-spacing: 0;
     text-align: center;
@@ -18,7 +18,6 @@ table.type02 th {
     border-left: 1px solid #fff;
     background: #d2f4ec;
 }
-
 table.type02 td {
     width: 350px ;
     padding: 10px;
