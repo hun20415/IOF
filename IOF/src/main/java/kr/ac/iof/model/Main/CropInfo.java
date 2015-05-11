@@ -29,14 +29,15 @@ public class CropInfo {
 		this.cropname = cropname;
 		this.crop_info_html = crop_info_html;
 	}
+	
+	public CropInfo() {
+		super();
+	}
 
 	private String cropname;
 	private String crop_info_html;
 
-	public CropInfo() {
-
-	}
-
+	
 	public int getCropid() {
 		return cropid;
 	}
