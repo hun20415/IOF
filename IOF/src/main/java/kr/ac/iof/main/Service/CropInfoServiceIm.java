@@ -56,8 +56,8 @@ public class CropInfoServiceIm implements CropInfoService{
  
     @Override
     @Transactional
-    public void delete(int cropid) {
-        this.cropInfoDao.delete(cropid);
+    public void delete(int cropId) {
+        this.cropInfoDao.delete(cropId);
     }
 
 }
