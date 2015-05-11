@@ -13,7 +13,7 @@ import kr.ac.iof.model.Main.CropCate;
 public interface CropCateDao {
 	public void add(CropCate cropCate);
 
-	public void delete(int cropCateid);
+	public void delete(int cropCateId);
 
 	public void update(CropCate cropCate);
 

@@ -22,8 +22,8 @@ public class AppBAK {
         
         List<CropCate> cropcateList = session.createQuery("from CropCate").list();
         for(CropCate p : cropcateList){
-        	if(p.getCropcateid() == 1){
-        		System.out.println(p.getCropcatename());
+        	if(p.getCropCateId() == 1){
+        		System.out.println(p.getCropCateName());
         		cat = p;
         		break;
         	}
@@ -32,9 +32,9 @@ public class AppBAK {
         
         	
         CropInfo emp1 = new CropInfo();
-        emp1.setCrop_info_html("html");
-        emp1.setCropname("name");
-        emp1.setCropcate(cat);
+        emp1.setCropInfoHtml("html");
+        emp1.setCropName("name");
+        emp1.setCropCate(cat);
         
          
         session.save(emp1);
