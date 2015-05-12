@@ -40,13 +40,7 @@
 	<!-- interceptors 처리 -->
 	<mvc:interceptors>
 
-		<!-- 
-		<mvc:interceptor>
-
-			<mvc:mapping path="/login" />
-			<beans:bean class="kr.ac.iof.interceptor.InterCeportLogin" />
-		</mvc:interceptor>
-		 -->
+		
 		<mvc:interceptor>
 			<mvc:mapping path="/" />
 			<beans:bean class="kr.ac.iof.interceptor.InterCeportLogin" />
@@ -82,17 +76,6 @@
 	
 	<!-- Register the Customer.properties -->
 	
-	 <!-- 
-   <beans:bean id="cropcateDao" class="kr.ac.iof.main.dao.CropCateDaoIm">
-        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-    </beans:bean>
-    
-    
-    <beans:bean id="cropcateService" class="kr.ac.iof.main.Service.CropCateServiceIm">
-        <beans:property name="cropCateDAO" ref="cropcateDao"></beans:property>
-    </beans:bean>
-     -->
-    
 
  
 

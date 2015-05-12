@@ -7,7 +7,7 @@
 <!--                                                                                                    -->
 <br>
 <h3>crop List</h3>
-<c:if test="${!empty listCrop}">
+<c:if test="${!empty listCropCate}">
     <table class="tg">
     <tr>
         <th width="80">cropCate ID</th>
@@ -17,7 +17,7 @@
         <th width="60">Delete</th>
     </tr>
      <!-- 리스트 객체를 받아서 출력(for문으로 출력) c:forEach 이러한 문법은 JSTL 문ㅂ-->
-    <c:forEach items="${listCrop}" var="cropCate">
+    <c:forEach items="${listCropCate}" var="cropCate">
         <tr>
             <td>${cropCate.cropCateId}</td>
             <td>${cropCate.cropCateName}</td>
