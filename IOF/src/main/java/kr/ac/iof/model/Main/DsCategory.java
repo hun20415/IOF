@@ -1,8 +1,7 @@
 /**                                                                                 	           **/
-/** Entity in java, 이때 각 테이블의 이름을 이곳에서  선언해주어도 되고 hbm 파일을 따로 만들어서 mapping 시켜도 된다.       	      **/
 /**                                File Name   : DsCategory.java                	              **/  		
 /**                                Description : ds_category 질병 분류 테이블                                                     **/ 
-/**                                Update      : 2015.05.12(박정훈)	                               **/
+/**                                Update      : 2015.05.12(옥정윤)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
 
@@ -25,11 +24,44 @@ public class DsCategory {
 	@Column(name = "DS_CATE_HTML") //200
 	private String dsCateHtml;
 	
-	public DsCategory () {//생성자는 필수
+	public DsCategory () {
 
 	    }
 	
+
+	public DsCategory(int dsCateId, String dsCateName, String dsCateHtml) {
+		super();
+		this.dsCateId = dsCateId;
+		this.dsCateName = dsCateName;
+		this.dsCateHtml = dsCateHtml;
+	}
 	
+	
+
+
+	public int getDsCateId() {
+		return dsCateId;
+	}
+
+	public String getDsCateName() {
+		return dsCateName;
+	}
+
+	public String getDsCateHtml() {
+		return dsCateHtml;
+	}
+
+	public void setDsCateId(int dsCateId) {
+		this.dsCateId = dsCateId;
+	}
+
+	public void setDsCateName(String dsCateName) {
+		this.dsCateName = dsCateName;
+	}
+
+	public void setDsCateHtml(String dsCateHtml) {
+		this.dsCateHtml = dsCateHtml;
+	}
 
 	
 }
