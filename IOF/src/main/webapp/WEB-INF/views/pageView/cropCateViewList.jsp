@@ -22,8 +22,8 @@
             <td>${cropCate.cropCateId}</td>
             <td>${cropCate.cropCateName}</td>
             <td>${cropCate.cropCateHtml}</td>
-            <td><a href="<c:url value='/${cropCate.cropCateId}' />" >Edit</a></td>
-            <td><a href="<c:url value='/remove/${cropCate.cropCateId}' />" >Delete</a></td>
+            <td><a href="<c:url value='/cropCateModify/${cropCate.cropCateId}' />" >Edit</a></td>
+            <td><a href="<c:url value='/cropCateRemove/${cropCate.cropCateId}' />" >Delete</a></td>
         </tr>
     </c:forEach>
     

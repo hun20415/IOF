@@ -4,6 +4,7 @@
 /**                                Update      : 2015.05.11(박정훈)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
+
 package kr.ac.iof.model.Main;
 
 import javax.persistence.Column;
