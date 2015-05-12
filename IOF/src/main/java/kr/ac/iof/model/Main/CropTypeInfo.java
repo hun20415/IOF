@@ -22,7 +22,7 @@ public class CropTypeInfo {
 	private int cropTypeId;
 	@Column(name = "CROP_TYPE_NAME") //20
 	private String cropTypeName;
-	@Column(name = "CROP_ID") //4
+	@Column(name = "CROP_ID") //4, FOREIGN KEY
 	private int cropId;
 	@Column(name = "CROP_TYPE_HTML") //200
 	private String cropTypeHtml;
@@ -30,6 +30,51 @@ public class CropTypeInfo {
 	public CropTypeInfo () {//생성자는 필수
 
 	    }
+	
+	
+
+	public CropTypeInfo(int cropTypeId, String cropTypeName, int cropId,
+			String cropTypeHtml) {
+		super();
+		this.cropTypeId = cropTypeId;
+		this.cropTypeName = cropTypeName;
+		this.cropId = cropId;
+		this.cropTypeHtml = cropTypeHtml;
+	}
+
+
+
+	public int getCropTypeId() {
+		return cropTypeId;
+	}
+
+	public String getCropTypeName() {
+		return cropTypeName;
+	}
+
+	public int getCropId() {
+		return cropId;
+	}
+
+	public String getCropTypeHtml() {
+		return cropTypeHtml;
+	}
+
+	public void setCropTypeId(int cropTypeId) {
+		this.cropTypeId = cropTypeId;
+	}
+
+	public void setCropTypeName(String cropTypeName) {
+		this.cropTypeName = cropTypeName;
+	}
+
+	public void setCropId(int cropId) {
+		this.cropId = cropId;
+	}
+
+	public void setCropTypeHtml(String cropTypeHtml) {
+		this.cropTypeHtml = cropTypeHtml;
+	}
 	
 	
 

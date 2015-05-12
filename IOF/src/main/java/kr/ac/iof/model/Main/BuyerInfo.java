@@ -1,8 +1,7 @@
 /**                                                                                 	           **/
-/** Entity in java, 이때 각 테이블의 이름을 이곳에서  선언해주어도 되고 hbm 파일을 따로 만들어서 mapping 시켜도 된다.       	      **/
 /**                                File Name   : BuyerInfo.java                	                  **/  		
 /**                                Description : buyer_info 구매자	정보            	                          **/ 
-/**                                Update      : 2015.05.12(박정훈)	                               **/
+/**                                Update      : 2015.05.12(옥정윤)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
 
