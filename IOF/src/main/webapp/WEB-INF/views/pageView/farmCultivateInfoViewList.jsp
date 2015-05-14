@@ -36,7 +36,7 @@
 	</thead>
 	<tbody>
 		<tr>
-	
+	<%-- 
 	        <td>${farmCultivateInfo.farmId}</td>
             <td>내용</td> <!--  <td>${farmCultivateInfo.}</td>  // 온실이름-->
             <td>내용</td> <!-- <td>${farmCultivateInfo.userId}</td> //온실주-->
@@ -53,7 +53,7 @@
             </form></td>
             <td> check box </td>
             
-
+ --%>
 		</tr>
 
 	</tbody>
