@@ -48,6 +48,11 @@ public class FarmEquipListController  {
 		return "farmEquipList";
 	}
 	
+	@RequestMapping(value = "/equipmentList", method = RequestMethod.GET)
+	public String equipmentList() {
+		logger.info("equipmentList");		
+		return "equipmentList";
+	}
 	 
 	
 }

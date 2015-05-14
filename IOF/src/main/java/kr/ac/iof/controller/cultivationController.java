@@ -34,32 +34,27 @@ import org.springframework.beans.factory.annotation.Autowired;
  * Handles requests for the application user page.
  */
 @Controller
-public class GreenhouseController  {
+public class cultivationController  {
 	
-	private static final Logger logger = LoggerFactory.getLogger(GreenhouseController.class);
+	private static final Logger logger = LoggerFactory.getLogger(cultivationController.class);
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	@RequestMapping(value = "/greenhouseAdd", method = RequestMethod.GET)
-	public String greenhouseAdd() {
-		logger.info("greenhouseInfoAdd");		
-		return "greenhouseAdd";
+	@RequestMapping(value = "/cultivationList", method = RequestMethod.GET)//서비스 호출
+	public String cultivationList() throws Exception {
+		logger.info("cultivationList");
+
+		return "cultivationList";
 	}
 	
-	@RequestMapping(value = "/greenHouseInfo", method = RequestMethod.GET)
-	public String greenHouseInfo() {
-		logger.info("greenHouseInfo");		
-		return "greenHouseInfo";
+	@RequestMapping(value = "/cultivationAdd", method = RequestMethod.GET)//서비스 호출
+	public String cultivationAdd() throws Exception {
+		logger.info("cultivationAdd");
+
+		return "cultivationAdd";
 	}
-	
-	@RequestMapping(value = "/greenHouseEnviInfo", method = RequestMethod.GET)
-	public String greenHouseEnviInfo() {
-		logger.info("greenHouseEnviInfo");		
-		return "greenHouseEnviInfo";
-	}
-	
 	
 	
 }
