@@ -36,17 +36,23 @@
 	</thead>
 	<tbody>
 		<tr>
-
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>조회 수정</td>
-			<td>내용</td>
+	
+	        <td>${farmCultivateInfo.farmId}</td>
+            <td>내용</td> <!--  <td>${farmCultivateInfo.}</td>  // 온실이름-->
+            <td>내용</td> <!-- <td>${farmCultivateInfo.userId}</td> //온실주-->
+            <td>${farmCultivateInfo.farmSectionId}</td>
+            <td>${farmCultivateInfo.cropSpeciesId}</td>
+            <td>${farmCultivateInfo.plantTime}</td>
+            <td>${farmCultivateInfo.productTimePlan}</td>
+            <td>${farmCultivateInfo.productTimeReal}</td>
+            
+            
+            <td><form action="cultivationModify">
+            <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            <td> check box </td>
+            
 
 		</tr>
 

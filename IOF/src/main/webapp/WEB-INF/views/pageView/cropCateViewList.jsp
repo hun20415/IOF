@@ -22,6 +22,7 @@
             <td>${cropCate.cropCateId}</td>
             <td>${cropCate.cropCateName}</td>
             <td>${cropCate.cropCateHtml}</td>
+            
             <td><form action="cropCateModify">
             <input type="hidden" name="id" value="${cropCate.cropCateId}">
             <input type="submit" value="Edit">
