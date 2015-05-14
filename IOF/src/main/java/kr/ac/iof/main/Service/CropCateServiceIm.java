@@ -45,7 +45,7 @@ public class CropCateServiceIm implements CropCateService{
     @Override
     @Transactional
     public List<CropCate> getAll() {
-    	System.out.println("cripCateServicelm");
+    	System.out.println("cropCateServicelm");
         return this.cropCateDao.getAll();
     }
  

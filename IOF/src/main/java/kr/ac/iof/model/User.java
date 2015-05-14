@@ -35,159 +35,17 @@ public class User{// implements UserDetails{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
-	private String userid;
-	private String username;
-	private String userpasswd;
-	private String usergroupid;
+	private String userId;
+	private String userName;
+	private String userPasswd;
+	private String userGroupId;
 	private String email;
-	private String mobilephone;
+	private String mobilePhone;
 	private String phone;
-	private String home_zipcode;
-	private String home_addr;
-	private Date sys_datatime;
-	private String active_yn;
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "USERGROUP_ID")
-	private UserGroup usergroup;
-	
-	/*@OneToOne(cascade=CascadeType.ALL)
-    @JoinTable(name="user_roles",
-        joinColumns = {@JoinColumn(name="userid", referencedColumnName="id")},
-        inverseJoinColumns = {@JoinColumn(name="role_id", referencedColumnName="id")}
-    )
-    private UserRole userrole;*/
-	
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	public User(String userid, String username, String userpasswd,
-			String usergroupid, String email, String mobilephone, String phone,
-			String home_zipcode, String home_addr, Date sys_datatime,
-			String active_yn, UserGroup usergroup) {
-		super();
-		this.userid = userid;
-		this.username = username;
-		this.userpasswd = userpasswd;
-		this.usergroupid = usergroupid;
-		this.email = email;
-		this.mobilephone = mobilephone;
-		this.phone = phone;
-		this.home_zipcode = home_zipcode;
-		this.home_addr = home_addr;
-		this.sys_datatime = sys_datatime;
-		this.active_yn = active_yn;
-		this.usergroup = usergroup;
-	}
-	
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getUserid() {
-		return userid;
-	}
-	public void setUserid(String userid) {
-		this.userid = userid;
-	}
-	public String getUserpasswd() {
-		return userpasswd;
-	}
-	public void setUserpasswd(String userpasswd) {
-		this.userpasswd = userpasswd;
-	}
-	public String getUsergroupid() {
-		return usergroupid;
-	}
-	public void setUsergroupid(String usergroupid) {
-		this.usergroupid = usergroupid;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getMobilephone() {
-		return mobilephone;
-	}
-	public void setMobilephone(String mobilephone) {
-		this.mobilephone = mobilephone;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-	public String getHome_zipcode() {
-		return home_zipcode;
-	}
-	public void setHome_zipcode(String home_zipzode) {
-		this.home_zipcode = home_zipzode;
-	}
-	public String getHome_addr() {
-		return home_addr;
-	}
-	public void setHome_addr(String home_addr) {
-		this.home_addr = home_addr;
-	}
-	public Date getSys_datatime() {
-		return sys_datatime;
-	}
-	public void setSys_datatime(Date sys_datatime) {
-		this.sys_datatime = sys_datatime;
-	}
-	public String getActive_yn() {
-		return active_yn;
-	}
-	public void setActive_yn(String active_yn) {
-		this.active_yn = active_yn;
-	}	
-	public UserGroup getUsergroup() {
-		return usergroup;
-	}
-	public void setUsergroup(UserGroup usergroup) {
-		this.usergroup = usergroup;
-	}
-
-	/*@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
-	}*/
+	private String homeZipcode;
+	private String homeAddr;
+	private Date sysDataTime;
+	private String activeYN;
 	
 
 }

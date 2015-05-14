@@ -42,7 +42,7 @@ public class GreenhouseController  {
 	 * Simply selects the home view to render by returning its name.
 	 */
 
-	@RequestMapping(value = "/greenhouseAdd", method = RequestMethod.GET)
+	@RequestMapping(value = "/greenHouseAdd", method = RequestMethod.GET)
 	public String greenhouseAdd() {
 		logger.info("greenhouseInfoAdd");		
 		return "greenhouseAdd";

@@ -21,8 +21,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository("cropCateDao")
 public class CropCateDaoIm implements CropCateDao {
-	private static final Logger logger = LoggerFactory
-			.getLogger(CropCateDaoIm.class);
+	private static final Logger logger = LoggerFactory.getLogger(CropCateDaoIm.class);
 
 	
 	@Override
@@ -48,7 +47,7 @@ public class CropCateDaoIm implements CropCateDao {
 
 	@Override
 	public void delete(int cropCateId) {
-		System.out.println("cripCateDaolm");
+		System.out.println("cropCateDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
@@ -89,7 +88,7 @@ public class CropCateDaoIm implements CropCateDao {
 	}
 	@Override
 	public List<CropCate> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
-		System.out.println("cripCateDaolm");
+		System.out.println("cropCateDaolm");
 		List<CropCate> cropCates = new ArrayList<CropCate>();
 		
 		Transaction trns = null;
@@ -109,7 +108,7 @@ public class CropCateDaoIm implements CropCateDao {
 
 	@Override
 	public CropCate getById(int cropCateId) {
-		System.out.println("cripCateDaolm");
+		System.out.println("cropCateDaolm");
 		CropCate cropCate = null;
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
