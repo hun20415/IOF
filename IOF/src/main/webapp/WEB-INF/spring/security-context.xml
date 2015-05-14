@@ -8,23 +8,29 @@
            ">
 
 	<http auto-config='true'>
-		<intercept-url pattern="/login2" access="ROLE_USER" />
-
-		<form-login login-page="/login" username-parameter="id"
-			password-parameter="pw" login-processing-url="/loginProcess"
-			default-target-url="/login_success" authentication-failure-url="/login"
-			always-use-default-target='true' />
-		<session-management>
-			<concurrency-control max-sessions="1"
-				expired-url="/login_duplicate" />
-		</session-management>
+		<intercept-url pattern="/login2" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/login_duplicate" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+        <intercept-url pattern="/login2" access="ROLE_USER" />
+        <form-login login-page="/login2" 
+                    username-parameter="id" 
+                    password-parameter="pw"     
+                    login-processing-url="/loginProcess"
+                    default-target-url="/login_success" 
+                    authentication-failure-url="/login" 
+                    always-use-default-target='true'
+                    />
+        
+        <session-management>
+            <concurrency-control max-sessions="1" expired-url="/login_duplicate"/>
+        </session-management>
 	</http>
 
-	<authentication-manager>
-		<authentication-provider>
-			<user-service>
-				<user name="guest" password="guest" authorities="ROLE_USER" />
-			</user-service>
-		</authentication-provider>
-	</authentication-manager>
+	<beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+    
+    <authentication-manager>
+        <authentication-provider ref="customAuthenticationProvider"/>
+    </authentication-manager>   
+    
+    <beans:bean id="customAuthenticationProvider" class="kr.ac.iof.authentication.CustomAuthenticationProvider"/>  
+    
 </beans:beans>
