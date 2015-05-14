@@ -22,7 +22,7 @@
 </table>
 
 <left>
-<h2>★ 장비정보</h2>
+<h2>★ 장비정보</h2> 
 </left>
 <table class="type02">
 	<tr>
