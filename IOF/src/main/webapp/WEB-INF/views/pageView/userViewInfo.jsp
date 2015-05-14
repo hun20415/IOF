@@ -5,43 +5,43 @@
 <!-- 본문 시작 -->
 <center><h1>사용자 상세 정보</h1></center>
 <left><h2># 개인정보</h2></left>
-<table class="type02">
+<table class="userInfo">
 	<tr>
 		<th scope="row">사용자 이름  </th>
-		<td></td>
+		<td>${user.userName}</td>
 		<th scope="row">사용자 ID</th>
-		<td></td>
+		<td>${user.userId}</td>
 	</tr>
-	<tr>
+	<tr><!-- 
 		<th scope="row">비밀번호</th>
-		<td></td>
+		<td></td> -->
 		<th scope="row">그룹ID</th>
-		<td></td>
+		<td>${user.userGroupId}</td>
 	</tr>
 	<tr>
 		<th scope="row">이메일</th>	
-		<td clospan="4"></td>			
+		<td clospan="4">${user.email}</td>			
 	</tr>
 	<tr>
 		<th scope="row">휴대폰</th>
-		<td></td>
+		<td>${user.mobilePhone}</td>
 		<th scope="row">연락처</th>
-		<td></td>
+		<td>${user.phone}</td>
 	</tr>
 	<tr>
 		<th scope="row">우편번호</th>
-		<td></td>
+		<td>${user.homeZipcode}</td>
 		<th scope="row">등록날짜</th>
-		<td></td>
+		<td>${user.sysDataTime}</td>
 	</tr>
 	<tr>
 		<th scope="row">집주소  </th>
-		<td clospan="3"></td>			
+		<td clospan="3">${user.homeAddr}</td>			
 	</tr>
 </table>
 
 <left><h2># 온실정보</h2></left>
-<table class="type02">
+<table class="userInfo">
 	<tr>
 		<th scope="row">온실 ID  </th>
 		<td></td>
@@ -104,7 +104,7 @@
 
 
 <left><h2># 재배정보</h2></left>
-<table class="type02">
+<table class="userInfo">
 	<tr>
 		<th scope="row">재배현황 기록 ID</th>
 		<td></td>

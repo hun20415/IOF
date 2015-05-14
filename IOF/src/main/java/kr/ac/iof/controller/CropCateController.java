@@ -7,7 +7,6 @@
 package kr.ac.iof.controller;
 
 import kr.ac.iof.main.Service.CropCateService;
-import kr.ac.iof.model.Main.BuyerInfo;
 import kr.ac.iof.model.Main.CropCate;
 
 import org.slf4j.Logger;
@@ -50,14 +49,7 @@ public class CropCateController {
 	public String cropCateAdd(@ModelAttribute("cropCate") CropCate cropCate)
 			throws Exception {
 		// 추가 입력된 데이터는 cropCate객체로 넘어온다.
-
-		/*
-		 * if(cropCate.getCropCateId() == 0){ //new person, add it
-		 * logger.info("cropCate 입력  + 수정ssssss");
-		 * this.cropCateService.add(cropCate); }else{
-		 * logger.info("cropCate 입력  + fffffView"); //existing person, call
-		 * update this.cropCateService.update(cropCate); }
-		 */
+		System.out.println(cropCate.getCropCateName());
 		this.cropCateService.add(cropCate);
 
 		return "redirect:/cropCateList";
@@ -80,13 +72,6 @@ public class CropCateController {
 		return "redirect:/cropCateList";// list 페이지를 부르면서 새로고침
 	}
 
-	/*
-	 * @RequestMapping("/cropCateModify/{id}") public String
-	 * cropCateModify(@PathVariable("id") int id, Model model) {
-	 * model.addAttribute("cropCate", this.cropCateService.getById(id));
-	 * model.addAttribute("listPersons", this.cropCateService.getAll()); return
-	 * "forward:/cropCateAdd"; }
-	 */
 	@RequestMapping(value = "/cropCateModify", method = RequestMethod.POST)
 	public String buyerInfoModify(@ModelAttribute("cropCate") CropCate cropCate)
 			throws Exception {

@@ -4,48 +4,127 @@
 
 package kr.ac.iof.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
-import java.io.Serializable;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @Entity
-@Table(name = "SYS_USER_INFO")
+@Table(name = "sys_user_info")
 public class User{// implements UserDetails{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
 	private String userId;
+	@Column(name = "USER_NAME")
 	private String userName;
-	private String userPasswd;
-	private String userGroupId;
+	@Column(name = "USER_PASSWD")
+	private String userPasswd;	
+	@Column(name = "USERGROUP_ID")
+	private int userGroupId;
+	@Column(name = "EMAIL")
 	private String email;
+	@Column(name = "MOBILEPHONE")
 	private String mobilePhone;
+	@Column(name = "PHONE")
 	private String phone;
+	@Column(name = "HOME_ZIPCODE")
 	private String homeZipcode;
+	@Column(name = "HOME_ADDR")
 	private String homeAddr;
-	private Date sysDataTime;
+	@Column(name = "SYS_DATE")
+	private String sysDataTime;
+	@Column(name = "ACTIVE_YN")	
 	private String activeYN;
 	
-
+	
+	public User() {
+		
+	}
+	public User(String userId, String userName, String userPasswd,
+			int userGroupId, String email, String mobilePhone, String phone,
+			String homeZipcode, String homeAddr, String sysDataTime,
+			String activeYN) {
+		super();
+		this.userId = userId;
+		this.userName = userName;
+		this.userPasswd = userPasswd;
+		this.userGroupId = userGroupId;
+		this.email = email;
+		this.mobilePhone = mobilePhone;
+		this.phone = phone;
+		this.homeZipcode = homeZipcode;
+		this.homeAddr = homeAddr;
+		this.sysDataTime = sysDataTime;
+		this.activeYN = activeYN;
+	}
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public String getUserPasswd() {
+		return userPasswd;
+	}
+	public void setUserPasswd(String userPasswd) {
+		this.userPasswd = userPasswd;
+	}
+	public int getUserGroupId() {
+		return userGroupId;
+	}
+	public void setUserGroupId(int userGroupId) {
+		this.userGroupId = userGroupId;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobilePhone() {
+		return mobilePhone;
+	}
+	public void setMobilePhone(String mobilePhone) {
+		this.mobilePhone = mobilePhone;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getHomeZipcode() {
+		return homeZipcode;
+	}
+	public void setHomeZipcode(String homeZipcode) {
+		this.homeZipcode = homeZipcode;
+	}
+	public String getHomeAddr() {
+		return homeAddr;
+	}
+	public void setHomeAddr(String homeAddr) {
+		this.homeAddr = homeAddr;
+	}
+	public String getSysDataTime() {
+		return sysDataTime;
+	}
+	public void setSysDataTime(String sysDataTime) {
+		this.sysDataTime = sysDataTime;
+	}
+	public String getActiveYN() {
+		return activeYN;
+	}
+	public void setActiveYN(String activeYN) {
+		this.activeYN = activeYN;
+	}
+	
 }

@@ -1,142 +1,59 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<link href="css/userList.css" rel="stylesheet" type="text/css">
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<link href="../css/userList.css" rel="stylesheet" type="text/css">
+<!--                                                                                                    -->
+<!--                                File Name   : quipmentViewList.jsp                                   -->
+<!--                                Description : equipmentList 페이지                                                                                                        -->
+<!--                                Update      : 2015.05.13                                            -->
+<!--                                ETC         :                                                       -->
+<!--                                                                                                    -->
 
 <!-- 본문 시작 -->
-<center><h1>전체사용자 List</h1></center>
+<center>
+    <h1>온실구역별 장비 List</h1>
+</center>
 
-<table class="type02">
-	<tr>
-		<th scope="row">사용자 이름  </th>
-		<td></td>
-		<th scope="row">사용자 ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">비밀번호</th>
-		<td></td>
-		<th scope="row">그룹ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">이메일</th>	
-		<td clospan="4"></td>			
-	</tr>
-	<tr>
-		<th scope="row">휴대폰</th>
-		<td></td>
-		<th scope="row">연락처</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">우편번호</th>
-		<td></td>
-		<th scope="row">등록날짜</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">집주소  </th>
-		<td clospan="3"></td>			
-	</tr>
+
+
+<table class="userList">
+    <p align="right">
+        <button onclick="window.location.href='/signUp'" >신규</button>
+    </p>
+    <thead>
+        <tr>
+            <th scope="cols">ID</th>
+            <th scope="cols">이름</th>
+            <th scope="cols">그룹</th>
+            <th scope="cols">휴대폰</th>
+            <th scope="cols">집주소</th>
+            <th scope="cols">등록일</th>
+            <th scope="cols">조회</th>
+            <th scope="cols">수정</th>
+            <th scope="cols">탈퇴</th>
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach items="${listUser}" var="user">
+        <tr>
+            <td>${user.userId}</td>
+            <td>${user.userName}</td>
+            <td>${user.userGroupId}</td>
+            <td>${user.mobilePhone}</td>
+            <td>${user.homeAddr}</td>
+             <td>${user.sysDataTime}</td>
+             <td><form action="userInfo">
+            <input type="hidden" name="id" value="${user.userId}">
+            <input type="submit" value="조회">
+            </form></td>
+             <td><form action="userModify">
+            <input type="hidden" name="id" value="${user.userId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            <td><button onclick="window.location.href='/userRemove/${user.userId}'" >탈퇴</a></td>
+            
+        </tr>
+    </c:forEach>
+    
+
+    </tbody>
 </table>
-
-<left><h2># 온실정보</h2></left>
-<table class="type02">
-	<tr>
-		<th scope="row">온실 ID  </th>
-		<td></td>
-		<th scope="row">온실주 ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">온실명</th>
-		<td></td>
-		<th scope="row">관리자ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">재배면적(평)</th>
-		<td></td>
-		<th scope="row">재배면적(제곱미터)</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">하우스 폭(m)</th>
-		<td></td>
-		<th scope="row">하우스 길이(m)</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">온실 측고 (m)</th>
-		<td></td>
-		<th scope="row">온실 동고 (m)</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">온실 방향</th>
-		<td></td>
-		<th scope="row">비닐/유리 온실</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">연동/단동</th>
-		<td></td>
-		<th scope="row">연동/단동 개수</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">구역 개수</th>
-		<td></td>
-		<th scope="row">양액/토경재배</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">우편번호</th>
-		<td></td>
-		<th scope="row">온실건립일</th>
-		<td></td>
-	</tr>	
-	<tr>
-		<th scope="row">주소</th>
-		<td clospan="3"></td>	
-	</tr>	
-</table>
-
-
-<left><h2># 재배정보</h2></left>
-<table class="type02">
-	<tr>
-		<th scope="row">재배현황 기록 ID</th>
-		<td></td>
-		<th scope="row">온실주</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">온실명</th>
-		<td></td>
-		<th scope="row">온실ID</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">구역ID</th>
-		<td></td>
-		<th scope="row">재배품종</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">정식일</th>
-		<td></td>
-		<th scope="row">재배상태</th>
-		<td></td>
-	</tr>
-	<tr>
-		<th scope="row">실제 출하일</th>
-		<td></td>
-		<th scope="row">예상 출하일</th>
-		<td></td>
-	</tr>	
-</table>
-
-<!--  본문 끝 -->
-
-

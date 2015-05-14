@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import kr.ac.iof.DBUser;
-import kr.ac.iof.action.user.UserService;
-import kr.ac.iof.action.user.UserServiceImpl;
 import kr.ac.iof.main.Service.FarmEquipListService;
 import kr.ac.iof.model.User;
 import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.model.Main.FarmEquipList;
+import kr.ac.iof.service.UserService;
+import kr.ac.iof.service.UserServiceIm;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.HibernateException;

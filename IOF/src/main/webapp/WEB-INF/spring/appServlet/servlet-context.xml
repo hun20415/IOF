@@ -31,6 +31,8 @@
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 	<context:component-scan base-package="kr.ac.iof.controller" />
+	<context:component-scan base-package="kr.ac.iof.service" />
+	<context:component-scan base-package="kr.ac.iof.dao" />
 	<context:component-scan base-package="kr.ac.iof.main.Service" />
 	<context:component-scan base-package="kr.ac.iof.main.dao" />
 	

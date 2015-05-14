@@ -22,16 +22,6 @@ public class UserGroup{
 	private int usergroup;
 	@Column(name = "USERGROUP_NAME")
 	private String usergroupName;
-	/*@OneToMany(mappedBy="usergroup")
-	private Set<User> users;
-	
-	public Set<User> getUser() {
-		return users;
-	}
-	public void setUser(Set<User> users) {
-		this.users = users;
-	}*/
-	
 	public int getUsergroup() {
 		return usergroup;
 	}
