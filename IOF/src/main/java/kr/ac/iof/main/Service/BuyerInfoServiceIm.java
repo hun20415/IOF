@@ -1,6 +1,6 @@
 /**                                                                                 	           		**/
-/**                                File Name   : CropCateService.java                	               	**/  		
-/**                                Description : cropCate에 대한 service controller에서 처리되어야 하는 
+/**                                File Name   : BuyerInfoService.java                	               	**/  		
+/**                                Description : buyerInfo에 대한 service controller에서 처리되어야 하는 
  * 								            	 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다			     	**/ 
 /**                                Update      : 2015.05.07(박정훈)	                               		**/
 /**                                ETC         :                    	                           		**/
@@ -10,8 +10,8 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
-import kr.ac.iof.main.dao.CropCateDao;
-import kr.ac.iof.model.Main.CropCate;
+import kr.ac.iof.main.dao.BuyerInfoDao;
+import kr.ac.iof.model.Main.BuyerInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,45 +20,45 @@ import org.springframework.transaction.annotation.Propagation;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)  
-public class CropCateServiceIm implements CropCateService{
+public class BuyerInfoServiceIm implements BuyerInfoService{
 	
 	@Autowired
-	private CropCateDao cropCateDao ;
+	private BuyerInfoDao buyerInfoDao ;
 	 
-    public void setCropCateDao(CropCateDao cropCateDao) {
-        this.cropCateDao = cropCateDao;
+    public void setBuyerInfoDao(BuyerInfoDao buyerInfoDao) {
+        this.buyerInfoDao = buyerInfoDao;
     }
  
     @Override
     @Transactional
-    public void add(CropCate p) {
+    public void add(BuyerInfo p) {
     	System.out.println("addserviceimple");
-        this.cropCateDao.add(p);
+        this.buyerInfoDao.add(p);
     }
  
     @Override
     @Transactional
-    public void update(CropCate p) {
-        this.cropCateDao.update(p);
+    public void update(BuyerInfo p) {
+        this.buyerInfoDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<CropCate> getAll() {
+    public List<BuyerInfo> getAll() {
     	System.out.println("cripCateServicelm");
-        return this.cropCateDao.getAll();
+        return this.buyerInfoDao.getAll();
     }
  
     @Override
     @Transactional
-    public CropCate getById(int id) {
-        return this.cropCateDao.getById(id);
+    public BuyerInfo getById(int id) {
+        return this.buyerInfoDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void delete(int cropCateId) {
-        this.cropCateDao.delete(cropCateId);
+    public void delete(int buyerInfoId) {
+        this.buyerInfoDao.delete(buyerInfoId);
     }
 
 }

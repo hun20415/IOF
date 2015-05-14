@@ -7,22 +7,15 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd
            ">
 
-	<http auto-config='true'>
-		<intercept-url pattern="/login2" access="ROLE_USER" />
-		<!-- <logout invalidate-session="true" logout-url ="unAuthentication" logout-success-url="/" />  -->
-	</http>
-	
-	<!-- <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/> -->
-
-	
-	<authentication-manager>
+	 <http auto-config='true'>
+        <intercept-url pattern="/login2" access="ROLE_USER" />
+    </http>
+       
+    <authentication-manager>
         <authentication-provider>
             <user-service>
                 <user name="guest" password="guest" authorities="ROLE_USER"/>    
             </user-service>
         </authentication-provider>
     </authentication-manager>
-
-   <!--  <beans:bean id="customAuthenticationProvider" class="com.yakolla.blackjack.CustomAuthenticationProvider"/> --> 
-
 </beans:beans>

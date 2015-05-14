@@ -14,12 +14,12 @@ public interface CropCateService {
  
 	public void add(CropCate cropCate);
 
-	public void delete(int cropCateid);
+	public void delete(int cropCateId);
 
 	public void update(CropCate cropCate);
 
 	public List<CropCate> getAll();
 
-	public CropCate getById(int cropCateid);
+	public CropCate getById(int cropCateId);
      
 }

@@ -33,10 +33,11 @@
          <!-- end  -->
         
         <mapping class="kr.ac.iof.model.Main.CropCate"/>
-        <mapping resource="kr/ac/iof/main/cropcate.hbm.xml"></mapping>
-         
-          <mapping class="kr.ac.iof.model.Main.CropInfo"/>
-        <mapping resource="kr/ac/iof/main/cropinfo.hbm.xml"></mapping>
+        <mapping class="kr.ac.iof.model.Main.CropInfo"/>
+        <mapping class="kr.ac.iof.model.Main.BuyerInfo"/>
+        
+        <!-- <mapping resource="kr/ac/iof/main/cropcate.hbm.xml"></mapping> --> 
+        <!-- <mapping resource="kr/ac/iof/main/cropinfo.hbm.xml"></mapping> -->
   
   
     </session-factory>

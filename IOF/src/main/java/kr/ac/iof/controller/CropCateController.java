@@ -62,7 +62,7 @@ public class CropCateController {
 		return "cropCateList";
 	}
 
-	@RequestMapping("/remove/{id}")
+	@RequestMapping("/cropCateRemove/{id}")
 	public String cropCateDelete(@PathVariable("id") int id) {
 
 		this.cropCateService.delete(id);//id로 검색해서 삭제
@@ -76,12 +76,12 @@ public class CropCateController {
        return "redirect:/cropCateList";
 	}
 	
-	@RequestMapping("/{id}")
+	@RequestMapping("/cropCateModify/{id}")
 	public String cropCateModify(@PathVariable("id") int id, Model model) {
 		model.addAttribute("cropCate", this.cropCateService.getById(id));
 		model.addAttribute("listPersons", this.cropCateService.getAll());	
 		
-		return "cropCateModify";
+		return "./cropCateModify";
 	}
 	
 
