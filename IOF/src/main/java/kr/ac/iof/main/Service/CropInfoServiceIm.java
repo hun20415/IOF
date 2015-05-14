@@ -44,7 +44,7 @@ public class CropInfoServiceIm implements CropInfoService{
     @Override
     @Transactional
     public List<CropInfo> getAll() {
-    	System.out.println("cripcateServicelm");
+    	System.out.println("cropInfoServicelm");
         return this.cropInfoDao.getAll();
     }
  

@@ -87,22 +87,22 @@ public class CropInfoDaoIm implements CropInfoDao {
 	}
 	@Override
 	public List<CropInfo> getAll() {
-		System.out.println("cripcateDaolm");
-		List<CropInfo> cropcates = new ArrayList<CropInfo>();
+		System.out.println("cropInfoDaolm");
+		List<CropInfo> cropInfos = new ArrayList<CropInfo>();
 		
 		Transaction trns = null;
 		
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			cropcates = session.createQuery("from CropInfo").list();
+			cropInfos = session.createQuery("from CropInfo").list();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return cropcates;
+		return cropInfos;
 	}
 
 	@Override

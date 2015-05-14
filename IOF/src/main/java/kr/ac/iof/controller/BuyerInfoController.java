@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Handles requests for the application user page.
@@ -77,12 +78,11 @@ public class BuyerInfoController {
        return "redirect:/buyerInfoList";
 	}
 	
-	@RequestMapping("/buyerInfoModify/{id}")
-	public String buyerInfoModify(@PathVariable("id") int id, Model model) {
+	@RequestMapping("/buyerInfoModify")
+	public String buyerInfoModify(@RequestParam("id") int id, Model model) {
 		model.addAttribute("buyerInfo", this.buyerInfoService.getById(id));
 		model.addAttribute("listPersons", this.buyerInfoService.getAll());	
 		
 		return "buyerInfoModify";
 	}
-
 }

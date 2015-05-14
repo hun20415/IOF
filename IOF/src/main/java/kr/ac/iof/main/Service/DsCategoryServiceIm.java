@@ -1,8 +1,8 @@
 /**                                                                                 	           		**/
-/**                                File Name   : BuyerInfoService.java                	               	**/  		
-/**                                Description : buyerInfo에 대한 service controller에서 처리되어야 하는 
+/**                                File Name   : DsCategoryService.java                	               	**/  		
+/**                                Description : dsCategory에 대한 service controller에서 처리되어야 하는 
  * 								            	 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다			     	**/ 
-/**                                Update      : 2015.05.07(박정훈)	                               		**/
+/**                                Update      : 2015.05.14(옥정윤)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
 package kr.ac.iof.main.Service;
@@ -10,8 +10,8 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
-import kr.ac.iof.main.dao.BuyerInfoDao;
-import kr.ac.iof.model.Main.BuyerInfo;
+import kr.ac.iof.main.dao.DsCategoryDao;
+import kr.ac.iof.model.Main.DsCategory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,45 +20,45 @@ import org.springframework.transaction.annotation.Propagation;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)  
-public class BuyerInfoServiceIm implements BuyerInfoService{
+public class DsCategoryServiceIm implements DsCategoryService{
 	
 	@Autowired
-	private BuyerInfoDao buyerInfoDao ;
+	private DsCategoryDao dsCategoryDao ;
 	 
-    public void setBuyerInfoDao(BuyerInfoDao buyerInfoDao) {
-        this.buyerInfoDao = buyerInfoDao;
+    public void setDsCategoryDao(DsCategoryDao dsCategoryDao) {
+        this.dsCategoryDao = dsCategoryDao;
     }
  
     @Override
     @Transactional
-    public void add(BuyerInfo p) {
+    public void add(DsCategory p) {
     	System.out.println("addserviceimple");
-        this.buyerInfoDao.add(p);
+        this.dsCategoryDao.add(p);
     }
  
     @Override
     @Transactional
-    public void update(BuyerInfo p) {
-        this.buyerInfoDao.update(p);
+    public void update(DsCategory p) {
+        this.dsCategoryDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<BuyerInfo> getAll() {
-    	System.out.println("buyerInfoServicelm");
-        return this.buyerInfoDao.getAll();
+    public List<DsCategory> getAll() {
+    	System.out.println("dsCategoryServicelm");
+        return this.dsCategoryDao.getAll();
     }
  
     @Override
     @Transactional
-    public BuyerInfo getById(int id) {
-        return this.buyerInfoDao.getById(id);
+    public DsCategory getById(int id) {
+        return this.dsCategoryDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void delete(int buyerInfoId) {
-        this.buyerInfoDao.delete(buyerInfoId);
+    public void delete(int dsCategoryId) {
+        this.dsCategoryDao.delete(dsCategoryId);
     }
 
 }

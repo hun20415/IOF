@@ -1,8 +1,8 @@
 /**                                                                                 	           		**/
-/**                                File Name   : BuyerInfoService.java                	               	**/  		
-/**                                Description : buyerInfo에 대한 service controller에서 처리되어야 하는 
+/**                                File Name   : FarmInfoService.java                	               	**/  		
+/**                                Description : farmInfo에 대한 service controller에서 처리되어야 하는 
  * 								            	 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다			     	**/ 
-/**                                Update      : 2015.05.07(박정훈)	                               		**/
+/**                                Update      : 2015.05.14(옥정윤)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
 package kr.ac.iof.main.Service;
@@ -10,8 +10,8 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
-import kr.ac.iof.main.dao.BuyerInfoDao;
-import kr.ac.iof.model.Main.BuyerInfo;
+import kr.ac.iof.main.dao.FarmInfoDao;
+import kr.ac.iof.model.Main.FarmInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,45 +20,45 @@ import org.springframework.transaction.annotation.Propagation;
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)  
-public class BuyerInfoServiceIm implements BuyerInfoService{
+public class FarmInfoServiceIm implements FarmInfoService{
 	
 	@Autowired
-	private BuyerInfoDao buyerInfoDao ;
+	private FarmInfoDao farmInfoDao ;
 	 
-    public void setBuyerInfoDao(BuyerInfoDao buyerInfoDao) {
-        this.buyerInfoDao = buyerInfoDao;
+    public void setFarmInfoDao(FarmInfoDao farmInfoDao) {
+        this.farmInfoDao = farmInfoDao;
     }
  
     @Override
     @Transactional
-    public void add(BuyerInfo p) {
+    public void add(FarmInfo p) {
     	System.out.println("addserviceimple");
-        this.buyerInfoDao.add(p);
+        this.farmInfoDao.add(p);
     }
  
     @Override
     @Transactional
-    public void update(BuyerInfo p) {
-        this.buyerInfoDao.update(p);
+    public void update(FarmInfo p) {
+        this.farmInfoDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<BuyerInfo> getAll() {
-    	System.out.println("buyerInfoServicelm");
-        return this.buyerInfoDao.getAll();
+    public List<FarmInfo> getAll() {
+    	System.out.println("farmInfoServicelm");
+        return this.farmInfoDao.getAll();
     }
  
     @Override
     @Transactional
-    public BuyerInfo getById(int id) {
-        return this.buyerInfoDao.getById(id);
+    public FarmInfo getById(int id) {
+        return this.farmInfoDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void delete(int buyerInfoId) {
-        this.buyerInfoDao.delete(buyerInfoId);
+    public void delete(int farmInfoId) {
+        this.farmInfoDao.delete(farmInfoId);
     }
 
 }
