@@ -28,8 +28,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 // 어노테이션 선언은 필수이다.
 public class CropCateController {
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(CropCateController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CropCateController.class);
 	@Autowired
 	/* @Qualifier(value="cropCateService") */
 	private CropCateService cropCateService;// 서비스 호출

@@ -36,10 +36,10 @@
 	</thead>
 	<tbody>
 		<tr>
-	<%-- 
+
 	        <td>${farmCultivateInfo.farmId}</td>
-            <td>내용</td> <!--  <td>${farmCultivateInfo.}</td>  // 온실이름-->
-            <td>내용</td> <!-- <td>${farmCultivateInfo.userId}</td> //온실주-->
+            <td>온실이름</td> <!--  <td>${farmCultivateInfo.}</td>  // 온실이름-->
+            <td>온실주</td> <!-- <td>${farmCultivateInfo.userId}</td> //온실주-->
             <td>${farmCultivateInfo.farmSectionId}</td>
             <td>${farmCultivateInfo.cropSpeciesId}</td>
             <td>${farmCultivateInfo.plantTime}</td>
@@ -53,7 +53,6 @@
             </form></td>
             <td> check box </td>
             
- --%>
 		</tr>
 
 	</tbody>

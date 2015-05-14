@@ -2,8 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="css/equipmentList.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
-<!--                                File Name   : quipmentViewAdd.jsp                                   -->
-<!--                                Description : equipmentList 입력페이지                                                                                                        -->
+<!--                                File Name   : quipmentViewList.jsp                                   -->
+<!--                                Description : equipmentList 페이지                                                                                                        -->
 <!--                                Update      : 2015.05.13                                            -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
