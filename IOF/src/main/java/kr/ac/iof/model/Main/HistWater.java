@@ -1,32 +1,61 @@
 /**                                                                                 	           **/
 /**                                File Name   : HistWater.java                	              **/  		
 /**                                Description : hist_water  양액, 관수 이력 데이터                      **/ 
-/**                                Update      : 2015.05.12(옥정윤)	                               **/
+/**                                Update      : 2015.05.14(옥정윤)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
 
 package kr.ac.iof.model.Main;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import java.io.Serializable;
 import java.util.Date;
 
+@Embeddable
+class HistWaterPK implements Serializable {
+	@Column(name = "FARM_ID") //4 primary key, FOREIGN KEY
+	private int farmId;
+	@Column(name = "SEQ_NO") //10 primary key
+	private int seqNo;
+	
+	public HistWaterPK() {
+		
+	}
+	public HistWaterPK(int farmId, int seqNo) {
+		this.farmId = farmId;
+		this.seqNo = seqNo;
+	}
+	
+	public int getFarmId() {
+		return farmId;
+	}
+	public void setFarmId(int farmId) {
+		this.farmId = farmId;
+	}
+	public int getSeqNo() {
+		return seqNo;
+	}
+	public void setSeqNo(int seqNo) {
+		this.seqNo = seqNo;
+	}
+}
 
 @Entity
 @Table(name = "hist_water")
 public class HistWater {
 	
-	@Id
-	@Column(name = "FARM_ID") //4 primary key, FOREIGN KEY
-	private int farmId;
-	@Id
+	@EmbeddedId
+	private HistWaterPK histWaterPK;
+	
 	@Column(name = "FARM_SECTION_ID") //2 primary key
 	private int farmSectionId;
-	@Id
-	@Column(name = "SEQ_NO") //10 primary key
-	private int seqNo;
+	
 	@Column(name = "DATA_INQ_DATE") //DATETIME
 	private Date dataInqDate;
 	
@@ -66,9 +95,8 @@ public class HistWater {
 			double groundEc, double groundPh, double outAmount, double outEc,
 			double outPh, Date sysDate) {
 		super();
-		this.farmId = farmId;
+		histWaterPK = new HistWaterPK(farmId, seqNo);
 		this.farmSectionId = farmSectionId;
-		this.seqNo = seqNo;
 		this.dataInqDate = dataInqDate;
 		this.temperatureGround = temperatureGround;
 		this.inputAmount = inputAmount;
@@ -85,7 +113,7 @@ public class HistWater {
 
 
 	public void setFarmId(int farmId) {
-		this.farmId = farmId;
+		histWaterPK.setFarmId(farmId);
 	}
 
 
@@ -95,7 +123,7 @@ public class HistWater {
 
 
 	public void setSeqNo(int seqNo) {
-		this.seqNo = seqNo;
+		histWaterPK.setSeqNo(seqNo);
 	}
 
 
@@ -160,7 +188,7 @@ public class HistWater {
 
 
 	public int getFarmId() {
-		return farmId;
+		return histWaterPK.getFarmId();
 	}
 
 
@@ -170,7 +198,7 @@ public class HistWater {
 
 
 	public int getSeqNo() {
-		return seqNo;
+		return histWaterPK.getSeqNo();
 	}
 
 
