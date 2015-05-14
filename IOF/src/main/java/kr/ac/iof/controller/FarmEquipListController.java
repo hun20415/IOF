@@ -63,7 +63,7 @@ public class FarmEquipListController  {
 	@RequestMapping(value = "/equipmentAdd", method = RequestMethod.GET)
 	public String equipmentAdd() {
 		logger.info("equipmentAdd");		
-		return "equipmentAdd"; 
+		return "equipmentAdd";  
 	}
 	 
 	

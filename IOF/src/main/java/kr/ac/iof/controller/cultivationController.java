@@ -61,6 +61,6 @@ public class cultivationController  {
 		logger.info("cultivationInfo");
 
 		return "cultivationInfo";
-	}
+	} 
 	
 }

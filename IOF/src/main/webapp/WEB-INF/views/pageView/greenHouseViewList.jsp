@@ -39,7 +39,7 @@
 			<th scope="cols">건립일</th>
 			<th scope="cols">편집</th>
 		</tr>
-	</thead>
+	</thead> 
 	<tbody>
 		<tr>
 

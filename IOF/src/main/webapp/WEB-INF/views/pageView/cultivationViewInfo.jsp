@@ -39,7 +39,7 @@
 			<td>내용</td>
 			<td>내용</td>
 			<td>내용</td>
-			<td>내용</td>
+			<td>내용</td> 
 			<td>내용</td>
 			<td>내용</td>
 			<td>조회</td>

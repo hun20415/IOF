@@ -53,7 +53,7 @@
 				<option>1</option>
 				<option>2</option>
 				<option>3</option></td>
-	</tr>
+	</tr> 
 	<tr>
 		<th scope="row">구역 개수</th>
 		<td><select name=sectionnum>
