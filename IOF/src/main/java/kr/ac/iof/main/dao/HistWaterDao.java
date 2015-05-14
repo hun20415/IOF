@@ -10,7 +10,7 @@ import java.util.List;
 
 import kr.ac.iof.model.Main.HistWater;
 
-public interface HistWaterInfoDao {
+public interface HistWaterDao {
 	public void add(HistWater histWater);
 
 	public void delete(int histWaterId);
