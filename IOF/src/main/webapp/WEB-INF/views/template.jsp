@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/index_page_temp.css" rel="stylesheet" type="text/css">
+<link href="../css/index_page_temp.css" rel="stylesheet" type="text/css">
 <title><%=pagename%></title>
 </head>
 <body>

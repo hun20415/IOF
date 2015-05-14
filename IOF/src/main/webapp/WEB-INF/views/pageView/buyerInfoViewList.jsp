@@ -31,10 +31,14 @@
             <td>${buyerInfo.branchPhone}</td>
             <td>${buyerInfo.interfaceName}</td>
              <td>${buyerInfo.interfacePhone}</td>
-            <td><a href="<c:url value='/buyerInfoModify/${buyerInfo.buyerId}'/>" >Edit</a></td>
-            <td><a href="<c:url value='/buyerInfoRemove/${buyerInfo.buyerId}' />" >Delete</a></td>
+              <td><form action="buyerInfoModify">
+            <input type="hidden" name="id" value="${buyerInfo.buyerId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            <td><button onclick="window.location.href='/buyerInfoRemov/${buyerInfo.buyerId}'" >Delete</a></td>
         </tr>
     </c:forEach>
+    <td><button onclick="window.location.href='/buyerInfoAdd'" >add</a></td>
     
     </table>
 </c:if>

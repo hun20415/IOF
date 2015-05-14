@@ -22,10 +22,15 @@
             <td>${cropCate.cropCateId}</td>
             <td>${cropCate.cropCateName}</td>
             <td>${cropCate.cropCateHtml}</td>
-            <td><a href="<c:url value='/cropCateModify/${cropCate.cropCateId}' />" >Edit</a></td>
-            <td><a href="<c:url value='/cropCateRemove/${cropCate.cropCateId}' />" >Delete</a></td>
+            <td><form action="cropCateModify">
+            <input type="hidden" name="id" value="${cropCate.cropCateId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            
+            <td><button onclick="window.location.href='/cropCateRemove/${cropCate.cropCateId}'" >Delete</a></td>
         </tr>
     </c:forEach>
+    <td><button onclick="window.location.href='/cropCateAdd'" >add</a></td>
     
     </table>
 </c:if>
