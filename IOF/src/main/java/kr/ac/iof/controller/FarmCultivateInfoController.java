@@ -45,13 +45,6 @@ public class FarmCultivateInfoController  {
 			throws Exception {
 		// 추가 입력된 데이터는 farmCultivateInfo객체로 넘어온다.
 
-		/*
-		 * if(farmCultivateInfo.getFarmCultivateInfoId() == 0){ //new person, add it
-		 * logger.info("farmCultivateInfo 입력  + 수정ssssss");
-		 * this.farmCultivateInfoService.add(farmCultivateInfo); }else{
-		 * logger.info("farmCultivateInfo 입력  + fffffView"); //existing person, call
-		 * update this.farmCultivateInfoService.update(farmCultivateInfo); }
-		 */
 		this.farmCultivateInfoService.add(farmCultivateInfo);
 
 		return "redirect:/farmCultivateInfoList";

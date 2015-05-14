@@ -35,11 +35,11 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-
+	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
+        <tr>
 	        <td>${farmCultivateInfo.farmId}</td>
-            <td>온실이름</td> <!--  <td>${farmCultivateInfo.}</td>  // 온실이름-->
-            <td>온실주</td> <!-- <td>${farmCultivateInfo.userId}</td> //온실주-->
+            <td>온실이름</td>
+            <td>온실주</td>
             <td>${farmCultivateInfo.farmSectionId}</td>
             <td>${farmCultivateInfo.cropSpeciesId}</td>
             <td>${farmCultivateInfo.plantTime}</td>
@@ -54,6 +54,6 @@
             <td> check box </td>
             
 		</tr>
-
+</c:forEach>
 	</tbody>
 </table>
