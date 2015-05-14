@@ -48,6 +48,23 @@ public class FarmEquipListController  {
 		return "farmEquipList";
 	}
 	
+	@RequestMapping(value = "/equipmentList", method = RequestMethod.GET)
+	public String equipmentList() {
+		logger.info("equipmentList");		
+		return "equipmentList";
+	}
+	
+	@RequestMapping(value = "/equipmentInfo", method = RequestMethod.GET)
+	public String equipmentInfo() {
+		logger.info("equipmentInfo");		
+		return "equipmentInfo";
+	}
+	
+	@RequestMapping(value = "/equipmentAdd", method = RequestMethod.GET)
+	public String equipmentAdd() {
+		logger.info("equipmentAdd");		
+		return "equipmentAdd";  
+	}
 	 
 	
 }
