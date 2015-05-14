@@ -35,20 +35,25 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>조회 수정</td>
-			<td>내용</td>
-
+	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
+        <tr>
+	        <td>${farmCultivateInfo.farmId}</td>
+            <td>온실이름</td>
+            <td>온실주</td>
+            <td>${farmCultivateInfo.farmSectionId}</td>
+            <td>${farmCultivateInfo.cropSpeciesId}</td>
+            <td>${farmCultivateInfo.plantTime}</td>
+            <td>${farmCultivateInfo.productTimePlan}</td>
+            <td>${farmCultivateInfo.productTimeReal}</td>
+            
+            
+            <td><form action="cultivationModify">
+            <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            <td> check box </td>
+            
 		</tr>
-
+</c:forEach>
 	</tbody>
 </table>
