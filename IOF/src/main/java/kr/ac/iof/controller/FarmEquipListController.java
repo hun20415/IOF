@@ -12,16 +12,9 @@ import javax.servlet.http.HttpSession;
 
 import kr.ac.iof.DBUser;
 import kr.ac.iof.main.Service.FarmEquipListService;
-import kr.ac.iof.model.User;
-import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.model.Main.FarmEquipList;
-import kr.ac.iof.service.UserService;
-import kr.ac.iof.service.UserServiceIm;
 import kr.ac.iof.util.HibernateUtil;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Query;
-import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -41,8 +34,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class FarmEquipListController  {
 	
 	private static final Logger logger = LoggerFactory.getLogger(FarmEquipListController.class);
-	
-
 	@Autowired
 	/* @Qualifier(value="farmEquipListService") */
 	private FarmEquipListService farmEquipListService;// 서비스 호출
