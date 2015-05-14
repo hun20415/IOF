@@ -56,5 +56,11 @@ public class cultivationController  {
 		return "cultivationAdd";
 	}
 	
+	@RequestMapping(value = "/cultivationInfo", method = RequestMethod.GET)//서비스 호출
+	public String cultivationInfo() throws Exception {
+		logger.info("cultivationInfo");
+
+		return "cultivationInfo";
+	}
 	
 }

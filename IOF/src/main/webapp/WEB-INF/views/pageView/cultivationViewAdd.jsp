@@ -24,9 +24,9 @@
 	</tr>
 	<tr>
 		<th scope="row">온실명</th>
-		<td><input type="text" size=10 name="farmid">우듬지2</td>
+		<td scope="row">우듬지</td>
 		<th scope="row">온실주명</th>
-		<td><input type="text" size=10 name="ownner">한태군</td>
+		<td scope="row">한태군</td>
 	</tr>
 	<tr>
 		<th scope="row">*재배품종 ID</th>
