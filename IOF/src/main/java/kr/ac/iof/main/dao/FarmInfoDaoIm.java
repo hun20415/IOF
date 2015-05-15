@@ -114,7 +114,7 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from FarmInfo where farmInfoId = :id";
+			String queryString = "from FarmInfo where farmId = :id";
 			Query query = session.createQuery(queryString);
 			query.setInteger("id", farmInfoId);//id로 매칭 특정 행을 불러온다.
 			farmInfo = (FarmInfo) query.uniqueResult();

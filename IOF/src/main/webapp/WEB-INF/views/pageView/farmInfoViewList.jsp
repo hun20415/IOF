@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/greenHouseList.css" rel="stylesheet" type="text/css">
+<link href="css/farmInfoList.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
 <!--                                File Name   : greenHouseViewList.jsp                                   -->
 <!--                                Description : greenHouseList 입력페이지                                                                                                        -->
@@ -14,16 +14,16 @@
 </center>
 
 
+<c:if test="${!empty listFarmInfo}">
+    <table class="type10">
+		<p>
+			검색 <select name=sectionnum>
+				<option>홍수영</option>
+			</select>
+			<button type="button">검색</button>
 
-<table class="type10">
-	<p>
-		검색 <select name=sectionnum>
-			<option>홍수영</option>
-		</select>
-		<button type="button">검색</button>
-
-		<button type="submit">신규</button>
-	</p>
+			<button type="submit">신규</button>
+		</p>
 	<thead>
 		<tr>
 			<th scope="cols">온실ID</th>
@@ -40,23 +40,33 @@
 			<th scope="cols">편집</th>
 		</tr>
 	</thead> 
+    
+     <!-- 리스트 객체를 받아서 출력(for문으로 출력) c:forEach 이러한 문법은 JSTL 문ㅂ-->
 	<tbody>
-		<tr>
-
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>내용</td>
-			<td>조회/수정</td>
-
-		</tr>
-
+    <c:forEach items="${listFarmInfo}" var="farmInfo">
+        <tr>
+            <td>${farmInfo.farmId}</td>
+            <td>${farmInfo.farmName}</td>
+            <td>${farmInfo.ownerId}</td>
+            <td>${farmInfo.employeeId}</td>
+            <td>${farmInfo.materialType}</td>
+            <td>${farmInfo.ifConnected}</td>
+            <td>${farmInfo.connectedNum}</td>
+            <td>${farmInfo.sectionNum}</td>
+            <td>${farmInfo.cultivationType}</td>
+            <td>${farmInfo.farmAddr}</td>
+            <td>${farmInfo.buildDate}</td>
+            
+            <td><form action="farmInfoModify">
+            <input type="hidden" name="id" value="${farmInfo.farmId}">
+            <input type="submit" value="Edit">
+            </form></td>
+            
+            <td><button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a></td>
+        </tr>
+    </c:forEach>
+    <td><button onclick="window.location.href='/farmInfoAdd'" >add</a></td>
+    
 	</tbody>
-</table>
+    </table>
+</c:if>
