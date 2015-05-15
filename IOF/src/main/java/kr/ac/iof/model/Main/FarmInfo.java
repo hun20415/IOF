@@ -53,8 +53,8 @@ public class FarmInfo {
 	@Column(name = "SECTION_NUM") //2
 	private int sectionNum;
 	
-	@Column(name = "CULTIBATION_TYPE") //1
-	private String cultibationType;
+	@Column(name = "CULTIVATION_TYPE") //1
+	private String cultivationType;
 	@Column(name = "FARM_ZIPCODE") //6
 	private String farmZipcode;
 	@Column(name = "FARM_ADDR") //200
@@ -73,7 +73,7 @@ public class FarmInfo {
 			String employeeId, double areaPyung, double areaMsquare,
 			double width, double length, double heightMin, double heightMax,
 			String direction, String materialType, String ifConnected,
-			int connectedNum, int sectionNum, String cultibationType,
+			int connectedNum, int sectionNum, String cultivationType,
 			String farmZipcode, String farmAddr, Date buildDate) {
 		super();
 		this.farmId = farmId;
@@ -91,7 +91,7 @@ public class FarmInfo {
 		this.ifConnected = ifConnected;
 		this.connectedNum = connectedNum;
 		this.sectionNum = sectionNum;
-		this.cultibationType = cultibationType;
+		this.cultivationType = cultivationType;
 		this.farmZipcode = farmZipcode;
 		this.farmAddr = farmAddr;
 		this.buildDate = buildDate;
@@ -173,8 +173,8 @@ public class FarmInfo {
 	}
 
 
-	public String getCultibationType() {
-		return cultibationType;
+	public String getCultivationType() {
+		return cultivationType;
 	}
 
 
@@ -268,8 +268,8 @@ public class FarmInfo {
 	}
 
 
-	public void setCultibationType(String cultibationType) {
-		this.cultibationType = cultibationType;
+	public void setCultivationType(String cultivationType) {
+		this.cultivationType = cultivationType;
 	}
 
 

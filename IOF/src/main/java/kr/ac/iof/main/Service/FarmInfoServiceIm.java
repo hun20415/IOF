@@ -57,8 +57,8 @@ public class FarmInfoServiceIm implements FarmInfoService{
  
     @Override
     @Transactional
-    public void delete(int farmInfoId) {
-        this.farmInfoDao.delete(farmInfoId);
+    public void delete(int farmId) {
+        this.farmInfoDao.delete(farmId);
     }
 
 }
