@@ -1,7 +1,7 @@
 ﻿<%
 String link1 = "userList";
-String link2 = "greenHouseList";
-String link3 = "equipmentList";
+String link2 = "farmInfoList";
+String link3 = "farmequipList";
 String link4 = "farmCultivateInfoList";
 String link5 = "greenHouseEnviInfo";
 String link6 = "#";

@@ -70,7 +70,7 @@ public class UserController {
 		List<User> users = new ArrayList<User>();
 
 		users = HibernateUtil.getCurrentSession()
-				.createQuery("from User where userid=?").setParameter(0, id)
+				.createQuery("from User where userid=?, userPasswd=?").setParameter(0, id)
 				.list();
 		session.setAttribute("user", users);
 		logger.info("finish?");
