@@ -92,30 +92,12 @@ public class FarmInfoController  {
 	public String farmInfoModify(@RequestParam("id") int id, Model model) {
 
 		model.addAttribute("farmInfo", this.farmInfoService.getById(id));
-		model.addAttribute("listPersons", this.farmInfoService.getAll());
+		//model.addAttribute("listPersons", this.farmInfoService.getAll());
 
 		return "farmInfoModify";
 	}
 	
-	/** 잠시 막아둠
-	@RequestMapping(value = "/greenHouseInfo", method = RequestMethod.GET)
-	public String greenHouseInfo() {
-		logger.info("greenHouseInfo");		
-		return "greenHouseInfo";
-	}
 	
-	@RequestMapping(value = "/greenHouseEnviInfo", method = RequestMethod.GET)
-	public String greenHouseEnviInfo() {
-		logger.info("greenHouseEnviInfo");		
-		return "greenHouseEnviInfo";
-	}
-	
-	@RequestMapping(value = "/greenHouseList", method = RequestMethod.GET)
-	public String greenHouseList() {
-		logger.info("greenHouseList");		
-		return "greenHouseList";
-	}
-	*/
 	 
 	
 }

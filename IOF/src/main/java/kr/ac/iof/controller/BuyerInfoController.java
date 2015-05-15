@@ -81,7 +81,7 @@ public class BuyerInfoController {
 	@RequestMapping("/buyerInfoModify")
 	public String buyerInfoModify(@RequestParam("id") int id, Model model) {
 		model.addAttribute("buyerInfo", this.buyerInfoService.getById(id));
-		model.addAttribute("listPersons", this.buyerInfoService.getAll());	
+		//model.addAttribute("listPersons", this.buyerInfoService.getAll());	
 		
 		return "buyerInfoModify";
 	}

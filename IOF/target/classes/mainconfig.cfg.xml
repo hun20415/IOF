@@ -48,7 +48,8 @@
         <mapping class="kr.ac.iof.model.Main.HarvestShipment"/>
         <mapping class="kr.ac.iof.model.Main.HistEnvironRaw"/>
         <mapping class="kr.ac.iof.model.Main.HistEnvironSum"/>
-        <mapping class="kr.ac.iof.model.Main.HistWater"/>  -->
+        -->
+        <mapping class="kr.ac.iof.model.Main.HistWater"/>
         
         <!-- <mapping resource="kr/ac/iof/main/cropcate.hbm.xml"></mapping> --> 
         <!-- <mapping resource="kr/ac/iof/main/cropinfo.hbm.xml"></mapping> -->

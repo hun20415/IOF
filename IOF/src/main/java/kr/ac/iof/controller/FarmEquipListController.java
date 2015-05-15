@@ -104,40 +104,11 @@ public class FarmEquipListController  {
 	public String farmEquipListModify(@RequestParam("id") int id, Model model) {
 
 		model.addAttribute("farmEquipList", this.farmEquipListService.getById(id));
-		model.addAttribute("listPersons", this.farmEquipListService.getAll());
+		//model.addAttribute("listPersons", this.farmEquipListService.getAll());
 
 		return "farmEquipListModify";
 	}
 	
-	/**
-	 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 
-
-	@RequestMapping(value = "/farmEquipList", method = RequestMethod.GET)
-	public String farmEquipList() {
-		logger.info("farmEquipList");		
-		return "farmEquipList";
-	}
 	
-	@RequestMapping(value = "/equipmentList", method = RequestMethod.GET)
-	public String equipmentList() {
-		logger.info("equipmentList");		
-		return "equipmentList";
-	}
-	
-	@RequestMapping(value = "/equipmentInfo", method = RequestMethod.GET)
-	public String equipmentInfo() {
-		logger.info("equipmentInfo");		
-		return "equipmentInfo";
-	}
-	
-	@RequestMapping(value = "/equipmentAdd", method = RequestMethod.GET)
-	public String equipmentAdd() {
-		logger.info("equipmentAdd");		
-		return "equipmentAdd";  
-	}
-	 **/
 	
 }

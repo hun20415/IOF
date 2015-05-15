@@ -86,7 +86,7 @@ public class FarmCultivateInfoController  {
 	public String farmCultivateInfoModify(@RequestParam("id") int id, Model model) {
 
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(id));
-		model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
+		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
 
 		return "farmCultivateInfoModify";
 	}

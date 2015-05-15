@@ -29,64 +29,64 @@ public class HistWaterController {
 
 	private static final Logger logger = LoggerFactory.getLogger(HistWaterController.class);
 	@Autowired
-	/* @Qualifier(value="HistWaterService") */
-	private HistWaterService HistWaterService;// 서비스 호출
+	/* @Qualifier(value="histWaterService") */
+	private HistWaterService histWaterService;// 서비스 호출
 
 	public void setHistWaterService(HistWaterService ps) {
-		this.HistWaterService = ps;
+		this.histWaterService = ps;
 	}
 
-	@RequestMapping(value = "/HistWaterAdd", method = RequestMethod.GET)
+	@RequestMapping(value = "/histWaterAdd", method = RequestMethod.GET)
 	// 서비스 호출
-	public String HistWaterAdd() throws Exception {
-		logger.info("HistWater 입력 View");
+	public String histWaterAdd() throws Exception {
+		logger.info("histWater 입력 View");
 
-		return "HistWaterAdd";
+		return "histWaterAdd";
 	}
 
-	@RequestMapping(value = "/HistWaterAdd", method = { RequestMethod.POST })
+	@RequestMapping(value = "/histWaterAdd", method = { RequestMethod.POST })
 	// 데이터를 받기위한 POST
-	public String HistWaterAdd(@ModelAttribute("HistWater") HistWater HistWater)
+	public String histWaterAdd(@ModelAttribute("histWater") HistWater histWater)
 			throws Exception {
-		// 추가 입력된 데이터는 HistWater객체로 넘어온다.
+		// 추가 입력된 데이터는 histWater객체로 넘어온다.
 		
-		this.HistWaterService.add(HistWater);
+		this.histWaterService.add(histWater);
 
-		return "redirect:/HistWaterList";
+		return "redirect:/histWaterList";
 	}
 
-	@RequestMapping(value = "/HistWaterList", method = RequestMethod.GET)
-	public String HistWaterList(Model model) throws Exception {
-		logger.info("HistWater 리스트");
+	@RequestMapping(value = "/histWaterList", method = RequestMethod.GET)
+	public String histWaterList(Model model) throws Exception {
+		logger.info("histWater 리스트");
 		// 리스트 출력
-		model.addAttribute("HistWater", new HistWater());
-		model.addAttribute("listHistWater", this.HistWaterService.getAll());
+		model.addAttribute("histWater", new HistWater());
+		model.addAttribute("listHistWater", this.histWaterService.getAll());
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
-		return "HistWaterList";
+		return "histWaterList";
 	}
 
-	@RequestMapping("/HistWaterRemove/{id}")
-	public String HistWaterDelete(@PathVariable("id") int id) {
+	@RequestMapping("/histWaterRemove/{id}")
+	public String histWaterDelete(@PathVariable("id") int id) {
 
-		this.HistWaterService.delete(id);// id로 검색해서 삭제
-		return "redirect:/HistWaterList";// list 페이지를 부르면서 새로고침
+		this.histWaterService.delete(id);// id로 검색해서 삭제
+		return "redirect:/histWaterList";// list 페이지를 부르면서 새로고침
 	}
 
-	@RequestMapping(value = "/HistWaterModify", method = RequestMethod.POST)
-	public String buyerInfoModify(@ModelAttribute("HistWater") HistWater HistWater)
+	@RequestMapping(value = "/histWaterModify", method = RequestMethod.POST)
+	public String buyerInfoModify(@ModelAttribute("histWater") HistWater histWater)
 			throws Exception {
 
-		this.HistWaterService.update(HistWater);
-		return "redirect:/HistWaterList";
+		this.histWaterService.update(histWater);
+		return "redirect:/histWaterList";
 	}
 
-	@RequestMapping("/HistWaterModify")
-	public String HistWaterModify(@RequestParam("id") int id, Model model) {
+	@RequestMapping("/histWaterModify")
+	public String histWaterModify(@RequestParam("id") int id, Model model) {
 
-		model.addAttribute("HistWater", this.HistWaterService.getById(id));
-		model.addAttribute("listPersons", this.HistWaterService.getAll());
+		model.addAttribute("histWater", this.histWaterService.getById(id));
+		model.addAttribute("listPersons", this.histWaterService.getAll());
 
-		return "HistWaterModify";
+		return "histWaterModify";
 	}
 	
 

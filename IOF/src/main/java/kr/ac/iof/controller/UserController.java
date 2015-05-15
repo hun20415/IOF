@@ -152,7 +152,7 @@ public class UserController {
 	public String userModify(@RequestParam("id") String id, Model model) {
 
 		model.addAttribute("user", this.userService.getById(id));
-		model.addAttribute("listPersons", this.userService.getAll());
+		//model.addAttribute("listPersons", this.userService.getAll());
 
 		return "userModify";
 	}
