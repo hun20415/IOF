@@ -50,7 +50,7 @@
             <td>${farmCultivateInfo.productTimeReal}</td>
             
             
-            <td><form action="cultivationModify">
+            <td><form action="farmCultivateInfoModify">
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
             <input type="submit" value="Edit">
             </form></td>
