@@ -84,7 +84,7 @@ public class CropCateController {
 	public String cropCateModify(@RequestParam("id") int id, Model model) {
 
 		model.addAttribute("cropCate", this.cropCateService.getById(id));
-		model.addAttribute("listPersons", this.cropCateService.getAll());
+		//model.addAttribute("listPersons", this.cropCateService.getAll());
 
 		return "cropCateModify";
 	}
