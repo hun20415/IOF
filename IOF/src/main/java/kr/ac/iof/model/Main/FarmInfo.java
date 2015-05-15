@@ -61,7 +61,7 @@ public class FarmInfo {
 	private String farmAddr;
 	
 	@Column(name = "BUILD_DATE") //DATE
-	private Date buildDate;
+	private String buildDate;
 
 	
 	public FarmInfo () {
@@ -74,7 +74,7 @@ public class FarmInfo {
 			double width, double length, double heightMin, double heightMax,
 			String direction, String materialType, String ifConnected,
 			int connectedNum, int sectionNum, String cultivationType,
-			String farmZipcode, String farmAddr, Date buildDate) {
+			String farmZipcode, String farmAddr, String buildDate) {
 		super();
 		this.farmId = farmId;
 		this.farmName = farmName;
@@ -188,7 +188,7 @@ public class FarmInfo {
 	}
 
 
-	public Date getBuildDate() {
+	public String getBuildDate() {
 		return buildDate;
 	}
 
@@ -283,7 +283,7 @@ public class FarmInfo {
 	}
 
 
-	public void setBuildDate(Date buildDate) {
+	public void setBuildDate(String buildDate) {
 		this.buildDate = buildDate;
 	}
 	

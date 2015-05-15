@@ -44,14 +44,10 @@ public class FarmInfoController  {
 			throws Exception {
 		// 추가 입력된 데이터는 farmInfo객체로 넘어온다.
 
-		/*
-		 * if(farmInfo.getFarmInfoId() == 0){ //new person, add it
-		 * logger.info("farmInfo 입력  + 수정ssssss");
-		 * this.farmInfoService.add(farmInfo); }else{
-		 * logger.info("farmInfo 입력  + fffffView"); //existing person, call
-		 * update this.farmInfoService.update(farmInfo); }
-		 */
+		
+		System.out.println("aaaa" + farmInfo.getBuildDate());
 		this.farmInfoService.add(farmInfo);
+		
 
 		return "redirect:/farmInfoList";
 	}
