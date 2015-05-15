@@ -29,6 +29,7 @@
 	<tr> 
 		<td scope="row">1  </td>
 		<td scope="row">외부 온도 센서</td>
+		<td>${farmEquipList.farmId}</td>
 		<td scope="row">1</td>
 		<td scope="row">  </td>
 		<td scope="row">1</td>

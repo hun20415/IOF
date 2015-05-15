@@ -31,7 +31,9 @@
 			<th scope="cols">예상종료일</th>
 			<th scope="cols">상세종료일</th>
 			<th scope="cols">편집</th>
-			<th scope="cols">종료</th>
+			<th scope="cols">종료</th>	
+	<!-- 		<th scope="cols">Delete</th>	 -->	
+        <!-- <th width="60">Delete</th> -->
 		</tr>
 	</thead>
 	<tbody>
@@ -53,6 +55,8 @@
             </form></td>
             <td> check box </td>
             
+       <%--      <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
+       --%>      
 		</tr>
 </c:forEach>
 	</tbody>
