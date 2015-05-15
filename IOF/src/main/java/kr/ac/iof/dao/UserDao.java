@@ -20,4 +20,6 @@ public interface UserDao {
 	public List<User> getAll();
 
 	public User getById(String userId);
+	
+	public User login(String userId, String passWd);
 }

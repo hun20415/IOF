@@ -10,6 +10,7 @@ package kr.ac.iof.service;
 import java.util.List;
 
 
+
 import kr.ac.iof.dao.UserDao;
 import kr.ac.iof.model.User;
 
@@ -60,5 +61,9 @@ public class UserServiceIm implements UserService{
     public void delete(String userId) {
         this.userDao.delete(userId);
     }
-
+    @Override
+    @Transactional
+    public User login(String userId, String passWd){
+    	 return this.userDao.login(userId, passWd);
+    }
 }
