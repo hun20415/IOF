@@ -1,4 +1,4 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
 <link href="css/greenhouseInfo.css" rel="stylesheet" type="text/css">
 
