@@ -10,7 +10,7 @@
 <!--                                                                                                    -->
 <!-- 본문 시작 -->
 <center>
-	<h1>재배 정보 신규 입력</h1>
+	<h1>재배 정보 수정</h1>
 </center>
 <form id="signUpForm" action="farmCultivateModify" method="post"
 	onsubmit="return check()">
