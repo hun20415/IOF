@@ -17,7 +17,8 @@
 
 <table class="type10">
 	<p align="right">
-		<button type="submit">신규</button>
+		<!-- <button type="submit">신규</button> -->
+		<button onclick="window.location.href='/farmCultivateInfoAdd'" >신규</button>
 		<button type="submit">과거재배정보</button>
 	</p>
 	<thead>
@@ -28,11 +29,11 @@
 			<th scope="cols">구역 ID</th>
 			<th scope="cols">재배품종</th>
 			<th scope="cols">정식일</th>
-			<th scope="cols">예상종료일</th>
-			<th scope="cols">상세종료일</th>
+			<th scope="cols">예상출하일</th>
+			<th scope="cols">실제출하일</th>
 			<th scope="cols">편집</th>
 			<th scope="cols">종료</th>	
-	<!-- 		<th scope="cols">Delete</th>	 -->	
+	 		<th scope="cols">Delete</th>	 	
         <!-- <th width="60">Delete</th> -->
 		</tr>
 	</thead>
@@ -55,8 +56,8 @@
             </form></td>
             <td> check box </td>
             
-       <%--      <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
-       --%>      
+            <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
+         
 		</tr>
 </c:forEach>
 	</tbody>
