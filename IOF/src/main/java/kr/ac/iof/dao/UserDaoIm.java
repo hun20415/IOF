@@ -127,4 +127,25 @@ public class UserDaoIm implements UserDao {
 		return user;
 	}
 	
+	public User login(String userId, String passWd){
+		System.out.println("userDaolm");
+		User user = null;
+		Transaction trns = null;
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from User where (userId = :id and userPasswd = :passWd)";
+			Query query = session.createQuery(queryString);
+			query.setString("id", userId);//id로 매칭 특정 행을 불러온다.
+			query.setString("passWd", passWd);
+			user = (User) query.uniqueResult();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return user;
+	}
+	
 }

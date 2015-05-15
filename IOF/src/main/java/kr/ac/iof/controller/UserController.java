@@ -67,14 +67,10 @@ public class UserController {
 
 		Session session1 = null;
 
-		List<User> users = new ArrayList<User>();
+		User user = new User();
 
-		users = HibernateUtil.getCurrentSession()
-				.createQuery("from User where userid=?, userPasswd=?").setParameter(0, id)
-				.list();
-		session.setAttribute("user", users);
-		logger.info("finish?");
-		request.getSession().setAttribute("user", users);
+		user = this.userService.login(id, passwd);
+		request.getSession().setAttribute("user", user);
 
 		return "home";
 	}
