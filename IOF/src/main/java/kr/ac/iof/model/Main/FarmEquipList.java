@@ -21,11 +21,7 @@ import kr.ac.iof.model.UserGroup;
 @Table(name = "farm_equip_list")
 @IdClass(FarmEquipListPK.class)
 public class FarmEquipList {
-	
-	/*@ManyToOne
-	@JoinColumn(name = "USERGROUP_ID")
-	private UserGroup userGroup;*/
-	
+		
 	@Id
 	@ManyToOne
 	@JoinColumn(name = "FARM_ID") //4 primary key FOREIGN KEY

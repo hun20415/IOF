@@ -14,12 +14,12 @@ public interface FarmEquipListService {
  
 	public void add(FarmEquipList farmEquipList);
 
-	public void delete(int farmEquipListId);
+	public void delete(int farmId, int eqId);
 
 	public void update(FarmEquipList farmEquipList);
 
 	public List<FarmEquipList> getAll();
 
-	public FarmEquipList getById(int farmEquipListId);
+	public FarmEquipList getById(int farmId, int eqId);
      
 }

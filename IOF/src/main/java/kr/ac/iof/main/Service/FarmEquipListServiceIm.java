@@ -10,8 +10,10 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
+
 import kr.ac.iof.main.dao.FarmEquipListDao;
 import kr.ac.iof.model.Main.FarmEquipList;
+import kr.ac.iof.model.Main.FarmInfo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,14 +53,14 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
  
     @Override
     @Transactional
-    public FarmEquipList getById(int id) {
-        return this.farmEquipListDao.getById(id);
+    public FarmEquipList getById(int farmId, int eqId) {
+        return this.farmEquipListDao.getById(farmId, eqId);
     }
  
     @Override
     @Transactional
-    public void delete(int farmEquipListId) {
-        this.farmEquipListDao.delete(farmEquipListId);
+    public void delete(int farmId, int eqId) {
+        this.farmEquipListDao.delete(farmId, eqId);
     }
 
 }

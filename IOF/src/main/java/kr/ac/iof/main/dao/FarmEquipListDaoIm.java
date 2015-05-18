@@ -46,14 +46,21 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 	}
 
 	@Override
-	public void delete(int farmEquipListId) {
+	public void delete(int farmId, int eqId) {
 		System.out.println("farmEquipListDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		FarmEquipList farmEquipList = null;
 		try {
 			trns = session.beginTransaction();
-			FarmEquipList farmEquipList = (FarmEquipList) session.load(FarmEquipList.class,
-					new Integer(farmEquipListId));//id로 db에서 삭제해야 할 row을 불러온다.
+			/*FarmEquipList farmEquipList = (FarmEquipList) session.load(FarmEquipList.class,
+					new Integer(farmEquipListId));//id로 db에서 삭제해야 할 row을 불러온다. */
+			String queryString = "from FarmEquipList where (farmId = :fid and eqId = :eid)";
+			Query query = session.createQuery(queryString);
+			query.setInteger("fid", farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("eid", eqId);//id로 매칭 특정 행을 불러온다.
+			farmEquipList = (FarmEquipList) query.uniqueResult();
+
 			session.delete(farmEquipList);//삭제 쿼리문 
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
@@ -107,16 +114,17 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 	}
 
 	@Override
-	public FarmEquipList getById(int farmEquipListId) {
+	public FarmEquipList getById(int farmId, int eqId) {
 		System.out.println("farmEquipListDaolm");
 		FarmEquipList farmEquipList = null;
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from FarmEquipList where farmEquipListId = :id";
+			String queryString = "from FarmEquipList where (farmId = :fid and eqId= :eid)";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", farmEquipListId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("fid", farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("eid", eqId);//id로 매칭 특정 행을 불러온다.
 			farmEquipList = (FarmEquipList) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
