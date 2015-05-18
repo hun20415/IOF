@@ -10,6 +10,8 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,10 +23,15 @@ public class DsInfo {
 	private int dsId;
 	@Column(name = "DS_NAME") //200
 	private String dsName;
-	@Column(name = "CROP_ID")//4 , foreign key
-	private int cropId;
-	@Column(name = "DS_CATE_ID")//4 , foreign key
-	private int dsCateId;
+	
+	@ManyToOne
+	@JoinColumn(name = "CROP_ID")//4 , foreign key
+	private CropInfo cropInfo;
+	
+	@ManyToOne
+	@JoinColumn(name = "DS_CATE_ID")//4 , foreign key
+	private DsCategory dsCategory;
+	
 	@Column(name = "DS_PART_ROOT") //1
 	private String dsPartRoot;
 	@Column(name = "DS_PART_LEAF") //1
@@ -45,15 +52,15 @@ public class DsInfo {
 	    }
 	
 
-	public DsInfo(int dsId, String dsName, int cropId, int dsCateId,
+	public DsInfo(int dsId, String dsName, CropInfo cropInfo, DsCategory dsCategory,
 			String dsPartRoot, String dsPartLeaf, String dsPartStem,
 			String dsPartFlower, String dsPartFruit, String dsPartGrowingPoint,
 			String dsInfoHtml) {
 		super();
 		this.dsId = dsId;
 		this.dsName = dsName;
-		this.cropId = cropId;
-		this.dsCateId = dsCateId;
+		this.cropInfo = cropInfo;
+		this.dsCategory = dsCategory;
 		this.dsPartRoot = dsPartRoot;
 		this.dsPartLeaf = dsPartLeaf;
 		this.dsPartStem = dsPartStem;
@@ -72,12 +79,12 @@ public class DsInfo {
 		return dsName;
 	}
 
-	public int getCropId() {
-		return cropId;
+	public CropInfo getCropInfo() {
+		return cropInfo;
 	}
 
-	public int getDsCateId() {
-		return dsCateId;
+	public DsCategory getDsCategory() {
+		return dsCategory;
 	}
 
 	public String getDsPartRoot() {
@@ -116,12 +123,12 @@ public class DsInfo {
 		this.dsName = dsName;
 	}
 
-	public void setCropId(int cropId) {
-		this.cropId = cropId;
+	public void setCropId(CropInfo cropInfo) {
+		this.cropInfo = cropInfo;
 	}
 
-	public void setDsCateId(int dsCateId) {
-		this.dsCateId = dsCateId;
+	public void setDsCateId(DsCategory dsCategory) {
+		this.dsCategory = dsCategory;
 	}
 
 	public void setDsPartRoot(String dsPartRoot) {
