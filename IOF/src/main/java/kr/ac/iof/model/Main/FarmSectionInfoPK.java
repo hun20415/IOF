@@ -7,67 +7,59 @@
 
 package kr.ac.iof.model.Main;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import java.io.Serializable;
 
-@Entity
-@Table(name = "farm_section_info")
-@IdClass(FarmSectionInfo.class)
-public class FarmSectionInfo {
-	
-	@Id
-	@Column(name = "FARM_SECTION_ID") //2 primary key
+public class FarmSectionInfoPK implements Serializable{
 	private int farmSectionId;
-	@Id
-	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 primary key FOREIGN KEY
 	private FarmInfo farmInfo;
-	
-	@Column(name = "DISCRIPTION") //300
-	private String discription;
-
-	
-	public FarmSectionInfo () {
-
+	public FarmSectionInfoPK() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-
-	public FarmSectionInfo(int farmSectionId, FarmInfo farmInfo,
-			String discription) {
+	public FarmSectionInfoPK(int farmSectionId, FarmInfo farmInfo) {
 		super();
 		this.farmSectionId = farmSectionId;
 		this.farmInfo = farmInfo;
-		this.discription = discription;
 	}
-
-
 	public int getFarmSectionId() {
 		return farmSectionId;
 	}
-
-	public FarmInfo getFarmInfo() {
-		return farmInfo;
-	}
-
-	public String getDiscription() {
-		return discription;
-	}
-
-
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
-
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
 	public void setFarmInfo(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
 	}
-
-	public void setDiscription(String discription) {
-		this.discription = discription;
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((farmInfo == null) ? 0 : farmInfo.hashCode());
+		result = prime * result + farmSectionId;
+		return result;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		FarmSectionInfoPK other = (FarmSectionInfoPK) obj;
+		if (farmInfo == null) {
+			if (other.farmInfo != null)
+				return false;
+		} else if (!farmInfo.equals(other.farmInfo))
+			return false;
+		if (farmSectionId != other.farmSectionId)
+			return false;
+		return true;
+	}
+	
 	
 }
