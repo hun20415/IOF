@@ -79,9 +79,9 @@ public class FarmEquipListController  {
 	}
 
 	@RequestMapping("/farmEquipListRemove/{id}")
-	public String farmEquipListDelete(@PathVariable("id") int id) {
+	public String farmEquipListDelete(@RequestParam("fid") int fid, @RequestParam("eid") int eid) {
 
-		this.farmEquipListService.delete(id);// id로 검색해서 삭제
+		this.farmEquipListService.delete(fid, eid);// id로 검색해서 삭제
 		return "redirect:/farmEquipListList";// list 페이지를 부르면서 새로고침
 	}
 
@@ -101,9 +101,9 @@ public class FarmEquipListController  {
 	}
 
 	@RequestMapping("/farmEquipListModify")
-	public String farmEquipListModify(@RequestParam("id") int id, Model model) {
+	public String farmEquipListModify(@RequestParam("fid") int fid, @RequestParam("eid") int eid, Model model) {
 
-		model.addAttribute("farmEquipList", this.farmEquipListService.getById(id));
+		model.addAttribute("farmEquipList", this.farmEquipListService.getById(fid, eid));
 		//model.addAttribute("listPersons", this.farmEquipListService.getAll());
 
 		return "farmEquipListModify";
