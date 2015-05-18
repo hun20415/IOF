@@ -10,9 +10,13 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import java.util.Date;
+
+import kr.ac.iof.model.User;
 
 @Entity
 @Table(name = "farm_cultivate_info")
@@ -21,8 +25,11 @@ public class FarmCultivateInfo {
 	@Id
 	@Column(name = "TNO")//4 primary key
 	private int tno;
-	@Column(name = "USER_ID") //20 FOREIGN KEY
-	private String userId;
+	
+	@ManyToOne
+	@JoinColumn(name = "USER_ID") //20 FOREIGN KEY
+	private User user;
+	
 	@Column(name = "FARM_ID")//4 FOREIGN KEY
 	private int farmId;
 	@Column(name = "FARM_SECTION_ID")//2
@@ -45,13 +52,13 @@ public class FarmCultivateInfo {
 	    }
 	
 
-	public FarmCultivateInfo(int tno, String userId, int farmId,
+	public FarmCultivateInfo(int tno, User user, int farmId,
 			int farmSectionId, int cropSpeciesId, Date plantTime,
 			Date productTimePlan, Date productTimeReal, Date endTime,
 			String activeYn) {
 		super();
 		this.tno = tno;
-		this.userId = userId;
+		this.user = user;
 		this.farmId = farmId;
 		this.farmSectionId = farmSectionId;
 		this.cropSpeciesId = cropSpeciesId;
@@ -67,8 +74,8 @@ public class FarmCultivateInfo {
 		return tno;
 	}
 
-	public String getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
 	public int getFarmId() {
@@ -102,13 +109,16 @@ public class FarmCultivateInfo {
 	public String getActiveYn() {
 		return activeYn;
 	}
+	public String getUserName1() {
+		return user.getUserName();
+	}
 
 	public void setTno(int tno) {
 		this.tno = tno;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public void setFarmId(int farmId) {
