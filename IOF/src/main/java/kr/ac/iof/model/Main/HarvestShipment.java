@@ -10,7 +10,10 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import java.util.Date;
 
 
@@ -25,12 +28,18 @@ public class HarvestShipment {
 	@Column(name = "SHIP_DATE") //DATETIME
 	private Date shipDate;
 	
-	@Column(name = "FARM_ID") //4 FOREIGN KEY
-	private int farmId;
-	@Column(name = "BUYER_ID") //4 FOREIGN KEY
-	private int buyerId;
-	@Column(name = "SPECIES_ID") //4 FOREIGN KEY
-	private int speciesId;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID") //4 FOREIGN KEY
+	private FarmInfo farmInfo;
+	
+	@ManyToOne
+	@JoinColumn(name = "BUYER_ID") //4 FOREIGN KEY
+	private BuyerInfo buyerInfo;
+	
+	@ManyToOne
+	@JoinColumn(name = "SPECIES_ID") //4 FOREIGN KEY
+	private CropSpeciesInfo cropSpeciesInfo;
+	
 	@Column(name = "QUALITY_LEVEL") //1
 	private int qualityLevel;
 	
@@ -49,18 +58,19 @@ public class HarvestShipment {
 		
 	public HarvestShipment () {
 
-	    }
+	}
 
-	public HarvestShipment(int tno, Date shipDate, int farmId, int buyerId,
-			int speciesId, int qualityLevel, double packageKg,
-			double packagePrice, int packageNum, double totalAmount,
-			double totalPrice) {
+
+	public HarvestShipment(int tno, Date shipDate, FarmInfo farmInfo,
+			BuyerInfo buyerInfo, CropSpeciesInfo cropSpeciesInfo,
+			int qualityLevel, double packageKg, double packagePrice,
+			int packageNum, double totalAmount, double totalPrice) {
 		super();
 		this.tno = tno;
 		this.shipDate = shipDate;
-		this.farmId = farmId;
-		this.buyerId = buyerId;
-		this.speciesId = speciesId;
+		this.farmInfo = farmInfo;
+		this.buyerInfo = buyerInfo;
+		this.cropSpeciesInfo = cropSpeciesInfo;
 		this.qualityLevel = qualityLevel;
 		this.packageKg = packageKg;
 		this.packagePrice = packagePrice;
@@ -75,18 +85,6 @@ public class HarvestShipment {
 
 	public Date getShipDate() {
 		return shipDate;
-	}
-
-	public int getFarmId() {
-		return farmId;
-	}
-
-	public int getBuyerId() {
-		return buyerId;
-	}
-
-	public int getSpeciesId() {
-		return speciesId;
 	}
 
 	public int getQualityLevel() {
@@ -113,24 +111,42 @@ public class HarvestShipment {
 		return totalPrice;
 	}
 
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
+
+
+	public void setFarmInfo(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
+	}
+
+
+	public BuyerInfo getBuyerInfo() {
+		return buyerInfo;
+	}
+
+
+	public void setBuyerInfo(BuyerInfo buyerInfo) {
+		this.buyerInfo = buyerInfo;
+	}
+
+
+	public CropSpeciesInfo getCropSpeciesInfo() {
+		return cropSpeciesInfo;
+	}
+
+
+	public void setCropSpeciesInfo(CropSpeciesInfo cropSpeciesInfo) {
+		this.cropSpeciesInfo = cropSpeciesInfo;
+	}
+
+
 	public void setTno(int tno) {
 		this.tno = tno;
 	}
 
 	public void setShipDate(Date shipDate) {
 		this.shipDate = shipDate;
-	}
-
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
-	}
-
-	public void setBuyerId(int buyerId) {
-		this.buyerId = buyerId;
-	}
-
-	public void setSpeciesId(int speciesId) {
-		this.speciesId = speciesId;
 	}
 
 	public void setQualityLevel(int qualityLevel) {
