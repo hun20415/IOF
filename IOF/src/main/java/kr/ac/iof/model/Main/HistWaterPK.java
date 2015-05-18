@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 
-class HistWaterPK implements Serializable {
+public class HistWaterPK implements Serializable {
 	
 	private FarmInfo farmInfo;
 	private int seqNo;
