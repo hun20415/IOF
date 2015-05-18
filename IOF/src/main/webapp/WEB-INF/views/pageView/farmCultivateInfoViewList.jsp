@@ -4,7 +4,7 @@
 <!--                                                                                                    -->
 <!--                                File Name   : cultivationViewList.jsp                                   -->
 <!--                                Description : cultivationList 입력페이지                                                                                                        -->
-<!--                                Update      : 2015.05.13                                            -->
+<!--                                Update      : 2015.05.18 (옥정윤)                                            -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
 
@@ -19,7 +19,7 @@
 	<p align="right">
 		<!-- <button type="submit">신규</button> -->
 		<button onclick="window.location.href='/farmCultivateInfoAdd'" >신규</button>
-		<button type="submit">과거재배정보</button>
+		<button onclick="window.location.href='/farmCultivateInfoHist'" >과거재배정보</button>
 	</p>
 	<thead>
 		<tr>
@@ -54,7 +54,7 @@
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
             <input type="submit" value="Edit">
             </form></td>
-            <td> check box </td>
+            <td input type="checkbox"> </td>
             
             <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
          
