@@ -43,7 +43,7 @@
         <tr>
 	        <td>${farmCultivateInfo.farmId}</td>
             <td>온실이름</td>
-            <td>${farmCultivateInfo.userName1}</td>
+            <td>온실주이름</td>
             <td>${farmCultivateInfo.farmSectionId}</td>
             <td>${farmCultivateInfo.cropSpeciesId}</td> 
             <td>${farmCultivateInfo.plantTime}</td>
