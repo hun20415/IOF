@@ -11,6 +11,8 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,27 +24,26 @@ public class CropTypeInfo {
 	private int cropTypeId;
 	@Column(name = "CROP_TYPE_NAME") //20
 	private String cropTypeName;
-	@Column(name = "CROP_ID") //4, FOREIGN KEY
-	private int cropId;
+	
+	@ManyToOne
+	@JoinColumn(name = "CROP_ID") //4, FOREIGN KEY
+	private CropInfo cropInfo;
+	
 	@Column(name = "CROP_TYPE_HTML") //200
 	private String cropTypeHtml;
 	
 	public CropTypeInfo () {//생성자는 필수
 
-	    }
+	}
 	
-	
-
-	public CropTypeInfo(int cropTypeId, String cropTypeName, int cropId,
+	public CropTypeInfo(int cropTypeId, String cropTypeName, CropInfo cropInfo,
 			String cropTypeHtml) {
 		super();
 		this.cropTypeId = cropTypeId;
 		this.cropTypeName = cropTypeName;
-		this.cropId = cropId;
+		this.cropInfo = cropInfo;
 		this.cropTypeHtml = cropTypeHtml;
 	}
-
-
 
 	public int getCropTypeId() {
 		return cropTypeId;
@@ -52,8 +53,8 @@ public class CropTypeInfo {
 		return cropTypeName;
 	}
 
-	public int getCropId() {
-		return cropId;
+	public CropInfo getCropInfo() {
+		return cropInfo;
 	}
 
 	public String getCropTypeHtml() {
@@ -68,15 +69,12 @@ public class CropTypeInfo {
 		this.cropTypeName = cropTypeName;
 	}
 
-	public void setCropId(int cropId) {
-		this.cropId = cropId;
+	public void setCropInfo(CropInfo cropInfo) {
+		this.cropInfo = cropInfo;
 	}
 
 	public void setCropTypeHtml(String cropTypeHtml) {
 		this.cropTypeHtml = cropTypeHtml;
 	}
-	
-	
-
 	
 }
