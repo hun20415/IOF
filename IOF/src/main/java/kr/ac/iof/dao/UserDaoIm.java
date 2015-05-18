@@ -96,7 +96,9 @@ public class UserDaoIm implements UserDao {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			trns = session.beginTransaction();
+			
 			users = session.createQuery("from User").list();//list로 호출
+			
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {

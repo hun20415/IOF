@@ -14,12 +14,12 @@ public interface HistWaterService {
  
 	public void add(HistWater histWater);
 
-	public void delete(int histWaterId);
+	public void delete(int farmId, int seqNo);
 
 	public void update(HistWater histWater);
 
 	public List<HistWater> getAll();
 
-	public HistWater getById(int histWaterId);
+	public HistWater getById(int farmId, int seqNo);
      
 }

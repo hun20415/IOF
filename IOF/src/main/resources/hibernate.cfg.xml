@@ -33,7 +33,7 @@
 		 <!-- end  -->
 		
 		<mapping class="kr.ac.iof.model.User"/>
-  		<!-- <mapping class="kr.ac.iof.model.UserGroup"/> --> 
+  		<mapping class="kr.ac.iof.model.UserGroup"/> 
   		
   		<!-- <mapping resource="kr/ac/iof/action/user/user.hbm.xml"></mapping> -->
   		<!-- <mapping resource="kr/ac/iof/action/user/userGroup.hbm.xml"></mapping> -->

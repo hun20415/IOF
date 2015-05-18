@@ -1,8 +1,8 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!-- *********************************************************************************************************/
-/************************modify view 페이지 add 페이지와 동일*******************************************************/
-/*************************2015-05-06 박정훈 *****************************************************************/
+/************************복합키 add 수정안함*******************************************************/
+/*************************2015-05-18 박정훈 *****************************************************************/
 /*********************************************************************************************************/ -->
 <div id = histWaterM>
 <!-- 본문 시작 -->
@@ -14,23 +14,23 @@
         <tr>
         
             <td style="width: 200px;">name</td>
-            <c:if test="${!empty histWater.histWaterName}">
-            <td style="width: 390px"><input type="text" name="histWaterName" value="${histWater.histWaterName}"
+            <c:if test="${!empty histWater.farmId}">
+            <td style="width: 390px"><input type="text" name="farmId" value="${histWater.histWaterName}"
                 style="width: 50%;" /></td>
                 </c:if>
-                <c:if test="${empty histWater.histWaterName}">
-            <td style="width: 390px"><input type="text" name="histWaterName"
+                <c:if test="${empty histWater.farmId}">
+            <td style="width: 390px"><input type="text" name="farmId"
                 style="width: 50%;" /></td>
                 </c:if>
         </tr>
 
         <tr>
             <td>html</td>
-            <c:if test="${!empty histWater.histWaterName}">
-            <td><input type="text" name="histWaterHtml" value="${histWater.histWaterHtml}" style="width: 50%;" /></td>
+            <c:if test="${!empty histWater.seqNo}">
+            <td><input type="text" name="histWaterHtml" value="${histWater.seqNo}" style="width: 50%;" /></td>
             </c:if>
-            <c:if test="${empty histWater.histWaterName}">
-            <td><input type="text" name="histWaterHtml" style="width: 50%;" /></td>
+            <c:if test="${empty histWater.seqNo}">
+            <td><input type="text" name="seqNo" style="width: 50%;" /></td>
             </c:if>
         </tr>
         

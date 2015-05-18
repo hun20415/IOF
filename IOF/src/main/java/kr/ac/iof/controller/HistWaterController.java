@@ -65,10 +65,10 @@ public class HistWaterController {
 		return "histWaterList";
 	}
 
-	@RequestMapping("/histWaterRemove/{id}")
-	public String histWaterDelete(@PathVariable("id") int id) {
+	@RequestMapping("/histWaterRemove")
+	public String histWaterDelete(@RequestParam("id") int id, @RequestParam("id2") int id2) {
 
-		this.histWaterService.delete(id);// id로 검색해서 삭제
+		this.histWaterService.delete(id, id2);// id로 검색해서 삭제
 		return "redirect:/histWaterList";// list 페이지를 부르면서 새로고침
 	}
 
@@ -81,9 +81,9 @@ public class HistWaterController {
 	}
 
 	@RequestMapping("/histWaterModify")
-	public String histWaterModify(@RequestParam("id") int id, Model model) {
+	public String histWaterModify(@RequestParam("id") int id,@RequestParam("id2") int id2, Model model) {
 
-		model.addAttribute("histWater", this.histWaterService.getById(id));
+		model.addAttribute("histWater", this.histWaterService.getById(id, id2));
 		model.addAttribute("listPersons", this.histWaterService.getAll());
 
 		return "histWaterModify";

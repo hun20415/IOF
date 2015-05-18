@@ -12,28 +12,39 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name = "SYS_USER_GROUP")
+@Table(name = "sys_user_group")
 public class UserGroup{
 	//USERGROUP_ID
     //USERGROUP_NAME  
 	
 	@Id
 	@Column(name = "USERGROUP_ID")
-	private int usergroup;
+	private int userGroup;
 	@Column(name = "USERGROUP_NAME")
-	private String usergroupName;
-	public int getUsergroup() {
-		return usergroup;
-	}
-	public void setUsergroup(int usergroup) {
-		this.usergroup = usergroup;
+	private String userGroupName;
+	
+	public UserGroup() {
 	}
 	
-	public String getUsergroupName() {
-		return usergroupName;
+	public UserGroup(int userGroup, String userGroupName) {
+		super();
+		this.userGroup = userGroup;
+		this.userGroupName = userGroupName;
 	}
-	public void setUsergroupName(String usergroupName) {
-		this.usergroupName = usergroupName;
+
+	public int getUserGroup() {
+		return userGroup;
 	}
+	public void setUserGroup(int userGroup) {
+		this.userGroup = userGroup;
+	}
+	
+	public String getUserGroupName() {
+		return userGroupName;
+	}
+	public void setUserGroupName(String userGroupName) {
+		this.userGroupName = userGroupName;
+	}
+	
 	
 }
