@@ -10,7 +10,11 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import kr.ac.iof.model.UserGroup;
 
 @Entity
 @Table(name = "farm_equip_type")
@@ -18,9 +22,17 @@ public class FarmEquipType {
 	
 	@Id
 	@Column(name = "EQ_TYPE_ID") //3 primary key
-	private int eqTypeId;
+	private int eqTypeId; 	     // -> eqTypd
+	
 	@Column(name = "EQ_TYPE_NAME") //20
-	private String eqTypeName;
+	private String eqTypeName; 	// -> eqTypeName
+	
+	/*@Id
+	@ManyToOne
+	@JoinColumn(name = "EQ_TYPE_ID")  //3 primary key : eq_type_id : eqTypeId
+	private FarmEquipList farmEquipList;*/
+	
+	
 	@Column(name = "DESCRIPTION") //200
 	private String description;
 	@Column(name = "CONTROL_SENSOR") //1
@@ -62,7 +74,7 @@ public class FarmEquipType {
 	}
 
 
-	public void setEqTypeId(int eqTypeId) {
+	public void setEqType(int eqTypeId) {
 		this.eqTypeId = eqTypeId;
 	}
 
@@ -81,5 +93,6 @@ public class FarmEquipType {
 		this.controlSensor = controlSensor;
 	}
 	
+
 	
 }
