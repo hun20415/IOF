@@ -10,11 +10,19 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import kr.ac.iof.model.UserGroup;
 
 @Entity
 @Table(name = "farm_equip_list")
 public class FarmEquipList {
+	
+	/*@ManyToOne
+	@JoinColumn(name = "USERGROUP_ID")
+	private UserGroup userGroup;*/
 	
 	@Id
 	@Column(name = "FARM_ID") //4 primary key FOREIGN KEY
@@ -24,8 +32,11 @@ public class FarmEquipList {
 	@Id
 	@Column(name = "EQ_ID") //4 primary key
 	private int eqId;
-	@Column(name = "EQ_TYPE_ID") //3  FOREIGN KEY
-	private int eqTypeId;
+	
+	@ManyToOne
+	@JoinColumn(name = "EQ_TYPE_ID") //3  FOREIGN KEY
+	private FarmEquipType eqType;
+	
 	
 	@Column(name = "EQ_COMPANY") //50
 	private String eqCompany;
@@ -42,14 +53,14 @@ public class FarmEquipList {
 	    }
 
 
-	public FarmEquipList(int farmId, int farmSectionId, int eqId, int eqTypeId,
+	public FarmEquipList(int farmId, int farmSectionId, int eqId, FarmEquipType eqType, /*int eqTypeId,*/
 			String eqCompany, String eqModel, String eqSwVersion,
 			String eqDiscription) {
 		super();
 		this.farmId = farmId;
 		this.farmSectionId = farmSectionId;
 		this.eqId = eqId;
-		this.eqTypeId = eqTypeId;
+		this.eqType = eqType;
 		this.eqCompany = eqCompany;
 		this.eqModel = eqModel;
 		this.eqSwVersion = eqSwVersion;
@@ -72,8 +83,8 @@ public class FarmEquipList {
 	}
 
 
-	public int getEqTypeId() {
-		return eqTypeId;
+	public FarmEquipType getEqType() {
+		return eqType;
 	}
 
 
@@ -112,8 +123,8 @@ public class FarmEquipList {
 	}
 
 
-	public void setEqTypeId(int eqTypeId) {
-		this.eqTypeId = eqTypeId;
+	public void setEqType(FarmEquipType eqType) {
+		this.eqType = eqType;
 	}
 
 
@@ -134,6 +145,10 @@ public class FarmEquipList {
 
 	public void setEqDiscription(String eqDiscription) {
 		this.eqDiscription = eqDiscription;
+	}
+	
+	public String getEqTypeName() {
+		return eqType.getEqTypeName();
 	}
 	
 	

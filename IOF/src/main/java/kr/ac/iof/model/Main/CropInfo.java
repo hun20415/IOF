@@ -22,7 +22,7 @@ public class CropInfo {
 	@Column(name = "CROP_ID")
 	private int cropId;
 	@ManyToOne
-	@JoinColumn(name = "CROP_CATE_ID", insertable = false, updatable = false, nullable = false)
+	@JoinColumn(name = "CROP_CATE_ID")
 	private CropCate cropCate;
 	
 	private String cropName;
@@ -72,5 +72,11 @@ public class CropInfo {
 	public void setCropInfoHtml(String cropInfoHtml) {
 		this.cropInfoHtml = cropInfoHtml;
 	}
+	
+	//get crop category name
+	public String getCropCateName() {
+		return cropCate.getCropCateName();
+	}
+	
 
 }
