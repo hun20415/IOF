@@ -10,6 +10,7 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -18,6 +19,7 @@ import kr.ac.iof.model.UserGroup;
 
 @Entity
 @Table(name = "farm_equip_list")
+@IdClass(FarmEquipListPK.class)
 public class FarmEquipList {
 	
 	/*@ManyToOne
@@ -25,10 +27,13 @@ public class FarmEquipList {
 	private UserGroup userGroup;*/
 	
 	@Id
-	@Column(name = "FARM_ID") //4 primary key FOREIGN KEY
-	private int farmId;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID") //4 primary key FOREIGN KEY
+	private FarmInfo farmInfo;
+	
 	@Column(name = "FARM_SECTION_ID") //2
 	private int farmSectionId;
+	
 	@Id
 	@Column(name = "EQ_ID") //4 primary key
 	private int eqId;
@@ -53,11 +58,11 @@ public class FarmEquipList {
 	    }
 
 
-	public FarmEquipList(int farmId, int farmSectionId, int eqId, FarmEquipType eqType, /*int eqTypeId,*/
+	public FarmEquipList(FarmInfo farmInfo, int farmSectionId, int eqId, FarmEquipType eqType, 
 			String eqCompany, String eqModel, String eqSwVersion,
 			String eqDiscription) {
 		super();
-		this.farmId = farmId;
+		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.eqId = eqId;
 		this.eqType = eqType;
@@ -66,10 +71,14 @@ public class FarmEquipList {
 		this.eqSwVersion = eqSwVersion;
 		this.eqDiscription = eqDiscription;
 	}
+	
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
 
 
-	public int getFarmId() {
-		return farmId;
+	public void setFarmInfo(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
 	}
 
 
@@ -105,11 +114,6 @@ public class FarmEquipList {
 
 	public String getEqDiscription() {
 		return eqDiscription;
-	}
-
-
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
 	}
 
 

@@ -7,22 +7,22 @@ import javax.persistence.Embeddable;
 
 
 class HistWaterPK implements Serializable {
-	private int farmId;
+	
+	private FarmInfo farmInfo;
 	private int seqNo;
 	
 	public HistWaterPK() {
 		
 	}
-	public HistWaterPK(int farmId, int seqNo) {
-		this.farmId = farmId;
+	public HistWaterPK(FarmInfo farmInfo, int seqNo) {
+		this.farmInfo = farmInfo;
 		this.seqNo = seqNo;
 	}
-	
-	public int getFarmId() {
-		return farmId;
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
 	}
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
+	public void setFarmInfo(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
 	}
 	public int getSeqNo() {
 		return seqNo;
@@ -34,7 +34,8 @@ class HistWaterPK implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + farmId;
+		result = prime * result
+				+ ((farmInfo == null) ? 0 : farmInfo.hashCode());
 		result = prime * result + seqNo;
 		return result;
 	}
@@ -47,7 +48,10 @@ class HistWaterPK implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		HistWaterPK other = (HistWaterPK) obj;
-		if (farmId != other.farmId)
+		if (farmInfo == null) {
+			if (other.farmInfo != null)
+				return false;
+		} else if (!farmInfo.equals(other.farmInfo))
 			return false;
 		if (seqNo != other.seqNo)
 			return false;
