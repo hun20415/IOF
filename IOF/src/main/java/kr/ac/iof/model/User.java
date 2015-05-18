@@ -9,6 +9,8 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,8 +24,11 @@ public class User{// implements UserDetails{
 	private String userName;
 	@Column(name = "USER_PASSWD")
 	private String userPasswd;	
-	@Column(name = "USERGROUP_ID")
-	private int userGroupId;
+	/*@Column(name = "USERGROUP_ID")
+	private int userGroupId;*/
+	@ManyToOne
+	@JoinColumn(name = "USERGROUP_ID")
+	private UserGroup userGroup;
 	@Column(name = "EMAIL")
 	private String email;
 	@Column(name = "MOBILEPHONE")
@@ -44,14 +49,14 @@ public class User{// implements UserDetails{
 		
 	}
 	public User(String userId, String userName, String userPasswd,
-			int userGroupId, String email, String mobilePhone, String phone,
+			UserGroup userGroup, String email, String mobilePhone, String phone,
 			String homeZipcode, String homeAddr, String sysDataTime,
 			String activeYN) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.userPasswd = userPasswd;
-		this.userGroupId = userGroupId;
+		this.userGroup = userGroup;
 		this.email = email;
 		this.mobilePhone = mobilePhone;
 		this.phone = phone;
@@ -78,11 +83,11 @@ public class User{// implements UserDetails{
 	public void setUserPasswd(String userPasswd) {
 		this.userPasswd = userPasswd;
 	}
-	public int getUserGroupId() {
-		return userGroupId;
+	public UserGroup getUserGroup() {
+		return userGroup;
 	}
-	public void setUserGroupId(int userGroupId) {
-		this.userGroupId = userGroupId;
+	public void setUserGroup(UserGroup userGroup) {
+		this.userGroup = userGroup;
 	}
 	public String getEmail() {
 		return email;
@@ -125,6 +130,9 @@ public class User{// implements UserDetails{
 	}
 	public void setActiveYN(String activeYN) {
 		this.activeYN = activeYN;
+	}
+	public String getUserGroupName() {
+		return userGroup.getUserGroupName();
 	}
 	
 }

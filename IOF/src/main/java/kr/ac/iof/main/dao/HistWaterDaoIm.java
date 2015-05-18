@@ -46,14 +46,23 @@ public class HistWaterDaoIm implements HistWaterDao {
 	}
 
 	@Override
-	public void delete(int histWaterId) {
+	public void delete(int farmId, int seqNo) {
 		System.out.println("histWaterDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		HistWater histWater = null;
 		try {
 			trns = session.beginTransaction();
-			HistWater histWater = (HistWater) session.load(HistWater.class,
-					new Integer(histWaterId));//id로 db에서 삭제해야 할 row을 불러온다.
+			
+			/*HistWater histWater = (HistWater) session.load(HistWater.class,
+					new Integer(int farmId, int seqNo));//id로 db에서 삭제해야 할 row을 불러온다.
+			*/
+			String queryString = "from HistWater where (farmId = :id and seqNo = :id2)";
+			Query query = session.createQuery(queryString);
+			query.setInteger("id", farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("id2", seqNo);//id로 매칭 특정 행을 불러온다.
+			histWater = (HistWater) query.uniqueResult();
+			
 			session.delete(histWater);//삭제 쿼리문 
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
@@ -96,7 +105,9 @@ public class HistWaterDaoIm implements HistWaterDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
+			
 			histWaters = session.createQuery("from HistWater").list();//list로 호출
+			
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
@@ -107,16 +118,17 @@ public class HistWaterDaoIm implements HistWaterDao {
 	}
 
 	@Override
-	public HistWater getById(int histWaterId) {
+	public HistWater getById(int farmId, int seqNo) {
 		System.out.println("histWaterDaolm");
 		HistWater histWater = null;
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from HistWater where histWaterId = :id";
+			String queryString = "from HistWater where (farmId = :id and seqNo = :id2)";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", histWaterId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("id", farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("id2", seqNo);//id로 매칭 특정 행을 불러온다.
 			histWater = (HistWater) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();

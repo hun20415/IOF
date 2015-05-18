@@ -51,14 +51,14 @@ public class HistWaterServiceIm implements HistWaterService{
  
     @Override
     @Transactional
-    public HistWater getById(int id) {
-        return this.histWaterDao.getById(id);
+    public HistWater getById(int farmId, int seqNo) {
+        return this.histWaterDao.getById(farmId, seqNo);
     }
  
     @Override
     @Transactional
-    public void delete(int histWaterId) {
-        this.histWaterDao.delete(histWaterId);
+    public void delete(int farmId, int seqNo) {
+        this.histWaterDao.delete(farmId, seqNo);
     }
 
 }
