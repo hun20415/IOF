@@ -85,7 +85,7 @@ public class FarmCultivateInfoController  {
 		return "farmCultivateInfoModify";
 	}
 	
-	
+	 
 	
 	// info controller 수정 요망
 	@RequestMapping(value = "/farmCultivateInfo", method = RequestMethod.GET)//서비스 호출

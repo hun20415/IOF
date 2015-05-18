@@ -45,7 +45,7 @@
             <td>온실이름</td>
             <td>온실주</td>
             <td>${farmCultivateInfo.farmSectionId}</td>
-            <td>${farmCultivateInfo.cropSpeciesId}</td>
+            <td>${farmCultivateInfo.cropSpeciesId}</td> 
             <td>${farmCultivateInfo.plantTime}</td>
             <td>${farmCultivateInfo.productTimeReal}</td>            
             
