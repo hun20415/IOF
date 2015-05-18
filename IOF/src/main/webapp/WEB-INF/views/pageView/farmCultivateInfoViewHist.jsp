@@ -1,4 +1,4 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="css/cultivationList.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
@@ -10,7 +10,7 @@
 
 <!-- 본문 시작 -->
 <center>
-	<h1>과거 재배 정보 List</h1> <!-- ACTIVE_YN = N 이거나 END_TIME이 기록되어 있을 경우  -->
+	<h1>과거 재배 정보 List</h1> <!-- ACTIVE_YN = N  있을 경우  -->
 </center>
 
 
@@ -37,26 +37,27 @@
 	</thead>
 	<tbody>
 	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
+	  <c:if test = "${farmCultivateInfo.activeYn == 'N'}">
         <tr>
+       
+        
 	        <td>${farmCultivateInfo.farmId}</td>
             <td>온실이름</td>
             <td>온실주</td>
             <td>${farmCultivateInfo.farmSectionId}</td>
             <td>${farmCultivateInfo.cropSpeciesId}</td>
             <td>${farmCultivateInfo.plantTime}</td>
-            <td>${farmCultivateInfo.productTimePlan}</td>
-            <td>${farmCultivateInfo.productTimeReal}</td>
-            
+            <td>${farmCultivateInfo.productTimeReal}</td>            
             
             <td><form action="farmCultivateInfoModify">
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
             <input type="submit" value="Edit">
             </form></td>
-            <td> check box </td>
             
             <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
-         
+        
 		</tr>
+		 </c:if>
 </c:forEach>
 	</tbody>
 </table>

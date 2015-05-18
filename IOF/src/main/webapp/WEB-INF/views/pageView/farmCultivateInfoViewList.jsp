@@ -39,6 +39,7 @@
 	</thead>
 	<tbody>
 	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
+	  <c:if test = "${farmCultivateInfo.activeYn == 'Y'}">
         <tr>
 	        <td>${farmCultivateInfo.farmId}</td>
             <td>온실이름</td>
@@ -59,6 +60,7 @@
             <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
          
 		</tr>
+		</c:if>
 </c:forEach>
 	</tbody>
 </table>

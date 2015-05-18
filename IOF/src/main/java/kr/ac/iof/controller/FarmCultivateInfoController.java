@@ -67,13 +67,7 @@ public class FarmCultivateInfoController  {
 		return "redirect:/farmCultivateInfoList";// list 페이지를 부르면서 새로고침
 	}
 
-	/*
-	 * @RequestMapping("/farmCultivateInfoModify/{id}") public String
-	 * farmCultivateInfoModify(@PathVariable("id") int id, Model model) {
-	 * model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(id));
-	 * model.addAttribute("listPersons", this.farmCultivateInfoService.getAll()); return
-	 * "forward:/farmCultivateInfoAdd"; }
-	 */
+	
 	@RequestMapping(value = "/farmCultivateInfoModify", method = RequestMethod.POST)
 	public String buyerInfoModify(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
 			throws Exception {
@@ -100,5 +94,16 @@ public class FarmCultivateInfoController  {
 
 		return "farmCultivateInfo";
 	} 
+	
+	@RequestMapping(value = "/farmCultivateInfoHist", method = RequestMethod.GET)//서비스 호출
+	public String farmCultivateInfoHist(Model model) throws Exception {
+		logger.info("farmCultivateInfoHist");
+		
+		model.addAttribute("farmCultivateInfo", new FarmCultivateInfo());
+		model.addAttribute("listFarmCultivateInfo", this.farmCultivateInfoService.getAll());
+		
+		return "farmCultivateInfoHist";
+	} 
+	
 	
 }
