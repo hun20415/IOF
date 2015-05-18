@@ -24,8 +24,6 @@ public class User{// implements UserDetails{
 	private String userName;
 	@Column(name = "USER_PASSWD")
 	private String userPasswd;	
-	/*@Column(name = "USERGROUP_ID")
-	private int userGroupId;*/
 	@ManyToOne
 	@JoinColumn(name = "USERGROUP_ID")
 	private UserGroup userGroup;
