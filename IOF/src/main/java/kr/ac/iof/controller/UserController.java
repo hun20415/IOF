@@ -38,7 +38,7 @@ public class UserController {
 
 	public void setUserService(UserService ps) {
 		this.userService = ps;
-	}
+	} 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		logger.info("login");
