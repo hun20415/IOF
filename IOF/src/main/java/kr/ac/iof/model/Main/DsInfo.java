@@ -159,5 +159,4 @@ public class DsInfo {
 		this.dsInfoHtml = dsInfoHtml;
 	}
 
-	
 }

@@ -31,12 +31,17 @@ public class FarmCultivateInfo {
 	@Column(name = "USER_ID")
 	private String userId;
 	
-	@Column(name = "FARM_ID")//4 FOREIGN KEY
-	private int farmId;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID")//4 FOREIGN KEY
+	private FarmInfo farmInfo;
+	
 	@Column(name = "FARM_SECTION_ID")//2
 	private int farmSectionId;
-	@Column(name = "CROP_SPECIES_ID")//4 FOREIGN KEY
-	private int cropSpeciesId;
+	
+	@ManyToOne
+	@JoinColumn(name = "CROP_SPECIES_ID")//4 FOREIGN KEY
+	private CropSpeciesInfo cropSpeciesInfo;
+	
 	@Column(name = "PLANT_TIME")//
 	private Date plantTime;
 	@Column(name = "PRODUCT_TIME_PLAN")//
@@ -50,26 +55,24 @@ public class FarmCultivateInfo {
 	
 	public FarmCultivateInfo () {
 
-	    }
-	
+	}
 
-	public FarmCultivateInfo(int tno, String userId, int farmId,
-			int farmSectionId, int cropSpeciesId, Date plantTime,
+	public FarmCultivateInfo(int tno, String userId, FarmInfo farmInfo,
+			int farmSectionId, CropSpeciesInfo cropSpeciesInfo, Date plantTime,
 			Date productTimePlan, Date productTimeReal, Date endTime,
 			String activeYn) {
 		super();
 		this.tno = tno;
 		this.userId = userId;
-		this.farmId = farmId;
+		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
-		this.cropSpeciesId = cropSpeciesId;
+		this.cropSpeciesInfo = cropSpeciesInfo;
 		this.plantTime = plantTime;
 		this.productTimePlan = productTimePlan;
 		this.productTimeReal = productTimeReal;
 		this.endTime = endTime;
 		this.activeYn = activeYn;
 	}
-
 
 	public int getTno() {
 		return tno;
@@ -79,16 +82,16 @@ public class FarmCultivateInfo {
 		return userId;
 	}
 
-	public int getFarmId() {
-		return farmId;
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
 	}
 
 	public int getFarmSectionId() {
 		return farmSectionId;
 	}
 
-	public int getCropSpeciesId() {
-		return cropSpeciesId;
+	public CropSpeciesInfo getCropSpeciesInfo() {
+		return cropSpeciesInfo;
 	}
 
 	public Date getPlantTime() {
@@ -122,16 +125,16 @@ public class FarmCultivateInfo {
 		this.userId = userId;
 	}
 
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
+	public void setFarmId(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
 	}
 
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
 
-	public void setCropSpeciesId(int cropSpeciesId) {
-		this.cropSpeciesId = cropSpeciesId;
+	public void setCropSpeciesId(CropSpeciesInfo cropSpeciesInfo) {
+		this.cropSpeciesInfo = cropSpeciesInfo;
 	}
 
 	public void setPlantTime(Date plantTime) {
