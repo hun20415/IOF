@@ -8,9 +8,12 @@
 package kr.ac.iof.model.Main;
 
 import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,13 +23,18 @@ public class HarvestInfo {
 	@Id
 	@Column(name = "TNO") //10 primary key
 	private int tno;
-	@Column(name = "CULTIVATE_ID") //10 FOREIGN KEY
-	private int cultivateId;
+	
+	@ManyToOne
+	@JoinColumn(name = "CULTIVATE_ID") //10 FOREIGN KEY
+	private FarmCultivateInfo farmCultivateInfo;
+	
 	@Column(name = "HARVEST_DATE") //DATE
 	private Date harvestDate;
 
-	@Column(name = "FARM_ID") //4  FOREIGN KEY
-	private int farmId;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID") //4  FOREIGN KEY
+	private FarmInfo farmInfo;
+	
 	@Column(name = "FARM_SECTION_ID") //2 
 	private int farmSectionId;
 	@Column(name = "FARM_SECTION_LINE") //2 
@@ -38,13 +46,14 @@ public class HarvestInfo {
 
 	    }
 
-	public HarvestInfo(int tno, int cultivateId, Date harvestDate, int farmId,
-			int farmSectionId, int farmSectionLine, double harvestAmount) {
+	public HarvestInfo(int tno, FarmCultivateInfo farmCultivateInfo,
+			Date harvestDate, FarmInfo farmInfo, int farmSectionId,
+			int farmSectionLine, double harvestAmount) {
 		super();
 		this.tno = tno;
-		this.cultivateId = cultivateId;
+		this.farmCultivateInfo = farmCultivateInfo;
 		this.harvestDate = harvestDate;
-		this.farmId = farmId;
+		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.farmSectionLine = farmSectionLine;
 		this.harvestAmount = harvestAmount;
@@ -54,16 +63,8 @@ public class HarvestInfo {
 		return tno;
 	}
 
-	public int getCultivateId() {
-		return cultivateId;
-	}
-
 	public Date getHarvestDate() {
 		return harvestDate;
-	}
-
-	public int getFarmId() {
-		return farmId;
 	}
 
 	public int getFarmSectionId() {
@@ -78,20 +79,28 @@ public class HarvestInfo {
 		return harvestAmount;
 	}
 
+	public FarmCultivateInfo getFarmCultivateInfo() {
+		return farmCultivateInfo;
+	}
+
+	public void setFarmCultivateInfo(FarmCultivateInfo farmCultivateInfo) {
+		this.farmCultivateInfo = farmCultivateInfo;
+	}
+
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
+
+	public void setFarmInfo(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
+	}
+
 	public void setTno(int tno) {
 		this.tno = tno;
 	}
 
-	public void setCultivateId(int cultivateId) {
-		this.cultivateId = cultivateId;
-	}
-
 	public void setHarvestDate(Date harvestDate) {
 		this.harvestDate = harvestDate;
-	}
-
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
 	}
 
 	public void setFarmSectionId(int farmSectionId) {
