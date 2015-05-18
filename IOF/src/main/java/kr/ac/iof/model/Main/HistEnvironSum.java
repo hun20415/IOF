@@ -10,20 +10,28 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import java.util.Date;
 
 
 @Entity
 @Table(name = "hist_environ_sum")
+@IdClass(HistEnvironSumPK.class)
 public class HistEnvironSum {
 	
 	@Id
-	@Column(name = "FARM_ID") //4 primary key, FOREIGN KEY
-	private int farmId ;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID") //4 primary key, FOREIGN KEY
+	private FarmInfo farmInfo;
+	
 	@Id
 	@Column(name = "FARM_SECTION_ID") //2 primary key
 	private int farmSectionId;
+	
 	@Id
 	@Column(name = "SEQ_NO") //10 primary key
 	private int seqNo;
@@ -66,13 +74,13 @@ public class HistEnvironSum {
 	    }
 
 
-	public HistEnvironSum(int farmId, int farmSectionId, int seqNo,
+	public HistEnvironSum(FarmInfo farmInfo, int farmSectionId, int seqNo,
 			Date dataInqDate, double temperatureOut, double humidityOut,
 			int windDirection, double windSpeed, int rainfall,
 			double temperatureIn, double humidityIn, int co2,
 			double solarRadiation, double dailyRadiation, Date sysDate) {
 		super();
-		this.farmId = farmId;
+		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.seqNo = seqNo;
 		this.dataInqDate = dataInqDate;
@@ -90,8 +98,8 @@ public class HistEnvironSum {
 	}
 
 
-	public int getFarmId() {
-		return farmId;
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
 	}
 
 
@@ -165,8 +173,8 @@ public class HistEnvironSum {
 	}
 
 
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
+	public void setFarmId(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
 	}
 
 
