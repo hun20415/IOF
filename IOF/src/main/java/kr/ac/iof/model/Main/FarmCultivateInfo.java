@@ -113,7 +113,7 @@ public class FarmCultivateInfo {
 	/*public String getUserName() {
 		return user.getUserName();
 	}
-*/
+*/ 
 	public void setTno(int tno) {
 		this.tno = tno;
 	}
