@@ -10,20 +10,28 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import java.util.Date;
 
 
 @Entity
 @Table(name = "hist_environ_raw")
+@IdClass(HistEnvironRawPK.class)
 public class HistEnvironRaw {
 	
 	@Id
 	@Column(name = "SEQ_NO") //10 primary key
 	private int seqNo ;
+	
 	@Id
-	@Column(name = "FARM_ID") //4 primary key, FOREIGN KEY
-	private int farmId;
+	@ManyToOne
+	@JoinColumn(name = "FARM_ID") //4 primary key, FOREIGN KEY
+	private FarmInfo farmInfo;
+	
 	@Id
 	@Column(name = "FARM_SECTION_ID") //11 primary key
 	private int farmSectionId;
@@ -31,8 +39,9 @@ public class HistEnvironRaw {
 	@Column(name = "DATA_INQ_DATE") //DATETIME
 	private Date dataInqDate;
 	
-	@Column(name = "EQ_ID") //4 , FOREIGN KEY
-	private int eqId;
+	@ManyToOne
+	@JoinColumn(name = "EQ_ID") //4 , FOREIGN KEY
+	private FarmEquipList farmEquipList;
 	
 	@Column(name = "EQ_VALUE") //DOUBLE(10,2)
 	private double eqValue;
@@ -43,91 +52,75 @@ public class HistEnvironRaw {
 		
 	public HistEnvironRaw () {
 
-	    }
+	}
 
-
-	public HistEnvironRaw(int seqNo, int farmId, int farmSectionId,
-			Date dataInqDate, int eqId, double eqValue, Date sysDate) {
+	public HistEnvironRaw(int seqNo, FarmInfo farmInfo, int farmSectionId,
+			Date dataInqDate, FarmEquipList farmEquipList, double eqValue,
+			Date sysDate) {
 		super();
 		this.seqNo = seqNo;
-		this.farmId = farmId;
+		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.dataInqDate = dataInqDate;
-		this.eqId = eqId;
+		this.farmEquipList = farmEquipList;
 		this.eqValue = eqValue;
 		this.sysDate = sysDate;
 	}
-
 
 	public int getSeqNo() {
 		return seqNo;
 	}
 
-
-	public int getFarmId() {
-		return farmId;
-	}
-
-
 	public int getFarmSectionId() {
 		return farmSectionId;
 	}
-
 
 	public Date getDataInqDate() {
 		return dataInqDate;
 	}
 
-
-	public int getEqId() {
-		return eqId;
-	}
-
-
 	public double getEqValue() {
 		return eqValue;
 	}
-
 
 	public Date getSysDate() {
 		return sysDate;
 	}
 
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
+
+	public void setFarmInfo(FarmInfo farmInfo) {
+		this.farmInfo = farmInfo;
+	}
+
+	public FarmEquipList getFarmEquipList() {
+		return farmEquipList;
+	}
+
+	public void setFarmEquipList(FarmEquipList farmEquipList) {
+		this.farmEquipList = farmEquipList;
+	}
 
 	public void setSeqNo(int seqNo) {
 		this.seqNo = seqNo;
 	}
 
-
-	public void setFarmId(int farmId) {
-		this.farmId = farmId;
-	}
-
-
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
-
 
 	public void setDataInqDate(Date dataInqDate) {
 		this.dataInqDate = dataInqDate;
 	}
 
-
-	public void setEqId(int eqId) {
-		this.eqId = eqId;
-	}
-
-
 	public void setEqValue(double eqValue) {
 		this.eqValue = eqValue;
 	}
 
-
 	public void setSysDate(Date sysDate) {
 		this.sysDate = sysDate;
 	}
-	
-	
 	
 }

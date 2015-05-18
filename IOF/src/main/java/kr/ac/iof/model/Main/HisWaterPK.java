@@ -14,22 +14,28 @@ class HistWaterPK implements Serializable {
 	public HistWaterPK() {
 		
 	}
+	
 	public HistWaterPK(FarmInfo farmInfo, int seqNo) {
 		this.farmInfo = farmInfo;
 		this.seqNo = seqNo;
 	}
+	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
 	}
+	
 	public void setFarmInfo(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
 	}
+	
 	public int getSeqNo() {
 		return seqNo;
 	}
+	
 	public void setSeqNo(int seqNo) {
 		this.seqNo = seqNo;
 	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -39,6 +45,7 @@ class HistWaterPK implements Serializable {
 		result = prime * result + seqNo;
 		return result;
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
