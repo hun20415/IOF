@@ -23,15 +23,15 @@ public class FarmSectionInfo {
 	@Id
 	@Column(name = "FARM_SECTION_ID") //2 primary key
 	private int farmSectionId;
+	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID", referencedColumnName="FARM_ID") //4 primary key FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4 primary key FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Column(name = "DISCRIPTION") //300
 	private String discription;
 
-	
 	public FarmSectionInfo () {
 
 	}
@@ -44,7 +44,6 @@ public class FarmSectionInfo {
 		this.discription = discription;
 	}
 
-
 	public int getFarmSectionId() {
 		return farmSectionId;
 	}
@@ -56,7 +55,6 @@ public class FarmSectionInfo {
 	public String getDiscription() {
 		return discription;
 	}
-
 
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;

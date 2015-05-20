@@ -19,16 +19,17 @@ public class DsCategory {
 	@Id
 	@Column(name = "DS_CATE_ID")//4 primary key, 매핑되는 column이름
 	private int dsCateId;
+	
 	@Column(name = "DS_CATE_NAME") //200
 	private String dsCateName;
+	
 	@Column(name = "DS_CATE_HTML") //200
 	private String dsCateHtml;
 	
 	public DsCategory () {
 
-	    }
+	}
 	
-
 	public DsCategory(int dsCateId, String dsCateName, String dsCateHtml) {
 		super();
 		this.dsCateId = dsCateId;
@@ -36,9 +37,6 @@ public class DsCategory {
 		this.dsCateHtml = dsCateHtml;
 	}
 	
-	
-
-
 	public int getDsCateId() {
 		return dsCateId;
 	}
@@ -62,6 +60,5 @@ public class DsCategory {
 	public void setDsCateHtml(String dsCateHtml) {
 		this.dsCateHtml = dsCateHtml;
 	}
-
 	
 }
