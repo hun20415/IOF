@@ -37,8 +37,10 @@ public class HarvestInfo {
 	
 	@Column(name = "FARM_SECTION_ID") //2 
 	private int farmSectionId;
+	
 	@Column(name = "FARM_SECTION_LINE") //2 
 	private int farmSectionLine;
+	
 	@Column(name = "HARVEST_AMOUNT") //DOUBLE(10,2)
 	private double harvestAmount;
 	
