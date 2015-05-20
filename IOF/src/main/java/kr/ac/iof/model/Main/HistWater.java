@@ -26,7 +26,7 @@ public class HistWater {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") 			//primary key & foreign key
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") 			//primary key & foreign key
 	private FarmInfo farmInfo;
 	
 	@Id
@@ -35,26 +35,37 @@ public class HistWater {
 	
 	@Column(name = "DATA_INQ_DATE") 		// DATETIME
 	private Date dataInqDate;
+	
 	@Column(name = "TEMPERATURE_GROUND") 	// DOUBLE(10,2)
 	private double temperatureGround;
+	
 	@Column(name = "INPUT_AMOUNT") 			// DOUBLE(10,2)
 	private double inputAmount;
+	
 	@Column(name = "INPUT_EC") 				// DOUBLE(10,2)
 	private double inputEc;
+	
 	@Column(name = "INPUT_PH") 				// DOUBLE(10,2)
 	private double inputPh;
+	
 	@Column(name = "GROUND_HUMIDITY")		// DOUBLE(10,2)
 	private double groundHumidity;
+	
 	@Column(name = "GROUND_EC") 			// DOUBLE(10,2)
 	private double groundEc;
+	
 	@Column(name = "GROUND_PH")				// DOUBLE(10,2)
 	private double groundPh;
+	
 	@Column(name = "OUT_AMOUNT")			// DOUBLE(10,2)
 	private double outAmount;
+	
 	@Column(name = "OUT_EC")				// DOUBLE(10,2)
 	private double outEc;
+	
 	@Column(name = "OUT_PH")				// DOUBLE(10,2)
 	private double outPh;
+	
 	@Column(name = "SYS_DATE")				// TIMESTAMP
 	private Date sysDate;
 	
