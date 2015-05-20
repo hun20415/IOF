@@ -39,15 +39,15 @@
 	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
 	  <c:if test = "${farmCultivateInfo.activeYn == 'N'}">
         <tr>
-       
+        
         
 	        <td>${farmCultivateInfo.farmId}</td>
-            <td>온실이름</td>
-            <td>온실주</td>
+            <td>${farmCultivateInfo.farmName}</td> 
+            <td>${farmCultivateInfo.userName}</td> 
             <td>${farmCultivateInfo.farmSectionId}</td>
-            <td>${farmCultivateInfo.cropSpeciesId}</td> 
+            <td>${farmCultivateInfo.cropSpeciesName}</td> 
             <td>${farmCultivateInfo.plantTime}</td>
-            <td>${farmCultivateInfo.productTimeReal}</td>            
+            <td>${farmCultivateInfo.productTimeReal}</td>      
             
             <td><form action="farmCultivateInfoModify">
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">

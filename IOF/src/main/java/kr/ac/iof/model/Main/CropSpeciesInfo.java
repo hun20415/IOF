@@ -36,18 +36,18 @@ public class CropSpeciesInfo {
 	
 	@Column(name = "SPECIES_NAME")//200
 	private String speciesName;
-	@Column(name = "LEVEL0 ")//double 10,2
-	private int level0;
-	@Column(name = "LEVEL1 ")//double 10,2
-	private int level1;
-	@Column(name = "LEVEL2 ")//double 10,2
-	private int level2;
-	@Column(name = "LEVEL3 ")//double 10,2
-	private int level3;
-	@Column(name = "LEVEL4 ")//double 10,2
-	private int level4;
-	@Column(name = "LEVEL5 ")//double 10,2
-	private int level5;
+	@Column(name = "LEVEL0")//double 10,2
+	private double level0;
+	@Column(name = "LEVEL1")//double 10,2
+	private double level1;
+	@Column(name = "LEVEL2")//double 10,2
+	private double level2;
+	@Column(name = "LEVEL3")//double 10,2
+	private double level3;
+	@Column(name = "LEVEL4")//double 10,2
+	private double level4;
+	@Column(name = "LEVEL5")//double 10,2
+	private double level5;
 	
 	@Column(name = "SPECIES_PHOTO_FILE ")//200
 	private String speciesPhotoFile;
@@ -57,9 +57,9 @@ public class CropSpeciesInfo {
 		super();
 	}
 	public CropSpeciesInfo(int speciesId, CropCate cropCate, CropInfo cropInfo,
-			CropTypeInfo cropTypeInfo, String speciesName, int level0,
-			int level1, int level2, int level3, int level4, int level5,
-			String speciesPhotoFile, String cropSpeciesInfoHtml) {
+			CropTypeInfo cropTypeInfo, String speciesName, double level0,
+			double level1, double level2, double level3, double level4,
+			double level5, String speciesPhotoFile, String cropSpeciesInfoHtml) {
 		super();
 		this.speciesId = speciesId;
 		this.cropCate = cropCate;
@@ -105,40 +105,40 @@ public class CropSpeciesInfo {
 	public void setSpeciesName(String speciesName) {
 		this.speciesName = speciesName;
 	}
-	public int getLevel0() {
+	public double getLevel0() {
 		return level0;
 	}
-	public void setLevel0(int level0) {
+	public void setLevel0(double level0) {
 		this.level0 = level0;
 	}
-	public int getLevel1() {
+	public double getLevel1() {
 		return level1;
 	}
-	public void setLevel1(int level1) {
+	public void setLevel1(double level1) {
 		this.level1 = level1;
 	}
-	public int getLevel2() {
+	public double getLevel2() {
 		return level2;
 	}
-	public void setLevel2(int level2) {
+	public void setLevel2(double level2) {
 		this.level2 = level2;
 	}
-	public int getLevel3() {
+	public double getLevel3() {
 		return level3;
 	}
-	public void setLevel3(int level3) {
+	public void setLevel3(double level3) {
 		this.level3 = level3;
 	}
-	public int getLevel4() {
+	public double getLevel4() {
 		return level4;
 	}
-	public void setLevel4(int level4) {
+	public void setLevel4(double level4) {
 		this.level4 = level4;
 	}
-	public int getLevel5() {
+	public double getLevel5() {
 		return level5;
 	}
-	public void setLevel5(int level5) {
+	public void setLevel5(double level5) {
 		this.level5 = level5;
 	}
 	public String getSpeciesPhotoFile() {
@@ -152,7 +152,6 @@ public class CropSpeciesInfo {
 	}
 	public void setCropSpeciesInfoHtml(String cropSpeciesInfoHtml) {
 		this.cropSpeciesInfoHtml = cropSpeciesInfoHtml;
-	} 
-	
+	}	
 
 }
