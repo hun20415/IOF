@@ -18,10 +18,12 @@ public class UserGroup{
 	@Id
 	@Column(name = "USERGROUP_ID") 
 	private int userGroup;
+	
 	@Column(name = "USERGROUP_NAME")
 	private String userGroupName;
 	
 	public UserGroup() {
+		
 	}
 	
 	public UserGroup(int userGroup, String userGroupName) {
@@ -40,9 +42,9 @@ public class UserGroup{
 	public String getUserGroupName() {
 		return userGroupName;
 	}
+	
 	public void setUserGroupName(String userGroupName) {
 		this.userGroupName = userGroupName;
 	}
-	
 	
 }
