@@ -21,7 +21,7 @@ import java.util.Date;
 @Entity
 @Table(name = "hist_environ_sum")
 @IdClass(HistEnvironSumPK.class)
-public class HistEnvironSum {
+public class HistEnvironSum { 
 	
 	@Id
 	@ManyToOne
