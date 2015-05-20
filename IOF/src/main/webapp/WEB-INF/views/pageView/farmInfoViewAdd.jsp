@@ -16,10 +16,23 @@
 			<td><input type="text" size=10 name="farmName"></td>
 		</tr>
 		<tr>
+		<th scope="row">*온실 주 ID</th>
+			<td style="width: 390px">
+			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
+			<c:forEach items="${farmAllId}" var="cropCate">
+			<option value="${farmInfo.owner}">Volvo</option>
+			</c:forEach>
+			</select>
+			</td> 
+			<th scope="row">*온실 주</th>
+			<td><input type="text" size=10 name="userName"></td>
+		
+		<!-- 
 			<th scope="row">*온실 주 ID</th>
 			<td><input type="text" size=10 name="ownerId"></td>
 			<th scope="row">*온실 주</th>
-			<td><input type="text" size=10 name="userName"></td>
+			<td><input type="text" size=10 name="userName"></td> 
+		-->
 		</tr>
 		<tr>
 			<th scope="row">관리인 ID</th>
