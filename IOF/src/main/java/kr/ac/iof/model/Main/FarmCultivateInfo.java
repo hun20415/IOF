@@ -157,7 +157,7 @@ public class FarmCultivateInfo {
 	//get farmName from FarmInfo table
 	public String getFarmName() {
 		return farmInfo.getFarmName();
-	}
+	} 
 	
 	//get userName from User table
 	public String getUserName() {
