@@ -12,7 +12,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name = "sys_user_group")
+@Table(name = "sys_user_group_view")
 public class UserGroup{
 	//USERGROUP_ID
     //USERGROUP_NAME  
