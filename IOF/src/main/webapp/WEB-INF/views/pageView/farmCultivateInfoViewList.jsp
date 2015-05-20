@@ -56,6 +56,7 @@
             <input type="submit" value="Edit">
             </form></td>
             <td input type="checkbox"> </td>
+            <!-- 종료???? -->
             
             <td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'" >Delete</a></td>
          
