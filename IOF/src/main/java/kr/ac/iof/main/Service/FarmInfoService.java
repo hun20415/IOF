@@ -21,5 +21,5 @@ public interface FarmInfoService {
 	public List<FarmInfo> getAll();
 
 	public FarmInfo getById(int farmInfoId);
-     
+	public List<String> getAllId() ;
 }

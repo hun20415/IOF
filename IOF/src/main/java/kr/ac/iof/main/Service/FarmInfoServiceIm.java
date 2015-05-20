@@ -10,6 +10,7 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
+
 import kr.ac.iof.main.dao.FarmInfoDao;
 import kr.ac.iof.model.Main.FarmInfo;
 
@@ -60,5 +61,9 @@ public class FarmInfoServiceIm implements FarmInfoService{
     public void delete(int farmId) {
         this.farmInfoDao.delete(farmId);
     }
-
+    @Override
+    @Transactional
+    public List<String> getAllId() { 
+    	 return this.farmInfoDao.getAllId();
+    }
 }

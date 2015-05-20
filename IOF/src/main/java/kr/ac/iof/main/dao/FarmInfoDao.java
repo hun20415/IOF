@@ -18,6 +18,6 @@ public interface FarmInfoDao {
 	public void update(FarmInfo farmInfo);
 
 	public List<FarmInfo> getAll();
-
+	public List<String> getAllId(); 
 	public FarmInfo getById(int farmInfoId);
 }
