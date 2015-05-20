@@ -9,8 +9,7 @@
 <!--                                                                                                    -->
 
 <!-- 본문 시작 -->
-<h1 style="position: absolute; top: 70px; left: 650px;">전체 사용자
-	List</h1>
+<h1 style="position: absolute; top: 70px; left: 650px;">과거 재배 정보 List</h1>
 
 <p></p>
 

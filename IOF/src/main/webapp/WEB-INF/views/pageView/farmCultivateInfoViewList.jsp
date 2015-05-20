@@ -55,7 +55,7 @@
 								value="${farmCultivateInfo.farmId}"> <input
 								type="submit" value="Edit">
 						</form></td>
-					<td input type="checkbox"></td>
+					<td><input type="checkbox"></td>
 					<!-- 종료???? -->
 
 					<td><button
