@@ -23,7 +23,7 @@ public class HarvestShipment {
 	
 	@Id
 	@Column(name = "TNO") //10 primary key
-	private int tno;
+	private int tno; 
 	
 	@Column(name = "SHIP_DATE") //DATETIME
 	private Date shipDate;
