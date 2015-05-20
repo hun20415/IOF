@@ -18,7 +18,7 @@ public class UserGroup{
     //USERGROUP_NAME  
 	
 	@Id
-	@Column(name = "USERGROUP_ID")
+	@Column(name = "USERGROUP_ID") 
 	private int userGroup;
 	@Column(name = "USERGROUP_NAME")
 	private String userGroupName;
