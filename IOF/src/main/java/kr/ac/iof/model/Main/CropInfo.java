@@ -24,8 +24,9 @@ public class CropInfo {
 	@ManyToOne
 	@JoinColumn(name = "CROP_CATE_ID")
 	private CropCate cropCate;
-	
+	@Column(name = "CROP_NAME")
 	private String cropName;
+	@Column(name = "CROP_INFO_HTML")
 	private String cropInfoHtml;
 
 	public CropInfo() {
