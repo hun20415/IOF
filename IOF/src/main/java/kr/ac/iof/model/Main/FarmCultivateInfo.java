@@ -154,12 +154,17 @@ public class FarmCultivateInfo {
 		this.activeYn = activeYn;
 	}
 
+	//get farmName from FarmInfo table
 	public String getFarmName() {
 		return farmInfo.getFarmName();
 	}
+	
+	//get userName from User table
 	public String getUserName() {
 		return user.getUserName();
 	}
+	
+	//get cropSpeciesName from CropSpecies table
 	public String getCropSpeciesName() {
 		return cropSpeciesInfo.getSpeciesName();
 	}
