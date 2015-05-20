@@ -96,7 +96,7 @@ public class FarmEquipList {
 	//set farmEquipTypeName to FarmEquipType table
 	public void setFarmEquipTypeName(String eqTypeName) {
 		eqType.setEqTypeName(eqTypeName);
-	}
+	} 
 	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
