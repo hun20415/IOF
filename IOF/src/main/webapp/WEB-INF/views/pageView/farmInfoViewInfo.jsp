@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
-<link href="css/greenhouseInfo.css" rel="stylesheet" type="text/css">
+<link href="css/farmInfo.css" rel="stylesheet" type="text/css">  <!-- /greenhouseInfo.css -> farmInfo.css로 변경 -->
 
 <!-- 본문 시작 -->
 <center><h1>온실 상세 정보</h1></center>
@@ -9,61 +9,74 @@
 <table class="type02">
 	<tr>
 		<th scope="row">온실 ID  </th>
-		<td></td>
+		<td>${farmInfo.farmId}</td>
+		 
+            
+            <td>${farmInfo.connectedNum}</td>
+            <td>${farmInfo.sectionNum}</td>
+            <td>${farmInfo.cultivationType}</td>
+            <td>${farmInfo.farmAddr}</td>
+            <td>${farmInfo.buildDate}</td>
+            
+            
+            
 		<th scope="row">온실주 ID</th>
-		<td></td>
+		<td>${farmInfo.ownerId}</td>
+           
 	</tr>
 	<tr>
 		<th scope="row">온실명</th>
-		<td></td>
+		<td>${farmInfo.farmName}</td>
+		        
 		<th scope="row">관리자ID</th>
-		<td></td>
+		<td>${farmInfo.employeeId}</td>        
 	</tr>
 	<tr>
 		<th scope="row">재배면적(평)</th>
-		<td></td>
-		<th scope="row">재배면적(제곱미터)</th>
-		<td></td>
+		<td>${farmInfo.areaPyung}</td>
+        <th scope="row">재배면적(제곱미터)</th>
+		<td>${farmInfo.areaMsquare}</td>
 	</tr>
 	<tr>
 		<th scope="row">하우스 폭(m)</th>
-		<td></td>
+		<td>${farmInfo.width}</td>
 		<th scope="row">하우스 길이(m)</th>
-		<td></td>
+		<td>${farmInfo.length}</td>
 	</tr>
 	<tr>
 		<th scope="row">온실 측고 (m)</th>
-		<td></td>
+		<td>${farmInfo.heightMin}</td>
 		<th scope="row">온실 동고 (m)</th>
-		<td></td>
+		<td>${farmInfo.heightMax}</td>
 	</tr>
 	<tr>
 		<th scope="row">온실 방향</th>
-		<td></td>
+		<td>${farmInfo.direction}</td>
 		<th scope="row">비닐/유리 온실</th>
-		<td></td>
+		<td>${farmInfo.materialType}</td>
+        
 	</tr>
 	<tr>
 		<th scope="row">연동/단동</th>
-		<td></td>
+		<td>${farmInfo.ifConnected}</td>
 		<th scope="row">연동/단동 개수</th>
-		<td></td>
+		<td>${farmInfo.connectedNum}</td>
 	</tr>
 	<tr>
 		<th scope="row">구역 개수</th>
-		<td></td>
+		<td>${farmInfo.sectionNum}</td>
 		<th scope="row">양액/토경재배</th>
-		<td></td>
+		<td>${farmInfo.cultivationType}</td>
 	</tr>
 	<tr>
 		<th scope="row">우편번호</th>
-		<td></td>
+		<td>${farmInfo.farmZipcode}</td>
 		<th scope="row">온실건립일</th>
 		<td></td>
 	</tr>	 
 	<tr>
 		<th scope="row">주소</th>
-		<td></td>
+		<td>${farmInfo.farmAddr}</td>
 	</tr>	
 </table>
 
