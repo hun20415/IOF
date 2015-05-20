@@ -42,15 +42,15 @@
 	  <c:if test = "${farmCultivateInfo.activeYn == 'Y'}">
         <tr>
 	        <td>${farmCultivateInfo.farmId}</td>
-            <td>온실이름</td> 
-            <td>온실주이름</td>
+            <td>${farmCultivateInfo.farmName}</td> 
+            <td>${farmCultivateInfo.userName}</td> 
             <td>${farmCultivateInfo.farmSectionId}</td>
-            <td>${farmCultivateInfo.cropSpeciesId}</td> 
+            <td>${farmCultivateInfo.cropSpeciesName}</td> 
             <td>${farmCultivateInfo.plantTime}</td>
             <td>${farmCultivateInfo.productTimePlan}</td>
             <td>${farmCultivateInfo.productTimeReal}</td>
             
-            
+             
             <td><form action="farmCultivateInfoModify">
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">
             <input type="submit" value="Edit">

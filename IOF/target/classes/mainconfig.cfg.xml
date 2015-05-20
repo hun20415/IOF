@@ -37,19 +37,19 @@
         <mapping class="kr.ac.iof.model.Main.BuyerInfo"/>
          <mapping class="kr.ac.iof.model.Main.CropSpeciesInfo"/>        
         <mapping class="kr.ac.iof.model.Main.CropTypeInfo"/>
-        <!--<mapping class="kr.ac.iof.model.Main.DsCategory"/>        
+        <mapping class="kr.ac.iof.model.Main.DsCategory"/>        
         <mapping class="kr.ac.iof.model.Main.DsInfo"/>     
-        -->    
+        
         <mapping class="kr.ac.iof.model.Main.FarmCultivateInfo"/>                        
         <mapping class="kr.ac.iof.model.Main.FarmEquipList"/>       
         <mapping class="kr.ac.iof.model.Main.FarmEquipType"/>        
         <mapping class="kr.ac.iof.model.Main.FarmInfo"/>
         
          <mapping class="kr.ac.iof.model.Main.FarmSectionInfo"/>
-        <!--<mapping class="kr.ac.iof.model.Main.HarvestInfo"/>
-        <mapping class="kr.ac.iof.model.Main.HarvestShipment"/>
-        <mapping class="kr.ac.iof.model.Main.HistEnvironRaw"/>-->
-        <mapping class="kr.ac.iof.model.Main.HistEnvironSum"/>
+        <mapping class="kr.ac.iof.model.Main.HarvestInfo"/>
+        <!-- <mapping class="kr.ac.iof.model.Main.HarvestShipment"/>
+        <mapping class="kr.ac.iof.model.Main.HistEnvironRaw"/>
+        <mapping class="kr.ac.iof.model.Main.HistEnvironSum"/> -->
         
         <mapping class="kr.ac.iof.model.Main.HistWater"/> 
         <mapping class="kr.ac.iof.model.User"/>

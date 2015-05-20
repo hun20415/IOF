@@ -26,16 +26,16 @@ public class FarmCultivateInfo {
 	@Column(name = "TNO")//4 primary key
 	private int tno;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "USER_ID") //20 FOREIGN KEY
-	@Column(name = "USER_ID")
-	private String userId;
+	@ManyToOne
+	@JoinColumn(name = "USER_ID") //20 FOREIGN KEY
+	//@Column(name = "USER_ID")
+	private User user;
 	
 	@ManyToOne
 	@JoinColumn(name = "FARM_ID")//4 FOREIGN KEY
-	private FarmInfo farmInfo;
+	private FarmInfo farmInfo;	
 	
-	@Column(name = "FARM_SECTION_ID")//2
+	@Column(name = "FARM_SECTION_ID")//4
 	private int farmSectionId;
 	
 	@ManyToOne
@@ -57,13 +57,13 @@ public class FarmCultivateInfo {
 
 	}
 
-	public FarmCultivateInfo(int tno, String userId, FarmInfo farmInfo,
+	public FarmCultivateInfo(int tno, User user, FarmInfo farmInfo,
 			int farmSectionId, CropSpeciesInfo cropSpeciesInfo, Date plantTime,
 			Date productTimePlan, Date productTimeReal, Date endTime,
 			String activeYn) {
 		super();
 		this.tno = tno;
-		this.userId = userId;
+		this.user = user;
 		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.cropSpeciesInfo = cropSpeciesInfo;
@@ -78,8 +78,8 @@ public class FarmCultivateInfo {
 		return tno;
 	}
 
-	public String getUser() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
 	public FarmInfo getFarmInfo() {
@@ -121,8 +121,8 @@ public class FarmCultivateInfo {
 		this.tno = tno;
 	}
 
-	public void setUser(String userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public void setFarmId(FarmInfo farmInfo) {
@@ -155,6 +155,15 @@ public class FarmCultivateInfo {
 
 	public void setActiveYn(String activeYn) {
 		this.activeYn = activeYn;
+	}
+	public String getFarmName() {
+		return farmInfo.getFarmName();
+	}
+	public String getUserName() {
+		return user.getUserName();
+	}
+	public String getCropSpeciesName() {
+		return cropSpeciesInfo.getSpeciesName();
 	}
 	
 

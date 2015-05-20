@@ -17,7 +17,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "farm_section_info")
-@IdClass(FarmSectionInfo.class)
+@IdClass(FarmSectionInfoPK.class)
 public class FarmSectionInfo {
 	
 	@Id
