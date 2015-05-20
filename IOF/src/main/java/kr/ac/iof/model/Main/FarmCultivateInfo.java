@@ -7,14 +7,14 @@
 
 package kr.ac.iof.model.Main;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import java.util.Date;
 
 import kr.ac.iof.model.User;
 
@@ -39,7 +39,7 @@ public class FarmCultivateInfo {
 	private int farmSectionId;
 	
 	@ManyToOne
-	@JoinColumn(name = "CROP_SPECIES_ID")//4 FOREIGN KEY
+	@JoinColumn(name = "CROP_SPECIES_ID", referencedColumnName = "SPECIES_ID")//4 FOREIGN KEY
 	private CropSpeciesInfo cropSpeciesInfo;
 	
 	@Column(name = "PLANT_TIME")//
@@ -78,84 +78,82 @@ public class FarmCultivateInfo {
 		return tno;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public FarmInfo getFarmInfo() {
-		return farmInfo;
-	}
-
-	public int getFarmSectionId() {
-		return farmSectionId;
-	}
-
-	public CropSpeciesInfo getCropSpeciesInfo() {
-		return cropSpeciesInfo;
-	}
-
-	public Date getPlantTime() {
-		return plantTime;
-	}
-
-	public Date getProductTimePlan() {
-		return productTimePlan;
-	}
-
-	public Date getProductTimeReal() {
-		return productTimeReal;
-	}
-
-	public Date getEndTime() {
-		return endTime;
-	}
-
-	public String getActiveYn() {
-		return activeYn;
-	}
-	/*public String getUserName() {
-		return user.getUserName();
-	}
-*/ 
 	public void setTno(int tno) {
 		this.tno = tno;
+	}
+
+	public User getUser() {
+		return user;
 	}
 
 	public void setUser(User user) {
 		this.user = user;
 	}
 
-	public void setFarmId(FarmInfo farmInfo) {
+	public FarmInfo getFarmInfo() {
+		return farmInfo;
+	}
+
+	public void setFarmInfo(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
+	}
+
+	public int getFarmSectionId() {
+		return farmSectionId;
 	}
 
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
 
-	public void setCropSpeciesId(CropSpeciesInfo cropSpeciesInfo) {
+	public CropSpeciesInfo getCropSpeciesInfo() {
+		return cropSpeciesInfo;
+	}
+
+	public void setCropSpeciesInfo(CropSpeciesInfo cropSpeciesInfo) {
 		this.cropSpeciesInfo = cropSpeciesInfo;
+	}
+
+	public Date getPlantTime() {
+		return plantTime;
 	}
 
 	public void setPlantTime(Date plantTime) {
 		this.plantTime = plantTime;
 	}
 
+	public Date getProductTimePlan() {
+		return productTimePlan;
+	}
+
 	public void setProductTimePlan(Date productTimePlan) {
 		this.productTimePlan = productTimePlan;
+	}
+
+	public Date getProductTimeReal() {
+		return productTimeReal;
 	}
 
 	public void setProductTimeReal(Date productTimeReal) {
 		this.productTimeReal = productTimeReal;
 	}
 
+	public Date getEndTime() {
+		return endTime;
+	}
+
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
+	}
+
+	public String getActiveYn() {
+		return activeYn;
 	}
 
 	public void setActiveYn(String activeYn) {
 		this.activeYn = activeYn;
 	}
+
 	public String getFarmName() {
 		return farmInfo.getFarmName();
 	}

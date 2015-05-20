@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class CropSpeciesInfo {
 	
 	@Id
-	@Column(name = "SPECIES_ID ")//4
+	@Column(name = "SPECIES_ID")//4
 	private int speciesId;
 	
 	@ManyToOne
@@ -31,7 +31,7 @@ public class CropSpeciesInfo {
 	private CropInfo cropInfo;
 	
 	@ManyToOne
-	@JoinColumn(name = "CROP_TYPE_ID ")//2, foreign key
+	@JoinColumn(name = "CROP_TYPE_ID")//2, foreign key
 	private CropTypeInfo cropTypeInfo;
 	
 	@Column(name = "SPECIES_NAME")//200
@@ -52,15 +52,13 @@ public class CropSpeciesInfo {
 	@Column(name = "SPECIES_PHOTO_FILE ")//200
 	private String speciesPhotoFile;
 	@Column(name = "CROP_SPECIES_INFO_HTML ")//200
-	private String cropSpeciesInfoHtml; 
-
-	public CropSpeciesInfo () {//생성자는 필수
-
+	private String cropSpeciesInfoHtml;
+	public CropSpeciesInfo() {
+		super();
 	}
-
 	public CropSpeciesInfo(int speciesId, CropCate cropCate, CropInfo cropInfo,
-			CropTypeInfo cropTypeInfo, String speciesName, int level0, int level1,
-			int level2, int level3, int level4, int level5,
+			CropTypeInfo cropTypeInfo, String speciesName, int level0,
+			int level1, int level2, int level3, int level4, int level5,
 			String speciesPhotoFile, String cropSpeciesInfoHtml) {
 		super();
 		this.speciesId = speciesId;
@@ -77,109 +75,84 @@ public class CropSpeciesInfo {
 		this.speciesPhotoFile = speciesPhotoFile;
 		this.cropSpeciesInfoHtml = cropSpeciesInfoHtml;
 	}
-	
 	public int getSpeciesId() {
 		return speciesId;
 	}
-
-	public CropCate getCropCate() {
-		return cropCate;
-	}
-
-	public CropInfo getCropInfo() {
-		return cropInfo;
-	}
-
-	public CropTypeInfo getCropTypeInfo() {
-		return cropTypeInfo;
-	}
-
-	public void setCropCate(CropCate cropCate) {
-		this.cropCate = cropCate;
-	}
-	
-	public void setCropInfo(CropInfo cropInfo) {
-		this.cropInfo = cropInfo;
-	}
-	
-	public void setCropTypeInfo(CropTypeInfo cropTypeInfo) {
-		this.cropTypeInfo = cropTypeInfo;
-	}
-	
-	public String getSpeciesName() {
-		return speciesName;
-	}
-	
-	public int getLevel0() {
-		return level0;
-	}
-	
-	public int getLevel1() {
-		return level1;
-	}
-	
-	public int getLevel2() {
-		return level2;
-	}
-	
-	public int getLevel3() {
-		return level3;
-	}
-	
-	public int getLevel4() {
-		return level4;
-	}
-	
-	public int getLevel5() {
-		return level5;
-	}
-	
-	public void setLevel0(int level0) {
-		this.level0 = level0;
-	}
-	
-	public void setLevel1(int level1) {
-		this.level1 = level1;
-	}
-	
-	public void setLevel2(int level2) {
-		this.level2 = level2;
-	}
-	
-	public void setLevel3(int level3) {
-		this.level3 = level3;
-	}
-	
-	public void setLevel4(int level4) {
-		this.level4 = level4;
-	}
-	
-	public void setLevel5(int level5) {
-		this.level5 = level5;
-	}
-
-	public String getSpeciesPhotoFile() {
-		return speciesPhotoFile;
-	}
-	
-	public String getCropSpeciesInfoHtml() {
-		return cropSpeciesInfoHtml;
-	}
-	
 	public void setSpeciesId(int speciesId) {
 		this.speciesId = speciesId;
 	}
-	
+	public CropCate getCropCate() {
+		return cropCate;
+	}
+	public void setCropCate(CropCate cropCate) {
+		this.cropCate = cropCate;
+	}
+	public CropInfo getCropInfo() {
+		return cropInfo;
+	}
+	public void setCropInfo(CropInfo cropInfo) {
+		this.cropInfo = cropInfo;
+	}
+	public CropTypeInfo getCropTypeInfo() {
+		return cropTypeInfo;
+	}
+	public void setCropTypeInfo(CropTypeInfo cropTypeInfo) {
+		this.cropTypeInfo = cropTypeInfo;
+	}
+	public String getSpeciesName() {
+		return speciesName;
+	}
 	public void setSpeciesName(String speciesName) {
 		this.speciesName = speciesName;
 	}
-
+	public int getLevel0() {
+		return level0;
+	}
+	public void setLevel0(int level0) {
+		this.level0 = level0;
+	}
+	public int getLevel1() {
+		return level1;
+	}
+	public void setLevel1(int level1) {
+		this.level1 = level1;
+	}
+	public int getLevel2() {
+		return level2;
+	}
+	public void setLevel2(int level2) {
+		this.level2 = level2;
+	}
+	public int getLevel3() {
+		return level3;
+	}
+	public void setLevel3(int level3) {
+		this.level3 = level3;
+	}
+	public int getLevel4() {
+		return level4;
+	}
+	public void setLevel4(int level4) {
+		this.level4 = level4;
+	}
+	public int getLevel5() {
+		return level5;
+	}
+	public void setLevel5(int level5) {
+		this.level5 = level5;
+	}
+	public String getSpeciesPhotoFile() {
+		return speciesPhotoFile;
+	}
 	public void setSpeciesPhotoFile(String speciesPhotoFile) {
 		this.speciesPhotoFile = speciesPhotoFile;
 	}
-
+	public String getCropSpeciesInfoHtml() {
+		return cropSpeciesInfoHtml;
+	}
 	public void setCropSpeciesInfoHtml(String cropSpeciesInfoHtml) {
 		this.cropSpeciesInfoHtml = cropSpeciesInfoHtml;
-	}
+	} 
+	
 
 }

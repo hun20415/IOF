@@ -27,7 +27,10 @@ public class CropInfo {
 	
 	private String cropName;
 	private String cropInfoHtml;
-	
+
+	public CropInfo() {
+
+	}
 	public CropInfo(int cropId, CropCate cropCate, String cropName,
 			String cropInfoHtml) {
 		super();
@@ -37,42 +40,31 @@ public class CropInfo {
 		this.cropInfoHtml = cropInfoHtml;
 	}	
 
-	public CropInfo() {
 
-	}
-
-	public int getcropId() {
+	public int getCropId() {
 		return cropId;
 	}
-
-	public void setcropId(int cropId) {
+	public void setCropId(int cropId) {
 		this.cropId = cropId;
 	}
-
-	public CropCate getcropCate() {
+	public CropCate getCropCate() {
 		return cropCate;
 	}
-
 	public void setCropCate(CropCate cropCate) {
 		this.cropCate = cropCate;
 	}
-
 	public String getCropName() {
 		return cropName;
 	}
-
 	public void setCropName(String cropName) {
 		this.cropName = cropName;
 	}
-
 	public String getCropInfoHtml() {
 		return cropInfoHtml;
 	}
-
 	public void setCropInfoHtml(String cropInfoHtml) {
 		this.cropInfoHtml = cropInfoHtml;
 	}
-	
 	//get crop category name
 	public String getCropCateName() {
 		return cropCate.getCropCateName();
