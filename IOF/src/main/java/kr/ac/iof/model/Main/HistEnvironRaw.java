@@ -29,7 +29,7 @@ public class HistEnvironRaw {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 primary key, FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4 primary key, FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Id
@@ -40,7 +40,7 @@ public class HistEnvironRaw {
 	private Date dataInqDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "EQ_ID") //4 , FOREIGN KEY
+	@JoinColumn(name = "EQ_ID", referencedColumnName = "EQ_ID") //4 , FOREIGN KEY
 	private FarmEquipList farmEquipList;
 	
 	@Column(name = "EQ_VALUE") //DOUBLE(10,2)
