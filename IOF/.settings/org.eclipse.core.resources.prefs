@@ -5,6 +5,7 @@ eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/home.jsp.bak=UTF-8
 encoding//src/main/webapp/WEB-INF/views/login.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/pageView/cropCateViewList.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pageView/equipmentViewAdd.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pageView/equipmentViewInfo.jsp=UTF-8
 encoding//src/main/webapp/WEB-INF/views/pageView/equipmentViewList.jsp=UTF-8

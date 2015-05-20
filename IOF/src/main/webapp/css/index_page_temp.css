@@ -66,7 +66,7 @@ color: #003;
 }
 			/*MAIN CONTAINER*/
 #container {
-width: 950px;      /*770->950수정(수영)*/
+width: 1300px;      /*770->950수정(수영)*/
 margin: 0 auto;
 padding: 0;
 }
@@ -81,7 +81,7 @@ color: #06a;
 }
 			/*CONTENT*/
 #content {
-width: 720px;     /*490->720수정(수영)*/
+width: 1000px;     /*490->720수정(수영)*/
 float: left;
 margin: 50px 0 0 0;
 padding: 0 0 30px 10px;
@@ -103,7 +103,7 @@ padding-bottom: 30px;
 #content_left {
 width: 200px;
 float: left;
-margin: 50px 10px 0 0;
+margin: 0px 0px 0 0;      /*margin 0으로 수정(수영,0520)*/
 padding-bottom: 30px;
 }
 

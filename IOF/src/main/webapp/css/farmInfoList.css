@@ -8,7 +8,7 @@
 }
 table.type10 thead th {
     width: 150px;
-    padding: 10px;
+    padding: 10px ,20px;
     font-weight: bold;
     vertical-align: top;
     color: #000000;
@@ -17,18 +17,12 @@ table.type10 thead th {
 }
 table.type10 tbody th {
     width: 100px;
-    padding: 10px;
 }
 table.type10 td {
     width: 300px;
-    padding: 10px;
     vertical-align: top;
 }
 table.type10 .even {
     background: #fdf3f5;
 }
 
-table.type10 btn{
-	position: relative;
-
-} 

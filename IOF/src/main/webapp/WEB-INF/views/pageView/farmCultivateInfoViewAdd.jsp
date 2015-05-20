@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/greenhouseAdd.css" rel="stylesheet" type="text/css">
+<link href="farmCultivateInfoAdd.css" rel="stylesheet" type="text/css">
 <!--                                                                                             -->
 <!--                                File Name   : farmCultivateInfoViewAdd.jsp                   -->
 <!--                                Description : farmCultivateInfoViewAdd 입력페이지                                     -->

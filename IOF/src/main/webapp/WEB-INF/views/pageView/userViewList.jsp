@@ -1,35 +1,33 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="../css/userList.css" rel="stylesheet" type="text/css">
+<link href="../css/" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
 <!--                                File Name   : userViewList.jsp                                   -->
 <!--                                Description : userList 페이지                                                                                                        -->
-<!--                                Update      : 2015.05.13                                            -->
+<!--                                Update      : 2015.05.20(홍수영)                                           -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
 
 <!-- 본문 시작 -->
-<center>
-    <h1> 전체 사용자 List</h1>
-</center>
 
+    <h1 style="position:absolute; top:70px ; left:700px;" > 전체 사용자 List</h1>
 
 
 <table class="userList">
-    <p align="right">
+    <p > <!--버튼위치지정 -->
         <button onclick="window.location.href='/signUp'" >신규</button>
     </p>
-    <thead>
+    <thead style=" background: #d2f4ec;" >
         <tr>
-            <th scope="cols">ID</th>
-            <th scope="cols">이름</th>
-            <th scope="cols">그룹</th>
-            <th scope="cols">휴대폰</th>
-            <th scope="cols">집주소</th>
-            <th scope="cols">등록일</th>
-            <th scope="cols">조회</th>
-            <th scope="cols">수정</th>
-            <th scope="cols">탈퇴</th>
+            <th width="50px">ID</th>
+            <th width="50px">이름</th>
+            <th width="100px">그룹</th>
+            <th width="100px">휴대폰</th>
+            <th width="200px">집주소</th>
+            <th width="170px">등록일</th>
+            <th width="40px">조회</th>
+            <th width="40px">수정</th>
+            <th width="45px">탈퇴</th>
         </tr>
     </thead>
     <tbody>

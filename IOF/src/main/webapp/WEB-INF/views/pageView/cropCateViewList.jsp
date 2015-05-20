@@ -6,7 +6,10 @@
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
 <br>
-<h3>crop List</h3>
+<center>
+    <h1> Crop List</h1>
+</center>
+
 <c:if test="${!empty listCropCate}">
     <table class="tg">
     <tr>
