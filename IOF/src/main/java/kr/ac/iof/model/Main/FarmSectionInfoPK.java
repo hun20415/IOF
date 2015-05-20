@@ -11,15 +11,15 @@ import java.io.Serializable;
 
 public class FarmSectionInfoPK implements Serializable{
 	private int farmSectionId;
-	private FarmInfo farmInfo;
+	private int farmId;
 	public FarmSectionInfoPK() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public FarmSectionInfoPK(int farmSectionId, FarmInfo farmInfo) {
+	public FarmSectionInfoPK(int farmSectionId, int farmInfo) {
 		super();
 		this.farmSectionId = farmSectionId;
-		this.farmInfo = farmInfo;
+		this.farmId = farmInfo;
 	}
 	public int getFarmSectionId() {
 		return farmSectionId;
@@ -27,18 +27,17 @@ public class FarmSectionInfoPK implements Serializable{
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
-	public FarmInfo getFarmInfo() {
-		return farmInfo;
+	public int getFarmInfo() {
+		return farmId;
 	}
-	public void setFarmInfo(FarmInfo farmInfo) {
-		this.farmInfo = farmInfo;
+	public void setFarmInfo(int farmId) {
+		this.farmId = farmId;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result
-				+ ((farmInfo == null) ? 0 : farmInfo.hashCode());
+		result = prime * result + farmId;
 		result = prime * result + farmSectionId;
 		return result;
 	}
@@ -51,15 +50,13 @@ public class FarmSectionInfoPK implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		FarmSectionInfoPK other = (FarmSectionInfoPK) obj;
-		if (farmInfo == null) {
-			if (other.farmInfo != null)
-				return false;
-		} else if (!farmInfo.equals(other.farmInfo))
+		if (farmId != other.farmId)
 			return false;
 		if (farmSectionId != other.farmSectionId)
 			return false;
 		return true;
 	}
+	
 	
 	
 }

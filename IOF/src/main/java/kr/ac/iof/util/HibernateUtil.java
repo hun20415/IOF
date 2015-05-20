@@ -14,7 +14,7 @@ public class HibernateUtil{
    private static final SessionFactory sessionFactory2;
    private static final ServiceRegistry serviceRegistry2;
    
-   static { 
+   static {
       try {
     	  
             Configuration configuration = new Configuration();

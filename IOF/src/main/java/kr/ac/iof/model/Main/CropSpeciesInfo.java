@@ -27,7 +27,7 @@ public class CropSpeciesInfo {
 	private CropCate cropCate;
 	
 	@ManyToOne
-	@JoinColumn(name = "CROP_ID ")//4, foreign key
+	@JoinColumn(name = "CROP_ID")//4, foreign key
 	private CropInfo cropInfo;
 	
 	@ManyToOne

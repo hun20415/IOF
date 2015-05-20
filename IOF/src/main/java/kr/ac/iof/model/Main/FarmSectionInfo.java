@@ -25,7 +25,7 @@ public class FarmSectionInfo {
 	private int farmSectionId;
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 primary key FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName="FARM_ID") //4 primary key FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Column(name = "DISCRIPTION") //300
