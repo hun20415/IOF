@@ -23,7 +23,7 @@ public class DsInfo {
 	private int dsId;
 	
 	@Column(name = "DS_NAME") //200
-	private String dsName;
+	private String dsName; 
 	
 	@ManyToOne
 	@JoinColumn(name = "CROP_ID", referencedColumnName = "CROP_ID")//4 , foreign key
