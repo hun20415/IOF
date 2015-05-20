@@ -133,4 +133,9 @@ public class User{// implements UserDetails{
 		return userGroup.getUserGroupName();
 	}
 	
+	public int getUserGroupId() {
+		return userGroup.getUserGroup();
+	}
+	
+	
 }

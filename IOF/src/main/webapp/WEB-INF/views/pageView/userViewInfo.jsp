@@ -16,7 +16,7 @@
 		<th scope="row">비밀번호</th>
 		<td></td> -->
 		<th scope="row">그룹ID</th>
-		<td>${user.userGroupId}</td>
+		<td>${user.userGroupName}</td> <!--  -->
 	</tr>
 	<tr>
 		<th scope="row">이메일</th>	
