@@ -14,14 +14,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "sys_user_info")
+@Table(name = "sys_user_info_view")
 public class User{// implements UserDetails{
 	
 	@Id
 	@Column(name = "USER_ID")
 	private String userId;
 	@Column(name = "USER_NAME")
-	private String userName;
+	private String userName; 
 	@Column(name = "USER_PASSWD")
 	private String userPasswd;	
 	@ManyToOne

@@ -12,13 +12,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name = "sys_user_group")
+@Table(name = "sys_user_group_view")
 public class UserGroup{
 	//USERGROUP_ID
     //USERGROUP_NAME  
 	
 	@Id
-	@Column(name = "USERGROUP_ID")
+	@Column(name = "USERGROUP_ID") 
 	private int userGroup;
 	@Column(name = "USERGROUP_NAME")
 	private String userGroupName;
