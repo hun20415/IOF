@@ -73,6 +73,21 @@ public class FarmEquipList {
 		return farmInfo.getFarmName();
 	}
 	
+	//set farmName to FarmInfo table
+	public void setFarmName(String farmName) {
+		farmInfo.setFarmName(farmName);
+	}
+	
+	//get farmID from FarmInfo table
+	public int getFarmId() {
+		return farmInfo.getFarmId();
+	}
+	
+	//set farmID to FarmInfo table
+	public void getFarmName(int farmId) {
+		farmInfo.setFarmId(farmId);
+	}
+	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
 	}
