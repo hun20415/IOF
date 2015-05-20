@@ -18,10 +18,10 @@ public class HibernateUtil{
       try {
     	  
             Configuration configuration = new Configuration();
-            configuration.configure("hibernate.cfg.xml");
+            configuration.configure("mainconfig.cfg.xml");
             
             Configuration configuration2 = new Configuration();
-            configuration2.configure("hibernate.cfg.xml");
+            configuration2.configure("mainconfig.cfg.xml");
             
             
             serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();        
