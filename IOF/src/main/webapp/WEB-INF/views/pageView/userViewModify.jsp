@@ -14,11 +14,11 @@
             <tr>
                 <td style="width: 200px;">아이디(ID)</td>
                 <td style="width: 390px"><input type="text" name="userId" value="${user.userId}"
-                    style="width: 50%;" /></td>
+                    style="width: 50%;" /></td> 
             </tr>
 
             <tr>
-                <td>비밀번호(Password)</td>
+                <td>비밀번호(Password)</td>              
                 <td><input type="password" name="userPasswd"
                     style="width: 50%;" /></td>
             </tr>
@@ -68,9 +68,12 @@
             </tr>
 
         </table>
-        <div style="text-align: center; padding-bottom: 15px;">
+        
+    <input type="text" name="userId" value="${use.userId}" hidden="true"/>
+    
+    <div style="text-align: center; padding-bottom: 15px;">
             <input type="submit" value="확인" />
-        </div>
+        </div> 
     </form>
 <!--  본문 끝 -->
 </div>

@@ -18,9 +18,9 @@
 	<table class="type02">
 		<tr>
 			<th scope="row">*온실 ID</th>
-			<td><input type="text" size=10 name="farmId"></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.farmId}" style="width: 50%;" /></td> 
 			<th scope="row">온실명</th>
-			<td><input type="text" size=10 name="farmName"></td>
+			<td style="width: 390px"><input type="text" name="farmName" value="${farmInfo.farmName}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
 			<th scope="row">*온실 주 ID</th>
@@ -32,7 +32,7 @@
 			<th scope="row">관리인 ID</th>
 			<td><input type="text" size=10 name="employeeId"></td>
 			<th scope="row">관리인</th>
-			<td><input type="text" size=10 name=""></td>
+			<td><input type="text" size=10 name="userName"></td>
 		</tr>
 		<tr>
 			<th scope="row">*재배면적(평)</th>
