@@ -32,9 +32,13 @@ public class FarmInfoController  {
 
 	@RequestMapping(value = "/farmInfoAdd", method = RequestMethod.GET)
 	// 서비스 호출
-	public String farmInfoAdd() throws Exception {
+	public String farmInfoAdd(Model model) throws Exception {
 		logger.info("farmInfo 입력 View");
-
+		
+		model.addAttribute("id", new String());
+		model.addAttribute("bb", new String());
+		model.addAttribute("farmAllId", this.farmInfoService.getAllId());
+		
 		return "farmInfoAdd";
 	}
 

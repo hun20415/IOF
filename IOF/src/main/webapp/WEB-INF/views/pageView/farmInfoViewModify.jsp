@@ -1,23 +1,36 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<!--                                                                                                    -->
+<!--                                File Name   : farmInfoViewModify.jsp                                   -->
+<!--                                Description : farmInfoViewModify 수정페이지                                                                                                        -->
+<!--                                Update      : 2015.05.20 (옥정윤)                                            -->
+<!--                                ETC         :                                                       -->
+<!--                                                                                                    -->
 
-<link href="css/farmInfoAdd.css" rel="stylesheet" type="text/css">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<link href="css/farmInfoModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>
-	<h1>온실 정보 신규 입력</h1>
+	<h1>온실 정보 수정</h1>
 </center>
-<form id="farmInfoAddForm" action="farmInfoAdd" method="post"
+<form id="farmInfoModifyForm" action="farmInfoModify" method="post"
 	onsubmit="return check()">
 	<table class="type02">
 		<tr>
 			<th scope="row">*온실 ID</th>
-			<td><input type="text" size=10 name="farmId"></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.farmId}" style="width: 50%;" /></td> 
 			<th scope="row">온실명</th>
-			<td><input type="text" size=10 name="farmName"></td>
+			<td style="width: 390px"><input type="text" name="farmName" value="${farmInfo.farmName}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
 			<th scope="row">*온실 주 ID</th>
-			<td><input type="text" size=10 name="ownerId"></td>
+			<td style="width: 390px">
+			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
+			<c:forEach items="${farmAllId}" var="cropCate">
+			<option value="${farmInfo.owner}">Volvo</option>
+			</c:forEach>
+			</select>
+			</td> 
 			<th scope="row">*온실 주</th>
 			<td><input type="text" size=10 name="userName"></td>
 		</tr>
@@ -25,7 +38,7 @@
 			<th scope="row">관리인 ID</th>
 			<td><input type="text" size=10 name="employeeId"></td>
 			<th scope="row">관리인</th>
-			<td><input type="text" size=10 name=""></td>
+			<td><input type="text" size=10 name="userName"></td>
 		</tr>
 		<tr>
 			<th scope="row">*재배면적(평)</th>
