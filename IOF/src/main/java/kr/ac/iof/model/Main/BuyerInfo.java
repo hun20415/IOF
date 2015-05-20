@@ -19,19 +19,24 @@ public class BuyerInfo {
 	@Id
 	@Column(name = "BUYER_ID")//매핑되는 column이름
 	private int buyerId;
+	
 	@Column(name = "COMPANY_NAME") //20
 	private String companyName;
+	
 	@Column(name = "BRANCH_NAME") //20
 	private String branchName;
+	
 	@Column(name = "BRANCH_ADDR") //200
 	private String branchAddr;
+	
 	@Column(name = "BRANCH_PHONE") //20
 	private String branchPhone;
+	
 	@Column(name = "INTERFACE_NAME") //20
 	private String interfaceName;
+	
 	@Column(name = "INTERFACE_PHONE") //20
 	private String interfacePhone;
-	
 	
 	public BuyerInfo(int buyerId, String companyName, String branchName,
 			String branchAddr, String branchPhone, String interfaceName,
@@ -46,95 +51,64 @@ public class BuyerInfo {
 		this.interfacePhone = interfacePhone;
 	}
 
-
-
 	public BuyerInfo () {//생성자는 필수
 
-	    }
-	
-	
+	}
 
 	public void setBuyerId(int buyerId) {
 		this.buyerId = buyerId;
 	}
 
-
-
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
 	}
-
-
 
 	public void setBranchName(String branchName) {
 		this.branchName = branchName;
 	}
 
-
-
 	public void setBranchAddr(String branchAddr) {
 		this.branchAddr = branchAddr;
 	}
-
-
 
 	public void setBranchPhone(String branchPhone) {
 		this.branchPhone = branchPhone;
 	}
 
-
-
 	public void setInterfaceName(String interfaceName) {
 		this.interfaceName = interfaceName;
 	}
-
-
 
 	public void setInterfacePhone(String interfacePhone) {
 		this.interfacePhone = interfacePhone;
 	}
 
-
-
 	public int getBuyerId() {
 		return buyerId;
 	}
-
-
 
 	public String getCompanyName() {
 		return companyName;
 	}
 
-
-
 	public String getBranchName() {
 		return branchName;
 	}
-
-
 
 	public String getBranchAddr() {
 		return branchAddr;
 	}
 
-
-
 	public String getBranchPhone() {
 		return branchPhone;
 	}
-
-
 
 	public String getInterfaceName() {
 		return interfaceName;
 	}
 
-
-
 	public String getInterfacePhone() {
 		return interfacePhone;
 	}
 
-	
 }

@@ -25,26 +25,28 @@ public class HarvestInfo {
 	private int tno;
 	
 	@ManyToOne
-	@JoinColumn(name = "CULTIVATE_ID") //10 FOREIGN KEY
+	@JoinColumn(name = "CULTIVATE_ID", referencedColumnName = "TNO") //10 FOREIGN KEY
 	private FarmCultivateInfo farmCultivateInfo;
 	
 	@Column(name = "HARVEST_DATE") //DATE
 	private Date harvestDate;
 
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4  FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4  FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Column(name = "FARM_SECTION_ID") //2 
 	private int farmSectionId;
+	
 	@Column(name = "FARM_SECTION_LINE") //2 
 	private int farmSectionLine;
+	
 	@Column(name = "HARVEST_AMOUNT") //DOUBLE(10,2)
 	private double harvestAmount;
 	
 	public HarvestInfo () {
 
-	    }
+	}
 
 	public HarvestInfo(int tno, FarmCultivateInfo farmCultivateInfo,
 			Date harvestDate, FarmInfo farmInfo, int farmSectionId,
@@ -114,7 +116,5 @@ public class HarvestInfo {
 	public void setHarvestAmount(double harvestAmount) {
 		this.harvestAmount = harvestAmount;
 	}
-	
-	
-	
+
 }

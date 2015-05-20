@@ -23,21 +23,21 @@ public class HarvestShipment {
 	
 	@Id
 	@Column(name = "TNO") //10 primary key
-	private int tno;
+	private int tno; 
 	
 	@Column(name = "SHIP_DATE") //DATETIME
 	private Date shipDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4 FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@ManyToOne
-	@JoinColumn(name = "BUYER_ID") //4 FOREIGN KEY
+	@JoinColumn(name = "BUYER_ID", referencedColumnName = "BUYER_ID") //4 FOREIGN KEY
 	private BuyerInfo buyerInfo;
 	
 	@ManyToOne
-	@JoinColumn(name = "SPECIES_ID") //4 FOREIGN KEY
+	@JoinColumn(name = "SPECIES_ID", referencedColumnName = "SPECIES_ID") //4 FOREIGN KEY
 	private CropSpeciesInfo cropSpeciesInfo;
 	
 	@Column(name = "QUALITY_LEVEL") //1
@@ -45,6 +45,7 @@ public class HarvestShipment {
 	
 	@Column(name = "PACKAGE_KG") //DOUBLE(10,2)
 	private double packageKg;
+	
 	@Column(name = "PACKAGE_PRICE") //DOUBLE(10,2)
 	private double packagePrice;
 	
@@ -53,13 +54,13 @@ public class HarvestShipment {
 	
 	@Column(name = "TOTAL_AMOUNT") //DOUBLE(10,2)
 	private double totalAmount;
+	
 	@Column(name = "TOTAL_PRICE") //DOUBLE(10,2)
 	private double totalPrice ;
 		
 	public HarvestShipment () {
 
 	}
-
 
 	public HarvestShipment(int tno, Date shipDate, FarmInfo farmInfo,
 			BuyerInfo buyerInfo, CropSpeciesInfo cropSpeciesInfo,
@@ -115,31 +116,25 @@ public class HarvestShipment {
 		return farmInfo;
 	}
 
-
 	public void setFarmInfo(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
 	}
-
 
 	public BuyerInfo getBuyerInfo() {
 		return buyerInfo;
 	}
 
-
 	public void setBuyerInfo(BuyerInfo buyerInfo) {
 		this.buyerInfo = buyerInfo;
 	}
-
 
 	public CropSpeciesInfo getCropSpeciesInfo() {
 		return cropSpeciesInfo;
 	}
 
-
 	public void setCropSpeciesInfo(CropSpeciesInfo cropSpeciesInfo) {
 		this.cropSpeciesInfo = cropSpeciesInfo;
 	}
-
 
 	public void setTno(int tno) {
 		this.tno = tno;
@@ -172,6 +167,5 @@ public class HarvestShipment {
 	public void setTotalPrice(double totalPrice) {
 		this.totalPrice = totalPrice;
 	}
-	
 	
 }

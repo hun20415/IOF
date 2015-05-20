@@ -24,7 +24,7 @@ public class FarmEquipList {
 		
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 primary key FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4 primary key FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Column(name = "FARM_SECTION_ID") //2
@@ -35,24 +35,25 @@ public class FarmEquipList {
 	private int eqId;
 	
 	@ManyToOne
-	@JoinColumn(name = "EQ_TYPE_ID") //3  FOREIGN KEY
+	@JoinColumn(name = "EQ_TYPE_ID", referencedColumnName = "EQ_TYPE_ID") //3  FOREIGN KEY
 	private FarmEquipType eqType;
 	
 	
 	@Column(name = "EQ_COMPANY") //50
 	private String eqCompany;
+	
 	@Column(name = "EQ_MODEL") //50
 	private String eqModel;
+	
 	@Column(name = "EQ_SW_VERSION") //50
 	private String eqSwVersion;
+	
 	@Column(name = "EQ_DISCRIPTION") //50
 	private String eqDiscription;
 
-	
 	public FarmEquipList () {
 
 	}
-
 
 	public FarmEquipList(FarmInfo farmInfo, int farmSectionId, int eqId, FarmEquipType eqType, 
 			String eqCompany, String eqModel, String eqSwVersion,
@@ -180,6 +181,5 @@ public class FarmEquipList {
 	public String getEqTypeName() {
 		return eqType.getEqTypeName();
 	}
-	
 	
 }

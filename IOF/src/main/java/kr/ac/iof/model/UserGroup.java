@@ -12,10 +12,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
-@Table(name = "sys_user_group_view")
+@Table(name = "sys_user_group")
 public class UserGroup{
-	//USERGROUP_ID
-    //USERGROUP_NAME  
 	
 	@Id
 	@Column(name = "USERGROUP_ID") 

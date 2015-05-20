@@ -28,7 +28,6 @@ public class FarmCultivateInfo {
 	
 	@ManyToOne
 	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID") //20 FOREIGN KEY
-	//@Column(name = "USER_ID")
 	private User user;
 	
 	@ManyToOne
@@ -44,12 +43,16 @@ public class FarmCultivateInfo {
 	
 	@Column(name = "PLANT_TIME")//
 	private Date plantTime;
+	
 	@Column(name = "PRODUCT_TIME_PLAN")//
 	private Date productTimePlan;
+	
 	@Column(name = "PRODUCT_TIME_REAL")//
 	private Date productTimeReal;
+	
 	@Column(name = "END_TIME")//
 	private Date endTime;
+	
 	@Column(name = "ACTIVE_YN")//1
 	private String activeYn;
 	

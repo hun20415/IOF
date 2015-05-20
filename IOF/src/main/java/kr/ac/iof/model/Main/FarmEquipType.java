@@ -29,6 +29,7 @@ public class FarmEquipType {
 	
 	@Column(name = "DESCRIPTION") //200
 	private String description;
+	
 	@Column(name = "CONTROL_SENSOR") //1
 	private String controlSensor ;
 
