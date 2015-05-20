@@ -135,7 +135,7 @@ public class FarmInfo {
 	}
 	
 	//get owner's Name from User table
-	public String getOwnerv() {
+	public String getOwnerName() {
 		return owner.getUserName();
 	}
 	
