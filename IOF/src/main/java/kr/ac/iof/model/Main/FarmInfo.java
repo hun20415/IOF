@@ -10,9 +10,13 @@ package kr.ac.iof.model.Main;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import java.util.Date;
+
+import kr.ac.iof.model.User;
 
 @Entity
 @Table(name = "farm_info")
@@ -23,10 +27,14 @@ public class FarmInfo {
 	private int farmId;
 	@Column(name = "FARM_NAME") //200
 	private String farmName;
-	@Column(name = "OWNER_ID") //20 FOREIGN KEY
-	private String ownerId;
-	@Column(name = "EMPLOYEE_ID") //20 FOREIGN KEY
-	private String employeeId;
+	
+	@ManyToOne
+	@JoinColumn(name = "OWNER_ID", referencedColumnName = "USER_ID") //20 FOREIGN KEY
+	private User owner;
+	
+	@ManyToOne
+	@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "USER_ID") //20 FOREIGN KEY
+	private User employee;
 
 	@Column(name = "AREA_PYUNG") //DOUBLE(10,2)
 	private double areaPyung;
@@ -66,20 +74,19 @@ public class FarmInfo {
 	
 	public FarmInfo () {
 
-	    }
+	}
 
-
-	public FarmInfo(int farmId, String farmName, String ownerId,
-			String employeeId, double areaPyung, double areaMsquare,
-			double width, double length, double heightMin, double heightMax,
-			String direction, String materialType, String ifConnected,
-			int connectedNum, int sectionNum, String cultivationType,
-			String farmZipcode, String farmAddr, String buildDate) {
+	public FarmInfo(int farmId, String farmName, User owner, User employee,
+			double areaPyung, double areaMsquare, double width, double length,
+			double heightMin, double heightMax, String direction,
+			String materialType, String ifConnected, int connectedNum,
+			int sectionNum, String cultivationType, String farmZipcode,
+			String farmAddr, String buildDate) {
 		super();
 		this.farmId = farmId;
 		this.farmName = farmName;
-		this.ownerId = ownerId;
-		this.employeeId = employeeId;
+		this.owner = owner;
+		this.employee = employee;
 		this.areaPyung = areaPyung;
 		this.areaMsquare = areaMsquare;
 		this.width = width;
@@ -97,7 +104,46 @@ public class FarmInfo {
 		this.buildDate = buildDate;
 	}
 
-
+	//get owner's Id from User table
+	public String getOwnerId() {
+		return owner.getUserId();
+	}
+	
+	//set owner's Id from User table
+	public void setOwnerId(String userId) {
+		owner.setUserId(userId);
+	}
+	
+	//get employee's Id from User table
+	public String getEmployeeId() {
+		return employee.getUserId();
+	}	
+	
+	//get owner's Id from User table
+	public void setEmployeeId(String userId) {
+		employee.setUserId(userId);
+	}
+	
+	//get owner's Name from User table
+	public String getOwnerv() {
+		return owner.getUserName();
+	}
+	
+	//set owner's Name from User table
+	public void setOwnerName(String userName) {
+		owner.setUserId(userName);
+	}
+	
+	//get employee's Name from User table
+	public String getEmployeeName() {
+		return employee.getUserName();
+	}	
+	
+	//get owner's Name from User table
+	public void setEmployeeName(String userName) {
+		employee.setUserId(userName);
+	}
+	
 	public int getFarmId() {
 		return farmId;
 	}
@@ -107,16 +153,21 @@ public class FarmInfo {
 		return farmName;
 	}
 
-
-	public String getOwnerId() {
-		return ownerId;
+	public User getOwner() {
+		return owner;
 	}
 
-
-	public String getEmployeeId() {
-		return employeeId;
+	public void setOwner(User owner) {
+		this.owner = owner;
 	}
 
+	public User getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(User employee) {
+		this.employee = employee;
+	}
 
 	public double getAreaPyung() {
 		return areaPyung;
@@ -201,17 +252,6 @@ public class FarmInfo {
 	public void setFarmName(String farmName) {
 		this.farmName = farmName;
 	}
-
-
-	public void setOwnerId(String ownerId) {
-		this.ownerId = ownerId;
-	}
-
-
-	public void setEmployeeId(String employeeId) {
-		this.employeeId = employeeId;
-	}
-
 
 	public void setAreaPyung(double areaPyung) {
 		this.areaPyung = areaPyung;

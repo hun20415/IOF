@@ -42,7 +42,7 @@
         <td colspan="2">
             <c:if test="${!empty cropCate.cropCateName}">
                 <input type="submit"
-                    value="<spring:message text="Edit"/>" />
+                    value="<spring:message text="확인"/>" />
             </c:if>
             <c:if test="${empty cropCate.cropCateName}">
                 <input type="submit"

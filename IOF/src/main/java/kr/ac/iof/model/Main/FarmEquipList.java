@@ -88,6 +88,16 @@ public class FarmEquipList {
 		farmInfo.setFarmId(farmId);
 	}
 	
+	//get farmEquipTypeName from FarmEquipType table
+	public String getFarmEquipTypeName() {
+		return eqType.getEqTypeName();
+	}
+	
+	//set farmEquipTypeName to FarmEquipType table
+	public void setFarmEquipTypeName(String eqTypeName) {
+		eqType.setEqTypeName(eqTypeName);
+	} 
+	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
 	}
