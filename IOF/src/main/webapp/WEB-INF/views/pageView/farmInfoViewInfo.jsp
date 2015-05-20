@@ -15,65 +15,65 @@
 <table class="type02">
 	<tr>
 		<th scope="row">온실 ID  </th>
-		<td>${farmInfo.farmId}</td>          
+<%-- 		<td>${farmInfo.farmId}</td> --%>          
             
 		<th scope="row">온실주 ID</th>
-		<td>${farmInfo.ownerId}</td>
+		<%-- <td>${farmInfo.ownerId}</td> --%>
            
 	</tr>
 	<tr>
 		<th scope="row">온실명</th>
-		<td>${farmInfo.farmName}</td>
+		<td></td>
 		        
 		<th scope="row">관리자ID</th>
-		<td>${farmInfo.employeeId}</td>        
+		<td></td>        
 	</tr>
 	<tr>
 		<th scope="row">재배면적(평)</th>
-		<td>${farmInfo.areaPyung}</td>
+		<%-- <td>${farmInfo.areaPyung}</td> --%>
         <th scope="row">재배면적(제곱미터)</th>
-		<td>${farmInfo.areaMsquare}</td>
+		<%-- <td>${farmInfo.areaMsquare}</td> --%>
 	</tr>
 	<tr>
 		<th scope="row">하우스 폭(m)</th>
-		<td>${farmInfo.width}</td>
+	<%-- 	<td>${farmInfo.width}</td> --%>
 		<th scope="row">하우스 길이(m)</th>
-		<td>${farmInfo.length}</td>
+	<%-- 	<td>${farmInfo.length}</td> --%>
 	</tr>
 	<tr>
 		<th scope="row">온실 측고 (m)</th>
-		<td>${farmInfo.heightMin}</td>
+		<%-- <td>${farmInfo.heightMin}</td> --%>
 		<th scope="row">온실 동고 (m)</th>
-		<td>${farmInfo.heightMax}</td>
+		<%-- <td>${farmInfo.heightMax}</td> --%>
 	</tr>
 	<tr>
 		<th scope="row">온실 방향</th>
-		<td>${farmInfo.direction}</td>
+		<%-- <td>${farmInfo.direction}</td> --%>
 		<th scope="row">비닐/유리 온실</th>
-		<td>${farmInfo.materialType}</td>
+		<%-- <td>${farmInfo.materialType}</td> --%>
         
 	</tr>
 	<tr>
 		<th scope="row">연동/단동</th>
-		<td>${farmInfo.ifConnected}</td>
+		<%-- <td>${farmInfo.ifConnected}</td> --%>
 		<th scope="row">연동/단동 개수</th>
-		<td>${farmInfo.connectedNum}</td>
+		<%-- <td>${farmInfo.connectedNum}</td> --%>
 	</tr>
 	<tr>
 		<th scope="row">구역 개수</th>
-		<td>${farmInfo.sectionNum}</td>
+		<%-- <td>${farmInfo.sectionNum}</td> --%>
 		<th scope="row">양액/토경재배</th>
-		<td>${farmInfo.cultivationType}</td>
+		<%-- <td>${farmInfo.cultivationType}</td> --%>
 	</tr>
 	<tr>
 		<th scope="row">우편번호</th>
-		<td>${farmInfo.farmZipcode}</td>
+		<%-- <td>${farmInfo.farmZipcode}</td> --%>
 		<th scope="row">온실건립일</th>
 		<td></td>
 	</tr>	 
 	<tr>
 		<th scope="row">주소</th>
-		<td>${farmInfo.farmAddr}</td>
+		<%-- <td>${farmInfo.farmAddr}</td> --%>
 	</tr>	
 </table>
 

@@ -44,13 +44,13 @@
 <table class="userInfo">
 	<tr>
 		<th scope="row">온실 ID  </th>
-		<td></td>
+		<td>${farmInfo.farmId}</td>
 		<th scope="row">온실주 ID</th>
-		<td></td>
+		<td>${farmInfo.ownerId}</td>
 	</tr>
 	<tr>
 		<th scope="row">온실명</th>
-		<td></td>
+		<td>${farmInfo.farmName}</td>
 		<th scope="row">관리자ID</th>
 		<td></td>
 	</tr>

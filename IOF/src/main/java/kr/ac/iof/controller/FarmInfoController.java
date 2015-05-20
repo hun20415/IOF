@@ -98,6 +98,14 @@ public class FarmInfoController  {
 	}
 	
 	
-	 
+	/*@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
+	public String userInfo(Model model) throws Exception {
+		logger.info("farmInfo 리스트");
+		// 리스트 출력
+		model.addAttribute("farmInfo", new FarmInfo());
+		model.addAttribute("listFarmInfo", this.farmInfoService.getAll());
+		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
+		return "farmInfoList";
+	} */
 	
 }
