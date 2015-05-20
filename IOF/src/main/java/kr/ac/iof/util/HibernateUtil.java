@@ -19,7 +19,7 @@ public class HibernateUtil{
     	  
             Configuration configuration = new Configuration();
             configuration.configure("hibernate.cfg.xml");
-            
+             
             Configuration configuration2 = new Configuration();
             configuration2.configure("mainconfig.cfg.xml");
             

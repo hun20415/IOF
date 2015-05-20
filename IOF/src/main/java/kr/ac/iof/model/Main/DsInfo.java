@@ -21,37 +21,43 @@ public class DsInfo {
 	@Id
 	@Column(name = "DS_ID")//4 primary key, 매핑되는 column이름
 	private int dsId;
+	
 	@Column(name = "DS_NAME") //200
-	private String dsName;
+	private String dsName; 
 	
 	@ManyToOne
-	@JoinColumn(name = "CROP_ID")//4 , foreign key
+	@JoinColumn(name = "CROP_ID", referencedColumnName = "CROP_ID")//4 , foreign key
 	private CropInfo cropInfo;
 	
 	@ManyToOne
-	@JoinColumn(name = "DS_CATE_ID")//4 , foreign key
+	@JoinColumn(name = "DS_CATE_ID", referencedColumnName = "DS_CATE_ID")//4 , foreign key
 	private DsCategory dsCategory;
 	
 	@Column(name = "DS_PART_ROOT") //1
 	private String dsPartRoot;
+	
 	@Column(name = "DS_PART_LEAF") //1
 	private String dsPartLeaf;
+	
 	@Column(name = "DS_PART_STEM") //1
 	private String dsPartStem;
+	
 	@Column(name = "DS_PART_FLOWER") //1
 	private String dsPartFlower;
+	
 	@Column(name = "DS_PART_FRUIT") //1
 	private String dsPartFruit;
+	
 	@Column(name = "DS_PART_GROWING_POINT") //1
 	private String dsPartGrowingPoint;
+	
 	@Column(name = "DS_INFO_HTML") //200
 	private String dsInfoHtml;
 	
 	public DsInfo () {
 
-	    }
+	}
 	
-
 	public DsInfo(int dsId, String dsName, CropInfo cropInfo, DsCategory dsCategory,
 			String dsPartRoot, String dsPartLeaf, String dsPartStem,
 			String dsPartFlower, String dsPartFruit, String dsPartGrowingPoint,
@@ -69,7 +75,6 @@ public class DsInfo {
 		this.dsPartGrowingPoint = dsPartGrowingPoint;
 		this.dsInfoHtml = dsInfoHtml;
 	}
-
 
 	public int getDsId() {
 		return dsId;
