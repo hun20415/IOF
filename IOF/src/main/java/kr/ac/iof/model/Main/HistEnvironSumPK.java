@@ -10,6 +10,7 @@ package kr.ac.iof.model.Main;
 import java.io.Serializable;
 
 public class HistEnvironSumPK implements Serializable{
+
 	private FarmInfo farmInfo;
 	private int farmSectionId;
 	private int seqNo;

@@ -25,7 +25,7 @@ public class HistEnvironSum {
 	
 	@Id
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID") //4 primary key, FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID") //4 primary key, FOREIGN KEY
 	private FarmInfo farmInfo;
 	
 	@Id
@@ -56,23 +56,25 @@ public class HistEnvironSum {
 	
 	@Column(name = "TEMPERATURE_IN") //DOUBLE(10,2)
 	private double temperatureIn;
+	
 	@Column(name = "HUMIDITY_IN") //DOUBLE(10,2)
 	private double humidityIn;
+	
 	@Column(name = "CO2") //4
 	private int co2;
 	
 	@Column(name = "SOLAR_RADIATION") //DOUBLE(10,2)
 	private double solarRadiation;
+	
 	@Column(name = "DAILY_RADIATION") //DOUBLE(10,2)
 	private double dailyRadiation;
+	
 	@Column(name = "SYS_DATE") //3
 	private Date sysDate;
 	
-	
 	public HistEnvironSum () {
 
-	    }
-
+	}
 
 	public HistEnvironSum(FarmInfo farmInfo, int farmSectionId, int seqNo,
 			Date dataInqDate, double temperatureOut, double humidityOut,
@@ -97,155 +99,124 @@ public class HistEnvironSum {
 		this.sysDate = sysDate;
 	}
 
-
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
 	}
-
 
 	public int getFarmSectionId() {
 		return farmSectionId;
 	}
 
-
 	public int getSeqNo() {
 		return seqNo;
 	}
-
 
 	public Date getDataInqDate() {
 		return dataInqDate;
 	}
 
-
 	public double getTemperatureOut() {
 		return temperatureOut;
 	}
-
 
 	public double getHumidityOut() {
 		return humidityOut;
 	}
 
-
 	public int getWindDirection() {
 		return windDirection;
 	}
-
 
 	public double getWindSpeed() {
 		return windSpeed;
 	}
 
-
 	public int getRainfall() {
 		return rainfall;
 	}
-
 
 	public double getTemperatureIn() {
 		return temperatureIn;
 	}
 
-
 	public double getHumidityIn() {
 		return humidityIn;
 	}
-
 
 	public int getCo2() {
 		return co2;
 	}
 
-
 	public double getSolarRadiation() {
 		return solarRadiation;
 	}
-
 
 	public double getDailyRadiation() {
 		return dailyRadiation;
 	}
 
-
 	public Date getSysDate() {
 		return sysDate;
 	}
-
 
 	public void setFarmId(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
 	}
 
-
 	public void setFarmSectionId(int farmSectionId) {
 		this.farmSectionId = farmSectionId;
 	}
-
 
 	public void setSeqNo(int seqNo) {
 		this.seqNo = seqNo;
 	}
 
-
 	public void setDataInqDate(Date dataInqDate) {
 		this.dataInqDate = dataInqDate;
 	}
-
 
 	public void setTemperatureOut(double temperatureOut) {
 		this.temperatureOut = temperatureOut;
 	}
 
-
 	public void setHumidityOut(double humidityOut) {
 		this.humidityOut = humidityOut;
 	}
-
 
 	public void setWindDirection(int windDirection) {
 		this.windDirection = windDirection;
 	}
 
-
 	public void setWindSpeed(double windSpeed) {
 		this.windSpeed = windSpeed;
 	}
-
 
 	public void setRainfall(int rainfall) {
 		this.rainfall = rainfall;
 	}
 
-
 	public void setTemperatureIn(double temperatureIn) {
 		this.temperatureIn = temperatureIn;
 	}
-
 
 	public void setHumidityIn(double humidityIn) {
 		this.humidityIn = humidityIn;
 	}
 
-
 	public void setCo2(int co2) {
 		this.co2 = co2;
 	}
-
 
 	public void setSolarRadiation(double solarRadiation) {
 		this.solarRadiation = solarRadiation;
 	}
 
-
 	public void setDailyRadiation(double dailyRadiation) {
 		this.dailyRadiation = dailyRadiation;
 	}
 
-
 	public void setSysDate(Date sysDate) {
 		this.sysDate = sysDate;
 	}
-	
 	
 }
