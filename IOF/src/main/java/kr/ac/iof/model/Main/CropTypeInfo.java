@@ -26,7 +26,7 @@ public class CropTypeInfo {
 	private String cropTypeName;
 	
 	@ManyToOne
-	@JoinColumn(name = "CROP_ID") //4, FOREIGN KEY
+	@JoinColumn(name = "CROP_ID", referencedColumnName = "CROP_ID") //4, FOREIGN KEY
 	private CropInfo cropInfo;
 	
 	@Column(name = "CROP_TYPE_HTML") //200
