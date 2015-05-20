@@ -167,6 +167,6 @@ public class FarmCultivateInfo {
 	//get cropSpeciesName from CropSpecies table
 	public String getCropSpeciesName() {
 		return cropSpeciesInfo.getSpeciesName();
-	}
+	} 
 	
 }
