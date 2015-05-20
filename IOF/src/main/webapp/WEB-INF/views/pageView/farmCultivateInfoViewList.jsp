@@ -49,7 +49,7 @@
             <td>${farmCultivateInfo.plantTime}</td>
             <td>${farmCultivateInfo.productTimePlan}</td>
             <td>${farmCultivateInfo.productTimeReal}</td>
-            
+              
              
             <td><form action="farmCultivateInfoModify">
             <input type="hidden" name="id" value="${farmCultivateInfo.farmId}">

@@ -39,7 +39,7 @@
 	 <c:forEach items="${listFarmCultivateInfo}" var="farmCultivateInfo">
 	  <c:if test = "${farmCultivateInfo.activeYn == 'N'}">
         <tr>
-       
+        
         
 	        <td>${farmCultivateInfo.farmId}</td>
             <td>${farmCultivateInfo.farmName}</td> 
