@@ -27,12 +27,12 @@ public class FarmCultivateInfo {
 	private int tno;
 	
 	@ManyToOne
-	@JoinColumn(name = "USER_ID") //20 FOREIGN KEY
+	@JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID") //20 FOREIGN KEY
 	//@Column(name = "USER_ID")
 	private User user;
 	
 	@ManyToOne
-	@JoinColumn(name = "FARM_ID")//4 FOREIGN KEY
+	@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID")//4 FOREIGN KEY
 	private FarmInfo farmInfo;	
 	
 	@Column(name = "FARM_SECTION_ID")//4

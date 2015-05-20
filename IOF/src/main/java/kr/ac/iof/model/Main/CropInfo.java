@@ -21,9 +21,11 @@ public class CropInfo {
 	@Id
 	@Column(name = "CROP_ID")
 	private int cropId;
+	
 	@ManyToOne
-	@JoinColumn(name = "CROP_CATE_ID")
+	@JoinColumn(name = "CROP_CATE_ID", referencedColumnName = "CROP_CATE_ID") // Foreign key
 	private CropCate cropCate;
+	
 	@Column(name = "CROP_NAME")
 	private String cropName;
 	@Column(name = "CROP_INFO_HTML")
