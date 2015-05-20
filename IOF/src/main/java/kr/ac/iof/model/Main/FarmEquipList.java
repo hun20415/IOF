@@ -51,7 +51,7 @@ public class FarmEquipList {
 	
 	public FarmEquipList () {
 
-	    }
+	}
 
 
 	public FarmEquipList(FarmInfo farmInfo, int farmSectionId, int eqId, FarmEquipType eqType, 
@@ -66,6 +66,11 @@ public class FarmEquipList {
 		this.eqModel = eqModel;
 		this.eqSwVersion = eqSwVersion;
 		this.eqDiscription = eqDiscription;
+	}
+	
+	//get farmName from FarmInfo table
+	public String getFarmName() {
+		return farmInfo.getFarmName();
 	}
 	
 	public FarmInfo getFarmInfo() {

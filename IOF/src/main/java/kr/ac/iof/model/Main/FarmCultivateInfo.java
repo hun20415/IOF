@@ -169,6 +169,4 @@ public class FarmCultivateInfo {
 		return cropSpeciesInfo.getSpeciesName();
 	}
 	
-
-	
 }
