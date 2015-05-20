@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "sys_user_info_view")
+@Table(name = "sys_user_info")
 public class User{// implements UserDetails{
 	
 	@Id
