@@ -1,12 +1,19 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<!--                                                                                                    -->
+<!--                                File Name   : farmInfoViewModify.jsp                                   -->
+<!--                                Description : farmInfoViewModify 수정페이지                                                                                                        -->
+<!--                                Update      : 2015.05.20 (옥정윤)                                            -->
+<!--                                ETC         :                                                       -->
+<!--                                                                                                    -->
 
-<link href="css/farmInfoAdd.css" rel="stylesheet" type="text/css">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<link href="css/farmInfoModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>
-	<h1>온실 정보 신규 입력</h1>
+	<h1>온실 정보 수정</h1>
 </center>
-<form id="farmInfoAddForm" action="farmInfoAdd" method="post"
+<form id="farmInfoModifyForm" action="farmInfoModify" method="post"
 	onsubmit="return check()">
 	<table class="type02">
 		<tr>

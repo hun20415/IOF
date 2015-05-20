@@ -2,8 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="css/farmInfoList.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
-<!--                                File Name   : greenHouseViewList.jsp                                   -->
-<!--                                Description : greenHouseList 입력페이지                                                                                                        -->
+<!--                                File Name   : farmInfoViewList.jsp                                   -->
+<!--                                Description : farmInfoViewList 입력페이지                                                                                                        -->
 <!--                                Update      : 2015.05.14                                            -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
@@ -22,7 +22,7 @@
 			</select>
 			<button type="button">검색</button>
 
-			<button type="submit">신규</button>
+			<button onclick="window.location.href='/farmInfoAdd'" >신규</button>
 		</p>
 	<thead>
 		<tr>
@@ -65,7 +65,7 @@
             <td><button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a></td>
         </tr>
     </c:forEach>
-    <td><button onclick="window.location.href='/farmInfoAdd'" >add</a></td>
+  <!--   <td><button onclick="window.location.href='/farmInfoAdd'" >add</a></td> -->
     
 	</tbody>
     </table>
