@@ -9,16 +9,7 @@
 <table class="type02">
 	<tr>
 		<th scope="row">온실 ID  </th>
-		<td>${farmInfo.farmId}</td>
-		 
-            
-            <td>${farmInfo.connectedNum}</td>
-            <td>${farmInfo.sectionNum}</td>
-            <td>${farmInfo.cultivationType}</td>
-            <td>${farmInfo.farmAddr}</td>
-            <td>${farmInfo.buildDate}</td>
-            
-            
+		<td>${farmInfo.farmId}</td>          
             
 		<th scope="row">온실주 ID</th>
 		<td>${farmInfo.ownerId}</td>
