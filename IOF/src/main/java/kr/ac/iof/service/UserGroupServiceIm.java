@@ -1,6 +1,6 @@
 /**                                                                                 	           		**/
-/**                                File Name   : UserService.java                	               	**/  		
-/**                                Description : user에 대한 service controller에서 처리되어야 하는 
+/**                                File Name   : UserGroupService.java                	               	**/  		
+/**                                Description : userGroup에 대한 service controller에서 처리되어야 하는 
  * 								            	 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다			     	**/ 
 /**                                Update      : 2015.05.07(박정훈)	                               		**/
 /**                                ETC         :                    	                           		**/
@@ -9,61 +9,55 @@ package kr.ac.iof.service;
 
 import java.util.List;
 
-
-
-import kr.ac.iof.dao.UserDao;
-import kr.ac.iof.model.User;
+import kr.ac.iof.dao.UserGroupDao;
+import kr.ac.iof.model.UserGroup;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.annotation.Propagation;  
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)  
-public class UserServiceIm implements UserService{
+public class UserGroupServiceIm implements UserGroupService{
 	
 	@Autowired
-	private UserDao userDao ;
+	private UserGroupDao userGroupDao ;
 	 
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
+    public void setUserGroupDao(UserGroupDao userGroupDao) {
+        this.userGroupDao = userGroupDao;
+    } 
  
     @Override
     @Transactional
-    public void add(int userGroupId, User p) {
+    public void add(UserGroup p) {
     	System.out.println("addserviceimple");
-        this.userDao.add(userGroupId, p);
+        this.userGroupDao.add(p);
     }
  
     @Override
     @Transactional
-    public void update(User p) {
-        this.userDao.update(p);
+    public void update(UserGroup p) {
+        this.userGroupDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<User> getAll() {
-    	System.out.println("userServicelm");
-        return this.userDao.getAll();
+    public List<UserGroup> getAll() {
+    	System.out.println("userGroupServicelm");
+        return this.userGroupDao.getAll();
     }
  
     @Override
     @Transactional
-    public User getById(String id) {
-        return this.userDao.getById(id);
+    public UserGroup getById(int id) {
+        return this.userGroupDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void delete(String userId) {
-        this.userDao.delete(userId);
+    public void delete(int userGroupId) {
+        this.userGroupDao.delete(userGroupId);
     }
-    @Override
-    @Transactional
-    public User login(String userId, String passWd){
-    	 return this.userDao.login(userId, passWd);
-    }
+
 }

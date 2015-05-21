@@ -1,6 +1,6 @@
 /**                                                                             				                **/
-/**                                File Name   : UserDao.java       	    		            		   	**/  		
-/**                                Description : User Dao interface			                    			**/ 
+/**                                File Name   : UserGroupDao.java       	    		            		   	**/  		
+/**                                Description : UserGroup Dao interface			                    			**/ 
 /**                                Update      : 2015.05.07(박정훈)                                				**/
 /**                                ETC         :                                                                **/
 /**					                                                                                            **/
@@ -8,18 +8,16 @@ package kr.ac.iof.dao;
 
 import java.util.List;
 
-import kr.ac.iof.model.User;
+import kr.ac.iof.model.UserGroup;
 
-public interface UserDao {
-	public void add(int userGroupId, User user);
+public interface UserGroupDao {
+	public void add(UserGroup userGroup);
 
-	public void delete(String userId);
+	public void delete(int userGroupId);
 
-	public void update(User user);
+	public void update(UserGroup userGroup);
 
-	public List<User> getAll();
+	public List<UserGroup> getAll();
 
-	public User getById(String userId);
-	
-	public User login(String userId, String passWd);
+	public UserGroup getById(int userGroupId);
 }

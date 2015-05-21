@@ -26,8 +26,9 @@
 			<th width="50px">온실주</th>
 			<th width="50px">구역 ID</th>
 			<th width="60px">재배품종</th>
-			<th width="130px">정식일</th>
-			<th width="130px">실제출하일</th>
+			<th width="130px">정식일</th>			
+			<th width="130px">실제 수확 시작일</th>
+			<th width="130px">수확 종료일</th>
 			<th width="45px">편집</th>
 			<th width="50px">Delete</th>
 			<!-- <th width="60">Delete</th> -->
@@ -46,16 +47,15 @@
 					<td>${farmCultivateInfo.cropSpeciesName}</td>
 					<td>${farmCultivateInfo.plantTime}</td>
 					<td>${farmCultivateInfo.productTimeReal}</td>
-
+					<td>${farmCultivateInfo.endTime}</td>
+					
+					
 					<td><form action="farmCultivateInfoModify">
-							<input type="hidden" name="id"
-								value="${farmCultivateInfo.farmId}"> <input
-								type="submit" value="Edit">
+							<input type="hidden" name="id" value="${farmCultivateInfo.tno}"> 
+							<input type="submit" value="Edit">
 						</form></td>
-
-					<td><button
-							onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'">
-							Delete</a></td>
+					<td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'"> <%-- farmId}'"> --%> 
+						Delete</a></td>
 
 				</tr>
 			</c:if>

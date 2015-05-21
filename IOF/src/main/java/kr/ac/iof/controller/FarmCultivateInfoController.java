@@ -60,10 +60,10 @@ public class FarmCultivateInfoController  {
 		return "farmCultivateInfoList";
 	}
 
-	@RequestMapping("/farmCultivateInfoRemove/{id}")
-	public String farmCultivateInfoDelete(@PathVariable("id") int id) {
+	@RequestMapping("/farmCultivateInfoRemove/{tno}") /*id}")*/
+	public String farmCultivateInfoDelete(@PathVariable ("tno") int tno) { /*("id") int id) {*/
 
-		this.farmCultivateInfoService.delete(id);// id로 검색해서 삭제
+		this.farmCultivateInfoService.delete(tno);// id로 검색해서 삭제
 		return "redirect:/farmCultivateInfoList";// list 페이지를 부르면서 새로고침
 	}
 
@@ -77,9 +77,9 @@ public class FarmCultivateInfoController  {
 	}
 
 	@RequestMapping("/farmCultivateInfoModify")
-	public String farmCultivateInfoModify(@RequestParam("id") int id, Model model) {
+	public String farmCultivateInfoModify(@RequestParam("tno") int tno, Model model) {
 
-		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(id));
+		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
 		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
 
 		return "farmCultivateInfoModify";

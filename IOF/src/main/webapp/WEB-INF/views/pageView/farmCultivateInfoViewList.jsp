@@ -27,8 +27,8 @@
 			<th width="55px">구역 ID</th>
 			<th width="70px">재배품종</th>
 			<th width="140px">정식일</th>
-			<th width="130px">예상출하일</th>
-			<th width="130px">실제출하일</th>
+			<th width="130px">예상 수확 시작일</th>
+			<th width="130px">실제 수확 시작일</th>
 			<th width="40px">편집</th>
 			<th width="50px">종료</th>
 			<th width="50px">Delete</th>
@@ -50,9 +50,8 @@
 
 
 					<td><form action="farmCultivateInfoModify">
-							<input type="hidden" name="id"
-								value="${farmCultivateInfo.farmId}"> <input
-								type="submit" value="Edit">
+							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}"> 
+							<input type="submit" value="Edit">
 						</form></td>
 					<td><input type="checkbox"></td>
 					<!-- 종료???? -->
