@@ -206,5 +206,8 @@ public class HistWater {
 	public void setSysDate(Date sysDate) {
 		this.sysDate = sysDate;
 	}
+	public int getFarmId(){
+		return this.getFarmInfo().getFarmId();
+	}
 	
 }

@@ -52,6 +52,7 @@ public class User{// implements UserDetails{
 	@Column(name = "ACTIVE_YN")	
 	private String activeYN;
 	
+	
 	public User() {
 		
 	}

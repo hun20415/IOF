@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.iof.model.User;
+import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.Query;
@@ -25,13 +26,16 @@ public class UserDaoIm implements UserDao {
 
 	
 	@Override
-	public void add(User user) {//insert
+	public void add(int userGroupId, User user) {//insert
 		Transaction trns = null;
-		
+		System.out.println("333333333333333333");
 		Session session = HibernateUtil.getSessionFactory().openSession();//sys db에 대한 session 호출
-		
+		System.out.println("2222222222222222222");
 		try {
 			trns = session.beginTransaction();
+			//System.out.println(user.getUserName());
+			UserGroup userGroup = (UserGroup)session.load(UserGroup.class, new Integer(userGroupId));
+			user.setUserGroup(userGroup);
 			session.save(user);//user 객체를 저장(insert 쿼리문)
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
