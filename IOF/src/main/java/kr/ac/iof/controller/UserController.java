@@ -37,7 +37,7 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;// 현재 에러 발생 수정 해야함
-	@Autowired
+	@Autowired//추가
 	private UserGroupService userGroupService;// 현재 에러 발생 수정 해야함
 
 	public void setUserService(UserService ps) {
@@ -82,10 +82,20 @@ public class UserController {
 	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
 	public String signUp(Model model) {
 		logger.info("sigh up(회원 가입 양식 불러옴)");
-		model.addAttribute("userGroup", new UserGroup());
+		model.addAttribute("userGroupP", new UserGroup());
 		model.addAttribute("userGroupList", userGroupService.getAll());
 		return "signUp";
 	}
+	
+	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
+	public String userAdd(@RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user)
+			throws Exception {
+
+		this.userService.add(groupId ,user);
+
+		return "redirect:/userList";
+	}
+	
 
 	@RequestMapping(value = "/notLoginUsers-menu", method = RequestMethod.GET)
 	public String notLoginUsersmenu() {
@@ -120,14 +130,7 @@ public class UserController {
 		return "userInfo";
 	}
 
-	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
-	public String userAdd(@RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user)
-			throws Exception {
-
-		this.userService.add(groupId ,user);
-
-		return "redirect:/userList";
-	}
+	
 
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
 	public String userList(Model model) throws Exception {
