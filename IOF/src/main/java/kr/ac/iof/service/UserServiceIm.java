@@ -32,9 +32,9 @@ public class UserServiceIm implements UserService{
  
     @Override
     @Transactional
-    public void add(User p) {
+    public void add(int userGroupId, User p) {
     	System.out.println("addserviceimple");
-        this.userDao.add(p);
+        this.userDao.add(userGroupId, p);
     }
  
     @Override
