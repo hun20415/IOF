@@ -17,26 +17,23 @@
 	<table class="type02">
 		<tr>
 			<th scope="row">*온실 ID</th>
-			<td style="width: 390px"><input type="text" name="tno"
-				value="${farmCultivateInfo.farmId}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.farmId}" style="width: 50%;" /></td>
 			<th scope="row">*구역 ID</th>
-			<td style="width: 390px"><input type="text" name="tno"
-				value="${farmCultivateInfo.farmSectionId}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.farmSectionId}" style="width: 50%;" /></td>
 			<!-- <td><select name="">
 					<option>전체/1/2...</option></td> -->
 		</tr>
 		<tr>
 			<th scope="row">온실명</th>
-			<td scope="row">온실 ID에서 가져오기</td>
-			<!-- DB에서 이름 가져와야 함 -->
+			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.farmName}" style="width: 50%;" /></td>	
+			
 			<th scope="row">온실주명</th>
-			<td scope="row">온실 ID에서 가져오기</td>
-			<!-- DB에서 이름 가져와야 함 -->
+			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.userName}" style="width: 50%;" /></td>		
+			
 		</tr>
 		<tr>
 			<th scope="row">*재배품종 ID</th>
-			<td style="width: 390px"><input type="text" name="tno"
-				value="${farmCultivateInfo.cropSpeciesId}" style="width: 50%;" />
+			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.cropSpeciesName}" style="width: 50%;" />
 				<button type="submit">검색</button></td>
 
 		</tr>
@@ -51,11 +48,11 @@
 			<!-- <td><input type="date" id="calendar" name=""></td> -->
 		</tr>
 		<tr>
-			<th scope="row">실제 출하일</th>
+			<th scope="row">실제 수확 시작일</th>
 			<td style="width: 390px"><input type="text" name="tno"
 				value="${farmCultivateInfo.productTimeReal}" style="width: 50%;" /></td>
 			<!-- <td><input type="date" id="calendar" name=""></td> -->
-			<th scope="row">예상 출하일</th>
+			<th scope="row">예상 수확 시작일</th>
 			<td style="width: 390px"><input type="text" name="tno"
 				value="${farmCultivateInfo.productTimePlan}" style="width: 50%;" /></td>
 			<!-- <td><input type="date" id="calendar" name=""></td> -->
