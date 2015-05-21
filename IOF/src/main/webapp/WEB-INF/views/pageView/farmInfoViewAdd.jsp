@@ -12,19 +12,19 @@
 		<tr>
 			<th scope="row">* 온실 ID</th>
 			<td><input type="text" size=10 name="farmId"></td>
-			<th scope="row">온실명</th>
+			<th scope="row">* 온실명</th>
 			<td><input type="text" size=10 name="farmName"></td>
 		</tr>
 		<tr>
 		<th scope="row">* 온실 주 ID</th>
 			<td style="width: 390px">
 			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
-			<c:forEach items="${farmAllId}" var="cropCate">
-			<option value="${farmInfo.owner}">Volvo</option>
-			</c:forEach>
+				<c:forEach items="${farmAllId}" var="owner">
+					<option value="${farmInfo.owner}"></option>
+				</c:forEach>
 			</select>
 			</td> 
-			<th scope="row">온실 주</th>
+			<th scope="row">* 온실 주</th>
 			<td><input type="text" size=10 name="userName"></td>
 		
 		<!-- 
@@ -33,17 +33,27 @@
 			<th scope="row">*온실 주</th>
 			<td><input type="text" size=10 name="userName"></td> 
 		-->
+		
 		</tr>
 		<tr>
 			<th scope="row">관리인 ID</th>
-			<td><input type="text" size=10 name="employeeId"></td>
+			<!-- <td><input type="text" size=10 name="employeeId"></td> -->
+			
+			<td style="width: 390px">
+			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
+				<c:forEach items="${farmAllId}" var="owner">
+					<option value="${farmInfo.owner}"></option>
+				</c:forEach>
+			</select>
+			</td> 
+			
 			<th scope="row">관리인</th>
 			<td><input type="text" size=10 name=""></td>
 		</tr>
 		<tr>
-			<th scope="row">*재배면적(평)</th>
+			<th scope="row">* 재배면적(평)</th>
 			<td><input type="text" size=10 name="areaPyung"></td>
-			<th scope="row">*재배면적(제곱미터)</th>
+			<th scope="row">* 재배면적(제곱미터)</th>
 			<td><input type="text" size=10 name="areaMsquare"></td>
 		</tr>
 		<tr>
@@ -61,19 +71,19 @@
 		<tr>
 			<th scope="row">온실 방향</th>
 			<td><input type="text" size=10 name="direction"></td>
-			<th scope="row">비닐/유리 온실</th>
+			<th scope="row">* 비닐/유리 온실</th>
 			<td><select name="materialType">
 					<option value="1">비닐</option>
 					<option value="2">유리</option>
 			</select></td>
 		</tr>
 		<tr>
-			<th scope="row">*연동/단동</th>
+			<th scope="row">* 연동/단동</th>
 			<td><select name="ifConnected">
 					<option value="Y">연동</option>
 					<option value="N">단동</option>
 			</select></td>
-			<th scope="row">*연동/단동 개수</th>
+			<th scope="row">* 연동/단동 개수</th>
 			<td><input type="text" size=10 name="connectedNum"></td>
 		</tr>
 		<tr>
