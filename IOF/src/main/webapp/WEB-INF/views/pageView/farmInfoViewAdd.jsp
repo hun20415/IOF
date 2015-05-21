@@ -10,13 +10,13 @@
 	onsubmit="return check()">
 	<table class="type02">
 		<tr>
-			<th scope="row">*온실 ID</th>
+			<th scope="row">* 온실 ID</th>
 			<td><input type="text" size=10 name="farmId"></td>
 			<th scope="row">온실명</th>
 			<td><input type="text" size=10 name="farmName"></td>
 		</tr>
 		<tr>
-		<th scope="row">*온실 주 ID</th>
+		<th scope="row">* 온실 주 ID</th>
 			<td style="width: 390px">
 			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
 			<c:forEach items="${farmAllId}" var="cropCate">
@@ -24,7 +24,7 @@
 			</c:forEach>
 			</select>
 			</td> 
-			<th scope="row">*온실 주</th>
+			<th scope="row">온실 주</th>
 			<td><input type="text" size=10 name="userName"></td>
 		
 		<!-- 
