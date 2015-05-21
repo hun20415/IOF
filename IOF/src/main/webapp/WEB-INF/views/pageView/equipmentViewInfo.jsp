@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/equipmentInfo.css" rel="stylesheet" type="text/css">
+<link href="css/farmEquipListInfo.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>

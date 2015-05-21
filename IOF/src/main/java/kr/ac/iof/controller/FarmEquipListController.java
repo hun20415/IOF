@@ -49,6 +49,14 @@ public class FarmEquipListController  {
 
 		return "farmEquipListAdd";
 	}
+	
+	@RequestMapping(value = "/farmEquipListInfo", method = RequestMethod.GET)
+	// 서비스 호출
+	public String farmEquipListInfo() throws Exception {
+		logger.info("farmEquipInfo View");
+
+		return "farmEquipListInfo";
+	}
 
 	@RequestMapping(value = "/farmEquipListAdd", method = { RequestMethod.POST })
 	// 데이터를 받기위한 POST
@@ -72,10 +80,19 @@ public class FarmEquipListController  {
 	public String farmEquipListList(Model model) throws Exception {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
-		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
+		//model.addAttribute("farmEquipList", new FarmEquipList());
+		//model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
 		return "farmEquipListList";
+	}
+	
+	@RequestMapping(value = "/farmEquipListModify", method = RequestMethod.GET)
+	public String farmEquipListModify(Model model) throws Exception {
+		logger.info("farmEquipListModify 리스트");
+		// 리스트 출력
+		
+		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
+		return "farmEquipListModify";
 	}
 
 	@RequestMapping("/farmEquipListRemove/{id}")

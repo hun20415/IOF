@@ -10,8 +10,7 @@
 
 <!-- 본문 시작 -->
 
-<h1 style="position: absolute; top: 70px; left: 750px;">현재 재배 정보
-	List</h1>
+<h1 style="position: absolute; top: 70px; left: 750px;">현재 재배 정보 List</h1>
 
 
 <table class="type10">
