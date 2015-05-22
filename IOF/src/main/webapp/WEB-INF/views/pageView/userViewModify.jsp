@@ -35,16 +35,16 @@
                 <td><input type="text" name="userName" style="width: 50%;" value="${user.userName}"/></td>
             </tr>
             <tr>
-                <td>권한(authorization)</td>
-                
-                <td><select name="groupId">
-                            <option selected="selected" value="${user.userGroupId}">${user.userGroupName}</option>
-                            <c:forEach items="${userGroupList}" var="userGroup">
-                            <c:if test ="${userGroup.userGroup != 1}">
-                              <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>
-                              </c:if>
-                              </c:forEach>
-                </select></td>
+            <td>* 권한(authorization)</td>
+				<td><select name="groupId">
+						 <c:forEach items="${userGroupList}" var="userGroupP">
+						 <c:if test="${userGroupP.userGroup != 1}">
+						<option value="${userGroupP.userGroup}">${userGroupP.userGroupName}
+						</option>
+						</c:if>
+						</c:forEach>				
+				</select></td>
+			
             </tr>
             <tr>
                 <td>Email</td>

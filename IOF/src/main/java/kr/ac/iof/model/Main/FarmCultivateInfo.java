@@ -162,9 +162,9 @@ public class FarmCultivateInfo {
 		return farmInfo.getFarmName();
 	} 
 	//get farmName from FarmInfo table
-		public int getFarmId() {
-			return farmInfo.getFarmId();
-		}
+	public int getFarmId() {
+		return farmInfo.getFarmId();
+	} 
 	//get userName from User table
 	public String getUserName() {
 		return user.getUserName();

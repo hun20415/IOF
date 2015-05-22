@@ -154,12 +154,13 @@ public class UserController {
 		return "redirect:/userList";
 	}
 	@RequestMapping("/userModify")
-	public String userModify(@RequestParam("id") String id, Model model) {
+	public String userModify(@RequestParam("id") String id, @RequestParam("groupId") Integer groupId, Model model) {
 
 		model.addAttribute("user", this.userService.getById(id));
-		model.addAttribute("userGroup", new UserGroup());
-		model.addAttribute("userGroupList", userGroupService.getAll());
-		
+
+		model.addAttribute("groupId", new Integer(groupId));
+		//model.addAttribute("listPersons", this.userService.getAll());
+
 		return "userModify";
 	}
 
