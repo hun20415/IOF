@@ -36,11 +36,14 @@
             </tr>
             <tr>
                 <td>권한(authorization)</td>
-                <td><select name="userGroupId" value="${user.userGroupId}">
-                        <!-- <option value="1">시스템관리자</option> -->
-                        <option value="2">관리자</option>
-                        <option value="3">농장주</option>
-
+                
+                <td><select name="groupId">
+                            <option selected="selected" value="${user.userGroupId}">${user.userGroupName}</option>
+                            <c:forEach items="${userGroupList}" var="userGroup">
+                            <c:if test ="${userGroup.userGroup != 1}">
+                              <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>
+                              </c:if>
+                              </c:forEach>
                 </select></td>
             </tr>
             <tr>
@@ -64,7 +67,7 @@
                 <td><input type="text" name="homeAddr" style="width: 99%;" value="${user.homeAddr}"/></td>
             </tr>
             <tr>
-                <td><input type="hidden" name="sysDataTime" value=""${user.sysDataTime}"/></td>
+                <td><input type="hidden" name="sysDataTime" value="${user.sysDataTime}"/></td>
             </tr>
 
         </table>

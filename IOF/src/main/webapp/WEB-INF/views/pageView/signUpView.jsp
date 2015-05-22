@@ -9,14 +9,14 @@
 		onsubmit="return check()">
 		<table>
 			<tr>
-				<td style="width: 200px;">* 아이디(ID)</td>
-				<td style="width: 390px"><input type="text" name="userid" style="width: 50%;" /></td>
+				<td style="width: 200px;">아이디(ID)</td>
+				<td style="width: 390px"><input type="text" name="userId"
+					style="width: 50%;" /></td>
 			</tr>
 
 			<tr>
-				<td>* 비밀번호(Password)</td>
-				<td><input type="password" name="userpasswd"
-
+				<td>비밀번호(Password)</td>
+				<td><input type="password" name="userPasswd"
 					style="width: 50%;" /></td>
 			</tr>
 			<tr>
@@ -24,25 +24,22 @@
 				</td>
 			</tr>
 			<tr>
-				<td>* 비밀번호 확인(Confirm)</td>
+				<td>비밀번호 확인(Confirm)</td>
 				<td><input type="password" name="confirm" style="width: 50%;" /></td>
 			</tr>
 			<tr>
-				<td>* 이름(Full Name)</td>
-				<td><input type="text" name="username" style="width: 50%;" /></td>
-
+				<td>이름(Full Name)</td>
+				<td><input type="text" name="userName" style="width: 50%;" /></td>
 			</tr>
 			<tr>
-				<td>* 권한(authorization)</td>
-				<td><select name="groupId">
-						 <c:forEach items="${userGroupList}" var="userGroupP">
-						 <c:if test="${userGroupP.userGroup != 1}">
-						<option value="${userGroupP.userGroup}">${userGroupP.userGroupName}
-						</option>
-						</c:if>
-						</c:forEach>
-
+				<td>권한(authorization)</td>
 				
+				<td><select name=groupId>
+				            <c:forEach items="${userGroupList}" var="userGroup">
+				            <c:if test ="${userGroup.userGroup != 1}">
+						      <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>
+						      </c:if>
+						      </c:forEach>
 				</select></td>
 				
 			</tr>
@@ -51,9 +48,8 @@
 				<td><input type="email" name="email" style="width: 80%;" /></td>
 			</tr>
 			<tr>
-				<td>* 휴대폰(Mobile)</td>
-				<td><input type="tel" name="mobilephone" style="width: 80%;" /></td>
-
+				<td>휴대폰(Mobile)</td>
+				<td><input type="tel" name="mobilePhone" style="width: 80%;" /></td>
 			</tr>
 			<tr>
 				<td>집전화(tel)</td>
@@ -78,7 +74,6 @@
 
 		</table>
 		<div style="text-align: center; padding-bottom: 15px;">
-		
 			<input type="submit" value="확인" />
 		</div>
 	</form>

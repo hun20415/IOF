@@ -15,7 +15,7 @@ public interface UserDao {
 
 	public void delete(String userId);
 
-	public void update(User user);
+	public void update(int userGroupId, User user);
 
 	public List<User> getAll();
 

@@ -39,8 +39,8 @@ public class UserServiceIm implements UserService{
  
     @Override
     @Transactional
-    public void update(User p) {
-        this.userDao.update(p);
+    public void update(int userGroupId, User p) {
+        this.userDao.update(userGroupId, p);
     }
  
     @Override
