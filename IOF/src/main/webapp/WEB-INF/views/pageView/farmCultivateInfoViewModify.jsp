@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/greenhouseAdd.css" rel="stylesheet" type="text/css">
+<link href="css/.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
 
 <!--                                File Name   : farmCultivateInfoViewModify.jsp                                   -->
@@ -12,9 +12,11 @@
 <center>
 	<h1>재배 정보 수정</h1>
 </center>
-<form id="signUpForm" action="farmCultivateModify" method="post"
+<form id="signUpForm" action="farmCultivateModify" method="post" 
 	onsubmit="return check()">
-	<table class="type02">
+	<table class="type02 ">
+	            
+	
 		<tr>
 			<th scope="row">*온실 ID</th>
 			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.farmId}" style="width: 50%;" /></td>
