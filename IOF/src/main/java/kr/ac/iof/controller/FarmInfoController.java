@@ -2,6 +2,8 @@ package kr.ac.iof.controller ;
 
 import kr.ac.iof.main.Service.FarmInfoService;
 import kr.ac.iof.model.Main.FarmInfo;
+//import kr.ac.iof.model.User;  //추가 0526
+//import kr.ac.iof.model.UserGroup; //추가 0526
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +32,17 @@ public class FarmInfoController  {
 		this.farmInfoService = ps;
 	}
 
+	/*@RequestMapping(value = "/farmInfoAdd", method = RequestMethod.GET)
+	// 서비스 호출
+	public String farmInfoAdd(Model model) throws Exception {
+		logger.info("farmInfo 입력 View");
+		
+		model.addAttribute("id", new String());
+		model.addAttribute("bb", new String());
+		model.addAttribute("farmAllId", this.farmInfoService.getAllId());
+		
+		return "farmInfoAdd";
+	}*/
 	@RequestMapping(value = "/farmInfoAdd", method = RequestMethod.GET)
 	// 서비스 호출
 	public String farmInfoAdd(Model model) throws Exception {
@@ -45,13 +58,13 @@ public class FarmInfoController  {
 	@RequestMapping(value = "/farmInfoAdd", method = { RequestMethod.POST })
 	// 데이터를 받기위한 POST
 	public String farmInfoAdd(@ModelAttribute("farmInfo") FarmInfo farmInfo)
-			throws Exception {
-		// 추가 입력된 데이터는 farmInfo객체로 넘어온다.
-
-		
+	//public String farmInfoAdd(@RequestParam("ownerListId") Integer ownerListId, @ModelAttribute("farmInfo") FarmInfo farmInfo)
+			throws Exception {		
 		System.out.println("aaaa" + farmInfo.getBuildDate());
 		this.farmInfoService.add(farmInfo);
 		
+		
+		//.add(ownerListId, farmInfo);		
 
 		return "redirect:/farmInfoList";
 	}
