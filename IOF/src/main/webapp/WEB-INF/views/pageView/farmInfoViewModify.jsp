@@ -121,7 +121,15 @@
 	<table>
 		<tr>
 			<center>
-				<button type="submit">확인</button>
+		<%-- 	 <c:if test="${!empty farmInfo.farmId}">
+                <input type="submit" value="<spring:message text="확인"/>" />
+            </c:if>
+            <c:if test="${empty farmInfo.farmId}">
+                <input type="submit" value="<spring:message text="Add"/>" />
+            </c:if>
+       --%>
+			
+			    <button type="submit">확인</button> 
 				<button type="send">취소</button>
 			</center>
 		</tr>

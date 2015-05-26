@@ -11,11 +11,11 @@ import java.util.List;
 import kr.ac.iof.model.User;
 
 public interface UserDao {
-	public void add(User user);
+	public void add(int userGroupId, User user);
 
 	public void delete(String userId);
 
-	public void update(User user);
+	public void update(int userGroupId, User user);
 
 	public List<User> getAll();
 

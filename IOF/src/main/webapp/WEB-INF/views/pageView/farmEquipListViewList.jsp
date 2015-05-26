@@ -30,8 +30,18 @@
 				<td>15</td>
 				<td>21</td>
 				<td>
-				<button>조회</button>
-				<button>수정</button>
+				    <form action="farmEquipListInfo">
+					<input type="hidden" name="id" value="${farmEquipList.farmId}"> <!-- & farmEquipList.farmSectionIdfid, eid  --> 
+					<input type="submit" value="조회">
+					</form>
+					<form action="farmEquipListModify">
+					<input type="hidden" name="id" value="${farmEquipList.farmId}"> <!--  & farmEquipList.farmSectionId}"> --> 
+					<input type="submit" value="수정">
+					</form>					
+				</td>
+						
+				<!-- <button >조회</button> -->
+				<!-- <button>수정</button> -->
 				</td>
 
 

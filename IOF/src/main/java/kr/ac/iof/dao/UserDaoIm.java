@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.iof.model.User;
+import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.Query;
@@ -25,13 +26,17 @@ public class UserDaoIm implements UserDao {
 
 	
 	@Override
-	public void add(User user) {//insert
+	public void add(int userGroupId, User user) {//insert
 		Transaction trns = null;
-		
+	
 		Session session = HibernateUtil.getSessionFactory().openSession();//sys db에 대한 session 호출
 		
 		try {
 			trns = session.beginTransaction();
+			//2줄 userGroup 추가
+			UserGroup userGroup = (UserGroup)session.load(UserGroup.class, new Integer(userGroupId));
+			user.setUserGroup(userGroup);
+			//
 			session.save(user);//user 객체를 저장(insert 쿼리문)
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
@@ -68,14 +73,33 @@ public class UserDaoIm implements UserDao {
 	}
 
 	@Override
-	public void update(User user) {
+	public void update(int userGroupId, User user) {
 		System.out.println("update");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		try {
 			trns = session.beginTransaction();
+			//2줄 userGroup 추가
+			/*UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(userGroupId));
+			user.setUserGroup(userGroup);
+			System.out.println("11111111" + user.getUserName());
+			User existingUser = (User) session.get(User.class, user.getUserId());
+			System.out.println("22222222" + existingUser.getUserName());
+			existingUser.setActiveYN(user.getActiveYN());
+			existingUser.setEmail(user.getEmail());
+			existingUser.setHomeAddr(user.getHomeAddr());
+			existingUser.setHomeZipcode(user.getHomeZipcode());
+			existingUser.setMobilePhone(user.getMobilePhone());
+			existingUser.setPhone(user.getPhone());
+			existingUser.setSysDataTime(user.getSysDataTime());
+			existingUser.setUserGroup(userGroup);
+			existingUser.setUserId(user.getUserId());
+			existingUser.setUserName(user.getUserName());
+			existingUser.setUserPasswd(user.getUserPasswd());*/
+			
 			session.update(user);//update 쿼리문
 			session.getTransaction().commit();
+			trns.commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
 				trns.rollback();

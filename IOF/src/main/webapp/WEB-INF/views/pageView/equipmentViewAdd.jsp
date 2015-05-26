@@ -14,10 +14,10 @@
 <table class="type10">
 	<thead>
 		<tr>
-			<th scope="row">*온실명</th>
+			<th scope="row">* 온실명</th>
 			<td><select name="">
 					<option>딸기세상</option></td>
-			<th scope="row">*구역</th>
+			<th scope="row">구역</th>
 			<td><select name="">
 					<option>2</option></td>
 		</tr>

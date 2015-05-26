@@ -1,6 +1,7 @@
 package kr.ac.iof.controller ;
 
 import kr.ac.iof.main.Service.FarmCultivateInfoService;
+import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.model.Main.FarmCultivateInfo;
 
 import org.slf4j.Logger;
@@ -30,13 +31,23 @@ public class FarmCultivateInfoController  {
 	public void setFarmCultivateInfoService(FarmCultivateInfoService ps) {
 		this.farmCultivateInfoService = ps;
 	}
+	
+	
+	/*@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	public String signUp(Model model) {
+		logger.info("sigh up(회원 가입 양식 불러옴)");
+		model.addAttribute("userGroupP", new UserGroup());
+		model.addAttribute("userGroupList", userGroupService.getAll());
+		return "signUp";
+	}*/
+	
 
 	@RequestMapping(value = "/farmCultivateInfoAdd", method = RequestMethod.GET)
 	// 서비스 호출
 	public String farmCultivateInfoAdd() throws Exception {
 		logger.info("farmCultivateInfo 입력 View");
-
-		return "farmCultivateInfoAdd";
+	
+		return "farmCultivateInfoList";
 	}
 
 	@RequestMapping(value = "/farmCultivateInfoAdd", method = { RequestMethod.POST })
