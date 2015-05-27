@@ -16,7 +16,7 @@
 <table class="type10">
 	<p >
 		<!-- <button type="submit">신규</button> -->
-		<button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>
+		<button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  <!-- //farmCultivateInfoAdd -->
 		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button>
 	</p>
 	<thead style="background: #d2f4ec;">
@@ -49,15 +49,22 @@
 					<td>${farmCultivateInfo.productTimeReal}</td>
 
 
-					<td><form action="farmCultivateInfoModify">
+					<%-- <td><form action="farmCultivateInfoModify">
 							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}"> 
 							<input type="submit" value="Edit">
-						</form></td>
-					<td><input type="checkbox"></td>
-					<!-- 종료???? -->
-
-					<td><button
-							onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.farmId}'">
+						</form></td> --%>
+					<td>	
+					<form action="farmCultivateInfoInfo">
+					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
+					<input type="submit" value="조회"> 
+					</form>
+					<form action="farmCultivateInfoModify">
+					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
+					<input type="submit" value="수정">
+					</form></td>
+          
+           		<td><input type="checkbox"></td>
+				<td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'">
 							Delete</a></td>
 
 				</tr>

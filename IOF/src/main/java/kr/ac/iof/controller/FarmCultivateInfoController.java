@@ -80,7 +80,7 @@ public class FarmCultivateInfoController  {
 
 	
 	@RequestMapping(value = "/farmCultivateInfoModify", method = RequestMethod.POST)
-	public String buyerInfoModify(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
+	public String farmCultivateInfoModify(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
 			throws Exception {
 
 		this.farmCultivateInfoService.update(farmCultivateInfo);
@@ -99,11 +99,11 @@ public class FarmCultivateInfoController  {
 	 
 	
 	// info controller 수정 요망 
-	@RequestMapping(value = "/farmCultivateInfo", method = RequestMethod.GET)//서비스 호출
+	@RequestMapping(value = "/farmCultivateInfoInfo", method = RequestMethod.GET)//서비스 호출
 	public String farmCultivateInfo() throws Exception {
-		logger.info("farmCultivateInfo");
+		logger.info("farmCultivateInfoInfo");
 
-		return "farmCultivateInfo";
+		return "farmCultivateInfoList";
 	} 
 	
 	@RequestMapping(value = "/farmCultivateInfoHist", method = RequestMethod.GET)//서비스 호출
@@ -115,6 +115,24 @@ public class FarmCultivateInfoController  {
 		
 		return "farmCultivateInfoHist";
 	} 
+	
+	//oak
+	@RequestMapping(value = "/farmCultivateInfoInfo", method = RequestMethod.POST)
+	public String farmCultivateInfoInfo(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
+			throws Exception {
+
+		this.farmCultivateInfoService.update(farmCultivateInfo);
+		return "redirect:/farmCultivateInfoList";
+	}
+
+	@RequestMapping("/farmCultivateInfoInfo")
+	public String farmCultivateInfoInfo(@RequestParam("tno") int tno, Model model) {
+
+		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
+		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
+
+		return "farmCultivateInfoInfo";
+	}
 	
 	
 }

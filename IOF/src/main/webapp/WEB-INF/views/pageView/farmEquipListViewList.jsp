@@ -8,7 +8,7 @@
 <table>
 	<p>
 		<!--버튼위치지정 -->
-		<button onclick="window.location.href='/signUp'">신규</button>
+		<button onclick="window.location.href='/farmEquipListAdd'">신규</button>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
@@ -38,6 +38,7 @@
 					<input type="hidden" name="id" value="${farmEquipList.farmId}"> <!--  & farmEquipList.farmSectionId}"> --> 
 					<input type="submit" value="수정">
 					</form>					
+					<button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'" >Delete</a>
 				</td>
 						
 				<!-- <button >조회</button> -->

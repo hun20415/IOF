@@ -15,7 +15,7 @@
 <table class="type02">
 	<tr>
 		<th scope="row">* 온실 ID</th>
-		<td><select name="">
+		<td><select name="farmCultivateInfo.farmId">
 				<option> DB에서 온실전체 뽑아와야 함 </option>  <!-- DB에서 온실전체 뽑아와야 함 -->
 				</td>
 		<th scope="row">* 구역 ID</th>   <!-- DB에서 구역수 뽑아와야 함 -->
