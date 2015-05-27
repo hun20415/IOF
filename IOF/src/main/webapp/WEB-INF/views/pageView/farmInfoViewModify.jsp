@@ -70,16 +70,16 @@
 			<th scope="row">온실 방향</th>
 			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.direction}" style="width: 50%;" /></td>
 			<th scope="row">비닐/유리 온실</th>			
-			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.materialType}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertMaterialType}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="materialType">
 					<option value="1">비닐</option>
 					<option value="2">유리</option>
 			</select></td> -->
 		</tr>
-		<tr>
+		<tr> 
 			<th scope="row">*연동/단동</th>			
-			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.ifConnected}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertIfConnected}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="ifConnected">
 					<option value="Y">연동</option>
@@ -92,7 +92,7 @@
 			<th scope="row">구역 개수</th>
 			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.sectionNum}" style="width: 50%;" /></td>
 			<th scope="row">양액/토경재배</th>			
-			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.cultivationType}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertCultivationType}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="cultivationType">
 					<option value="1">양액재배</option>

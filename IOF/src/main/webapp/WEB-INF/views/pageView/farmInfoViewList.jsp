@@ -35,7 +35,7 @@
 			<th width="60px">양액/토경</th>
 			<th width="200px">농장주소</th>
 			<th width="90px">건립일</th>
-			<th width="95px">편집</th>
+			<th width="140px">편집</th>
 		</tr>
 	</thead> 
     
@@ -47,11 +47,11 @@
             <td>${farmInfo.farmName}</td>
             <td>${farmInfo.ownerName}</td>      <%-- farmInfo.ownerId}</td> --%>
             <td>${farmInfo.employeeName}</td>   <!-- farmInfo.employeeId}</td> -->
-            <td>${farmInfo.materialType}</td>
-            <td>${farmInfo.ifConnected}</td>
+            <td>${farmInfo.convertMaterialType}</td>
+            <td>${farmInfo.convertIfConnected}</td>
             <td>${farmInfo.connectedNum}</td>
             <td>${farmInfo.sectionNum}</td>
-            <td>${farmInfo.cultivationType}</td>
+            <td>${farmInfo.convertCultivationType}</td>
             <td>${farmInfo.farmAddr}</td>
             <td>${farmInfo.buildDate}</td>
             
@@ -63,21 +63,9 @@
             <form action="farmInfoModify">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="수정">
-            </form>  
-            
-            <%-- 
-             <input type="hidden" name="id" value="${farmInfo.farmId}">
-            <input type="submit" value="Edit">        
-             --%> 
-				   <%--  <form action="farmInfoInfo">
-					<input type="hidden" name="id" value="${{farmInfo.farmId}"> 
-					<input type="submit" value="조회">
-					</form>
-					<form action="farmInfoModify">
-					<input type="hidden" name="id" value="${farmInfo.farmId}">  
-					<input type="submit" value="수정">
-					</form> --%>
-           <button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a></td> </form> 
+            </form>
+          
+           <button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a> </td> <!--</form> --> 
         </tr>
     </c:forEach>
   <!--   <td><button onclick="window.location.href='/farmInfoAdd'" >add</a></td> -->

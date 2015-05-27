@@ -50,12 +50,12 @@
 		<th scope="row">온실 방향</th>
 		<td>${farmInfo.direction}</td>
 		<th scope="row">비닐/유리 온실</th>
-		<td>${farmInfo.materialType}</td>
+		<td>${farmInfo.convertMaterialType}</td>
         
 	</tr>
 	<tr>
 		<th scope="row">연동/단동</th>
-		<td>${farmInfo.ifConnected}</td>
+		<td>${farmInfo.convertIfConnected}</td>
 		<th scope="row">연동/단동 개수</th>
 		<td>${farmInfo.connectedNum}</td>
 	</tr>
@@ -63,7 +63,7 @@
 		<th scope="row">구역 개수</th>
 		<td>${farmInfo.sectionNum}</td>
 		<th scope="row">양액/토경재배</th>
-		<td>${farmInfo.cultivationType}</td> 
+		<td>${farmInfo.convertCultivationType}</td> 
 	</tr>
 	<tr>
 		<th scope="row">우편번호</th>
