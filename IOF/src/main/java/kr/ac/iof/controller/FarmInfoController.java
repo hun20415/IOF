@@ -4,6 +4,7 @@ import kr.ac.iof.main.Service.FarmInfoService;
 import kr.ac.iof.model.User;
 import kr.ac.iof.model.Main.FarmInfo;
 import kr.ac.iof.service.UserService;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,10 +66,13 @@ public class FarmInfoController  {
 		this.farmInfoService.add(farmInfo);
 		
 		
-		//.add(ownerListId, farmInfo);		
-
-		return "redirect:/farmInfoList";
+		//.add(ownerListId, farmInfo);
+		
+		return "redirect:/closeWindows";
 	}
+/*
+		return "redirect:/farmInfoList";
+	}*/
 
 	@RequestMapping(value = "/farmInfoList", method = RequestMethod.GET)
 	public String farmInfoList(Model model) throws Exception {
@@ -100,7 +104,8 @@ public class FarmInfoController  {
 			throws Exception {
 
 		this.farmInfoService.update(farmInfo);
-		return "redirect:/farmInfoList";
+/*		return "redirect:/farmInfoList";*/
+		return "redirect:/closeWindows";
 	}
 
 	@RequestMapping("/farmInfoModify")
@@ -120,7 +125,8 @@ public class FarmInfoController  {
 			throws Exception {
 
 		this.farmInfoService.update(farmInfo);
-		return "redirect:/farmInfoList";
+/*		return "redirect:/farmInfoList";*/
+		return "redirect:/closeWindows";
 	}
 
 	@RequestMapping("/farmInfoInfo")

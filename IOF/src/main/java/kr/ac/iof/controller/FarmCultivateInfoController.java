@@ -58,7 +58,8 @@ public class FarmCultivateInfoController  {
 
 		this.farmCultivateInfoService.add(farmCultivateInfo);
 
-		return "redirect:/farmCultivateInfoList";
+		return "redirect:/closeWindows";
+		/*		return "redirect:/farmCultivateInfoList";*/
 	}
 
 	@RequestMapping(value = "/farmCultivateInfoList", method = RequestMethod.GET)
@@ -84,7 +85,8 @@ public class FarmCultivateInfoController  {
 			throws Exception {
 
 		this.farmCultivateInfoService.update(farmCultivateInfo);
-		return "redirect:/farmCultivateInfoList";
+	/*	return "redirect:/farmCultivateInfoList";*/
+		return "redirect:/closeWindows";
 	}
 
 	@RequestMapping("/farmCultivateInfoModify")
@@ -113,7 +115,8 @@ public class FarmCultivateInfoController  {
 		model.addAttribute("farmCultivateInfo", new FarmCultivateInfo());
 		model.addAttribute("listFarmCultivateInfo", this.farmCultivateInfoService.getAll());
 		
-		return "farmCultivateInfoHist";
+/*		return "farmCultivateInfoHist";*/
+		return "redirect:/closeWindows";
 	} 
 	
 	//oak
@@ -122,7 +125,8 @@ public class FarmCultivateInfoController  {
 			throws Exception {
 
 		this.farmCultivateInfoService.update(farmCultivateInfo);
-		return "redirect:/farmCultivateInfoList";
+/*		return "redirect:/farmCultivateInfoList";*/
+		return "redirect:/closeWindows";
 	}
 
 	@RequestMapping("/farmCultivateInfoInfo")

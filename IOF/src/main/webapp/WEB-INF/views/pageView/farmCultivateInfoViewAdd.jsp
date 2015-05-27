@@ -1,12 +1,14 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<link href="css/farmCultivateInfoAdd.css" rel="stylesheet" type="text/css">
-<!--                                                                                             -->
+﻿<!--                                                                                             -->
 <!--                                File Name   : farmCultivateInfoViewAdd.jsp                   -->
 <!--                                Description : farmCultivateInfoViewAdd 입력페이지                                     -->
 <!--                                Update      : 2015.05.20(홍수영)                                      -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<link href="css/farmCultivateInfoAdd.css" rel="stylesheet" type="text/css">
+
+
 <!-- 본문 시작 -->
 <center>
 	<h1>재배 정보 신규 입력</h1>
@@ -17,11 +19,11 @@
 		<th scope="row">* 온실 ID</th>
 		<td><select name="farmCultivateInfo.farmId">
 				<option> DB에서 온실전체 뽑아와야 함 </option>  <!-- DB에서 온실전체 뽑아와야 함 -->
-				</td>
+		</td>
 		<th scope="row">* 구역 ID</th>   <!-- DB에서 구역수 뽑아와야 함 -->
 		<td><select name="">
 				<option>DB에서 구역수 뽑아와야 함</option>
-				</td>
+		</td>
 	</tr>
 	<tr>
 		 <th scope="row">온실명</th>

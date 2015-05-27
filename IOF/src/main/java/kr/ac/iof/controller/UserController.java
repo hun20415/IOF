@@ -165,7 +165,8 @@ public class UserController {
 		model.addAttribute("userGroup", new UserGroup());
 		model.addAttribute("userGroupList", userGroupService.getAll());
 
-		return "userModify";
+/*		return "userModify";*/
+		return "redirect:/closeWindows";
 	}
 
 }

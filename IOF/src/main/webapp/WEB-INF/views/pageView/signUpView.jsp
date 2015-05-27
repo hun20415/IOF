@@ -5,13 +5,11 @@
 <div id=signup>
 	<!-- 본문 시작 -->
 	<h1>회원가입</h1>
-	<form id="signUpForm" action="signUp" method="post"
-		onsubmit="return check()">
+	<form id="signUpForm" action="signUp" method="post"	onsubmit="return check()">
 		<table>
 			<tr>
 				<td style="width: 200px;">아이디(ID)</td>
-				<td style="width: 390px"><input type="text" name="userId"
-					style="width: 50%;" /></td>
+				<td style="width: 390px"><input type="text" name="userId" style="width: 50%;" /></td>
 			</tr>
 
 			<tr>
@@ -19,8 +17,7 @@
 				<td><input type="password" name="userPasswd" style="width: 50%;" /></td>
 			</tr>
 			<tr>
-				<td colspan="2" style="text-align: center; font-weight: bold;">
-				</td>
+				<td colspan="2" style="text-align: center; font-weight: bold;">	</td>
 			</tr>
 			<tr>
 				<td>비밀번호 확인(Confirm)</td>
@@ -37,8 +34,8 @@
 				            <c:forEach items="${userGroupList}" var="userGroup">
 				            <c:if test ="${userGroup.userGroup != 1}">
 						      <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>
-						      </c:if>
-						      </c:forEach>
+						    </c:if>
+						    </c:forEach>
 				</select></td>
 				
 			</tr>

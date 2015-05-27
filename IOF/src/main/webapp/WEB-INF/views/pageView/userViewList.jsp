@@ -1,8 +1,7 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="../css/" rel="stylesheet" type="text/css">
-<script src="../js/newWindow.js" type="text/javascript"
-	, charset="utf-8"></script>
+<script src="../js/newWindow.js" type="text/javascript", charset="utf-8"></script>
 <!--                                                                                                    -->
 <!--                                File Name   : userViewList.jsp                                   -->
 <!--                                Description : userList 페이지   새창으로 출력                                                                                              -->
@@ -19,8 +18,7 @@
 <table class="userList">
 	<p>
 		<!--버튼위치지정 -->
-		<a href="javascript:SignUpPop()"><input type="button"
-			class="button" value="신규" /></a>
+		<a href="javascript:SignUpPop()"><input type="button" class="button" value="신규" /></a>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
@@ -47,8 +45,7 @@
 				<td>
 					<form name="userInfoForm">
 						<input type="hidden" name="id" value="${user.userId}">
-						 <input
-							type="button" value="조회"
+						 <input type="button" value="조회"
 							onclick="javascript:userInfoPop(this.form);">
 					</form>
 				</td>
@@ -57,11 +54,9 @@
 						<input type="hidden" name="groupId" value="${user.userGroupId}">
 						<input type="submit" value="Edit"
 						onclick="javascript:userModifyPop(this.form);">
-					</form></td>
+				</form></td>
 					
-				<td><button
-						onclick="window.location.href='/userRemove/${user.userId}'">
-						탈퇴</a></td>
+				<td><button onclick="window.location.href='/userRemove/${user.userId}'">탈퇴</a></td>
 
 			</tr>
 		</c:forEach>

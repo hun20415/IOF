@@ -1,12 +1,14 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/" rel="stylesheet" type="text/css">
+﻿
 <!--                                                                                                    -->
 <!--                                File Name   : cultivationViewList.jsp                                   -->
 <!--                                Description : cultivationList 입력페이지                                                                                                        -->
 <!--                                Update      : 2015.05.20 (홍수영)                                            -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<link href="css/" rel="stylesheet" type="text/css">
+<script src="../js/newWindow.js" type="text/javascript", charset="utf-8"></script>
 
 <!-- 본문 시작 -->
 
@@ -15,9 +17,11 @@
 
 <table class="type10">
 	<p >
+		<a href="javascript:FarmCultivateInfoAddPop()"><input type="button" class="button" value="신규" /></a>
+		<a href="javascript:farmCultivateInfoHistPop()"><input type="button" class="button" value="과거재배정보" /></a>
 		<!-- <button type="submit">신규</button> -->
-		<button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  <!-- //farmCultivateInfoAdd -->
-		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button>
+		<!-- <button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  //farmCultivateInfoAdd
+		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button> -->
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
@@ -54,11 +58,11 @@
 							<input type="submit" value="Edit">
 						</form></td> --%>
 					<td>	
-					<form action="farmCultivateInfoInfo">
+					<form name="farmCultivateInfoInfoForm" action="farmCultivateInfoInfo">
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="submit" value="조회"> 
 					</form>
-					<form action="farmCultivateInfoModify">
+					<form name="farmCultivateInfoModifyForm" action="farmCultivateInfoModify">
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="submit" value="수정">
 					</form></td>
