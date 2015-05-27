@@ -46,7 +46,8 @@
 				<td>${user.sysDataTime}</td>
 				<td>
 					<form name="userInfoForm">
-						<input type="hidden" name="id" value="${user.userId}"> <input
+						<input type="hidden" name="id" value="${user.userId}">
+						 <input
 							type="button" value="조회"
 							onclick="javascript:userInfoPop(this.form);">
 					</form>
@@ -57,6 +58,7 @@
 						<input type="submit" value="Edit"
 						onclick="javascript:userModifyPop(this.form);">
 					</form></td>
+					
 				<td><button
 						onclick="window.location.href='/userRemove/${user.userId}'">
 						탈퇴</a></td>

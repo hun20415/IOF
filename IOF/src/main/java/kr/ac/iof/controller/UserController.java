@@ -79,13 +79,7 @@ public class UserController {
 		return "home";
 	}
 
-	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
-	public String signUp(Model model) {
-		logger.info("sigh up(회원 가입 양식 불러옴)");
-		model.addAttribute("userGroup", new UserGroup());
-		model.addAttribute("userGroupList", userGroupService.getAll());
-		return "signUp";
-	}
+	
 
 	@RequestMapping(value = "/notLoginUsers-menu", method = RequestMethod.GET)
 	public String notLoginUsersmenu() {
@@ -118,7 +112,14 @@ public class UserController {
 		
 		return "userInfo";
 	}
-
+	@RequestMapping(value = "/signUp", method = RequestMethod.GET)
+	public String signUp(Model model) {
+		logger.info("sigh up(회원 가입 양식 불러옴)");
+		model.addAttribute("userGroup", new UserGroup());
+		model.addAttribute("userGroupList", userGroupService.getAll());
+		return "signUp";
+	}
+	
 	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
 	public String userAdd(@RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user)
 			throws Exception {

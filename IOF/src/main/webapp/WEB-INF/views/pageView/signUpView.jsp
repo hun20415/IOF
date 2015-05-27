@@ -16,8 +16,7 @@
 
 			<tr>
 				<td>비밀번호(Password)</td>
-				<td><input type="password" name="userPasswd"
-					style="width: 50%;" /></td>
+				<td><input type="password" name="userPasswd" style="width: 50%;" /></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="text-align: center; font-weight: bold;">

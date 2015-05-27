@@ -29,8 +29,10 @@ function userInfoPop(userInfoForm) {
 
 	window.open("", "userInfoPop", popOption);
 	
-	userInfoForm.action="userInfo";
+	userInfoForm.action=popUrl;
 	userInfoForm.target="userInfoPop";
 	userInfoForm.submit();
 }
+
+
  
