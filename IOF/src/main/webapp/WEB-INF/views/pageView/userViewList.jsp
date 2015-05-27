@@ -16,7 +16,7 @@
 
 <table class="userList">
     <p > <!--버튼위치지정 -->
-        <a href="javascript:signUpPop()"><input type="button" class = "button" value="신규"/></a>
+        <a href="javascript:SignUpPop()"><input type="button" class = "button" value="신규"/></a>
     </p>
     <thead style=" background: #d2f4ec;" >
         <tr>
@@ -40,9 +40,9 @@
             <td>${user.mobilePhone}</td>
             <td>${user.homeAddr}</td>
              <td>${user.sysDataTime}</td>
-             <td><form action="userInfo">
+             <td><form  name = "userInfoForm" method="post">
             <input type="hidden" name="id" value="${user.userId}">
-            <input type="submit" value="조회">
+            <input type="button" value="조회"  onclick="javascript:userInfoPop();">
             </form></td>
              <td><form action="userModify">
             <input type="hidden" name="id" value="${user.userId}">

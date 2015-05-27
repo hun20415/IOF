@@ -74,7 +74,7 @@
 
 		</table>
 		<div style="text-align: center; padding-bottom: 15px;">
-			<input type="submit" value="확인" />
+			<input type="submit" value="확인"/>
 		</div>
 	</form>
 	<!--  본문 끝 -->

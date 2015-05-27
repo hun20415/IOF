@@ -126,7 +126,11 @@ public class UserController {
 
 		this.userService.add(groupId ,user);
 
-		return "redirect:/userList";
+		return "redirect:/closeWindows";
+	}
+	@RequestMapping(value = "/closeWindows")
+	public void closeWindows() throws Exception {
+
 	}
 
 	@RequestMapping(value = "/userList", method = RequestMethod.GET)
