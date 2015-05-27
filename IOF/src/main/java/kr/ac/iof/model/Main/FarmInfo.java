@@ -116,7 +116,7 @@ public class FarmInfo {
 
 	//get owner's Id from User table
 	public String getOwnerId() {
-		return owner.getUserId();
+		return this.owner.getUserId();
 	}
 	
 	//set owner's Id from User table
@@ -306,5 +306,4 @@ public class FarmInfo {
 	public void setBuildDate(String buildDate) {
 		this.buildDate = buildDate;
 	}
-	
 }
