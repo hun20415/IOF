@@ -115,8 +115,7 @@ public class UserController {
 	public String userInfo(@RequestParam("id") String id, Model model) {
 
 		model.addAttribute("user", this.userService.getById(id));
-		model.addAttribute("listPersons", this.userService.getAll());
-
+		
 		return "userInfo";
 	}
 
@@ -155,15 +154,15 @@ public class UserController {
 			throws Exception {
 		
 		this.userService.update(groupId, user);
-		return "redirect:/userList";
+		return "redirect:/closeWindows";
 	}
 	@RequestMapping("/userModify")
 	public String userModify(@RequestParam("id") String id, @RequestParam("groupId") Integer groupId, Model model) {
-
+		
 		model.addAttribute("user", this.userService.getById(id));
-
 		model.addAttribute("groupId", new Integer(groupId));
-		//model.addAttribute("listPersons", this.userService.getAll());
+		model.addAttribute("userGroup", new UserGroup());
+		model.addAttribute("userGroupList", userGroupService.getAll());
 
 		return "userModify";
 	}

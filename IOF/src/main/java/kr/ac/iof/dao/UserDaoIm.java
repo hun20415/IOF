@@ -77,29 +77,16 @@ public class UserDaoIm implements UserDao {
 		System.out.println("update");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
+		
 		try {
 			trns = session.beginTransaction();
-			//2줄 userGroup 추가
-			/*UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(userGroupId));
+			UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(userGroupId));
 			user.setUserGroup(userGroup);
-			System.out.println("11111111" + user.getUserName());
-			User existingUser = (User) session.get(User.class, user.getUserId());
-			System.out.println("22222222" + existingUser.getUserName());
-			existingUser.setActiveYN(user.getActiveYN());
-			existingUser.setEmail(user.getEmail());
-			existingUser.setHomeAddr(user.getHomeAddr());
-			existingUser.setHomeZipcode(user.getHomeZipcode());
-			existingUser.setMobilePhone(user.getMobilePhone());
-			existingUser.setPhone(user.getPhone());
-			existingUser.setSysDataTime(user.getSysDataTime());
-			existingUser.setUserGroup(userGroup);
-			existingUser.setUserId(user.getUserId());
-			existingUser.setUserName(user.getUserName());
-			existingUser.setUserPasswd(user.getUserPasswd());*/
-			
-			session.update(user);//update 쿼리문
+			session.update(user);
 			session.getTransaction().commit();
-			trns.commit();
+			if (!trns.wasCommitted())
+				trns.commit();
+			
 		} catch (RuntimeException e) {
 			if (trns != null) {
 				trns.rollback();
