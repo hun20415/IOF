@@ -1,4 +1,10 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<!--                                                                                             -->
+<!--                                File Name   : farmInfoViewModify.jsp                   -->
+<!--                                Description : farmInfoViewModify 수정                                     -->
+<!--                                Update      : 2015.05.20(옥정윤)                                      -->
+<!--                                ETC         :                                                       -->
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link href="css/farmEquipList.css" rel="stylesheet" type="text/css">
 

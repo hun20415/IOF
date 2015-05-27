@@ -50,10 +50,15 @@
 					<td>${farmCultivateInfo.endTime}</td>
 					
 					
-					<td><form action="farmCultivateInfoModify">
+			<%-- 		<td><form action="farmCultivateInfoModify">
 							<input type="hidden" name="id" value="${farmCultivateInfo.tno}"> 
 							<input type="submit" value="Edit">
+						</form></td> --%>
+						<td><form action="farmCultivateInfoModify">
+							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}"> 
+							<input type="submit" value="Edit">
 						</form></td>
+						
 					<td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'"> <%-- farmId}'"> --%> 
 						Delete</a></td>
 

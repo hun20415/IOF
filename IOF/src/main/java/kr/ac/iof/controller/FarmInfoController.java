@@ -95,7 +95,8 @@ public class FarmInfoController  {
 	 * "forward:/farmInfoAdd"; }
 	 */
 	@RequestMapping(value = "/farmInfoModify", method = RequestMethod.POST)
-	public String buyerInfoModify(@ModelAttribute("farmInfo") FarmInfo farmInfo)
+	//public String buyerInfoModify(@ModelAttribute("farmInfo") FarmInfo farmInfo)
+	public String farmInfoModify(@ModelAttribute("farmInfo") FarmInfo farmInfo)
 			throws Exception {
 
 		this.farmInfoService.update(farmInfo);
@@ -114,6 +115,25 @@ public class FarmInfoController  {
 		return "farmInfoModify";
 	}
 	
+	@RequestMapping(value = "/farmInfoInfo", method = RequestMethod.POST)
+	public String FarmInfoInfo(@ModelAttribute("farmInfo") FarmInfo farmInfo)
+			throws Exception {
+
+		this.farmInfoService.update(farmInfo);
+		return "redirect:/farmInfoList";
+	}
+
+	@RequestMapping("/farmInfoInfo")
+	public String farmInfoInfo(@RequestParam("id") int id, Model model) {
+
+		
+		model.addAttribute("farmInfo", this.farmInfoService.getById(id));//우리가 선택한 farm에 대한 정보
+		
+		model.addAttribute("user", new User());//우리가 불러올 데이터를 전체 데이터를 읽어올 farm 정보 저장 #A
+		model.addAttribute("userAll", this.userService.getAll());
+
+		return "farmInfoInfo";
+	}
 	
 	/*@RequestMapping(value = "/userInfo", method = RequestMethod.GET)
 	public String userInfo(Model model) throws Exception {

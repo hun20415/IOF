@@ -17,12 +17,18 @@
 		</tr>
 		<tr>
 		<th scope="row">* 온실 주 ID</th>
-			<td style="width: 390px">
-			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
+			<td style="width: 390px"> 
+			<select name=ownerId> 
+				   <c:forEach items="${farmAllId}" var="farmInfo"> 			        
+						 <option value= ${farmInfo.ownerId}"></option>	 				    
+				   </c:forEach> 
+			 </select>
+			
+			<%-- <select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
 				<c:forEach items="${farmAllId}" var="owner">
 					<option value="${farmInfo.owner}"></option>
 				</c:forEach>
-			</select>
+			</select> by oak--%>
 			</td> 
 			<th scope="row">* 온실 주</th>
 			<td><input type="text" size=10 name="userName"></td>
