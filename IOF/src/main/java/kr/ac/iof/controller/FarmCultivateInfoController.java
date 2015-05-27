@@ -47,7 +47,7 @@ public class FarmCultivateInfoController  {
 	public String farmCultivateInfoAdd() throws Exception {
 		logger.info("farmCultivateInfo 입력 View");
 	
-		return "farmCultivateInfoList";
+		return "farmCultivateInfoAdd";
 	}
 
 	@RequestMapping(value = "/farmCultivateInfoAdd", method = { RequestMethod.POST })
@@ -98,14 +98,14 @@ public class FarmCultivateInfoController  {
 	
 	 
 	
-	// info controller 수정 요망 
+	/*// info controller 수정 요망 
 	@RequestMapping(value = "/farmCultivateInfoInfo", method = RequestMethod.GET)//서비스 호출
 	public String farmCultivateInfo() throws Exception {
 		logger.info("farmCultivateInfoInfo");
 
-		return "farmCultivateInfoList";
+		return "farmCultivateInfoInfo";
 	} 
-	
+*/	
 	@RequestMapping(value = "/farmCultivateInfoHist", method = RequestMethod.GET)//서비스 호출
 	public String farmCultivateInfoHist(Model model) throws Exception {
 		logger.info("farmCultivateInfoHist");
