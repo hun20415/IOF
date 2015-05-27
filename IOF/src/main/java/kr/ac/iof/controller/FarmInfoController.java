@@ -1,7 +1,9 @@
 package kr.ac.iof.controller ;
 
 import kr.ac.iof.main.Service.FarmInfoService;
+import kr.ac.iof.model.User;
 import kr.ac.iof.model.Main.FarmInfo;
+import kr.ac.iof.service.UserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +27,8 @@ public class FarmInfoController  {
 	@Autowired
 	/* @Qualifier(value="farmInfoService") */
 	private FarmInfoService farmInfoService;// 서비스 호출
+	@Autowired
+	private UserService userService;// 서비스 호출
 
 	public void setFarmInfoService(FarmInfoService ps) {
 		this.farmInfoService = ps;
@@ -91,8 +95,11 @@ public class FarmInfoController  {
 	@RequestMapping("/farmInfoModify")
 	public String farmInfoModify(@RequestParam("id") int id, Model model) {
 
-		model.addAttribute("farmInfo", this.farmInfoService.getById(id));
-		//model.addAttribute("listPersons", this.farmInfoService.getAll());
+		
+		model.addAttribute("farmInfo", this.farmInfoService.getById(id));//우리가 선택한 farm에 대한 정보
+		
+		model.addAttribute("user", new User());//우리가 불러올 데이터를 전체 데이터를 읽어올 farm 정보 저장 #A
+		model.addAttribute("userAll", this.userService.getAll());
 
 		return "farmInfoModify";
 	}

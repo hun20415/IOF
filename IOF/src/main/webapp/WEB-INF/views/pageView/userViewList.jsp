@@ -1,10 +1,11 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="../css/" rel="stylesheet" type="text/css">
+<script src="../js/newWindow.js" type="text/javascript", charset = "utf-8"></script>
 <!--                                                                                                    -->
 <!--                                File Name   : userViewList.jsp                                   -->
-<!--                                Description : userList 페이지                                                                                                        -->
-<!--                                Update      : 2015.05.20(홍수영)                                           -->
+<!--                                Description : userList 페이지   새창으로 출력                                                                                              -->
+<!--                                Update      : 2015.05.27(박정훈)                                           -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
 
@@ -15,7 +16,7 @@
 
 <table class="userList">
     <p > <!--버튼위치지정 -->
-        <button onclick="window.location.href='/signUp'" >신규</button>
+        <a href="javascript:signUpPop()"><input type="button" class = "button" value="신규"/></a>
     </p>
     <thead style=" background: #d2f4ec;" >
         <tr>

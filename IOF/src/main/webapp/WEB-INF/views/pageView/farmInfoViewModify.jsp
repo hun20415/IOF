@@ -6,7 +6,7 @@
 <!--                                                                                           -->
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<script src="jquery-1.9.1.js"></script>
 <link href="css/farmInfoModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
@@ -23,21 +23,24 @@
 			<td style="width: 390px"><input type="text" name="farmName" value="${farmInfo.farmName}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
+		<%-- 
 			<th scope="row">*온실주 ID</th>
 			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.ownerId}" style="width: 50%;" /></td> 
 			<th scope="row">온실주</th>
 			<td style="width: 390px"><input type="text" name="farmName" value="${farmInfo.ownerName}" style="width: 50%;" /></td>			
-		
-		<%-- <th scope="row">*온실 주 ID</th>
+		 --%>
+		<th scope="row">*온실 주 ID</th>
 			<td style="width: 390px">
-			<select name="farmId" value="${farmInfo.owner}" style="width: 50%;">
-			<c:forEach items="${farmAllId}" var="cropCate">
-			<option value="${farmInfo.owner}">Volvo</option>
+			<select name="ownerId" value="${farmInfo.ownerId}" style="width: 50%;" onchange="ownerName(this.form)">
+			<!-- 기본값으로 farmInfo.ownerId 가 들어가는지 확인해 보아야 한다 -->
+			<c:forEach items="${userAll}" var="user"><!-- controller에 있는 #A의 farmInfoAll과 이름이 매칭되어야 한다. -->
+			     <option value="${user.userId}, ${user.userName}">${user.userId}</option>			     
 			</c:forEach>
+			
 			</select>
 			</td> 
 			<th scope="row">*온실 주</th>
-			<td><input type="text" size=10 name="userName"></td> --%>
+			<td><input type="text" size=10 readonly="readonly" value="${user.userName}" /></td>
 		</tr>
 		<tr>
 			<th scope="row">관리인 ID</th>
