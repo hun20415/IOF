@@ -20,11 +20,11 @@
 	</select> <br>측정 시간: 2015년 xx월 xx일 xx시 xx분</br></td>
 </p>
 
-<table class="type10">
-    <p align="right">
-		<button type="submit">신규</button>
-		<button type="submit">과거재배정보</button>
-	</p> 
+<table>
+    
+		<button type="submit" style="position:relative;left:820px;">신규</button>
+		<button type="submit" style="position:relative;left:830px;">과거재배정보</button>
+	
 	<thead style="background: #d2f4ec;">
 		<tr>
 			<th width="50px">온실ID</th>
