@@ -141,6 +141,29 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 		}
 		return farmInfos;//리스트로 반환
 	}
+	@Override
+	public List<FarmInfo> getOwnerIdList(String ownerId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+		System.out.println("farmInfoDaolm");
+		List<FarmInfo> farmInfos = new ArrayList<FarmInfo>();
+		
+		Transaction trns = null;
+		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from FarmInfo where owner= :id";
+			Query query = session.createQuery(queryString);
+			query.setString("id", ownerId);//id로 매칭 특정 행을 불러온다.
+			farmInfos = query.list();
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return farmInfos;//리스트로 반환
+	}
 
 	@Override
 	public FarmInfo getById(int farmInfoId) {

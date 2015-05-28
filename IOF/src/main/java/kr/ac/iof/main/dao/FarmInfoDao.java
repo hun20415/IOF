@@ -20,4 +20,8 @@ public interface FarmInfoDao {
 	public List<FarmInfo> getAll();
 	public List<String> getAllId(); 
 	public FarmInfo getById(int farmInfoId);
+
+	public List<FarmInfo> getOwnerIdList(String ownerId);
+
+
 }

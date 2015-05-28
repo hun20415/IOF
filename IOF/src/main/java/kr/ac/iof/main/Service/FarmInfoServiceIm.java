@@ -72,4 +72,9 @@ public class FarmInfoServiceIm implements FarmInfoService{
     public List<String> getAllId() { 
     	 return this.farmInfoDao.getAllId();
     }
+    @Override
+    @Transactional
+    public List<FarmInfo> getOwnerIdList(String ownerId) { 
+    	 return this.farmInfoDao.getOwnerIdList(ownerId);
+    }
 }

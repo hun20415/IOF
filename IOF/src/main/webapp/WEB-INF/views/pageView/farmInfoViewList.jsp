@@ -16,17 +16,19 @@
 <c:if test="${!empty listFarmInfo}">
     <table class="type10">
 		<p>
-			<!-- 검색 <select name=sectionnum>
-				<option>홍수영</option>
-			</select>-->
+			
+			 <form name = "selectForm">
 			 
-			<select name=ownerName>
-				    <c:forEach items="${ownerNameList}" var="ownerName">			
-					     <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>			
+			<select name="ownerId">
+				    <c:forEach items="${ownerList}" var="owner">			
+					     <option value="${owner.userId}">${owner.userName}</option>			
 					</c:forEach>
 			</select>
-			
-			<button type="button">검색</button>
+			 
+			 
+			 <input type="submit" value="검색" onclick="farmInfoList">
+			 
+			</form>
 			
 
 			<a href="javascript:FarmInfoAddPop()"><input type="button" class="button" value="신규" /></a>
@@ -45,7 +47,7 @@
 			<th width="60px">양액/토경</th>
 			<th width="200px">농장주소</th>
 			<th width="90px">건립일</th>
-			<th width="160px">편집</th>
+			<th width="140px">편집</th>
 		</tr>
 	</thead> 
     
@@ -69,11 +71,11 @@
             <form name="farmInfoInfoForm">
 			<input type="hidden" name="id" value="${farmInfo.farmId}">
 			<input type="button" value="조회" onclick="javascript:farmInfoInfoPop(this.form);">
-			<!-- </form> -->
+			</form>
 			<form name="farmInfoModifyForm">
 			<input type="hidden" name="id" value="${farmInfo.farmId}">
 			<input type="submit" value="수정" onclick="javascript:farmInfoModifyPop(this.form);">
-			<!-- </form> -->
+			</form>
             <%-- <form action="farmInfoInfoForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="조회">
@@ -81,7 +83,7 @@
             <form action="farmInfoModifyForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="수정">
-            </form>--%>   <!-- delete 지울때는 이form 살리세요 -->
+            </form>--%> 
           
            <button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a> </td> <!--</form> --> 
         </tr>
