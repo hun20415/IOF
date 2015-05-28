@@ -60,22 +60,18 @@
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="button" value="조회" onclick="javascript:farmCultivateInfoInfoPop(this.form);">
 
-					</form>
-
 					<form name="farmCultivateInfoModifyForm"> <!-- action="farmCultivateInfoModify"> -->
-					
-					
-					
+										
+					<!-- </form> 추가하지 말것!!! -->
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="hidden" name="m_farmId" value="${farmCultivateInfo.farmId}">
 					<input type="hidden" name="m_userId" value="${farmCultivateInfo.userId}">
 					<input type="hidden" name="m_cropSpeciesId" value="${farmCultivateInfo.cropSpeciesId}">
 					
 					<input type="submit" value="수정" onclick="javascript:farmCultivateInfoModifyPop(this.form);">
-					
-					
-					
-					</form>
+		
+					<!-- </form> 추가하지 말것!!! -->
+				
 					</td>
           
            		<td><input type="checkbox"></td>

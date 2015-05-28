@@ -5,11 +5,12 @@
 <!--                                                                                                    -->
 <!-- 본문 시작 -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link href="css/.css" rel="stylesheet" type="text/css">
+<link href="css/farmCultivationInfoInfo.css" rel="stylesheet" type="text/css">
 
 <center>
 	<h1>재배 상세 정보</h1>
 </center>
+
 	<table class="type02 ">            
 	
 		<tr>
@@ -28,7 +29,10 @@
 		</tr>
 		<tr>
 			<th scope="row">*재배품종 ID</th>
-			<td>${farmCultivateInfo.farmName}</td>			
+			<td>${farmCultivateInfo.farmName}</td>	
+			
+			<td></td>
+			<td></td>			
 		</tr>
 		<tr>
 			<th scope="row">정식일</th>
