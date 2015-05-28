@@ -39,7 +39,7 @@
 			</tr>
 			<tr>
 				<td>* 권한(authorization)</td>
-				<td><select name=m_userGroupId">
+				<td><select name="m_userGroupId">
 						<c:forEach items="${userGroupList}" var="userGroupP">
 							<c:if test="${userGroupP.userGroup != 1}">
 								<option value="${userGroupP.userGroup}">${userGroupP.userGroupName}
