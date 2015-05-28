@@ -20,8 +20,8 @@
 <p>	
 
 		
-	<a href="javascript:farmCultivateInfoAddPop()"><input type="button" class="button" value="신규" /></a>
-	<a href="javascript:farmCultivateInfoHistPop()"><input type="button" class="button" value="과거재배정보" /></a>
+	<a href="javascript:farmCultivateInfoAddPop()"><input type="button" class="button" value="신규" style="position:relative;left:750px;"/></a>
+	<a href="javascript:farmCultivateInfoHistPop()"><input type="button" class="button" value="과거재배정보" style="position:relative;left:760px;" /></a>
 		<!-- <button type="submit">신규</button> -->
 		<!-- <button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  //farmCultivateInfoAdd
 		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button> -->
