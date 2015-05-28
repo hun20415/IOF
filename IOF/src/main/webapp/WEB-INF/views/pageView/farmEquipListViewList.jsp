@@ -8,7 +8,7 @@
 <table>
 	<p>
 		<!--버튼위치지정 -->
-		<button onclick="window.location.href='/farmEquipListAdd'">신규</button>
+		<button onclick="window.location.href='/farmEquipListAdd'" style="position:relative;left:520px;">신규</button>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
