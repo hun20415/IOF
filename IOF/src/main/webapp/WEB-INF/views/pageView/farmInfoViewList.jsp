@@ -31,7 +31,7 @@
 			</form>
 			<!-- 검색 끝 -->
 
-			<a href="javascript:FarmInfoAddPop()"><input type="button" class="button" value="신규" /></a>
+			<a href="javascript:FarmInfoAddPop()"><input type="button" class="button" value="신규" style="position:relative;left:830px;" /></a>
 			<!-- <button onclick="window.location.href='/farmInfoAdd'" >신규</button> -->
 		</p>
 	<thead style=" background: #d2f4ec; ">

@@ -17,7 +17,7 @@
 <table class="userList">
 	<p>
 		<!--버튼위치지정 -->
-		<a href="javascript:SignUpPop()"><input type="button" class="button" value="신규" /></a>
+		<a href="javascript:SignUpPop()"><input type="button" class="button" value="신규" style="position:relative;left:800px;"/></a>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
