@@ -12,11 +12,9 @@
 <center>
 	<h1>재배 정보 수정</h1>
 </center>
-<form id="signUpForm" action="farmCultivateModify" method="post" 
-	onsubmit="return check()">
+<form id="farmCultivateInfoModifyForm" action="farmCultivateModify" method="post" onsubmit="return check()">
+
 	<table class="type02 ">
-	            
-	
 		<tr>
 			<th scope="row">*온실 ID</th>
 			<td style="width: 390px"><input type="text" name="tno" value="${farmCultivateInfo.farmId}" style="width: 50%;" /></td>
@@ -68,5 +66,5 @@
 			<button type="send">취소</button>
 	</tr>
 	</center>
-
+</form>
 	<!--  본문 끝 -->

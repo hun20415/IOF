@@ -49,7 +49,7 @@ function FarmInfoAddPop() {
 function farmInfoModifyPop(farmInfoModifyForm) {
 
 	var popUrl = "farmInfoModify"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=620, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=700, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open("", "farmInfoModifyPop", popOption);
 	
@@ -74,7 +74,7 @@ function farmInfoInfoPop(farmInfoInfoForm) {
 function FarmCultivateInfoAddPop() {
 
 	var popUrl = "farmCultivateInfoAdd"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=700, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=620, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open(popUrl, "", popOption);
 }
