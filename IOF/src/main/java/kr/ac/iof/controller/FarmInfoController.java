@@ -111,12 +111,13 @@ public class FarmInfoController  {
 
 	//songlock: 2015-05-28
 	@RequestMapping("/farmInfoModify")
-	public String farmInfoModify(@RequestParam("id") int id, @RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, Model model) {
+	public String farmInfoModify(@RequestParam("farmId") int farmId, @RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, Model model) {
 
 		
-		model.addAttribute("farmInfo", this.farmInfoService.getById(id));//우리가 선택한 farm에 대한 정보
+		model.addAttribute("farmInfo", this.farmInfoService.getById(farmId));//우리가 선택한 farm에 대한 정보
 		model.addAttribute("m_owner", new String(m_owner));
 		model.addAttribute("m_employee", new String(m_employee));
+		
 		model.addAttribute("user", new User());//우리가 불러올 데이터를 전체 데이터를 읽어올 farm 정보 저장 #A
 		model.addAttribute("userAll", this.userService.getAll());
 
