@@ -1,11 +1,11 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/userInfoViewList.css" rel="stylesheet" type="text/css">
+<link href="css/farmCultivationInfoInfo.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center><h1>사용자 상세 정보</h1></center>
 <left><h2># 개인정보</h2></left>
-<table class="userInfo">
+<table class="type02">
 	<tr>
 		<th scope="row">사용자 이름  </th>
 		<td>${user.userName}</td>
@@ -17,10 +17,14 @@
 		<td></td> -->
 		<th scope="row">그룹ID</th>
 		<td>${user.userGroupName}</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<th scope="row">이메일</th>	
-		<td clospan="4">${user.email}</td>			
+		<td clospan="4">${user.email}</td>		
+		<td></td>
+		<td></td>	
 	</tr>
 	<tr>
 		<th scope="row">휴대폰</th>
@@ -41,7 +45,7 @@
 </table>
 
 <left><h2># 온실정보</h2></left>
-<table class="userInfo">
+<table class="type02">
 	<tr>
 		<th scope="row">온실 ID  </th>
 		<td>${farmInfo.farmId}</td>
@@ -104,7 +108,7 @@
 
 
 <left><h2># 재배정보</h2></left>
-<table class="userInfo">
+<table class="type02">
 	<tr>
 		<th scope="row">재배현황 기록 ID</th>
 		<td></td>
