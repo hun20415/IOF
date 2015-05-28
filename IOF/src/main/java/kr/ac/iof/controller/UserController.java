@@ -125,10 +125,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/signUp", method = { RequestMethod.POST })
-	public String userAdd(@RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user)
+	public String userAdd(@RequestParam("m_userGroupId") Integer m_userGroupId, @ModelAttribute("user") User user)
 			throws Exception {
 
-		this.userService.add(groupId ,user);
+		this.userService.add(m_userGroupId ,user);
 
 		return "redirect:/closeWindows";
 	}
@@ -155,22 +155,21 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/userModify", method = RequestMethod.POST)
-	public String userModify(@RequestParam("muserGoupId") Integer muserGroupId, @ModelAttribute("user") User user)
+	public String userModify(@RequestParam("m_userGroupId") Integer m_userGroupId, @ModelAttribute("user") User user)
 			throws Exception {
 		
-		this.userService.update(muserGroupId, user);
+		this.userService.update(m_userGroupId, user);
 		return "redirect:/closeWindows";
 	}
 	@RequestMapping("/userModify")
-	public String userModify(@RequestParam("id") String id, @RequestParam("groupId") Integer groupId, Model model) {
+	public String userModify(@RequestParam("id") String id, @RequestParam("m_userGroupId") Integer m_userGroupId, Model model) {
 		
 		model.addAttribute("user", this.userService.getById(id));
-		model.addAttribute("groupId", new Integer(groupId));
+		model.addAttribute("m_userGroupId", new Integer(m_userGroupId));
 		model.addAttribute("userGroup", new UserGroup());
 		model.addAttribute("userGroupList", userGroupService.getAll());
 
-/*		return "userModify";*/
-		return "redirect:/closeWindows";
+		return "userModify";
 	}
 
 }

@@ -57,17 +57,16 @@ public class FarmInfoController  {
 		return "farmInfoAdd";
 	}
 
+	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmInfoAdd", method = { RequestMethod.POST })
-	// 데이터를 받기위한 POST
-	public String farmInfoAdd(@ModelAttribute("farmInfo") FarmInfo farmInfo)
+	// 데이터를 받기위한 POST @RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user
+	public String farmInfoAdd(@RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, @ModelAttribute("farmInfo") FarmInfo farmInfo)
 	//public String farmInfoAdd(@RequestParam("ownerListId") Integer ownerListId, @ModelAttribute("farmInfo") FarmInfo farmInfo)
 			throws Exception {		
 		System.out.println("aaaa" + farmInfo.getBuildDate());
-		this.farmInfoService.add(farmInfo);
+		this.farmInfoService.add(m_owner, m_employee, farmInfo);		
 		
-		
-		//.add(ownerListId, farmInfo);
-		
+		//.add(ownerListId, farmInfo);		
 		return "redirect:/closeWindows";
 	}
 /*
@@ -98,37 +97,32 @@ public class FarmInfoController  {
 	 * model.addAttribute("listPersons", this.farmInfoService.getAll()); return
 	 * "forward:/farmInfoAdd"; }
 	 */
+	
+	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmInfoModify", method = RequestMethod.POST)
 	//public String buyerInfoModify(@ModelAttribute("farmInfo") FarmInfo farmInfo)
-	public String farmInfoModify(@ModelAttribute("farmInfo") FarmInfo farmInfo)
+	public String farmInfoModify(@RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, @ModelAttribute("farmInfo") FarmInfo farmInfo)
 			throws Exception {
 
-		this.farmInfoService.update(farmInfo);
+		this.farmInfoService.update(m_owner, m_employee, farmInfo);
 /*		return "redirect:/farmInfoList";*/
 		return "redirect:/closeWindows";
 	}
 
+	//songlock: 2015-05-28
 	@RequestMapping("/farmInfoModify")
-	public String farmInfoModify(@RequestParam("id") int id, Model model) {
+	public String farmInfoModify(@RequestParam("id") int id, @RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, Model model) {
 
 		
 		model.addAttribute("farmInfo", this.farmInfoService.getById(id));//우리가 선택한 farm에 대한 정보
-		
+		model.addAttribute("m_owner", new String(m_owner));
+		model.addAttribute("m_employee", new String(m_employee));
 		model.addAttribute("user", new User());//우리가 불러올 데이터를 전체 데이터를 읽어올 farm 정보 저장 #A
 		model.addAttribute("userAll", this.userService.getAll());
 
 		return "farmInfoModify";
 	}
 	
-	@RequestMapping(value = "/farmInfoInfo", method = RequestMethod.POST)
-	public String FarmInfoInfo(@ModelAttribute("farmInfo") FarmInfo farmInfo)
-			throws Exception {
-
-		this.farmInfoService.update(farmInfo);
-/*		return "redirect:/farmInfoList";*/
-		return "redirect:/closeWindows";
-	}
-
 	@RequestMapping("/farmInfoInfo")
 	public String farmInfoInfo(@RequestParam("id") int id, Model model) {
 
