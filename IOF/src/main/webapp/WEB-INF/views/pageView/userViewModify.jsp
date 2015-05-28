@@ -14,31 +14,30 @@
 		onsubmit="return check()">
 		<table>
 			<tr>
-				<td style="width: 200px;">아이디(ID)</td>
+				<td style="width: 130px;background: #d2f4ec;">아이디(ID)</td>
 				<td style="width: 390px"><input type="text" name="userId"
 					value="${user.userId}" readonly="readonly" style="width: 50%;" /></td>
 			</tr>
 
 			<tr>
-				<td>비밀번호(Password)</td>
+				<td style="background: #d2f4ec;">비밀번호(Password)</td>
 				<td><input type="password" name="userPasswd"
 					style="width: 50%;" /></td>
-			</tr>
-			<tr>
+			
 				<td colspan="2" style="text-align: center; font-weight: bold;">
 				</td>
 			</tr>
 			<tr>
-				<td>비밀번호 확인(Confirm)</td>
+				<td style="background: #d2f4ec;">비밀번호 확인(Confirm)</td>
 				<td><input type="password" name="confirm" style="width: 50%;" /></td>
 			</tr>
 			<tr>
-				<td>이름(Full Name)</td>
+				<td style="background: #d2f4ec;">이름(Full Name)</td>
 				<td><input type="text" name="userName" style="width: 50%;"
 					value="${user.userName}" /></td>
 			</tr>
 			<tr>
-				<td>* 권한(authorization)</td>
+				<td style="background: #d2f4ec;">* 권한(authorization)</td>
 				<td><select name="m_userGroupId">
 						<c:forEach items="${userGroupList}" var="userGroupP">
 							<c:if test="${userGroupP.userGroup != 1}">
@@ -50,27 +49,27 @@
 
 			</tr>
 			<tr>
-				<td>Email</td>
+				<td style="background: #d2f4ec;">Email</td>
 				<td><input type="email" name="email" style="width: 80%;"
 					value="${user.email}" /></td>
 			</tr>
 			<tr>
-				<td>휴대폰(Mobile)</td>
+				<td style="background: #d2f4ec;">휴대폰(Mobile)</td>
 				<td><input type="tel" name="mobilePhone" style="width: 80%;"
 					value="${user.mobilePhone}" /></td>
 			</tr>
 			<tr>
-				<td>집전화(tel)</td>
+				<td style="background: #d2f4ec;">집전화(tel)</td>
 				<td><input type="tel" name="phone" style="width: 80%;"
 					value="${user.phone}" /></td>
 			</tr>
 			<tr>
-				<td>우편번호</td>
+				<td style="background: #d2f4ec;">우편번호</td>
 				<td><input type="text" name="homeZipcode" style="width: 30%;"
 					value="${user.homeZipcode}" /></td>
 			</tr>
 			<tr>
-				<td>주소(address)</td>
+				<td style="background: #d2f4ec;">주소(address)</td>
 				<td><input type="text" name="homeAddr" style="width: 99%;"
 					value="${user.homeAddr}" /></td>
 			</tr>
