@@ -70,7 +70,7 @@
 					
 					<input type="submit" value="수정" onclick="javascript:farmCultivateInfoModifyPop(this.form);">
 		
-					<!-- </form> 추가하지 말것!!! -->
+					<!-- </form> 추가하지 말것!!!  -->
 				
 					</td>
           

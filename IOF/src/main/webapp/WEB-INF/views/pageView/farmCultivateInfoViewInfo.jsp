@@ -24,7 +24,7 @@
 			<th scope="row">온실명</th>
 			<td>${farmCultivateInfo.farmName}</td> 
 			
-			<th scope="row">온실주명</th>
+			<th scope="row">온실주명 </th>
 			<td>${farmCultivateInfo.farmName}</td> 			
 		</tr>
 		<tr>
