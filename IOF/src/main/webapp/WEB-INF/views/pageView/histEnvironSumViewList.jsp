@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/greenHouseEnviInfo.css" rel="stylesheet" type="text/css">
+<link href="css/.css" rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
 <!--                                File Name   : histEnvironSumViewList.jsp                                   -->
 <!--                                Description : histEnvironSumViewList 전체 정보페이지                                                   -->
@@ -25,28 +25,28 @@
 		<button type="submit">신규</button>
 		<button type="submit">과거재배정보</button>
 	</p> 
-	<thead>
+	<thead style="background: #d2f4ec;">
 		<tr>
-			<th scope="cols">온실ID</th>
-			<th scope="cols">온실명</th>
-			<th scope="cols">외부온도</th>
-			<th scope="cols">외부습도</th>
-			<th scope="cols">풍향</th>
-			<th scope="cols">풍속</th>
-			<th scope="cols">강우</th>
-			<th scope="cols">내부온도</th>
-			<th scope="cols">내부습도</th>
-			<th scope="cols">배지온도</th>
-			<th scope="cols">배지수분</th>
-			<th scope="cols">급액량</th>
-			<th scope="cols">급액EC</th>
-			<th scope="cols">급액pH</th>
-			<th scope="cols">배지배액량</th>
-			<th scope="cols">배지배액EC</th>
-			<th scope="cols">배지배액pH</th>
-			<th scope="cols">CO2농도</th>
-			<th scope="cols">순간광량</th>
-			<th scope="cols">누적광량</th>
+			<th width="50px">온실ID</th>
+			<th>온실명</th>
+			<th >외부온도</th>
+			<th >외부습도</th>
+			<th >풍향</th>
+			<th >풍속</th>
+			<th >강우</th>
+			<th >내부온도</th>
+			<th >내부습도</th>
+			<th >배지온도</th>
+			<th >배지수분</th>
+			<th >급액량</th>
+			<th >급액EC</th>
+			<th >급액pH</th>
+			<th >배지배액량</th>
+			<th >배지배액EC</th>
+			<th >배지배액pH</th>
+			<th >CO2농도</th>
+			<th >순간광량</th>
+			<th >누적광량</th>
 		</tr>
 	</thead>
 	<tbody>
