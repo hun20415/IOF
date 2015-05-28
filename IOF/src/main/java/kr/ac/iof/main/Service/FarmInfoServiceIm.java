@@ -11,6 +11,10 @@ import java.util.List;
 
 
 
+
+
+
+
 import kr.ac.iof.main.dao.FarmInfoDao;
 import kr.ac.iof.model.Main.FarmInfo;
 
@@ -32,15 +36,15 @@ public class FarmInfoServiceIm implements FarmInfoService{
  
     @Override
     @Transactional
-    public void add(FarmInfo p) {
+    public void add(String m_owner, String m_employee, FarmInfo p) {
     	System.out.println("addserviceimple");
-        this.farmInfoDao.add(p);
+        this.farmInfoDao.add(m_owner, m_employee, p);
     }
  
     @Override
     @Transactional
-    public void update(FarmInfo p) {
-        this.farmInfoDao.update(p);
+    public void update(String m_owner, String m_employee, FarmInfo p) {
+        this.farmInfoDao.update(m_owner, m_employee, p);
     }
  
     @Override

@@ -26,7 +26,7 @@ public class UserDaoIm implements UserDao {
 
 	
 	@Override
-	public void add(int userGroupId, User user) {//insert
+	public void add(int m_userGroupId, User user) {//insert
 		Transaction trns = null;
 	
 		Session session = HibernateUtil.getSessionFactory().openSession();//sys db에 대한 session 호출
@@ -34,7 +34,7 @@ public class UserDaoIm implements UserDao {
 		try {
 			trns = session.beginTransaction();
 			//2줄 userGroup 추가
-			UserGroup userGroup = (UserGroup)session.load(UserGroup.class, new Integer(userGroupId));
+			UserGroup userGroup = (UserGroup)session.load(UserGroup.class, new Integer(m_userGroupId));
 			user.setUserGroup(userGroup);
 			//
 			session.save(user);//user 객체를 저장(insert 쿼리문)
@@ -73,7 +73,7 @@ public class UserDaoIm implements UserDao {
 	}
 
 	@Override
-	public void update(int userGroupId, User user) {
+	public void update(int m_userGroupId, User user) {
 		System.out.println("update");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactory().openSession();
@@ -81,7 +81,7 @@ public class UserDaoIm implements UserDao {
 		try {
 			trns = session.beginTransaction();
 			
-			UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(userGroupId));
+			UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(m_userGroupId));
 			user.setUserGroup(userGroup);
 			
 			session.update(user);

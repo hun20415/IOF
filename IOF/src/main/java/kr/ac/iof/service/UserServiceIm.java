@@ -32,15 +32,15 @@ public class UserServiceIm implements UserService{
  
     @Override
     @Transactional
-    public void add(int userGroupId, User p) {
+    public void add(int m_userGroupId, User p) {
     	System.out.println("addserviceimple");
-        this.userDao.add(userGroupId, p);
+        this.userDao.add(m_userGroupId, p);
     }
  
     @Override
     @Transactional
-    public void update(int userGroupId, User p) {
-        this.userDao.update(userGroupId, p);
+    public void update(int m_userGroupId, User p) {
+        this.userDao.update(m_userGroupId, p);
     }
  
     @Override

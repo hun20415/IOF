@@ -11,11 +11,11 @@ import java.util.List;
 import kr.ac.iof.model.Main.FarmInfo;
 
 public interface FarmInfoDao {
-	public void add(FarmInfo farmInfo);
+	public void add(String m_owner, String m_employee, FarmInfo farmInfo);
 
 	public void delete(int farmInfoId);
 
-	public void update(FarmInfo farmInfo);
+	public void update(String m_owner, String m_employee, FarmInfo farmInfo);
 
 	public List<FarmInfo> getAll();
 	public List<String> getAllId(); 

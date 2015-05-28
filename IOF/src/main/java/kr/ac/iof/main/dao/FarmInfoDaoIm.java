@@ -9,6 +9,8 @@ package kr.ac.iof.main.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.iof.model.User;
+import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.model.Main.FarmInfo;
 import kr.ac.iof.util.HibernateUtil;
 
@@ -18,20 +20,27 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Repository("farmInfoDao")
 public class FarmInfoDaoIm implements FarmInfoDao {
 	private static final Logger logger = LoggerFactory.getLogger(FarmInfoDaoIm.class);
 
-	
+	//songlock: 2015-05-28
 	@Override
-	public void add(FarmInfo farmInfo) {//insert
+	public void add(String m_owner, String m_employee, FarmInfo farmInfo) {//insert
 		Transaction trns = null;
 		
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();//main db에 대한 session 호출
 		
 		try {
 			trns = session.beginTransaction();
+			
+			User owner = (User)session.load(User.class, new Integer(m_owner));
+			User employee = (User)session.load(User.class, new Integer(m_employee));
+			farmInfo.setOwner(owner);
+			farmInfo.setEmployee(employee);
+			
 			session.save(farmInfo);//farmInfo 객체를 저장(insert 쿼리문)
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
@@ -67,13 +76,20 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 		}
 	}
 
+	//songlock: 2015-05-28
 	@Override
-	public void update(FarmInfo farmInfo) {
+	public void update(String m_owner, String m_employee, FarmInfo farmInfo) {
 		System.out.println("update");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
+			
+			User owner = (User)session.load(User.class, new Integer(m_owner));
+			User employee = (User)session.load(User.class, new Integer(m_employee));
+			farmInfo.setOwner(owner);
+			farmInfo.setEmployee(employee);
+			
 			session.update(farmInfo);//update 쿼리문
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
