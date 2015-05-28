@@ -18,7 +18,7 @@
 			<th width="60px">구역ID</th>
 			<th width="70px">센서 종류</th>
 			<th width="100px">컨트롤러 종류</th>
-			<th width="90px">편집</th>
+			<th width="145px">편집</th>
 		</tr>
 	</thead>
 	<tbody>  
@@ -33,12 +33,12 @@
 				    <form action="farmEquipListInfo">
 					<input type="hidden" name="id" value="${farmEquipList.farmId}"> <!-- & farmEquipList.farmSectionIdfid, eid  --> 
 					<input type="submit" value="조회">
-					</form>
+					
 					<form action="farmEquipListModify">
 					<input type="hidden" name="id" value="${farmEquipList.farmId}"> <!--  & farmEquipList.farmSectionId}"> --> 
 					<input type="submit" value="수정">
-					</form>					
-					<button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'" >Delete</a>
+									
+					<button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'" >Delete</button>
 				</td>
 						
 				<!-- <button >조회</button> -->

@@ -59,7 +59,9 @@
 					<form name="farmCultivateInfoInfoForm"> <!-- action="farmCultivateInfoInfo"> -->
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="button" value="조회" onclick="javascript:farmCultivateInfoInfoPop(this.form);">
+
 					</form>
+
 					<form name="farmCultivateInfoModifyForm"> <!-- action="farmCultivateInfoModify"> -->
 					
 					
@@ -78,7 +80,7 @@
           
            		<td><input type="checkbox"></td>
 				<td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'">
-							Delete</a></td>
+							Delete</button></td>
 
 				</tr>
 			</c:if>
