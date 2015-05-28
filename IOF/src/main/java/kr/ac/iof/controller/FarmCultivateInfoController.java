@@ -88,20 +88,19 @@ public class FarmCultivateInfoController  {
 			throws Exception {
 
 		this.farmCultivateInfoService.update(m_farmId, m_userId, m_cropSpeciesId, farmCultivateInfo);
-	/*	return "redirect:/farmCultivateInfoList";*/
+		
 		return "redirect:/closeWindows";
 	}
 	
 	//songlock: 2015-05-28
-	@RequestMapping("/farmCultivateInfoModify")
+	@RequestMapping(value = "/farmCultivateInfoModify")
 	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
 			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @RequestParam("tno") int tno, Model model) {
-
+		
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
 		model.addAttribute("m_farmId", new Integer(m_farmId));
 		model.addAttribute("m_userId", new String(m_userId));
 		model.addAttribute("m_cropSpeciesId", new Integer(m_cropSpeciesId));
-		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
 
 		return "farmCultivateInfoModify";
 	}
@@ -129,9 +128,10 @@ public class FarmCultivateInfoController  {
 	
 	@RequestMapping(value = "/farmCultivateInfoInfo",  method = RequestMethod.GET)
 	public String farmCultivateInfoInfo(@RequestParam("tno") int tno, Model model) {
-
+		logger.info("farmCultivateInfo 1");
+		
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
-		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
+		
 
 		
 		return "farmCultivateInfoInfo";

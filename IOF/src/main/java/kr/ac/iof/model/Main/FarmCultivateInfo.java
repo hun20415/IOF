@@ -169,10 +169,18 @@ public class FarmCultivateInfo {
 	public String getUserName() {
 		return user.getUserName();
 	}
+	public String getUserId() {
+		return user.getUserId();
+	}
 	
 	//get cropSpeciesName from CropSpecies table
 	public String getCropSpeciesName() {
 		return cropSpeciesInfo.getSpeciesName();
+	}
+	public int getCropSpeciesId() {
+		return cropSpeciesInfo.getSpeciesId();
 	} 
+	
+	
 	
 }
