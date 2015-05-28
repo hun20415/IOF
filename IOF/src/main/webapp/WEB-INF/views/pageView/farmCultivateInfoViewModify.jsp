@@ -6,7 +6,7 @@
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link href="css/.css" rel="stylesheet" type="text/css">
+<link href="css/farmCultivateInfoModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>
@@ -27,7 +27,7 @@
 		<tr>
 			<th scope="row">온실명</th>
 			<td style="width: 390px"><input type="text" name="farmName" value="${farmCultivateInfo.farmName}" style="width: 50%;" /></td>	
-			
+			g
 			<th scope="row">온실주명</th>
 			<td style="width: 390px"><input type="hidden" name="m_userId" value = "${farmCultivateInfo.userId}"/><input type="text" name="userName" value="${farmCultivateInfo.userName}" style="width: 50%;" /></td>		
 			
