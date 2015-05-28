@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<link href="css/farmCultivationInfoInfo.css" rel="stylesheet" type="text/css">
+<link href="css/userInfo.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center><h1>사용자 상세 정보</h1></center>
