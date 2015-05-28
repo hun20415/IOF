@@ -29,17 +29,19 @@ public class FarmCultivateInfoServiceIm implements FarmCultivateInfoService{
         this.farmCultivateInfoDao = farmCultivateInfoDao;
     }
  
+    //songlock: 2015-05-28   
     @Override
     @Transactional
-    public void add(FarmCultivateInfo p) {
+    public void add(Integer m_farmId, String m_userId, Integer m_cropSpeciesId, FarmCultivateInfo p) {
     	System.out.println("addserviceimple");
-        this.farmCultivateInfoDao.add(p);
+        this.farmCultivateInfoDao.add(m_farmId, m_userId, m_cropSpeciesId, p);
     }
  
+    //songlock: 2015-05-28
     @Override
     @Transactional
-    public void update(FarmCultivateInfo p) {
-        this.farmCultivateInfoDao.update(p);
+    public void update(Integer m_farmId, String m_userId, Integer m_cropSpeciesId, FarmCultivateInfo p) {
+        this.farmCultivateInfoDao.update(m_farmId, m_userId, m_cropSpeciesId, p);
     }
  
     @Override

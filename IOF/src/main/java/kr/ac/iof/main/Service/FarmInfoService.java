@@ -12,11 +12,11 @@ import kr.ac.iof.model.Main.FarmInfo;
   
 public interface FarmInfoService {
  
-	public void add(String m_owner, String m_employee, FarmInfo farmInfo);
+	public void add(String m_owner, String m_employee, FarmInfo farmInfo); //songlock: 2015-05-28   
 
 	public void delete(int farmInfoId);
 
-	public void update(String m_owner, String m_employee, FarmInfo farmInfo);
+	public void update(String m_owner, String m_employee, FarmInfo farmInfo); //songlock: 2015-05-28   
 
 	public List<FarmInfo> getAll();
 

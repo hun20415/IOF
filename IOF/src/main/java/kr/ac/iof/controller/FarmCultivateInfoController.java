@@ -50,13 +50,15 @@ public class FarmCultivateInfoController  {
 		return "farmCultivateInfoAdd";
 	}
 
+	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmCultivateInfoAdd", method = { RequestMethod.POST })
 	// 데이터를 받기위한 POST
-	public String farmCultivateInfoAdd(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
+	public String farmCultivateInfoAdd(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
+			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
 			throws Exception {
 		// 추가 입력된 데이터는 farmCultivateInfo객체로 넘어온다.
 
-		this.farmCultivateInfoService.add(farmCultivateInfo);
+		this.farmCultivateInfoService.add(m_farmId, m_userId, m_cropSpeciesId, farmCultivateInfo);
 
 		return "redirect:/closeWindows";
 		/*		return "redirect:/farmCultivateInfoList";*/
@@ -79,20 +81,26 @@ public class FarmCultivateInfoController  {
 		return "redirect:/farmCultivateInfoList";// list 페이지를 부르면서 새로고침
 	}
 
-	
+	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmCultivateInfoModify", method = RequestMethod.POST)
-	public String farmCultivateInfoModify(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
+	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
+			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
 			throws Exception {
 
-		this.farmCultivateInfoService.update(farmCultivateInfo);
+		this.farmCultivateInfoService.update(m_farmId, m_userId, m_cropSpeciesId, farmCultivateInfo);
 	/*	return "redirect:/farmCultivateInfoList";*/
 		return "redirect:/closeWindows";
 	}
-
+	
+	//songlock: 2015-05-28
 	@RequestMapping("/farmCultivateInfoModify")
-	public String farmCultivateInfoModify(@RequestParam("tno") int tno, Model model) {
+	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
+			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @RequestParam("tno") int tno, Model model) {
 
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
+		model.addAttribute("m_farmId", new Integer(m_farmId));
+		model.addAttribute("m_userId", new String(m_userId));
+		model.addAttribute("m_cropSpeciesId", new Integer(m_cropSpeciesId));
 		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
 
 		return "farmCultivateInfoModify";
@@ -119,16 +127,6 @@ public class FarmCultivateInfoController  {
 		return "redirect:/closeWindows";
 	} 
 	
-	//oak
-	@RequestMapping(value = "/farmCultivateInfoInfo", method = RequestMethod.POST)
-	public String farmCultivateInfoInfo(@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
-			throws Exception {
-
-		this.farmCultivateInfoService.update(farmCultivateInfo);
-/*		return "redirect:/farmCultivateInfoList";*/
-		return "redirect:/closeWindows";
-	}
-
 	@RequestMapping("/farmCultivateInfoInfo")
 	public String farmCultivateInfoInfo(@RequestParam("tno") int tno, Model model) {
 

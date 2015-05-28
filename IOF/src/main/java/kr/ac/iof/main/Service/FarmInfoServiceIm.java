@@ -34,6 +34,7 @@ public class FarmInfoServiceIm implements FarmInfoService{
         this.farmInfoDao = farmInfoDao;
     }
  
+    //songlock: 2015-05-28   
     @Override
     @Transactional
     public void add(String m_owner, String m_employee, FarmInfo p) {
@@ -41,6 +42,7 @@ public class FarmInfoServiceIm implements FarmInfoService{
         this.farmInfoDao.add(m_owner, m_employee, p);
     }
  
+    //songlock: 2015-05-28   
     @Override
     @Transactional
     public void update(String m_owner, String m_employee, FarmInfo p) {

@@ -102,6 +102,7 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 			session.close();
 		}
 	}
+	
 	@Override
 	public List<FarmInfo> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
 		System.out.println("farmInfoDaolm");
