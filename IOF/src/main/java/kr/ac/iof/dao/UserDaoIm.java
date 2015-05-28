@@ -80,8 +80,10 @@ public class UserDaoIm implements UserDao {
 		
 		try {
 			trns = session.beginTransaction();
+			
 			UserGroup userGroup = (UserGroup)session.get(UserGroup.class, new Integer(userGroupId));
 			user.setUserGroup(userGroup);
+			
 			session.update(user);
 			session.getTransaction().commit();
 			if (!trns.wasCommitted())

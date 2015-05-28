@@ -13,8 +13,8 @@
 <center>
 	<h1>온실 정보 수정</h1>
 </center>
-<form id="farmInfoModifyForm" action="farmInfoModify" method="post"
-	onsubmit="return check()">
+
+<form id="farmInfoModifyForm" action="farmInfoModify" method="post" onsubmit="return check()">
 	<table class="type02">
 		<tr>
 			<th scope="row">*온실 ID</th>

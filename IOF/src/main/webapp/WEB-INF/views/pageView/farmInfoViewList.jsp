@@ -16,10 +16,18 @@
 <c:if test="${!empty listFarmInfo}">
     <table class="type10">
 		<p>
-			검색 <select name=sectionnum>
+			<!-- 검색 <select name=sectionnum>
 				<option>홍수영</option>
+			</select>-->
+			 
+			<select name=ownerName>
+				    <c:forEach items="${ownerNameList}" var="ownerName">			
+					     <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>			
+					</c:forEach>
 			</select>
+			
 			<button type="button">검색</button>
+			
 
 			<a href="javascript:FarmInfoAddPop()"><input type="button" class="button" value="신규" /></a>
 			<!-- <button onclick="window.location.href='/farmInfoAdd'" >신규</button> -->
@@ -58,14 +66,22 @@
             <td>${farmInfo.buildDate}</td>
             
             <td>
-            <form action="farmInfoModifyForm">
+            <form name="farmInfoInfoForm">
+			<input type="hidden" name="id" value="${farmInfo.farmId}">
+			<input type="button" value="조회" onclick="javascript:farmInfoInfoPop(this.form);">
+			</form>
+			<form name="farmInfoModifyForm">
+			<input type="hidden" name="id" value="${farmInfo.farmId}">
+			<input type="submit" value="수정" onclick="javascript:farmInfoModifyPop(this.form);">
+			</form>
+            <%-- <form action="farmInfoInfoForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="조회">
             </form>  
-            <form action="farmInfoInfoForm">
+            <form action="farmInfoModifyForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="수정">
-            </form>
+            </form>--%> 
           
            <button onclick="window.location.href='/farmInfoRemove/${farmInfo.farmId}'" >Delete</a> </td> <!--</form> --> 
         </tr>

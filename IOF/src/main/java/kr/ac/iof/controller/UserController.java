@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import kr.ac.iof.main.Service.CropCateService;
+import kr.ac.iof.main.Service.FarmInfoService;
 import kr.ac.iof.model.User;
 import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.service.UserService;
@@ -39,7 +40,9 @@ public class UserController {
 	private UserService userService;// 현재 에러 발생 수정 해야함
 	@Autowired
 	private UserGroupService userGroupService;// 현재 에러 발생 수정 해야함
-
+	@Autowired
+	private FarmInfoService farmInfoService;
+	
 	public void setUserService(UserService ps) {
 		this.userService = ps;
 	} 
@@ -109,6 +112,7 @@ public class UserController {
 	public String userInfo(@RequestParam("id") String id, Model model) {
 
 		model.addAttribute("user", this.userService.getById(id));
+		//model.addAttribute("farm", this.farmInfoService.getById(farmInfoId));
 		
 		return "userInfo";
 	}
@@ -151,10 +155,10 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/userModify", method = RequestMethod.POST)
-	public String userModify(@RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user)
+	public String userModify(@RequestParam("muserGoupId") Integer muserGroupId, @ModelAttribute("user") User user)
 			throws Exception {
 		
-		this.userService.update(groupId, user);
+		this.userService.update(muserGroupId, user);
 		return "redirect:/closeWindows";
 	}
 	@RequestMapping("/userModify")

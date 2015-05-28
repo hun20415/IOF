@@ -30,7 +30,7 @@
 			<tr>
 				<td>권한(authorization)</td>
 				
-				<td><select name=groupId>
+				<td><select name=muserGroupId>
 				            <c:forEach items="${userGroupList}" var="userGroup">
 				            <c:if test ="${userGroup.userGroup != 1}">
 						      <option value="${userGroup.userGroup}">${userGroup.userGroupName}</option>

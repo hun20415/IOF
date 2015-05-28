@@ -45,15 +45,13 @@
 				<td>
 					<form name="userInfoForm">
 						<input type="hidden" name="id" value="${user.userId}">
-						 <input type="button" value="조회"
-							onclick="javascript:userInfoPop(this.form);">
+						 <input type="button" value="조회" onclick="javascript:userInfoPop(this.form);">
 					</form>
 				</td>
 				<td><form name = "userModifyForm">
 						<input type="hidden" name="id" value="${user.userId}"> 
 						<input type="hidden" name="groupId" value="${user.userGroupId}">
-						<input type="submit" value="Edit"
-						onclick="javascript:userModifyPop(this.form);">
+						<input type="submit" value="수정" onclick="javascript:userModifyPop(this.form);">
 				</form></td>
 					
 				<td><button onclick="window.location.href='/userRemove/${user.userId}'">탈퇴</a></td>

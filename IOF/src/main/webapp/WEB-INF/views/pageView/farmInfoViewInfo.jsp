@@ -6,11 +6,13 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 
-<link href="css/farmInfo.css" rel="stylesheet" type="text/css">  <!-- /greenhouseInfo.css -> farmInfo.css로 변경 -->
-
+<link href="css/farmInfo.css" rel="stylesheet" type="text/css"> 
+ 
 <!-- 본문 시작 -->
 <center><h1>온실 상세 정보</h1></center>
 
+<form id="farmInfoInfoForm" action="farmInfoInfo" method="post" onsubmit="return check()">
+	
 <left><h2># 온실정보</h2></left>
 <table class="type02">
 	<tr>
@@ -314,7 +316,7 @@
 	</tr>
 	
 </table>
-
+</form>
 <!--  본문 끝 -->
 
 
