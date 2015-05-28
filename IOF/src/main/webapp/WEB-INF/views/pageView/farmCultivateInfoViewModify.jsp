@@ -1,17 +1,18 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
-<link href="css/.css" rel="stylesheet" type="text/css">
-<!--                                                                                                    -->
+﻿<!--                                                                                                    -->
 
 <!--                                File Name   : farmCultivateInfoViewModify.jsp                                   -->
 <!--                                Description : farmCultivateInfoViewModify 수정페이지                                                                                                        -->
 <!--                                Update      : 2015.05.18(옥정윤)                                      -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<link href="css/.css" rel="stylesheet" type="text/css">
+
 <!-- 본문 시작 -->
 <center>
 	<h1>재배 정보 수정</h1>
 </center>
+
 <form id="farmCultivateInfoModifyForm" action="farmCultivateModify" method="post" onsubmit="return check()">
 
 	<table class="type02 ">

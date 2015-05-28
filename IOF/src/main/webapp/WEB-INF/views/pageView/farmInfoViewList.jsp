@@ -16,20 +16,20 @@
 <c:if test="${!empty listFarmInfo}">
     <table class="type10">
 		<p>
-			
+			<!-- 검색 시작 -->
 			 <form name = "selectForm">
 			 
-			<select name="ownerId">
-				    <c:forEach items="${ownerList}" var="owner">			
-					     <option value="${owner.userId}">${owner.userName}</option>			
-					</c:forEach>
-			</select>
+				<select name="ownerId">
+					    <c:forEach items="${ownerList}" var="owner">			
+						     <option value="${owner.userId}">${owner.userName}</option>			
+						</c:forEach>
+				</select>
 			 
 			 
-			 <input type="submit" value="검색" onclick="farmInfoList">
+			 	<input type="submit" value="검색" onclick="farmInfoList">
 			 
 			</form>
-			
+			<!-- 검색 끝 -->
 
 			<a href="javascript:FarmInfoAddPop()"><input type="button" class="button" value="신규" /></a>
 			<!-- <button onclick="window.location.href='/farmInfoAdd'" >신규</button> -->

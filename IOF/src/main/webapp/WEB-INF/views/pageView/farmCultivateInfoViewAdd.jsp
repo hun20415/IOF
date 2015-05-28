@@ -13,41 +13,47 @@
 <center>
 	<h1>재배 정보 신규 입력</h1>
 </center>
-
+<form id="farmCultivateInfoAddForm" action="farmCultivateInfoAdd" method="post"	onsubmit="return check()">
 <table class="type02">
 	<tr>
 		<th scope="row">* 온실 ID</th>
-		<td><select name="farmCultivateInfo.farmId">
-				<option> DB에서 온실전체 뽑아와야 함 </option>  <!-- DB에서 온실전체 뽑아와야 함 -->
+		<td>
+		<select name="m_farmId">
+						<c:forEach items="${farmIdList}" var="farmIdP">
+							<option value="${farmIdP.farmId}">${farmIdP.farmId}			</option>							
+						</c:forEach>
+		</select>		
+		<!-- <select name="farmCultivateInfo.farmId">
+				<option> DB에서 온실전체 뽑아와야 함 </option>  DB에서 온실전체 뽑아와야 함 -->
 		</td>
+		
 		<th scope="row">* 구역 ID</th>   <!-- DB에서 구역수 뽑아와야 함 -->
-		<td><select name="">
-				<option>DB에서 구역수 뽑아와야 함</option>
+		<td>
+		<select name="farmSectionId">
+						<c:forEach items="${farmSectionIdList}" var="farmSectionIdP">
+							<option value="${farmSectionIdP.farmSectionId}"> ${farmSectionIdP.farmSectionId} </option>							
+						</c:forEach>
+		</select>
 		</td>
 	</tr>
 	<tr>
 		 <th scope="row">온실명</th>
-		 <td scope="row">온실 ID에서 가져오기</td> <-- DB에서 이름 가져와야 함 -->
-		
-		<%-- <td><select name="farmName">
-						 <c:forEach items="${farmNameList}" var="userGroupP">
-						 <c:if test="${userGroupP.userGroup != 1}">
-						<option value="${userGroupP.userGroup}">${userGroupP.userGroupName}
-						</option>
-						</c:if>
-						</c:forEach>
-
-				
-				</select></td>
-		 --%>
-		
+		 <td scope="row">${farmId.farmName}</td> 		
 		
 		<th scope="row">* 온실주명</th>
-		<td scope="row">온실 ID에서 가져오기</td> <!-- DB에서 이름 가져와야 함 -->
+		<td scope="row">${farmId.userName}</td> <!-- DB에서 이름 가져와야 함 -->
 	</tr>
 	<tr>
 		<th scope="row">* 재배품종 ID</th>
-		<td><input type="text" size=10 name="croptypeid">
+		<td>
+		<!-- <input type="text" size=10 name="croptypeid"> -->
+		
+		<select name="m_cropSpeciesId">
+						<c:forEach items="${cropSpeciesIdList}" var="cropSpeciesIdP">
+							<option value="${cropSpeciesIdP.cropSpeciesId}"> ${cropSpeciesIdP.cropSpeciesName} </option>							
+						</c:forEach>
+		</select>
+		
 		<button type="submit">검색</button>
 		</td>
 		
@@ -73,6 +79,7 @@
 		<button type="send">취소</button>
 </tr>
 </center>
+</form>
 
 <!--  본문 끝 -->
 

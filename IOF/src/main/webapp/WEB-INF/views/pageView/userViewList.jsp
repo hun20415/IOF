@@ -11,8 +11,7 @@
 
 <!-- 본문 시작 -->
 
-<h1 style="position: absolute; top: 70px; left: 700px;">전체 사용자
-	List</h1>
+<h1 style="position: absolute; top: 70px; left: 700px;">전체 사용자 List</h1>
 
 
 <table class="userList">

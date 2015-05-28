@@ -38,7 +38,7 @@ function userInfoPop(userInfoForm) {
 }
 
 //farmInfo
-function FarmInfoAddPop() {
+function farmInfoAddPop() {
 
 	var popUrl = "farmInfoAdd"; // 팝업창에 출력될 페이지 URL
 	var popOption = "width=700, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
@@ -71,7 +71,7 @@ function farmInfoInfoPop(farmInfoInfoForm) {
 }
 
 //farmCultivateInfo
-function FarmCultivateInfoAddPop() {
+function farmCultivateInfoAddPop() {
 
 	var popUrl = "farmCultivateInfoAdd"; // 팝업창에 출력될 페이지 URL
 	var popOption = "width=620, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
@@ -82,7 +82,7 @@ function FarmCultivateInfoAddPop() {
 function farmCultivateInfoModifyPop(farmCultivateInfoModifyForm) {
 
 	var popUrl = "farmCultivateInfoModify"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=620, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=550, height=550, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open("", "farmCultivateInfoModifyPop", popOption);
 	
@@ -94,7 +94,7 @@ function farmCultivateInfoModifyPop(farmCultivateInfoModifyForm) {
 
 function farmCultivateInfoInfoPop(farmCultivateInfoInfoForm) {
 	var popUrl = "farmCultivateInfoInfo"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=640, height=900, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=550, height=550, resizable=no, scrollbars=no, status=no;"; // 팝업창
 
 	window.open("", "farmCultivateInfoInfoPop", popOption);
 	

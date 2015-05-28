@@ -72,26 +72,22 @@ public class FarmInfoController  {
 /*
 		return "redirect:/farmInfoList";
 	}*/
-
+	//search start
+	
 	@RequestMapping(value = "/farmInfoList", method = {RequestMethod.GET}, params= "ownerId")
 	public String farmInfoList(Model model, @RequestParam("ownerId") String ownerId) throws Exception {
 		logger.info("farmInfo 111111");
 		// 리스트 출력
-		if(ownerId != null){
-			model.addAttribute("farmInfo", new FarmInfo());
-			model.addAttribute("listFarmInfo", this.farmInfoService.getOwnerIdList(ownerId));
-			
-		}else{
 		model.addAttribute("farmInfo", new FarmInfo());
-		model.addAttribute("listFarmInfo", this.farmInfoService.getAll());
-		}
-		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
+		model.addAttribute("listFarmInfo", this.farmInfoService.getOwnerIdList(ownerId));
 		
 		model.addAttribute("owner", new User());
 		model.addAttribute("ownerList", this.userService.getAll());
 		
 		return "farmInfoList";
 	}
+	
+	//search end
 	@RequestMapping(value = "/farmInfoList", method = {RequestMethod.GET})
 	public String farmInfoList(Model model) throws Exception {
 		logger.info("farmInfo 4444444");

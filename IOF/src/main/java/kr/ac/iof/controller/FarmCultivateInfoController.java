@@ -123,16 +123,17 @@ public class FarmCultivateInfoController  {
 		model.addAttribute("farmCultivateInfo", new FarmCultivateInfo());
 		model.addAttribute("listFarmCultivateInfo", this.farmCultivateInfoService.getAll());
 		
-/*		return "farmCultivateInfoHist";*/
-		return "redirect:/closeWindows";
+		return "farmCultivateInfoHist";
+		/*return "redirect:/closeWindows";*/
 	} 
 	
-	@RequestMapping("/farmCultivateInfoInfo")
+	@RequestMapping(value = "/farmCultivateInfoInfo",  method = RequestMethod.GET)
 	public String farmCultivateInfoInfo(@RequestParam("tno") int tno, Model model) {
 
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
 		//model.addAttribute("listPersons", this.farmCultivateInfoService.getAll());
 
+		
 		return "farmCultivateInfoInfo";
 	}
 	
