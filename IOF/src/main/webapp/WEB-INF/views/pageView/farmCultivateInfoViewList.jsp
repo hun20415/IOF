@@ -55,15 +55,18 @@
 					<td>${farmCultivateInfo.productTimePlan}</td>
 					<td>${farmCultivateInfo.productTimeReal}</td>
 					
-					<td>	
+					<th>	
 					<form name="farmCultivateInfoInfoForm"> <!-- action="farmCultivateInfoInfo"> -->
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
-					<input type="button" value="조회" onclick="javascript:farmCultivateInfoInfoPop(this.form);"> 
+					<input type="button" value="조회" onclick="javascript:farmCultivateInfoInfoPop(this.form);">
+					</form>
+					 </th>
+					 <th>
 					<form name="farmCultivateInfoModifyForm"> <!-- action="farmCultivateInfoModify"> -->
 					<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 					<input type="submit" value="수정" onclick="javascript:farmCultivateInfoModifyPop(this.form);">
-					</form></form>
-					</td>
+					</form>
+					</th>
           
            		<td><input type="checkbox"></td>
 				<td><button onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'">
