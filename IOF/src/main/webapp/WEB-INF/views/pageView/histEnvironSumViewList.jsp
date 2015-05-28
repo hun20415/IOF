@@ -1,6 +1,6 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/.css" rel="stylesheet" type="text/css">
+<link href="css/.css " rel="stylesheet" type="text/css">
 <!--                                                                                                    -->
 <!--                                File Name   : histEnvironSumViewList.jsp                                   -->
 <!--                                Description : histEnvironSumViewList 전체 정보페이지                                                   -->
