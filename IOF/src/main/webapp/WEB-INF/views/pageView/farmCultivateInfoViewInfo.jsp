@@ -29,7 +29,7 @@
 		</tr>
 		<tr>
 			<th scope="row">*재배품종 ID</th>
-			<td>${farmCultivateInfo.farmName}</td>	
+			<td>${farmCultivateInfo.farmName} </td>	
 			
 			<td></td>
 			<td></td>			

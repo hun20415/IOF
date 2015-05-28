@@ -53,7 +53,7 @@
 					<td>${farmCultivateInfo.cropSpeciesName}</td>
 					<td>${farmCultivateInfo.plantTime}</td>
 					<td>${farmCultivateInfo.productTimePlan}</td>
-					<td>${farmCultivateInfo.productTimeReal}</td>
+					<td>${farmCultivateInfo.productTimeReal} </td>
 					
 					<td>	
 					<form name="farmCultivateInfoInfoForm"> <!-- action="farmCultivateInfoInfo"> -->
