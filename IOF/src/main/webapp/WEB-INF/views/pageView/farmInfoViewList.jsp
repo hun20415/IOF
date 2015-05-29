@@ -6,7 +6,7 @@
 <!--                                                                                                    -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/" rel="stylesheet" type="text/css">
+<link href="css/" rel="stylesheet" type="text/css">  
 <script src="../js/newWindow.js" type="text/javascript"
 	, charset="utf-8"></script>
 
@@ -72,20 +72,16 @@
 
 					<td>
 						<form name="farmInfoInfoForm">
-							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
-							<input type="submit" value="조회"
+							<input type="hidden" name="id" value="${farmInfo.farmId}">
+							<input type="button" value="조회"
 								onclick="javascript:farmInfoInfoPop(this.form);">
 						</form>
 					</td>
 					<td>
 						<form name="farmInfoModifyForm">
-							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
-							<input type="hidden" name="m_owner" value="${farmInfo.owner}">
-							<input type="hidden" name="m_employee" value="${farmInfo.employee}">
-							
+							<input type="hidden" name="id" value="${farmInfo.farmId}">
 							<input type="submit" value="수정"
 								onclick="javascript:farmInfoModifyPop(this.form);">
-								</form>
 
 							<%-- <form action="farmInfoInfoForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">

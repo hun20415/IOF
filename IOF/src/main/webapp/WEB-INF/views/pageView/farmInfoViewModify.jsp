@@ -7,7 +7,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="jquery-1.9.1.js"></script>
-<link href="css/farmInfoModify.css" rel="stylesheet" type="text/css">
+<link href="css/farmInfoViewModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>
@@ -44,33 +44,33 @@
 		</tr>
 		<tr>
 			<th scope="row">관리인 ID</th>
-			<td style="width: 390px"><input type="text" name="employeeId" value="${farmInfo.employeeId}" style="width: 50%;" /></td> 
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.employeeId}" style="width: 50%;" /></td> 
 			<th scope="row">관리인</th>
-			<td style="width: 390px"><input type="text" name="employeeName" value="${farmInfo.employeeName}" style="width: 50%;" /></td> 
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.employeeName}" style="width: 50%;" /></td> 
 			</tr>
 		<tr>
 			<th scope="row">*재배면적(평)</th>
-			<td style="width: 390px"><input type="text" name="areaPyung" value="${farmInfo.areaPyung}" style="width: 50%;" /></td> 
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.areaPyung}" style="width: 50%;" /></td> 
 			<th scope="row">*재배면적(제곱미터)</th>
-			<td style="width: 390px"><input type="text" name="areaMsquare" value="${farmInfo.areaMsquare}" style="width: 50%;" /></td>			
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.areaMsquare}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
 			<th scope="row">하우스 폭(m)</th>
-			<td style="width: 390px"><input type="text" name="width" value="${farmInfo.width}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.width}" style="width: 50%;" /></td>
 			<th scope="row">하우스 길이(m)</th>
-			<td style="width: 390px"><input type="text" name="length" value="${farmInfo.length}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.length}" style="width: 50%;" /></td>
 		</tr>
 		<tr>
 			<th scope="row">온실 측고 (m)</th>
-			<td style="width: 390px"><input type="text" name="heightMin" value="${farmInfo.heightMin}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.heightMin}" style="width: 50%;" /></td>
 			<th scope="row">온실 동고 (m)</th>
-			<td style="width: 390px"><input type="text" name="heightMax" value="${farmInfo.heightMax}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.heightMax}" style="width: 50%;" /></td>
 		</tr>
 		<tr>
 			<th scope="row">온실 방향</th>
-			<td style="width: 390px"><input type="text" name="direction" value="${farmInfo.direction}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.direction}" style="width: 50%;" /></td>
 			<th scope="row">비닐/유리 온실</th>			
-			<td style="width: 390px"><input type="text" name="convertMaterialType" value="${farmInfo.convertMaterialType}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertMaterialType}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="materialType">
 					<option value="1">비닐</option>
@@ -79,20 +79,20 @@
 		</tr>
 		<tr> 
 			<th scope="row">*연동/단동</th>			
-			<td style="width: 390px"><input type="text" name="convertIfConnected" value="${farmInfo.convertIfConnected}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertIfConnected}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="ifConnected">
 					<option value="Y">연동</option>
 					<option value="N">단동</option>
 			</select></td> -->
 			<th scope="row">*연동/단동 개수</th>			
-			<td style="width: 390px"><input type="text" name="connectedNum" value="${farmInfo.connectedNum}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.connectedNum}" style="width: 50%;" /></td>
 		</tr>
 		<tr>
 			<th scope="row">구역 개수</th>
-			<td style="width: 390px"><input type="text" name="sectionNum" value="${farmInfo.sectionNum}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.sectionNum}" style="width: 50%;" /></td>
 			<th scope="row">양액/토경재배</th>			
-			<td style="width: 390px"><input type="text" name="convertCultivationType" value="${farmInfo.convertCultivationType}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.convertCultivationType}" style="width: 50%;" /></td>
 			<!-- 
 			<td><select name="cultivationType">
 					<option value="1">양액재배</option>
@@ -111,13 +111,13 @@
 		
 		<tr>
 			<th scope="row">우편번호</th>
-			<td style="width: 390px"><input type="text" name="farmZipcode" value="${farmInfo.farmZipcode}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.farmZipcode}" style="width: 50%;" /></td>
 			<th scope="row">농장 건립일</th>
-			<td style="width: 390px"><input type="text" name="buildDate" value="${farmInfo.buildDate}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.buildDate}" style="width: 50%;" /></td>
 		</tr>
 		<tr>
 			<th scope="row">주소</th>
-			<td style="width: 390px"><input type="text" name="farmAddr" value="${farmInfo.farmAddr}" style="width: 50%;" /></td>
+			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.farmAddr}" style="width: 50%;" /></td>
 		</tr>
 	</table>
 
