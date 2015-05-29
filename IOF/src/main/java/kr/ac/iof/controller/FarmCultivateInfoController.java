@@ -1,8 +1,13 @@
 package kr.ac.iof.controller ;
 
+import kr.ac.iof.main.Service.CropSpeciesInfoService;
 import kr.ac.iof.main.Service.FarmCultivateInfoService;
+import kr.ac.iof.main.Service.FarmInfoService;
+import kr.ac.iof.main.dao.CropSpeciesInfoDao;
 import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.model.Main.FarmCultivateInfo;
+import kr.ac.iof.model.Main.FarmInfo;
+import kr.ac.iof.service.UserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +30,14 @@ public class FarmCultivateInfoController  {
 	private static final Logger logger = LoggerFactory
 			.getLogger(FarmCultivateInfoController.class);
 	@Autowired
-	/* @Qualifier(value="farmCultivateInfoService") */
 	private FarmCultivateInfoService farmCultivateInfoService;// 서비스 호출
-
+	@Autowired
+	private UserService userService;
+	@Autowired
+	private FarmInfoService farmInfoService;
+	@Autowired
+	private CropSpeciesInfoService cropSpeciesInfoService;
+	
 	public void setFarmCultivateInfoService(FarmCultivateInfoService ps) {
 		this.farmCultivateInfoService = ps;
 	}
@@ -44,9 +54,14 @@ public class FarmCultivateInfoController  {
 
 	@RequestMapping(value = "/farmCultivateInfoAdd", method = RequestMethod.GET)
 	// 서비스 호출
-	public String farmCultivateInfoAdd() throws Exception {
+	public String farmCultivateInfoAdd(Model model) throws Exception {
 		logger.info("farmCultivateInfo 입력 View");
-	
+		
+		
+		model.addAttribute("farmInfo", new FarmInfo());
+		model.addAttribute("farmInfoList", farmInfoService.getAll());
+		
+		
 		return "farmCultivateInfoAdd";
 	}
 

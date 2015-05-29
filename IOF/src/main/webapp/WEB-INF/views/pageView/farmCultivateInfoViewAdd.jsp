@@ -19,8 +19,8 @@
 		<th scope="row">* 온실 ID</th>
 		<td>
 		<select name="m_farmId">
-						<c:forEach items="${farmIdList}" var="farmIdP">
-							<option value="${farmIdP.farmId}">${farmIdP.farmId}			</option>							
+						<c:forEach items="${farmInfoList}" var="farmInfo">
+							<option value="${farmInfo.farmId}">${farmInfo.farmId}</option>							
 						</c:forEach>
 		</select>		
 		<!-- <select name="farmCultivateInfo.farmId">
