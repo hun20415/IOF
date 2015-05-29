@@ -20,8 +20,8 @@
 			<th width="60px">구역ID</th>
 			<th width="70px">센서 종류</th>
 			<th width="100px">컨트롤러 종류</th>
-			<th width="40px">편집</th>
-			<th width="40px">편집</th>
+			<th width="40px">조회</th>
+			<th width="40px">수정</th>
 			<th width="50px">Delete</th>
 		</tr>
 	</thead>

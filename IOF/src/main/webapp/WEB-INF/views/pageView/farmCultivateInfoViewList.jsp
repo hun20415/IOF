@@ -17,7 +17,7 @@
 	List</h1>
 
 
-<table class="type10">
+<table class="type10"> 
 	<p>
 
 

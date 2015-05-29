@@ -57,7 +57,7 @@
 			<c:forEach items="${listFarmInfo}" var="farmInfo">
 				<tr>
 					<td>${farmInfo.farmId}</td>
-					<td>${farmInfo.farmName}</td>
+					<td>${farmInfo.farmName}</td> 
 					<td>${farmInfo.ownerName}</td>
 					<%-- farmInfo.ownerId}</td> --%>
 					<td>${farmInfo.employeeName}</td>
