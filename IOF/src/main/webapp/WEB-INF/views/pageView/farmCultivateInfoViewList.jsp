@@ -23,10 +23,10 @@
 
 		<a href="javascript:farmCultivateInfoAddPop()"><input
 			type="button" class="button" value="신규"
-			style="position: relative; left: 750px;" /></a> <a
+			style="position: relative; left: 780px;" /></a> <a
 			href="javascript:farmCultivateInfoHistPop()"><input type="button"
 			class="button" value="과거재배정보"
-			style="position: relative; left: 760px;" /></a>
+			style="position: relative; left: 780px;" /></a>
 		<!-- <button type="submit">신규</button> -->
 		<!-- <button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  //farmCultivateInfoAdd
 		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button> -->
@@ -41,8 +41,9 @@
 			<th width="140px">정식일</th>
 			<th width="130px">예상 수확 시작일</th>
 			<th width="130px">실제 수확 시작일</th>
-			<th width="90px">편집</th>
-			<th width="10px">종료</th>
+			<th width="40px">조회</th>
+			<th width="40px">수정</th>
+			<th width="40px">종료</th>
 			<th width="50px">Delete</th>
 
 		</tr>
@@ -66,22 +67,24 @@
 							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 							<input type="button" value="조회"
 								onclick="javascript:farmCultivateInfoInfoPop(this.form);">
+						</form>
+					</td>
+					<td>
+						<form name="farmCultivateInfoModifyForm">
+							<!-- action="farmCultivateInfoModify"> -->
 
-							<form name="farmCultivateInfoModifyForm">
-								<!-- action="farmCultivateInfoModify"> -->
+							<!-- </form> 추가하지 말것!!! -->
+							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
+							<input type="hidden" name="m_farmId"
+								value="${farmCultivateInfo.farmId}"> <input
+								type="hidden" name="m_userId"
+								value="${farmCultivateInfo.userId}"> <input
+								type="hidden" name="m_cropSpeciesId"
+								value="${farmCultivateInfo.cropSpeciesId}"> <input
+								type="submit" value="수정"
+								onclick="javascript:farmCultivateInfoModifyPop(this.form);">
 
-								<!-- </form> 추가하지 말것!!! -->
-								<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
-								<input type="hidden" name="m_farmId"
-									value="${farmCultivateInfo.farmId}"> <input
-									type="hidden" name="m_userId"
-									value="${farmCultivateInfo.userId}"> <input
-									type="hidden" name="m_cropSpeciesId"
-									value="${farmCultivateInfo.cropSpeciesId}"> <input
-									type="submit" value="수정"
-									onclick="javascript:farmCultivateInfoModifyPop(this.form);">
-
-								<!-- </form> 추가하지 말것!!!  -->
+						</form>
 					</td>
 
 					<td><input type="checkbox"></td>

@@ -46,7 +46,8 @@
 				<th width="60px">양액/토경</th>
 				<th width="200px">농장주소</th>
 				<th width="90px">건립일</th>
-				<th width="90px">편집</th>
+				<th width="40px">조회</th>
+				<th width="40px">수정</th>
 				<th width="50px">Delete</th>
 			</tr>
 		</thead>
@@ -74,13 +75,15 @@
 							<input type="hidden" name="id" value="${farmInfo.farmId}">
 							<input type="button" value="조회"
 								onclick="javascript:farmInfoInfoPop(this.form);">
+						</form>
+					</td>
+					<td>
+						<form name="farmInfoModifyForm">
+							<input type="hidden" name="id" value="${farmInfo.farmId}">
+							<input type="submit" value="수정"
+								onclick="javascript:farmInfoModifyPop(this.form);">
 
-							<form name="farmInfoModifyForm">
-								<input type="hidden" name="id" value="${farmInfo.farmId}">
-								<input type="submit" value="수정"
-									onclick="javascript:farmInfoModifyPop(this.form);">
-
-								<%-- <form action="farmInfoInfoForm">
+							<%-- <form action="farmInfoInfoForm">
             <input type="hidden" name="id" value="${farmInfo.farmId}">
             <input type="submit" value="조회">
             </form>  

@@ -2,7 +2,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="../css/" rel="stylesheet" type="text/css">
 <script src="../js/newWindow.js" type="text/javascript"
-	, charset="utf-8"></script>
+   , charset="utf-8"></script>
 <!--                                                                                                    -->
 <!--                                File Name   : userViewList.jsp                                   -->
 <!--                                Description : userList 페이지   새창으로 출력                                                                                              -->
@@ -16,53 +16,54 @@
 
 
 <table class="userList">
-	<p>
-		<!--버튼위치지정 -->
-		<a href="javascript:SignUpPop()"><input type="button"
-			class="button" value="신규" style="position: relative; left: 800px;" /></a>
-	</p>
-	<thead style="background: #d2f4ec;">
-		<tr>
-			<th width="50px">ID</th>
-			<th width="50px">이름</th>
-			<th width="100px">그룹</th>
-			<th width="100px">휴대폰</th>
-			<th width="200px">집주소</th>
-			<th width="170px">등록일</th>
-			<th width="90px">편집</th>
+   <p>
+      <!--버튼위치지정 -->
+      <a href="javascript:SignUpPop()"><input type="button"
+         class="button" value="신규" style="position: relative; left: 800px;" /></a>
+   </p>
+   <thead style="background: #d2f4ec;">
+      <tr>
+         <th width="50px">ID</th>
+         <th width="50px">이름</th>
+         <th width="100px">그룹</th>
+         <th width="100px">휴대폰</th>
+         <th width="200px">집주소</th>
+         <th width="170px">등록일</th>
+         <th width="90px">편집</th>
 
-			<th width="45px">탈퇴</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach items="${listUser}" var="user">
-			<tr>
-				<td>${user.userId}</td>
-				<td>${user.userName}</td>
-				<td>${user.userGroupName}</td>
-				<td>${user.mobilePhone}</td>
-				<td>${user.homeAddr}</td>
-				<td>${user.sysDataTime}</td>
-				<td>
-					<form name="userInfoForm">
-						<input type="hidden" name="id" value="${user.userId}"> <input
-							type="button" value="조회"
-							onclick="javascript:userInfoPop(this.form);">
-						<form name="userModifyForm">
-							<input type="hidden" name="id" value="${user.userId}"> <input
-								type="hidden" name="m_userGroupId" value="${user.userGroupId}">
-							<input type="submit" value="수정"
-								onclick="javascript:userModifyPop(this.form);">
-						</form>
-				</td>
+         <th width="45px">탈퇴</th>
+      </tr>
+   </thead>
+   <tbody>
+      <c:forEach items="${listUser}" var="user">
+         <tr>
+            <td>${user.userId}</td>
+            <td>${user.userName}</td>
+            <td>${user.userGroupName}</td>
+            <td>${user.mobilePhone}</td>
+            <td>${user.homeAddr}</td>
+            <td>${user.sysDataTime}</td>
+            <td>
+               <form name="userInfoForm">
+                  <input type="hidden" name="id" value="${user.userId}"> <input
+                     type="button" value="조회"
+                     onclick="javascript:userInfoPop(this.form);">
+               </form>
+               <form name="userModifyForm">
+                  <input type="hidden" name="id" value="${user.userId}"> <input
+                     type="hidden" name="m_userGroupId" value="${user.userGroupId}">
+                  <input type="submit" value="수정"
+                     onclick="javascript:userModifyPop(this.form);">
+               </form>
+            </td>
 
-				<td><button
-						onclick="window.location.href='/userRemove/${user.userId}'">
-						탈퇴</a></td>
+            <td><button
+                  onclick="window.location.href='/userRemove/${user.userId}'">
+                  탈퇴</a></td>
 
-			</tr>
-		</c:forEach>
+         </tr>
+      </c:forEach>
 
 
-	</tbody>
+   </tbody>
 </table>

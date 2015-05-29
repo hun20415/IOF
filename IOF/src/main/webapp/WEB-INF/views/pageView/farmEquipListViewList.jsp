@@ -20,7 +20,8 @@
 			<th width="60px">구역ID</th>
 			<th width="70px">센서 종류</th>
 			<th width="100px">컨트롤러 종류</th>
-			<th width="90px">편집</th>
+			<th width="40px">편집</th>
+			<th width="40px">편집</th>
 			<th width="50px">Delete</th>
 		</tr>
 	</thead>
@@ -37,11 +38,13 @@
 					<input type="hidden" name="id" value="${farmEquipList.farmId}">
 					<!-- & farmEquipList.farmSectionIdfid, eid  -->
 					<input type="submit" value="조회">
-
-					<form action="farmEquipListModify">
-						<input type="hidden" name="id" value="${farmEquipList.farmId}">
-						<!--  & farmEquipList.farmSectionId}"> -->
-						<input type="submit" value="수정">
+				</form>
+			<td>
+				<form action="farmEquipListModify">
+					<input type="hidden" name="id" value="${farmEquipList.farmId}">
+					<!--  & farmEquipList.farmSectionId}"> -->
+					<input type="submit" value="수정">
+				</form>
 			</td>
 			<td>
 				<button
