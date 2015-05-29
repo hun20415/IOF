@@ -48,13 +48,13 @@
 						<input type="hidden" name="id" value="${user.userId}"> <input
 							type="button" value="조회"
 							onclick="javascript:userInfoPop(this.form);">
-							</form>
-						<form name="userModifyForm">
-							<input type="hidden" name="id" value="${user.userId}"> <input
-								type="hidden" name="m_userGroupId" value="${user.userGroupId}">
-							<input type="submit" value="수정"
-								onclick="javascript:userModifyPop(this.form);">
-						</form>
+					</form>
+					<form name="userModifyForm">
+						<input type="hidden" name="id" value="${user.userId}"> <input
+							type="hidden" name="m_userGroupId" value="${user.userGroupId}">
+						<input type="submit" value="수정"
+							onclick="javascript:userModifyPop(this.form);">
+					</form>
 				</td>
 
 				<td><button
