@@ -22,4 +22,7 @@ public interface FarmInfoService {
 
 	public FarmInfo getById(int farmInfoId);
 	public List<String> getAllId() ;
+
+	public List<FarmInfo> getOwnerIdList(String ownerId);
+	
 }

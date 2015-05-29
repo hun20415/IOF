@@ -122,6 +122,7 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 		}
 		return farmInfos;//리스트로 반환
 	}
+	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$>>>>>>>
 	@Override
 	public List<String> getAllId() { // 컬럼에 속해있는 모든 데이터를 불러온다.
 		System.out.println("farmInfoDaolm");
@@ -141,7 +142,34 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 		}
 		return farmInfos;//리스트로 반환
 	}
-
+	//$$$$$$$$$$$$$$$$$$$$$$$$$$$$<<<<<지워야됨, 연관성 있는 코드 확인해서 고쳐줘야함
+	
+	
+	// 오너 아이디 검색 DAO
+	@Override
+	public List<FarmInfo> getOwnerIdList(String ownerId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+		List<FarmInfo> farmInfos = new ArrayList<FarmInfo>();
+		
+		Transaction trns = null;
+		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from FarmInfo where owner= :id";
+			Query query = session.createQuery(queryString);
+			query.setString("id", ownerId);//id로 매칭 특정 행을 불러온다.
+			farmInfos = query.list();
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return farmInfos;//리스트로 반환
+	}
+	//오너 아이디 검색 DAO 끝
 	@Override
 	public FarmInfo getById(int farmInfoId) {
 		System.out.println("farmInfoDaolm");

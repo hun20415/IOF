@@ -92,6 +92,7 @@ public class FarmCultivateInfoDaoIm implements FarmCultivateInfoDao {
 			CropSpeciesInfo cropSpeciesInfo = (CropSpeciesInfo)session.load(CropSpeciesInfo.class, new Integer(m_cropSpeciesId));
 			farmCultivateInfo.setFarmInfo(farmInfo);
 			farmCultivateInfo.setUser(user);
+			
 			farmCultivateInfo.setCropSpeciesInfo(cropSpeciesInfo);
 			
 			session.update(farmCultivateInfo);//update 쿼리문

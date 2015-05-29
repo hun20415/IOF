@@ -12,6 +12,7 @@
 <h1 style="position: absolute; top: 70px; left: 650px;">과거 재배 정보 List</h1>
 
 <p></p>
+<form id="farmCultivateInfoHistForm" action="farmCultivateInfoHist" method="post"	onsubmit="return check()">
 
 <table class="type10">
 	<!-- <p align="right">
@@ -67,3 +68,4 @@
 		</c:forEach>
 	</tbody>
 </table>
+</form>
