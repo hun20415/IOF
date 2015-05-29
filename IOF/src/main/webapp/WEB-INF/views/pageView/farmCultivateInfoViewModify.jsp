@@ -18,18 +18,18 @@
 	<table class="type02 ">
 		<tr>
 			<th scope="row">*온실 ID</th>
-			<td style="width: 390px"><input type="text" name="m_farmId" value="${farmCultivateInfo.farmId}" style="width: 50%;" /></td>
+			<td style="width: 390px">${farmCultivateInfo.farmId}</td>
 			<th scope="row">*구역 ID</th>
-			<td style="width: 390px"><input type="text" name="farmSectionId" value="${farmCultivateInfo.farmSectionId}" style="width: 50%;" /></td>
+			<td style="width: 390px">${farmCultivateInfo.farmSectionId}</td>
 			<!-- <td><select name="">
 					<option>전체/1/2...</option></td> -->
 		</tr>
 		<tr>
 			<th scope="row">온실명</th>
-			<td style="width: 390px"><input type="text" name="farmName" value="${farmCultivateInfo.farmName}" style="width: 50%;" /></td>	
-			g
+			<td style="width: 390px">${farmCultivateInfo.farmName}</td>	
+			
 			<th scope="row">온실주명</th>
-			<td style="width: 390px"><input type="hidden" name="m_userId" value = "${farmCultivateInfo.userId}"/><input type="text" name="userName" value="${farmCultivateInfo.userName}" style="width: 50%;" /></td>		
+			<td style="width: 390px">${farmCultivateInfo.userName}</td>		
 			
 		</tr>
 		<tr>
