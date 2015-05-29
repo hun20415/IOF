@@ -29,8 +29,8 @@
 			<th width="100px">휴대폰</th>
 			<th width="200px">집주소</th>
 			<th width="170px">등록일</th>
-			<th width="90px">편집</th>
-
+			<th width="40px">조회</th>
+			<th width="40px">수정</th>
 			<th width="45px">탈퇴</th>
 		</tr>
 	</thead>
@@ -49,6 +49,8 @@
 							type="button" value="조회"
 							onclick="javascript:userInfoPop(this.form);">
 					</form>
+				</td>
+				<td>
 					<form name="userModifyForm">
 						<input type="hidden" name="id" value="${user.userId}"> <input
 							type="hidden" name="m_userGroupId" value="${user.userGroupId}">
@@ -56,6 +58,7 @@
 							onclick="javascript:userModifyPop(this.form);">
 					</form>
 				</td>
+
 
 				<td><button
 						onclick="window.location.href='/userRemove/${user.userId}'">

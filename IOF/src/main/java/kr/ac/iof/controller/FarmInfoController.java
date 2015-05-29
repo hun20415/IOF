@@ -143,10 +143,10 @@ public class FarmInfoController  {
 	}
 	
 	@RequestMapping("/farmInfoInfo")
-	public String farmInfoInfo(@RequestParam("id") int id, Model model) {
+	public String farmInfoInfo(@RequestParam("farmId") int farmId, Model model) {
 
 		
-		model.addAttribute("farmInfo", this.farmInfoService.getById(id));//우리가 선택한 farm에 대한 정보
+		model.addAttribute("farmInfo", this.farmInfoService.getById(farmId));//우리가 선택한 farm에 대한 정보
 		
 		model.addAttribute("user", new User());//우리가 불러올 데이터를 전체 데이터를 읽어올 farm 정보 저장 #A
 		model.addAttribute("userAll", this.userService.getAll());

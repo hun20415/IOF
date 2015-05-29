@@ -5,20 +5,20 @@
 <!-- 본문 시작 -->
 <h1 style="position: absolute; top: 70px; left: 600px;">장비 신규 정보</h1>
 
-<table class="type02" style="width: 600px;">
+<table class="type02" style="width: 720px;">
 	<tr>
 		<th scope="row" style="width: 80px;">온실 명</th>
 		<td><select name="">
 				<option>딸기세상</option>
 		</select></td>
 		<th scope="row" style="width: 107px;">구역</th>
-			<td><select name="">
+		<td><select name="">
 				<option>2</option>
 		</select></td>
 	</tr>
 </table>
 
-<table class="type02" style="width: 600px;">
+<table class="type02" style="width: 700px;">
 	<tr>
 		<th scope="row">No</th>
 		<th scope="row">장비</th>
@@ -30,15 +30,14 @@
 	</tr>
 	<tr>
 		<td scope="row">1</td>
-			<td><select name="">
+		<td><select name="">
 				<option>내부 습도 센서</option>
 		</select></td>
-		<td></td>
-		<td ></td>
-		<td ></td>
-		<td ></td>
-		<td ><button>추가</button>
-		</td>
+		<td><input size="10" ></input></td>
+		<td><input size="10"></input></td>
+		<td><input size="10"></input></td>
+		<td><input size="10"></input></td>
+		<td><button >추가</button></td>
 	</tr>
 
 
