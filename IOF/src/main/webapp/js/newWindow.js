@@ -119,7 +119,7 @@ function farmCultivateInfoHistPop(farmCultivateInfoHistForm) {
 function farmEquipListAddPop() {
 
 	var popUrl = "farmEquipListAdd"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=620, height=600, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=800, height=800, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open(popUrl, "", popOption);
 }

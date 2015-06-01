@@ -12,11 +12,11 @@
 				<option>딸기세상</option>
 		</select></td> -->
 		<td>
-		<select name="m_farmId">
+	 	<select name="m_farmId">
 						<c:forEach items="${farmInfoList}" var="farmInfo">
 							<option value="${farmInfo.farmId}">${farmId.farmName}</option>							
 						</c:forEach>
-		</select>
+		</select> 
 		</td>	
 		
 		<th scope="row" style="width: 107px;">구역</th>
