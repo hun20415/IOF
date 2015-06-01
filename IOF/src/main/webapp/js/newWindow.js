@@ -61,7 +61,7 @@ function farmInfoModifyPop(farmInfoModifyForm) {
 
 function farmInfoInfoPop(farmInfoInfoForm) {
 	var popUrl = "farmInfoInfo"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=640, height=900, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=680, height=900, resizable=no, scrollbars=no, status=no;"; // 팝업창
 
 	window.open("", "farmInfoInfoPop", popOption);
 	

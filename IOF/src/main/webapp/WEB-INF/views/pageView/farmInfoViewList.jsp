@@ -6,9 +6,10 @@
 <!--                                                                                                    -->
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+
 <link href="css/" rel="stylesheet" type="text/css">
-<script src="../js/newWindow.js" type="text/javascript"
-	, charset="utf-8"></script>
+<script src="../js/newWindow.js" type="text/javascript" , charset="utf-8"></script>
+
 
 <!-- 본문 시작 -->
 <h1 style="position: absolute; top: 70px; left: 800px;">온실 정보 관리</h1>
@@ -29,8 +30,8 @@
 		</form>
 		<!-- 검색 끝 -->
 
-		<a href="javascript:FarmInfoAddPop()"><input type="button"
-			class="button" value="신규" style="position: relative; left: 830px;" /></a>
+		<a href="javascript:FarmInfoAddPop()"> 
+		<input type="button" class="button" value="신규" style="position: relative; left: 830px;" /></a>
 		<!-- <button onclick="window.location.href='/farmInfoAdd'" >신규</button> -->
 		</p>
 		<thead style="background: #d2f4ec;">
@@ -57,7 +58,7 @@
 			<c:forEach items="${listFarmInfo}" var="farmInfo">
 				<tr>
 					<td>${farmInfo.farmId}</td>
-					<td>${farmInfo.farmName}</td> 
+					<td>${farmInfo.farmName}</td>
 					<td>${farmInfo.ownerName}</td>
 					<%-- farmInfo.ownerId}</td> --%>
 					<td>${farmInfo.employeeName}</td>
@@ -72,25 +73,23 @@
 
 					<td>
 						<form name="farmInfoInfoForm">
-							<input type="hidden" name="id" value="${farmInfo.farmId}">
+							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
 							<input type="button" value="조회"
 								onclick="javascript:farmInfoInfoPop(this.form);">
 						</form>
 					</td>
 					<td>
 						<form name="farmInfoModifyForm">
-							<input type="hidden" name="id" value="${farmInfo.farmId}">
-							<input type="submit" value="수정"
-								onclick="javascript:farmInfoModifyPop(this.form);">
 
-							<%-- <form action="farmInfoInfoForm">
-            <input type="hidden" name="id" value="${farmInfo.farmId}">
-            <input type="submit" value="조회">
-            </form>  
-            <form action="farmInfoModifyForm">
-            <input type="hidden" name="id" value="${farmInfo.farmId}">
-            <input type="submit" value="수정">
-            </form>--%>
+							
+							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
+							<input type="hidden" name="m_owner" value="${farmInfo.owner}">
+							<input type="hidden" name="m_employee"
+								value="${farmInfo.employee}"> <input type="submit"
+								value="수정" onclick="javascript:farmInfoModifyPop(this.form);">
+						</form>
+						
+						
 					</td>
 					<td>
 						<button

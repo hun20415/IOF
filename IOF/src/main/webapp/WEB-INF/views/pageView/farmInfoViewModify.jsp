@@ -7,7 +7,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="jquery-1.9.1.js"></script>
-<link href="css/farmInfoModify.css" rel="stylesheet" type="text/css">
+<link href="css/farmInfoViewModify.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
 <center>
