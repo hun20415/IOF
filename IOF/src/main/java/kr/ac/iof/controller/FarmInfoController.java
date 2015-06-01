@@ -59,7 +59,7 @@ public class FarmInfoController  {
 
 	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmInfoAdd", method = { RequestMethod.POST })
-	// 데이터를 받기위한 POST @RequestParam("groupId") Integer groupId, @ModelAttribute("user") User user
+	// 데이터를 받기위한 
 	public String farmInfoAdd(@RequestParam("m_owner") String m_owner, @RequestParam("m_employee") String m_employee, @ModelAttribute("farmInfo") FarmInfo farmInfo)
 	//public String farmInfoAdd(@RequestParam("ownerListId") Integer ownerListId, @ModelAttribute("farmInfo") FarmInfo farmInfo)
 			throws Exception {		

@@ -51,11 +51,16 @@ public class FarmEquipListController  {
 		this.farmEquipListService = ps;
 	}
 
+	//songlock: 2015-06-01
 	@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET)
 	// 서비스 호출
-	public String farmEquipListAdd() throws Exception {
+	public String farmEquipListAdd(Model model) throws Exception {
 		logger.info("farmEquipList 입력 View");
 
+		model.addAttribute("farmInfo", new FarmInfo());
+		model.addAttribute("farmInfoList", farmInfoService.getAll());
+		model.addAttribute("farmEquipType", new FarmEquipType());
+		model.addAttribute("farmEquipTypeList", farmEquipTypeService.getAll());
 		return "farmEquipListAdd";
 	}
 	
@@ -64,6 +69,7 @@ public class FarmEquipListController  {
 	public String farmEquipListInfo() throws Exception {
 		logger.info("farmEquipInfo View");
 
+		
 		return "farmEquipListInfo";
 	}  
 
