@@ -9,15 +9,16 @@ package kr.ac.iof.main.dao;
 import java.util.List;
 
 import kr.ac.iof.model.Main.FarmEquipList;
+import kr.ac.iof.model.Main.FarmInfo;
 
 public interface FarmEquipListDao {
-	public void add(FarmEquipList farmEquipList);
+	public void add(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
-	public void delete(int farmId, int eqId);
+	public void delete(int m_farmId, int m_eqTypeId);
 
-	public void update(FarmEquipList farmEquipList);
+	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
 	public List<FarmEquipList> getAll();
 
-	public FarmEquipList getById(int farmId, int eqId);
+	public FarmEquipList getById(int m_farmId, int m_eqTypeId);
 }
