@@ -80,8 +80,8 @@ public class FarmEquipListController  {
 	public String farmEquipListList(Model model) throws Exception {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
-		//model.addAttribute("farmEquipList", new FarmEquipList());
-		//model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
+		model.addAttribute("farmEquipList", new FarmEquipList());
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
 		return "farmEquipListList";
 	}
