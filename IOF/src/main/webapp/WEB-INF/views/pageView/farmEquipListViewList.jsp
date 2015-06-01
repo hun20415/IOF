@@ -1,6 +1,6 @@
 ﻿<!--                                                                                                    -->
-<!--                                File Name   : cultivationViewList.jsp                                   -->
-<!--                                Description : cultivationList 입력페이지                                                                                                        -->
+<!--                                File Name   : farmEquipListViewList.jsp                                   -->
+<!--                                Description : farmEquipList                                                                                                         -->
 <!--                                Update      : 2015.05.20 (홍수영) /06. 01(옥정윤)
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
