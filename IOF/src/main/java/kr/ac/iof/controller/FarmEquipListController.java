@@ -65,7 +65,7 @@ public class FarmEquipListController  {
 		logger.info("farmEquipInfo View");
 
 		return "farmEquipListInfo";
-	} 
+	}  
 
 	//songlock: 2015-06-01
 	@RequestMapping(value = "/farmEquipListAdd", method = { RequestMethod.POST })
