@@ -1,4 +1,13 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<!--                                                                                                    -->
+<!--                                File Name   : cultivationViewList.jsp                                   -->
+<!--                                Description : cultivationList 입력페이지                                                                                                        -->
+<!--                                Update      : 2015.05.20 (홍수영) /06. 01(옥정윤)
+<!--                                ETC         :                                                       -->
+<!--                                                                                                    -->
+
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="../js/newWindow.js" type="text/javascript" charset="utf-8"></script>
 
 
 
@@ -9,8 +18,12 @@
 <table>
 	<p>
 		<!--버튼위치지정 -->
-		<button onclick="window.location.href='/farmEquipListAdd'"
-			style="position: relative; left: 520px;">신규</button>
+		<!-- <button onclick="window.location.href='/farmEquipListAdd'"
+			style="position: relative; left: 520px;">신규</button> -->
+			
+		<a href="javascript:farmEquipListAddPop()">
+		<input type="button" class="button" value="신규" style="position: relative; left: 780px;" /> 
+		</a>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
@@ -26,24 +39,43 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
+<!-- 		<tr>
 			<td>1</td>
 			<td>딸기네</td>
 			<td>0001</td>
 			<td>1</td>
 			<td>15</td>
-			<td>21</td>
-			<td>
-				<form action="farmEquipListInfo">
-					<input type="hidden" name="id" value="${farmEquipList.farmId}">
+			<td>21</td> -->
+			
+			<c:forEach items="${listFarmEquipList}" var="farmEquipList">			
+				<tr>
+					<td>1</td>
+					<td>${farmEquipList.farmName}</td>
+					<td>${farmEquipList.farmId}</td>
+					<td>${farmEquipList.farmSectionId}</td>
+					<%-- <c:if test="${farmEquipList.controlSensor == 'C'}"> --%>
+					
+					<td>센서 수 계산</td>
+					<td>컨트롤러 수 계산</td>
+					<td>
+			<%-- 	<form action="farmEquipListInfo">
+					<input type="hidden" name="farmId" value="${farmEquipList.farmId}">
 					<!-- & farmEquipList.farmSectionIdfid, eid  -->
-					<input type="submit" value="조회">
-				</form>
-			<td>
-				<form action="farmEquipListModify">
-					<input type="hidden" name="id" value="${farmEquipList.farmId}">
-					<!--  & farmEquipList.farmSectionId}"> -->
-					<input type="submit" value="수정">
+					<input type="submit" value="조회" onclick="farmEquipListInfoPop(this.form);">
+				</form> --%>
+				       <form name="farmEquipListInfoForm">						
+							<input type="hidden" name="farmId" value="${farmEquipListInfo.farmId}">
+							<input type="hidden" name="farmSectionId" value="${farmEquipListInfo.farmSectionId}">					
+					
+							<input type="button" value="조회"
+								onclick="javascript:farmEquipListInfoPop(this.form);">
+						</form>
+						
+					<td>
+				<form action="farmEquipListModifyForm">
+					<input type="hidden" name="farmId" value="${farmEquipListModify.farmId}">
+					<input type="hidden" name="farmSectionId" value="${farmEquipListModify.farmSectionId}">						
+					<input type="submit" value="수정" onclick="farmEquipListModifyPop(this.form);">
 				</form>
 			</td>
 			<td>
@@ -58,9 +90,7 @@
 
 
 		</tr>
-
-
-
+		</c:forEach>
 	</tbody>
 </table>
 

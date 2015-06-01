@@ -21,12 +21,14 @@
 	<p>
 
 
-		<a href="javascript:farmCultivateInfoAddPop()"><input
-			type="button" class="button" value="신규"
-			style="position: relative; left: 780px;" /></a> <a
-			href="javascript:farmCultivateInfoHistPop()"><input type="button"
-			class="button" value="과거재배정보"
-			style="position: relative; left: 780px;" /></a>
+		<a href="javascript:farmCultivateInfoAddPop()">
+		<input type="button" class="button" value="신규" style="position: relative; left: 780px;" /> 
+		</a>
+		 
+		<a href="javascript:farmCultivateInfoHistPop()">
+		<input type="button" class="button" value="과거재배정보" style="position: relative; left: 780px;" />
+		</a>
+		
 		<!-- <button type="submit">신규</button> -->
 		<!-- <button onclick="window.location.href='/farmCultivateInfoAdd'">신규</button>  //farmCultivateInfoAdd
 		<button onclick="window.location.href='/farmCultivateInfoHist'">과거재배정보</button> -->
@@ -75,8 +77,8 @@
 
 							<!-- </form> 추가하지 말것!!! -->
 							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
-							<input type="hidden" name="m_farmId"
-								value="${farmCultivateInfo.farmId}"> <input
+							<input type="hidden" name="m_farmId" value="${farmCultivateInfo.farmId}"> 
+							<input
 								type="hidden" name="m_userId"
 								value="${farmCultivateInfo.userId}"> <input
 								type="hidden" name="m_cropSpeciesId"

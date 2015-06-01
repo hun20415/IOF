@@ -8,9 +8,17 @@
 <table class="type02" style="width: 720px;">
 	<tr>
 		<th scope="row" style="width: 80px;">온실 명</th>
-		<td><select name="">
+<!-- 		<td><select name="">
 				<option>딸기세상</option>
-		</select></td>
+		</select></td> -->
+		<td>
+		<select name="m_farmId">
+						<c:forEach items="${farmInfoList}" var="farmInfo">
+							<option value="${farmInfo.farmId}">${farmId.farmName}</option>							
+						</c:forEach>
+		</select>
+		</td>	
+		
 		<th scope="row" style="width: 107px;">구역</th>
 		<td><select name="">
 				<option>2</option>

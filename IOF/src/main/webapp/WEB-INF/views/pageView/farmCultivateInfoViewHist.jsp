@@ -1,12 +1,12 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href="css/" rel="stylesheet" type="text/css">
-<!--                                                                                                    -->
+﻿<!--                                                                                                    -->
 <!--                                File Name   : cultivationViewHist.jsp                                   -->
 <!--                                Description : cultivationHist 과거재배정보                                                                                                        -->
 <!--                                Update      : 2015.05.18 (옥정윤)                                            -->
 <!--                                ETC         :                                                       -->
 <!--                                                                                                    -->
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<!-- <link href="css/" rel="stylesheet" type="text/css"> -->
 
 <!-- 본문 시작 -->
 <h1 style="position: absolute; top: 70px; left: 650px;">과거 재배 정보 List</h1>
@@ -15,11 +15,6 @@
 <form id="farmCultivateInfoHistForm" action="farmCultivateInfoHist" method="post"	onsubmit="return check()">
 
 <table class="type10">
-	<!-- <p align="right">
-		<button type="submit">신규</button>
-		<button onclick="window.location.href='/farmCultivateInfoAdd'" >신규</button>
-		<button onclick="window.location.href='/farmCultivateInfoHist'" >과거재배정보</button>
-	</p> -->
 	<thead style="background: #d2f4ec;">
 		<tr>
 			<th width="50px">온실ID</th>
