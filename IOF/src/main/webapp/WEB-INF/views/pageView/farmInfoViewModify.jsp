@@ -18,18 +18,19 @@
 	<table class="type02">
 		<tr>
 			<th scope="row">*온실 ID</th>
-			<td style="width: 390px">
-			<input type="text" name="farmId" value="${farmInfo.farmId}" readonly="readonly" style="width: 50%;" /></td> 
+			<td style="width: 390px">${farmInfo.farmId}</td> 
 			<th scope="row">온실명</th>
 			<td style="width: 390px">
-			<input type="text" name="farmName" value="${farmInfo.farmName}" readonly="readonly" style="width: 50%;" /></td>			
+			<input type="text" name="farmName" value="${farmInfo.farmName}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
 		
 			<th scope="row">*온실주 ID</th>
-			<td style="width: 390px"><input type="text" readonly="readonly" name="ownerId" value="${farmInfo.ownerId}" style="width: 50%;" /></td> 
+			<td style="width: 390px">${farmInfo.ownerId}</td>
+			<%-- <td style="width: 390px"><input type="text" readonly="readonly" name="ownerId" value="${farmInfo.ownerId}" style="width: 50%;" /></td>--%>
 			<th scope="row">온실주</th>
-			<td style="width: 390px"><input type="text" readonly="readonly" name="ownerName" value="${farmInfo.ownerName}" style="width: 50%;" /></td>			
+			<td style="width: 390px">${farmInfo.ownerName}</td>
+			<%-- <td style="width: 390px"><input type="text" readonly="readonly" name="ownerName" value="${farmInfo.ownerName}" style="width: 50%;" /></td> --%>			
 		
 		<%--by oak
 		<th scope="row">*온실 주 ID</th>
@@ -51,7 +52,7 @@
 		</tr>
 		<tr>
 			<th scope="row">관리인 ID</th>
-			<td style="width: 390px"><input type="text" name="employeeId" value="${farmInfo.employeeId}" style="width: 50%;" /></td> 
+			<td style="width: 390px"><input type="text" name="m_employee" value="${farmInfo.employeeId}" style="width: 50%;" /></td> 
 			<th scope="row">관리인</th>
 			<td style="width: 390px"><input type="text" name="employeeName" value="${farmInfo.employeeName}" style="width: 50%;" /></td> 
 			</tr>
