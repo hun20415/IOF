@@ -22,7 +22,7 @@
 			style="position: relative; left: 520px;">신규</button> -->
 
 		<a href="javascript:farmEquipListAddPop()"> <input type="button"
-			class="button" value="신규" style="position: relative; left: 780px;" />
+			class="button" value="신규" style="position: relative; left: 520px;" />
 		</a>
 	</p>
 	<thead style="background: #d2f4ec;">

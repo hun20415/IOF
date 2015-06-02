@@ -3,8 +3,8 @@
 <link href="css/farmEquipList.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
-<h1 style="position: absolute; top: 70px; left: 600px;">장비 상세 정보</h1>
-
+<h1 style="position: absolute; top: 70px; left: 230px;">장비 상세 정보</h1>
+<br><br><br>
 <table class="type02" style="width: 546px; ">
 	<tr>
 		<th scope="row" style="width: 80px; ">온실 명</th>
@@ -39,7 +39,7 @@
 </table>
 
 
-<button type="submit" style="position:relative;left:210px;">확인</button>
+<button type="submit" style="position:relative;left:220px;">확인</button>
 <button type="send" style="position:relative;left:220px;">취소</button>
 
 <!--  본문 끝 -->
