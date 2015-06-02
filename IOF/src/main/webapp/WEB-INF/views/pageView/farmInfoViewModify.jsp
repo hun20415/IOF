@@ -8,7 +8,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="jquery-1.9.1.js"></script>
 <link href="css/farmInfoViewModify.css" rel="stylesheet" type="text/css">
-
+<script src="../js/dataValue.js" type="text/javascript", charset="utf-8"></script>
 <!-- 본문 시작 -->
 <center>
 	<h1>온실 정보 수정</h1>
@@ -50,9 +50,9 @@
 			</tr>
 		<tr>
 			<th scope="row">*재배면적(평)</th>
-			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.areaPyung}" style="width: 50%;" /></td> 
+			<td style="width: 390px"><input type="text"  id = "farmPyeong"  name="farmId" value="${farmInfo.areaPyung}" onchange="javascript:m2ToPyeong();"  style="width: 50%;" /></td> 
 			<th scope="row">*재배면적(제곱미터)</th>
-			<td style="width: 390px"><input type="text" name="farmId" value="${farmInfo.areaMsquare}" style="width: 50%;" /></td>			
+			<td style="width: 390px"><input type="text" id = "farmMeter" name="farmId" value="${farmInfo.areaMsquare}" style="width: 50%;" /></td>			
 		</tr>
 		<tr>
 			<th scope="row">하우스 폭(m)</th>

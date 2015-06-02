@@ -1,0 +1,26 @@
+<SCRIPT LANGUAGE="javascript">
+<!--
+function value_copy() {
+// 아래 소스를 제가 알고있는걸로 해석하자면 
+// name one를 가진 form에 name ffname의 입력값과 name one를 가진 form에 name fname의 입력값이 서로 같다는 뜻임
+// 추가시엔 우선 input text형식의 폼을 만들고 name을 지정한 후
+// document.A.B.value = document.A.C.value; 를 추가하고
+// onchange나 onkeydown을 이용해서 아래 소스가 존재하는 function name을 적으면 됨.
+// A : form의 name을 적으면 됨.. 하지만form의 name이 없을땐 all을 적어도 됨
+// B : 값이 입력되는 부분의 input name
+// C : 위 B의 값이 복사되는 부분의 input name
+// onchange : input로 예를들면 커서가 다른곳으로 이동시 발생하는 이벤트
+// onkeydown : 값이 입력되는즉시 발생하는 이벤트
+document.one.ffname.value = document.one.fname.value;
+document.one.llname.value = document.one.lname.value;
+}
+//-->
+</SCRIPT>
+Input A에 글자를 적으면 Input A-a에 곧바로 같은 내용이 복사됩니다.<br>
+그리고 Input B는 글자를 적고 커서를 빼면 Input B-a에 내용이 복사됩니다.<br>
+<form name="one">
+Input A : <input type="text" name="fname" onkeydown="javascript:value_copy()"><br>
+Input B : <input type="text" name="lname" onchange="javascript:value_copy()"><br><br>
+Input A-a : <input type="text" name="ffname" disabled> - Option : disabled<br>
+Input B-a : <input type="text" name="llname" readonly> - Option : readonly<bR>
+</form>
