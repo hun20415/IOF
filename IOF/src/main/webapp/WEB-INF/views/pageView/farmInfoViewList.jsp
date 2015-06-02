@@ -74,19 +74,15 @@
 					<td>
 						<form name="farmInfoInfoForm">
 							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
-							<input type="button" value="조회"
-								onclick="javascript:farmInfoInfoPop(this.form);">
+							<input type="button" value="조회" onclick="javascript:farmInfoInfoPop(this.form);">
 						</form>
 					</td>
 					<td>
-						<form name="farmInfoModifyForm">
-
-							
+						<form name="farmInfoModifyForm">							
 							<input type="hidden" name="farmId" value="${farmInfo.farmId}">
 							<input type="hidden" name="m_owner" value="${farmInfo.owner}">
-							<input type="hidden" name="m_employee"
-								value="${farmInfo.employee}"> <input type="submit"
-								value="수정" onclick="javascript:farmInfoModifyPop(this.form);">
+							<input type="hidden" name="m_employee" 	value="${farmInfo.employee}"> 
+							<input type="submit" value="수정" onclick="javascript:farmInfoModifyPop(this.form);">
 						</form>
 						
 						

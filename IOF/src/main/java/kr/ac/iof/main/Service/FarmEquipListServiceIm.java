@@ -11,6 +11,7 @@ import java.util.List;
 
 
 
+
 import kr.ac.iof.main.dao.FarmEquipListDao;
 import kr.ac.iof.model.Main.FarmEquipList;
 import kr.ac.iof.model.Main.FarmInfo;
@@ -33,15 +34,15 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
  
     @Override
     @Transactional
-    public void add(FarmEquipList p) {
+    public void add(int m_farmId, int m_eqTypeId, FarmEquipList p) {
     	System.out.println("addserviceimple");
-        this.farmEquipListDao.add(p);
+        this.farmEquipListDao.add(m_farmId, m_eqTypeId, p);
     }
  
     @Override
     @Transactional
-    public void update(FarmEquipList p) {
-        this.farmEquipListDao.update(p);
+    public void update(int m_farmId, int m_eqTypeId, FarmEquipList p) {
+        this.farmEquipListDao.update(m_farmId, m_eqTypeId, p);
     }
  
     @Override
@@ -53,14 +54,13 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
  
     @Override
     @Transactional
-    public FarmEquipList getById(int farmId, int eqId) {
-        return this.farmEquipListDao.getById(farmId, eqId);
+    public FarmEquipList getById(int m_farmId, int m_eqTypeId) {
+        return this.farmEquipListDao.getById(m_farmId, m_eqTypeId);
     }
  
     @Override
     @Transactional
-    public void delete(int farmId, int eqId) {
-        this.farmEquipListDao.delete(farmId, eqId);
+    public void delete(int m_farmId, int m_eqTypeId) {
+        this.farmEquipListDao.delete(m_farmId, m_eqTypeId);
     }
-
 }

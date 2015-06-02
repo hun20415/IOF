@@ -74,7 +74,7 @@ function farmInfoInfoPop(farmInfoInfoForm) {
 function farmCultivateInfoAddPop() {
 
 	var popUrl = "farmCultivateInfoAdd"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=620, height=700, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=620, height=600, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open(popUrl, "", popOption);
 }
@@ -82,7 +82,7 @@ function farmCultivateInfoAddPop() {
 function farmCultivateInfoModifyPop(farmCultivateInfoModifyForm) {
 
 	var popUrl = "farmCultivateInfoModify"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=550, height=550, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
 																						// 옵션(optoin)
 	window.open("", "farmCultivateInfoModifyPop", popOption);
 	
@@ -94,7 +94,7 @@ function farmCultivateInfoModifyPop(farmCultivateInfoModifyForm) {
 
 function farmCultivateInfoInfoPop(farmCultivateInfoInfoForm) {
 	var popUrl = "farmCultivateInfoInfo"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=550, height=550, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
 
 	window.open("", "farmCultivateInfoInfoPop", popOption);
 	
@@ -115,4 +115,35 @@ function farmCultivateInfoHistPop(farmCultivateInfoHistForm) {
 	farmCultivateInfoHistForm.submit();
 }
 
- 
+//farmEquipList
+function farmEquipListAddPop() {
+
+	var popUrl = "farmEquipListAdd"; // 팝업창에 출력될 페이지 URL
+	var popOption = "width=800, height=800, resizable=no, scrollbars=no, status=no;"; // 팝업창
+																						// 옵션(optoin)
+	window.open(popUrl, "", popOption);
+}
+
+function farmEquipListModifyPop(farmEquipListModifyForm) {
+
+	var popUrl = "farmEquipListModify"; // 팝업창에 출력될 페이지 URL
+	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
+																						// 옵션(optoin)
+	window.open("", "farmEquipListModifyPop", popOption);
+	
+	farmEquipListModifyForm.action="farmEquipListModify";
+	farmEquipListModifyForm.target="farmEquipListModifyPop";
+	farmEquipListModifyForm.submit();
+}
+
+
+function farmEquipListInfoPop(farmEquipListInfoForm) {
+	var popUrl = "farmEquipListInfo"; // 팝업창에 출력될 페이지 URL
+	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
+
+	window.open("", "farmEquipListInfoPop", popOption);
+	
+	farmEquipListInfoForm.action=popUrl;
+	farmEquipListInfoForm.target="farmEquipListInfoPop";
+	farmEquipListInfoForm.submit();
+}

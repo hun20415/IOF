@@ -52,10 +52,9 @@
 				</td>
 				<td>
 					<form name="userModifyForm">
-						<input type="hidden" name="id" value="${user.userId}"> <input
-							type="hidden" name="m_userGroupId" value="${user.userGroupId}">
-						<input type="submit" value="수정"
-							onclick="javascript:userModifyPop(this.form);">
+						<input type="hidden" name="id" value="${user.userId}"> 
+						<input type="hidden" name="m_userGroupId" value="${user.userGroupId}">
+						<input type="submit" value="수정" onclick="javascript:userModifyPop(this.form);">
 					</form>
 				</td>
 
