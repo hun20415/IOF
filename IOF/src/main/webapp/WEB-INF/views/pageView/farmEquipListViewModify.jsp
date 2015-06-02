@@ -15,9 +15,9 @@
 	<tr>
 		<th scope="row" style="width: 80px; ">온실 명</th>
 		<%-- <td style="width: 120px; ">${farmInfo.farmId}</td> --%>
-		<td><input type="text" name="m_farmId" value="${farmEquipList.farmId}" style="width: 50%;" /></td>		
+		<td><input type="text" name="m_farmId" value="${farmInfo.farmId}" style="width: 50%;" /></td>		
 		<th scope="row" style="width: 107px; ">구역 ID</th>
-		<td style="width: 157px; ">sectionId</td>
+		<td> <input type="text" name="farmSectionId" value="${farmEquipList.farmSectionId}" style="width: 50%;" /></td>
 	</tr>
 	
 </table>

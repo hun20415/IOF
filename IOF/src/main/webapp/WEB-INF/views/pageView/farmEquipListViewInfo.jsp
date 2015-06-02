@@ -8,9 +8,9 @@
 <table class="type02" style="width: 546px; ">
 	<tr>
 		<th scope="row" style="width: 80px; ">온실 명</th>
-		<td style="width: 120px; ">${farmCultivateInfo.farmSectionId}</td>
+		<td style="width: 157px; ">${farmEquipList.farmName}</td>
 		<th scope="row" style="width: 107px; ">구역 ID</th>
-		<td style="width: 157px; ">${farmCultivateInfo.farmSectionId}</td>
+		<td style="width: 157px; ">${farmEquipList.farmName}</td>
 	</tr>
 </table>
 

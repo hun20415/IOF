@@ -60,18 +60,17 @@
 				<td>
 					<form name="farmEquipListInfoForm">
 						<input type="hidden" name="farmId"
-							value="${farmEquipListInfo.farmId}"> <input type="hidden"
-							name="farmSectionId" value="${farmEquipListInfo.farmSectionId}">
+							value="${farmEquipList.farmId}"> <input type="hidden"
+							name="farmSectionId" value="${farmEquipList.farmSectionId}">
 
 						<input type="submit" value="조회"
 							onclick="javascript:farmEquipListInfoPop(this.form)">
 					</form>
 				<td>
 					<form action="farmEquipListModifyForm">
-						<input type="hidden" name="farmId"
-							value="${farmEquipListModify.farmId}"> <input
-							type="hidden" name="farmSectionId"
-							value="${farmEquipListModify.farmSectionId}"> <input
+						<input type="hidden" name="farmId" value="${farmEquipList.farmId}">
+						<input type="hidden" name="farmSectionId"
+							value="${farmEquipList.farmSectionId}"> <input
 							type="submit" value="수정"
 							onclick="farmEquipListModifyPop(this.form)">
 					</form>
@@ -80,10 +79,6 @@
 					<button
 						onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
 				</td>
-
-				</td>
-
-
 
 			</tr>
 		</c:forEach>
