@@ -61,18 +61,10 @@
   	<servlet-name>DisplayChart</servlet-name>
   	<servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>chart</servlet-name>
-    <servlet-class>kr.ac.iof.graph.demo.ChartServlet</servlet-class>
-  </servlet>
-  
+
   <servlet-mapping>
   	<servlet-name>DisplayChart</servlet-name>
   	<url-pattern>/DisplayChart</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>chart</servlet-name>
-    <url-pattern>/chart</url-pattern>
   </servlet-mapping>
 
 </web-app>

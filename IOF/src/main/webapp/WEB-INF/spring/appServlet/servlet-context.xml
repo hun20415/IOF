@@ -30,7 +30,8 @@
       <context:exclude-filter type="annotation"
          expression="org.springframework.stereotype.Repository" />
    </context:component-scan>
-   <context:component-scan base-package="kr.ac.iof.controller" />
+   
+   <context:component-scan base-package="kr.ac.iof.controller"/>
    <context:component-scan base-package="kr.ac.iof.service" />
    <context:component-scan base-package="kr.ac.iof.dao" />
    <context:component-scan base-package="kr.ac.iof.main.Service" />
@@ -65,8 +66,6 @@
    <resources mapping="/js/**" location="/js/" />
    <resources mapping="/images/**" location="/images/" />
    <resources mapping="/message/**" location="/message/" />
-   <resources mapping="/chart/**" location="/chart/" />
-   <resources mapping="/DisplayChart/**" location="/DisplayChart/" />
 
 
    <!-- Resolves views selected for rendering by @Controllers to .jsp resources 
