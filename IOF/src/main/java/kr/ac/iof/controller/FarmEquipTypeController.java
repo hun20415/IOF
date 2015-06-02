@@ -84,10 +84,16 @@ public class FarmEquipTypeController {
 	public String farmEquipTypeModify(@RequestParam("id") int id, Model model) {
 
 		model.addAttribute("farmEquipType", this.farmEquipTypeService.getById(id));
-		//model.addAttribute("listPersons", this.farmEquipTypeService.getAll());
+		//model.addAttribute("listPersons", this.farmEquipTypeService.getAll());userTestGraph
 
 		return "farmEquipTypeModify";
 	}
 	
+	@RequestMapping(value = "/userTestGraph", method = RequestMethod.POST)
+	public String userTestGraph(@ModelAttribute("userTestGraph") FarmEquipType userTestGraph)
+			throws Exception {
+
+		return "userTestGrapht";
+	}
 
 }

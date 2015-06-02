@@ -10,6 +10,8 @@ import kr.ac.iof.main.Service.CropCateService;
 import kr.ac.iof.main.Service.FarmInfoService;
 import kr.ac.iof.model.User;
 import kr.ac.iof.model.UserGroup;
+import kr.ac.iof.model.Main.FarmEquipType;
+import kr.ac.iof.model.Main.FarmSectionInfo;
 import kr.ac.iof.service.UserService;
 import kr.ac.iof.service.UserGroupService;
 import kr.ac.iof.util.HibernateUtil;
@@ -171,5 +173,14 @@ public class UserController {
 
 		return "userModify";
 	}
+	
+	@RequestMapping(value = "/userTestGraph", method = RequestMethod.GET)
+	public String userTestGraph()
+			throws Exception {
+		
+
+		return "userTestGraph";
+	}
+	
 
 }
