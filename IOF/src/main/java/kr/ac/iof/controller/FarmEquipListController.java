@@ -96,12 +96,6 @@ public class FarmEquipListController  {
 		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		
 		
-		
-		
-		
-		
-		
-		
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
 		
 		//model.addAttribute("farmInfo", new FarmInfo());
@@ -109,8 +103,6 @@ public class FarmEquipListController  {
 		
 		//model.addAttribute("farmEquipType", new FarmEquipType());
 		//model.addAttribute("listfarmEquipType", this.farmEquipTypeService.getAll());
-		
-		
 		
 		return "farmEquipListList";
 	}
