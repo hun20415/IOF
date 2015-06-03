@@ -12,7 +12,7 @@
 				<option>딸기세상</option>
 		</select></td> -->
 		<td>
-	 	<select name="m_farmId">
+	 	<select name="farmId">
 						<c:forEach items="${farmInfoList}" var="farmInfo">
 							<option value="${farmInfo.farmId}">${farmId.farmName}</option>							
 						</c:forEach>
@@ -41,7 +41,7 @@
 		<td><select name="">
 				<option>내부 습도 센서</option>
 		</select></td>
-		<td><input size="10" ></input></td>
+		<td><td><input type="password" name="confirm" style="width: 50%;" /></td></td>
 		<td><input size="10"></input></td>
 		<td><input size="10"></input></td>
 		<td><input size="10"></input></td>

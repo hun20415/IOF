@@ -39,6 +39,7 @@ public class FarmCultivateInfoDaoIm implements FarmCultivateInfoDao {
 			FarmInfo farmInfo = (FarmInfo)session.load(FarmInfo.class, new Integer(m_farmId));
 			User user = (User)session.load(User.class, new Integer(m_userId));
 			CropSpeciesInfo cropSpeciesInfo = (CropSpeciesInfo)session.load(CropSpeciesInfo.class, new Integer(m_cropSpeciesId));
+			
 			farmCultivateInfo.setFarmInfo(farmInfo);
 			farmCultivateInfo.setUser(user);
 			farmCultivateInfo.setCropSpeciesInfo(cropSpeciesInfo);
