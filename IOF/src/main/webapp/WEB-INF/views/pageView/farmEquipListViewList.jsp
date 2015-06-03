@@ -27,12 +27,12 @@
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
-			<th width="50px">번호</th>
+			<!-- <th width="50px">번호</th>  -->
 			<th width="50px">온실</th>
 			<th width="60px">온실ID</th>
 			<th width="60px">구역ID</th>
-			<th width="70px">센서 종류</th>
-			<th width="100px">컨트롤러 종류</th>
+			<!--  <th width="70px">센서 종류</th>  -->
+			<!--  <th width="100px">컨트롤러 종류</th>  -->
 			<th width="40px">조회</th>
 			<th width="40px">수정</th>
 			<th width="50px">Delete</th>
@@ -49,29 +49,24 @@
 
 		<c:forEach items="${listFarmEquipList}" var="farmEquipList" >		
 			<tr>
-				<td> 1 </td>
+				<!--  <td> 1 </td>  -->
 				<td>${farmEquipList.farmName}</td>
 				<td>${farmEquipList.farmId}</td>
 				<td>${farmEquipList.farmSectionId}</td>
 				
-				<td>센서 수 계산</td>
-				<td>컨트롤러 수 계산</td>
+				<!--  <td>센서 수 계산</td>  -->
+				<!--  <td>컨트롤러 수 계산</td>  -->
 				<td>
 					<form name="farmEquipListInfoForm">
-						<input type="hidden" name="farmId"
-							value="${farmEquipList.farmId}"> <input type="hidden"
-							name="farmSectionId" value="${farmEquipList.farmSectionId}">
-
-						<input type="submit" value="조회"
-							onclick="javascript:farmEquipListInfoPop(this.form)">
+						<input type="hidden" name="farmId" value="${farmEquipList.farmId}"> 
+						<!--  <input type="hidden" name="farmSectionId" value="${farmEquipList.farmSectionId}">  -->
+						<input type="submit" value="조회" onclick="javascript:farmEquipListInfoPop(this.form)">
 					</form>
 				<td>
 					<form action="farmEquipListModifyForm">
 						<input type="hidden" name="farmId" value="${farmEquipList.farmId}">
-						<input type="hidden" name="farmSectionId"
-							value="${farmEquipList.farmSectionId}"> <input
-							type="submit" value="수정"
-							onclick="farmEquipListModifyPop(this.form)">
+						<input type="hidden" name="farmSectionId" value="${farmEquipList.farmSectionId}">
+						<input type="submit" value="수정" onclick="farmEquipListModifyPop(this.form)">
 					</form>
 				</td>
 				<td>

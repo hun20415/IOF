@@ -112,19 +112,17 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 	}
 	
 	@Override
-	public List<FarmEquipList> getAll(int m_farmId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+	public List<FarmEquipList> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
 		System.out.println("farmEquipListDaolm");
 		List<FarmEquipList> farmEquipLists = new ArrayList<FarmEquipList>();
-		
-		List<Integer> sensorNum = new ArrayList<Integer>(); //songlock 2015-06-03
-		List<FarmInfo> farmInfoLists = new ArrayList<FarmInfo>();
 		
 		Transaction trns = null;
 		
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			farmInfoLists = session.createQuery("select farmInfo from FarmEquipList group by farmInfo").list();
+			System.out.println("Calling SQL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			farmEquipLists = session.createQuery("from FarmEquipList group by farmInfo, farmSectionId").list();
 			//farmEquipLists = session.createQuery("from FarmEquipList").list();//list로 호출
 		} catch (RuntimeException e) {
 			e.printStackTrace();

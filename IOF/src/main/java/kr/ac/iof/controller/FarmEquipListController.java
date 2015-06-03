@@ -72,7 +72,7 @@ public class FarmEquipListController  {
 		logger.info("farmEquipInfo View");
 
 		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId));
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		return "farmEquipListInfo";
 	}  
 
@@ -91,11 +91,11 @@ public class FarmEquipListController  {
 
 	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListList", method = RequestMethod.GET)
-	public String farmEquipListList(@RequestParam("m_farmId") Integer m_farmId, Model model) throws Exception {
+	public String farmEquipListList(Model model) throws Exception {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
 		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId)); 
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll()); 
 		
 		
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
