@@ -109,6 +109,16 @@ public class FarmEquipList {
 		eqType.setEqTypeId(eqTypeId);
 	}
 	
+	//get controlSensor from FarmEquipType table
+	public String getControlSensor() {
+		return eqType.getControlSensor();
+	}
+	
+	//set controlSensor to FarmEquipType table
+	public void setControlSensor(String controlSensor) {
+		eqType.setControlSensor(controlSensor);
+	}
+	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;
 	}

@@ -124,7 +124,7 @@ public class FarmEquipListController  {
 	}
 
 	//songlock: 2015-06-01
-	@RequestMapping("/farmEquipListModify")
+	@RequestMapping(value = "/farmEquipListModify", method = RequestMethod.POST)
 	public String farmEquipListModify(@RequestParam("m_farmId") int m_farmId, @RequestParam("m_eqTypeId") int m_eqTypeId, 
 			@ModelAttribute("farmEquipList") FarmEquipList farmEquipList, Model model) {
 
