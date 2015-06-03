@@ -4,6 +4,15 @@ function Move() {
         window.close(); 
 } 
 
+
+function aaa(){
+	
+	      window.open( this.options[ this.selectedIndex ].value );
+	
+}
+
+
+
 // user
 function SignUpPop() {
 

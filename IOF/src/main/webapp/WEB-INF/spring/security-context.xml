@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/security"
-	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
           http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.1.xsd
            ">
 
-	<http auto-config='true'>
-		<intercept-url pattern="/login2" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+   <http auto-config='true'>
+      <intercept-url pattern="/login2" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/login_duplicate" access="IS_AUTHENTICATED_ANONYMOUSLY" />
         <intercept-url pattern="/login2" access="ROLE_USER" />
         <form-login login-page="/login2" 
@@ -23,9 +23,9 @@
         <session-management>
             <concurrency-control max-sessions="1" expired-url="/login_duplicate"/>
         </session-management>
-	</http>
+   </http>
 
-	<beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+   <beans:bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
     
     <authentication-manager>
         <authentication-provider ref="customAuthenticationProvider"/>

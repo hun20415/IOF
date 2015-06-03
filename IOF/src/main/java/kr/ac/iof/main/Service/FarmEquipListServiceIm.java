@@ -51,6 +51,13 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
     	System.out.println("farmEquipListServicelm");
         return this.farmEquipListDao.getAll();
     }
+    
+    @Override
+    @Transactional
+    public List<FarmEquipList> getAll2(int farmId) {
+    	System.out.println("farmEquipListServicelm2");
+        return this.farmEquipListDao.getAll2(farmId);
+    }
  
     @Override
     @Transactional
@@ -63,4 +70,11 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
     public void delete(int m_farmId, int m_eqTypeId) {
         this.farmEquipListDao.delete(m_farmId, m_eqTypeId);
     }
+
+    //songlock 2015-06-03
+	@Override
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
+		// TODO Auto-generated method stub
+		return this.farmEquipListDao.getByFarmIdAndSectionId(m_farmId, farmSectionId);
+	}
 }

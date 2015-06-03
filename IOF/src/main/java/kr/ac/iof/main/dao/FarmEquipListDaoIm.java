@@ -121,7 +121,9 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			farmEquipLists = session.createQuery("from FarmEquipList").list();//list로 호출
+			System.out.println("Calling SQL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+			farmEquipLists = session.createQuery("from FarmEquipList group by farmInfo, farmSectionId").list();
+			//farmEquipLists = session.createQuery("from FarmEquipList").list();//list로 호출
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
@@ -129,6 +131,32 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 			session.close();
 		}
 		return farmEquipLists;//리스트로 반환
+	}
+	@Override
+	public List<FarmEquipList> getAll2(int farmId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+		System.out.println("farmEquipTypeDaolm");
+		List<FarmEquipList> FarmEquipLists = new ArrayList<FarmEquipList>();
+		
+		Transaction trns = null;
+		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			
+			
+			String queryString = "from FarmEquipList where (farmInfo = :id) group by farmSectionId ";
+			Query query = session.createQuery(queryString);
+			query.setInteger("id", farmId);
+			FarmEquipLists = query.list();
+			
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return FarmEquipLists;//리스트로 반환
 	}
 
 	//songlock: 2015-06-01
@@ -153,4 +181,31 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		}
 		return farmEquipList;
 	}
+
+	//songlock 2015-06-03
+	@Override
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
+		System.out.println("farmEquipListDaolm");
+		FarmEquipList farmEquipList = null;
+		Transaction trns = null;
+		
+		List<FarmEquipList> farmEquipLists = new ArrayList<FarmEquipList>();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from FarmEquipList where (farmInfo = :fid and farmSectionId= :sid)";
+			Query query = session.createQuery(queryString);
+			query.setInteger("fid", m_farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("sid", farmSectionId);//id로 매칭 특정 행을 불러온다.
+			farmEquipLists = query.list();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return farmEquipLists;
+	}
+
+	
 }

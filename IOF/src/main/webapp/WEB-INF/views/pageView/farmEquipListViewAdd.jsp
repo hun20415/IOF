@@ -1,7 +1,7 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link href="css/farmEquipListAdd.css" rel="stylesheet" type="text/css">
-
+<script src="../js/newWindow.js" type="text/javascript" , charset="utf-8"></script>
 <!-- 본문 시작 -->
 <h1 style="position: absolute; top: 70px; left: 300px;">장비 신규 정보</h1>
 <br><br><br>
@@ -12,16 +12,26 @@
 				<option>딸기세상</option>
 		</select></td> -->
 		<td>
-	 	<select name="m_farmId">
+		<form>
+	 	<select name="m_farmId" onchange="this.form.submit()">
+	 	
+					<option value="">  </option>
 						<c:forEach items="${farmInfoList}" var="farmInfo">
-							<option value="${farmInfo.farmId}">${farmId.farmName}</option>							
+							<option value="${farmInfo.farmId}" ${m_farmId == farmInfo.farmId ? 'selected' :''}>${farmInfo.farmName}</option>							
 						</c:forEach>
-		</select> 
-		</td>	
+		</select>
 		
+		</form> 
+		</td>	
+		<%-- <c:forEach items="${listUser}" var="user"> --%>
 		<th scope="row" style="width: 107px;">구역</th>
-		<td><select name="">
-				<option>2</option>
+		<td><select name="farmSectionId">
+					<%-- <c:forEach items="${listFarmEquipList}" var="farmSectionId">
+						<option value="${farmEquipList.farmSectionId}">${farmEquipList.farmSectionId}</option>							
+					</c:forEach> --%>
+					<c:forEach items="${listfarmEquipList}" var="farmEquipList">
+						<option value="${farmEquipList.farmSectionId}">${farmEquipList.farmSectionId}</option>							
+					</c:forEach> 
 		</select></td>
 	</tr>
 </table>
@@ -41,10 +51,10 @@
 		<td><select name="">
 				<option>내부 습도 센서</option>
 		</select></td>
-		<td><input size="10" ></input></td>
-		<td><input size="10"></input></td>
-		<td><input size="10"></input></td>
-		<td><input size="10"></input></td>
+		<td><input type="text" name="eqCompany" style="width: 50%;" /></td>
+		<td><input type="text" name="eqModel" style="width: 50%;" /></td>
+		<td><input type="text" name="eqSwVersion" style="width: 50%;" /></td>
+		<td><input type="text" name="eqDiscription" style="width: 50%;" /></td>
 		<td><button >추가</button></td>
 	</tr>
 
@@ -52,7 +62,10 @@
 
 </table>
 
-
+<!-- by oak 
 <button type="submit" style="position: relative; left: 320px;">확인</button>
 <button type="send" style="position: relative; left: 320px;">취소</button>
-
+ -->
+ 		<div style="text-align: center; padding-bottom: 15px;">
+			<input type="submit" value="확인" />
+		</div>

@@ -174,13 +174,6 @@ public class UserController {
 		return "userModify";
 	}
 	
-	@RequestMapping(value = "/userTestGraph", method = RequestMethod.GET)
-	public String userTestGraph()
-			throws Exception {
-		
-
-		return "userTestGraph";
-	}
 	
 	@RequestMapping(value = "/userFarmList", method = RequestMethod.GET)
 	public String userFarmList()

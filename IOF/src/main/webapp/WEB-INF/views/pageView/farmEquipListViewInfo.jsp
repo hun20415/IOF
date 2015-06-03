@@ -8,9 +8,9 @@
 <table class="type02" style="width: 546px; ">
 	<tr>
 		<th scope="row" style="width: 80px; ">온실 명</th>
-		<td style="width: 120px; ">${farmCultivateInfo.farmSectionId}</td>
+		<td style="width: 157px; ">${farmInfo.farmName}</td>
 		<th scope="row" style="width: 107px; ">구역 ID</th>
-		<td style="width: 157px; ">${farmCultivateInfo.farmSectionId}</td>
+		<td style="width: 157px; ">${farmSectionId}</td>
 	</tr>
 </table>
 
@@ -18,22 +18,25 @@
 	<tr>
 		<th scope="row">No  </th>
 		<th scope="row">센서/컨트롤러  </th>
-		<th scope="row">장비  </th>
+		<th scope="row">장비 타입 </th>
 		<th scope="row">회사명</th>
 		<th scope="row">모델명</th>
 		<th scope="row">S/W version  </th>
 		<th scope="row">설명</th> 
 	</tr>
-	<tr> 
-		<td scope="row">1  </td>
-		<td scope="row">외부 온도 센서</td>
-		<td>${farmEquipList.farmId}</td>
-		<td scope="row"></td>
-		<td scope="row">1  </td>		
-		<td scope="row">복합제어기</td>
-		<td scope="row">1</td>
-	</tr>
-	
+	<!-- songlock 2015-06-03 -->
+	<c:forEach items="${listFarmEquipListInfo}" var="farmEquipListInfo" >
+		<tr> 
+			<!-- songlock 2015-06-03 -->
+			<td scope="row">${farmEquipListInfo.eqId}</td>
+			<td scope="row">${farmEquipListInfo.controlSensor}</td>
+			<td scope="row">${farmEquipListInfo.farmEquipTypeName}</td>
+			<td scope="row">${farmEquipListInfo.eqCompany}</td>
+			<td scope="row">${farmEquipListInfo.eqModel}</td>		
+			<td scope="row">${farmEquipListInfo.eqSwVersion}</td>
+			<td scope="row">${farmEquipListInfo.eqDiscription}</td>
+		</tr>
+	</c:forEach>
 	
 	
 </table>

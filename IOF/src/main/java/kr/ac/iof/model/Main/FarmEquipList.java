@@ -89,15 +89,35 @@ public class FarmEquipList {
 		farmInfo.setFarmId(farmId);
 	}
 	
-	//get farmEquipTypeName from FarmEquipType table
+	//get eqTypeName from FarmEquipType table
 	public String getFarmEquipTypeName() {
 		return eqType.getEqTypeName();
 	}
 	
-	//set farmEquipTypeName to FarmEquipType table
+	//set eqTypeName to FarmEquipType table
 	public void setFarmEquipTypeName(String eqTypeName) {
 		eqType.setEqTypeName(eqTypeName);
 	} 
+	
+	//get eqTypeId from FarmEquipType table
+	public int getEqTypeId() {
+		return eqType.getEqTypeId();
+	}
+	
+	//set eqTypeId to FarmEquipType table
+	public void setEqTypeId(int eqTypeId) {
+		eqType.setEqTypeId(eqTypeId);
+	}
+	
+	//get controlSensor from FarmEquipType table
+	public String getControlSensor() {
+		return eqType.getControlSensor();
+	}
+	
+	//set controlSensor to FarmEquipType table
+	public void setControlSensor(String controlSensor) {
+		eqType.setControlSensor(controlSensor);
+	}
 	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;

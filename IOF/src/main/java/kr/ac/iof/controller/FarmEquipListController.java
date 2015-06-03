@@ -32,6 +32,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import bsh.This;
+
 
 /**
  * Handles requests for the application user page.
@@ -47,7 +49,8 @@ public class FarmEquipListController  {
 	private FarmInfoService farmInfoService; //songlock: 2015-06-01 farmId, farmNamed을 위하여
 	@Autowired//꼭 추가해야함
 	private FarmEquipTypeService farmEquipTypeService; //songlock: 2015-06-01 farmEquipTypeID를 위하여
-
+	
+	
 	public void setFarmEquipListService(FarmEquipListService ps) {
 		this.farmEquipListService = ps;
 	}
@@ -65,12 +68,31 @@ public class FarmEquipListController  {
 		return "farmEquipListAdd";
 	}
 	
-	@RequestMapping(value = "/farmEquipListInfo", method = RequestMethod.GET)
+	//Oak: 2015-06-03	
+	@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET, params={"m_farmId"})
 	// 서비스 호출
-	public String farmEquipListInfo() throws Exception {
-		logger.info("farmEquipInfo View");
+	public String farmEquipListAdd(@RequestParam("m_farmId") Integer m_farmId, Model model) throws Exception {
+		logger.info("farmEquipList with farmid입력 View");
 
+		model.addAttribute("farmInfo", new FarmInfo());
+		model.addAttribute("farmInfoList", farmInfoService.getAll());
+		model.addAttribute("m_farmId", m_farmId);
+		model.addAttribute("farmEquiplist", new FarmEquipList());
+		model.addAttribute("listfarmEquipList", farmEquipListService.getAll2(m_farmId)); 
+		/*model.addAttribute("listFarmEquipListAdd", this.farmEquipListService.getByFarmId(m_farmId));*/
+		return "farmEquipListAdd";
+	}
+	
+	//songlock: 2015-06-03
+	@RequestMapping(value = "/farmEquipListInfo", method = RequestMethod.GET)
+	public String farmEquipListInfo(@RequestParam("m_farmId") Integer m_farmId, 
+			@RequestParam("farmSectionId") Integer farmSectionId, Model model) throws Exception {
+		logger.info("farmEquipInfo View");
 		
+		model.addAttribute("farmInfo", this.farmInfoService.getById(m_farmId));
+		model.addAttribute("farmSectionId", farmSectionId);
+		model.addAttribute("farmEquipListInfo", new FarmEquipList());
+		model.addAttribute("listFarmEquipListInfo", this.farmEquipListService.getByFarmIdAndSectionId(m_farmId, farmSectionId));
 		return "farmEquipListInfo";
 	}  
 
@@ -87,19 +109,13 @@ public class FarmEquipListController  {
 		return "redirect:/farmEquipListList";
 	}
 
-	//songlock: 2015-06-01
+	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListList", method = RequestMethod.GET)
 	public String farmEquipListList(Model model) throws Exception {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
 		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
-		
-		
-		
-		
-		
-		
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll()); 
 		
 		
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
@@ -109,8 +125,6 @@ public class FarmEquipListController  {
 		
 		//model.addAttribute("farmEquipType", new FarmEquipType());
 		//model.addAttribute("listfarmEquipType", this.farmEquipTypeService.getAll());
-		
-		
 		
 		return "farmEquipListList";
 	}
@@ -132,7 +146,7 @@ public class FarmEquipListController  {
 	}
 
 	//songlock: 2015-06-01
-	@RequestMapping("/farmEquipListModify")
+	@RequestMapping(value = "/farmEquipListModify", method = RequestMethod.POST)
 	public String farmEquipListModify(@RequestParam("m_farmId") int m_farmId, @RequestParam("m_eqTypeId") int m_eqTypeId, 
 			@ModelAttribute("farmEquipList") FarmEquipList farmEquipList, Model model) {
 
