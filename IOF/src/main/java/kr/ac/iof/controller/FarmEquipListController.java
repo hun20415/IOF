@@ -95,7 +95,7 @@ public class FarmEquipListController  {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
 		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId));
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId)); 
 		
 		
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.
