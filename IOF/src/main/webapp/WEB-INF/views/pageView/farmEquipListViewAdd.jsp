@@ -14,14 +14,19 @@
 		<td>
 	 	<select name="farmId">
 						<c:forEach items="${farmInfoList}" var="farmInfo">
-							<option value="${farmInfo.farmId}">${farmId.farmName}</option>							
+							<option value="${farmInfo.farmId}">${farmInfo.farmName}</option>							
 						</c:forEach>
 		</select> 
 		</td>	
-		
+		<%-- <c:forEach items="${listUser}" var="user"> --%>
 		<th scope="row" style="width: 107px;">구역</th>
-		<td><select name="">
-				<option>2</option>
+		<td><select name="farmSectionId">
+					<%-- <c:forEach items="${listFarmEquipList}" var="farmSectionId">
+						<option value="${farmEquipList.farmSectionId}">${farmEquipList.farmSectionId}</option>							
+					</c:forEach> --%>
+					<c:forEach items="${farmInfoList}" var="farmSectionId">
+						<option value="${farmInfo.farmSectionId}">${farmInfo.farmSectionId}</option>							
+					</c:forEach> 
 		</select></td>
 	</tr>
 </table>
@@ -41,10 +46,10 @@
 		<td><select name="">
 				<option>내부 습도 센서</option>
 		</select></td>
-		<td><td><input type="password" name="confirm" style="width: 50%;" /></td></td>
-		<td><input size="10"></input></td>
-		<td><input size="10"></input></td>
-		<td><input size="10"></input></td>
+		<td><input type="text" name="eqCompany" style="width: 50%;" /></td>
+		<td><input type="text" name="eqModel" style="width: 50%;" /></td>
+		<td><input type="text" name="eqSwVersion" style="width: 50%;" /></td>
+		<td><input type="text" name="eqDiscription" style="width: 50%;" /></td>
 		<td><button >추가</button></td>
 	</tr>
 
@@ -52,7 +57,10 @@
 
 </table>
 
-
+<!-- by oak 
 <button type="submit" style="position: relative; left: 320px;">확인</button>
 <button type="send" style="position: relative; left: 320px;">취소</button>
-
+ -->
+ 		<div style="text-align: center; padding-bottom: 15px;">
+			<input type="submit" value="확인" />
+		</div>
