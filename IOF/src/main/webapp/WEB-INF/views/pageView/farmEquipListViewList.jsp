@@ -12,7 +12,7 @@
 
 
 <!-- 본문 시작 -->
-<h1 style="position: absolute; top: 70px; left: 550px;">온실 구역별 장비
+<h1 style="position: absolute; top: 70px; left: 450px;">온실 구역별 장비
 	List</h1>
 
 <table>
@@ -22,7 +22,7 @@
 			style="position: relative; left: 520px;">신규</button> -->
 
 		<a href="javascript:farmEquipListAddPop()"> <input type="button"
-			class="button" value="신규" style="position: relative; left: 520px;" />
+			class="button" value="신규" style="position: relative; left: 290px;" />
 		</a>
 	</p>
 	<thead style="background: #d2f4ec;">
