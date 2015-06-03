@@ -18,7 +18,7 @@ public interface FarmEquipListDao {
 
 	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
-	public List<FarmEquipList> getAll();
+	public List<FarmEquipList> getAll(int m_farmId);
 
 	public FarmEquipList getById(int m_farmId, int m_eqTypeId);
 }

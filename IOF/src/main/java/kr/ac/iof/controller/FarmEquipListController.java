@@ -65,12 +65,14 @@ public class FarmEquipListController  {
 		return "farmEquipListAdd";
 	}
 	
+	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListInfo", method = RequestMethod.GET)
-	// 서비스 호출
-	public String farmEquipListInfo() throws Exception {
+	public String farmEquipListInfo(@RequestParam("m_farmId") Integer m_farmId, 
+			@RequestParam("farmSectionId") Integer farmSectionId, Model model) throws Exception {
 		logger.info("farmEquipInfo View");
 
-		
+		model.addAttribute("farmEquipList", new FarmEquipList());
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId));
 		return "farmEquipListInfo";
 	}  
 
@@ -87,13 +89,13 @@ public class FarmEquipListController  {
 		return "redirect:/farmEquipListList";
 	}
 
-	//songlock: 2015-06-01
+	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListList", method = RequestMethod.GET)
-	public String farmEquipListList(Model model) throws Exception {
+	public String farmEquipListList(@RequestParam("m_farmId") Integer m_farmId, Model model) throws Exception {
 		logger.info("farmEquipList 리스트");
 		// 리스트 출력
 		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
+		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll(m_farmId));
 		
 		
 		// jsp 페이지에 model를 받아 리스트를 페이지로 뿌려준다.

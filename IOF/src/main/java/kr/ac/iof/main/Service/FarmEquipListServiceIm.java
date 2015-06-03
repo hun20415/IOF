@@ -47,9 +47,9 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
  
     @Override
     @Transactional
-    public List<FarmEquipList> getAll() {
+    public List<FarmEquipList> getAll(int m_farmId) {
     	System.out.println("farmEquipListServicelm");
-        return this.farmEquipListDao.getAll();
+        return this.farmEquipListDao.getAll(m_farmId);
     }
  
     @Override
