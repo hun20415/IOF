@@ -26,4 +26,7 @@ public interface FarmEquipListService {
 	//songlock 2015-06-03
 	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId);
 	
+	public List<FarmEquipList> getAll2(int farmId);
+	
+	
 }

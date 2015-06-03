@@ -24,4 +24,6 @@ public interface FarmEquipListDao {
 	
 	//songlock 2015-06-03
 	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId);
+
+	public List<FarmEquipList> getAll2(int farmId);
 }

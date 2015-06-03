@@ -132,6 +132,32 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		}
 		return farmEquipLists;//리스트로 반환
 	}
+	@Override
+	public List<FarmEquipList> getAll2(int farmId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+		System.out.println("farmEquipTypeDaolm");
+		List<FarmEquipList> FarmEquipLists = new ArrayList<FarmEquipList>();
+		
+		Transaction trns = null;
+		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			
+			
+			String queryString = "from FarmEquipList where (farmInfo = :id) group by farmSectionId ";
+			Query query = session.createQuery(queryString);
+			query.setInteger("id", farmId);
+			FarmEquipLists = query.list();
+			
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return FarmEquipLists;//리스트로 반환
+	}
 
 	//songlock: 2015-06-01
 	@Override
@@ -180,4 +206,6 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		}
 		return farmEquipLists;
 	}
+
+	
 }

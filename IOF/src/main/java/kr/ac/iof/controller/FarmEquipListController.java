@@ -49,7 +49,8 @@ public class FarmEquipListController  {
 	private FarmInfoService farmInfoService; //songlock: 2015-06-01 farmId, farmNamed을 위하여
 	@Autowired//꼭 추가해야함
 	private FarmEquipTypeService farmEquipTypeService; //songlock: 2015-06-01 farmEquipTypeID를 위하여
-
+	
+	
 	public void setFarmEquipListService(FarmEquipListService ps) {
 		this.farmEquipListService = ps;
 	}
@@ -64,6 +65,21 @@ public class FarmEquipListController  {
 		model.addAttribute("farmInfoList", farmInfoService.getAll());
 		model.addAttribute("farmEquipType", new FarmEquipType());
 		model.addAttribute("farmEquipTypeList", farmEquipTypeService.getAll()); 
+		return "farmEquipListAdd";
+	}
+	
+	//Oak: 2015-06-03	
+	@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET, params={"m_farmId"})
+	// 서비스 호출
+	public String farmEquipListAdd(@RequestParam("m_farmId") Integer m_farmId, Model model) throws Exception {
+		logger.info("farmEquipList with farmid입력 View");
+
+		model.addAttribute("farmInfo", new FarmInfo());
+		model.addAttribute("farmInfoList", farmInfoService.getAll());
+		model.addAttribute("m_farmId", m_farmId);
+		model.addAttribute("farmEquiplist", new FarmEquipList());
+		model.addAttribute("listfarmEquipList", farmEquipListService.getAll2(m_farmId)); 
+		/*model.addAttribute("listFarmEquipListAdd", this.farmEquipListService.getByFarmId(m_farmId));*/
 		return "farmEquipListAdd";
 	}
 	
