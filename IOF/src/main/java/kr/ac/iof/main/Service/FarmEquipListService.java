@@ -23,4 +23,6 @@ public interface FarmEquipListService {
 
 	public FarmEquipList getById(int m_farmId, int m_eqTypeId);
 	
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId);
+	
 }

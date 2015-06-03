@@ -63,4 +63,10 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
     public void delete(int m_farmId, int m_eqTypeId) {
         this.farmEquipListDao.delete(m_farmId, m_eqTypeId);
     }
+
+	@Override
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
+		// TODO Auto-generated method stub
+		return this.farmEquipListDao.getByFarmIdAndSectionId(m_farmId, farmSectionId);
+	}
 }

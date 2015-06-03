@@ -155,4 +155,28 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		}
 		return farmEquipList;
 	}
+
+	@Override
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
+		System.out.println("farmEquipListDaolm");
+		FarmEquipList farmEquipList = null;
+		Transaction trns = null;
+		
+		List<FarmEquipList> farmEquipLists = new ArrayList<FarmEquipList>();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from FarmEquipList where (farmInfo = :fid and farmSectionId= :sid)";
+			Query query = session.createQuery(queryString);
+			query.setInteger("fid", m_farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("sid", farmSectionId);//id로 매칭 특정 행을 불러온다.
+			farmEquipLists = query.list();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return farmEquipLists;
+	}
 }

@@ -32,6 +32,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import bsh.This;
+
 
 /**
  * Handles requests for the application user page.
@@ -70,9 +72,15 @@ public class FarmEquipListController  {
 	public String farmEquipListInfo(@RequestParam("m_farmId") Integer m_farmId, 
 			@RequestParam("farmSectionId") Integer farmSectionId, Model model) throws Exception {
 		logger.info("farmEquipInfo View");
-
-		model.addAttribute("farmEquipList", new FarmEquipList());
-		model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
+		
+		
+		
+		model.addAttribute("farmInfo", this.farmInfoService.getById(m_farmId));
+		model.addAttribute("farmSectionId", farmSectionId);
+		model.addAttribute("farmEquipListInfo", new FarmEquipList());
+		model.addAttribute("listFarmEquipListInfo", this.farmEquipListService.getByFarmIdAndSectionId(m_farmId, farmSectionId));
+		//model.addAttribute("farmEquipList", new FarmEquipList());
+		//model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		return "farmEquipListInfo";
 	}  
 
