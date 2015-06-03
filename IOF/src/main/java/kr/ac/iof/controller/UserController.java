@@ -182,5 +182,20 @@ public class UserController {
 		return "userTestGraph";
 	}
 	
+	@RequestMapping(value = "/userFarmList", method = RequestMethod.GET)
+	public String userFarmList()
+			throws Exception {
+		
 
+		return "userFarmList";
+	}
+	
+	@RequestMapping(value = "/userFarmCultivateInfoList", method = RequestMethod.GET)
+	public String userFarmCultivateInfoList()
+			throws Exception {
+		
+
+		return "userFarmCultivateInfoList";
+	}
+	
 }

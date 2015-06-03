@@ -84,8 +84,12 @@
 		</tr>
 	</table>
 
-
-	<left>
+<a href=""> <input type="button"
+			class="button" value="구역별 상세 정보 보기" style="position: relative; left: 450px;" />
+		</a>
+		<!--
+		<left>
+  
 	<h2># 재배정보</h2>
 	</left>
 	<table class="type02">
@@ -326,6 +330,7 @@
 
 	</table>
 </form>
+-->
 <!--  본문 끝 -->
 
 
