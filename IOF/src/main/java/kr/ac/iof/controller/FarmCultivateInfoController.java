@@ -107,7 +107,7 @@ public class FarmCultivateInfoController  {
 		return "redirect:/closeWindows";
 	}
 	
-	//songlock: 2015-05-28
+	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmCultivateInfoModify")
 	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
 			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @RequestParam("tno") int tno, Model model) {
