@@ -45,16 +45,15 @@
 			<td>0001</td>
 			<td>1</td>
 			<td>15</td>
-			<td>21</td> -->
+			<td>21</td> -->			
 
-		<c:forEach items="${listFarmEquipList}" var="farmEquipList">
+		<c:forEach items="${listFarmEquipList}" var="farmEquipList" >		
 			<tr>
-				<td>1</td>
+				<td> 1 </td>
 				<td>${farmEquipList.farmName}</td>
 				<td>${farmEquipList.farmId}</td>
 				<td>${farmEquipList.farmSectionId}</td>
-				<%-- <c:if test="${farmEquipList.controlSensor == 'C'}"> --%>
-
+				
 				<td>센서 수 계산</td>
 				<td>컨트롤러 수 계산</td>
 				<td>
@@ -79,8 +78,8 @@
 					<button
 						onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
 				</td>
-
 			</tr>
+			
 		</c:forEach>
 	</tbody>
 </table>
