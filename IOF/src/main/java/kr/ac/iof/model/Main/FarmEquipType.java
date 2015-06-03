@@ -62,7 +62,7 @@ public class FarmEquipType {
 		return controlSensor;
 	}
 
-	public void setEqType(int eqTypeId) {
+	public void setEqTypeId(int eqTypeId) {
 		this.eqTypeId = eqTypeId;
 	}
 
