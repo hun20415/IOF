@@ -22,5 +22,6 @@ public interface FarmEquipListDao {
 
 	public FarmEquipList getById(int m_farmId, int m_eqTypeId);
 	
+	//songlock 2015-06-03
 	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId);
 }

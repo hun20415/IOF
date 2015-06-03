@@ -73,14 +73,10 @@ public class FarmEquipListController  {
 			@RequestParam("farmSectionId") Integer farmSectionId, Model model) throws Exception {
 		logger.info("farmEquipInfo View");
 		
-		
-		
 		model.addAttribute("farmInfo", this.farmInfoService.getById(m_farmId));
 		model.addAttribute("farmSectionId", farmSectionId);
 		model.addAttribute("farmEquipListInfo", new FarmEquipList());
 		model.addAttribute("listFarmEquipListInfo", this.farmEquipListService.getByFarmIdAndSectionId(m_farmId, farmSectionId));
-		//model.addAttribute("farmEquipList", new FarmEquipList());
-		//model.addAttribute("listFarmEquipList", this.farmEquipListService.getAll());
 		return "farmEquipListInfo";
 	}  
 

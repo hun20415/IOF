@@ -156,6 +156,7 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		return farmEquipList;
 	}
 
+	//songlock 2015-06-03
 	@Override
 	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
 		System.out.println("farmEquipListDaolm");

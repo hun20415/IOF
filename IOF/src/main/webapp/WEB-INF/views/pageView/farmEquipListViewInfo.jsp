@@ -24,6 +24,7 @@
 		<th scope="row">S/W version  </th>
 		<th scope="row">설명</th> 
 	</tr>
+	<!-- songlock 2015-06-03 -->
 	<c:forEach items="${listFarmEquipListInfo}" var="farmEquipListInfo" >
 		<tr> 
 			<!-- songlock 2015-06-03 -->

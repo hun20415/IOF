@@ -64,6 +64,7 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
         this.farmEquipListDao.delete(m_farmId, m_eqTypeId);
     }
 
+    //songlock 2015-06-03
 	@Override
 	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId) {
 		// TODO Auto-generated method stub
