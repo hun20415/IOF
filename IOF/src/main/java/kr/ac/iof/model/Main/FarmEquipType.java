@@ -62,6 +62,8 @@ public class FarmEquipType {
 		return controlSensor;
 	}
 
+	//songlock 2015-06-03, setEqType --> setEqTypeId
+	//public void setEqType(int eqTypeId) {
 	public void setEqTypeId(int eqTypeId) {
 		this.eqTypeId = eqTypeId;
 	}
