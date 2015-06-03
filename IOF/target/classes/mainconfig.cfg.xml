@@ -35,7 +35,7 @@
         <mapping class="kr.ac.iof.model.Main.CropCate"/>
         <mapping class="kr.ac.iof.model.Main.CropInfo"/>
         <mapping class="kr.ac.iof.model.Main.BuyerInfo"/>
-         <mapping class="kr.ac.iof.model.Main.CropSpeciesInfo"/>        
+        <mapping class="kr.ac.iof.model.Main.CropSpeciesInfo"/>        
         <mapping class="kr.ac.iof.model.Main.CropTypeInfo"/>
         <mapping class="kr.ac.iof.model.Main.DsCategory"/>        
         <mapping class="kr.ac.iof.model.Main.DsInfo"/>     
