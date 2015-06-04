@@ -43,6 +43,20 @@ public class FarmEquipListController  {
 		this.farmEquipListService = ps;
 	}
 
+	
+/*	//Oak: 2015-06-04
+	 @RequestMapping(value = "/farmEquipListAdd", method = { RequestMethod.POST })
+	// 데이터를 받기위한 POST
+	public String farmEquipListAdd()	throws Exception {
+		// 추가 입력된 데이터는 farmEquipList객체로 넘어온다.
+		System.out.println("nononononono");
+		
+		return "redirect:/closeWindows";
+		// oak : 저장이 확인 단추가 아니고 '추가'이므로 다시 자기 페이지로 돌아와야 함
+		//return "farmEquipListAdd";
+	}*/
+	
+	
 	//songlock: 2015-06-01
 	@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET)
 	// 서비스 호출
@@ -54,36 +68,14 @@ public class FarmEquipListController  {
 		model.addAttribute("farmEquipType", new FarmEquipType());
 		model.addAttribute("farmEquipTypeList", farmEquipTypeService.getAll()); 
 		
-		
-		
-		
 		model.addAttribute("farmSection", new FarmSectionInfo());
 		model.addAttribute("farmSectionList", farmSectionInfoService.getAll()); 
-		
-		
-		
+	
 		return "farmEquipListAdd";
 	}
-/*	
-	//Oak: 2015-06-03	
-	@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET, params={"m_farmId"})
-	// 서비스 호출
-	public String farmEquipListAdd(@RequestParam("m_farmId") Integer m_farmId,  Model model) throws Exception {
-		logger.info("farmEquipList with farmid입력 View");
 
-		model.addAttribute("farmInfo", new FarmInfo());
-		model.addAttribute("farmInfoList", farmInfoService.getAll());
-		model.addAttribute("m_farmId", m_farmId);
-		model.addAttribute("farmEquiplist", new FarmEquipList());
-		model.addAttribute("listfarmEquipList", farmEquipListService.getAll2(m_farmId)); 
-		
-		model.addAttribute("farmEquipType", new FarmEquipType());
-		model.addAttribute("listFarmEquipType", farmEquipTypeService.getAll()); 
-		
-		
-		model.addAttribute("listFarmEquipListAdd", this.farmEquipListService.getByFarmId(m_farmId));
-		return "farmEquipListAdd";
-	}*/
+
+	
 	//Oak: 2015-06-03	
 		@RequestMapping(value = "/farmEquipListAdd", method = RequestMethod.GET, params={"m_farmId", "farmSectionId"})
 		// 서비스 호출

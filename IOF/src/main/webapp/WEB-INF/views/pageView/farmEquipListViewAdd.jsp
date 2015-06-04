@@ -107,9 +107,12 @@
 	<!-- by oak 
 <button type="submit" style="position: relative; left: 320px;">확인</button>
 <button type="send" style="position: relative; left: 320px;">취소</button>
- --><!-- 
-	<div style="text-align: center; padding-bottom: 15px;">
-		<input type="submit" value="확인" />
-		<input type="send" value="취소" />
-	</div>
  -->
+ <form> 
+	<div style="text-align: center; padding-bottom: 15px;">
+		<button onclick="window.close()">확인</button>
+		
+		<!-- <input type="send" value="취소" /> -->
+	</div>
+</form>
+ 
