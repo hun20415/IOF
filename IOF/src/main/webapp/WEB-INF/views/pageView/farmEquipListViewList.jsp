@@ -34,7 +34,7 @@
 			<!--  <th width="70px">센서 종류</th>  songlock, 2015-06-203-->
 			<!--  <th width="100px">컨트롤러 종류</th>  songlock, 2015-06-203-->
 			<th width="40px">조회</th>
-			<th width="40px">수정</th>
+			<!--  <th width="40px">수정</th>   songlock, 2015-06-04-->
 			<th width="50px">Delete</th>
 		</tr>
 	</thead>
@@ -50,11 +50,12 @@
 				<!--  <td>센서 수 계산</td>  songlock, 2015-06-203-->
 				<!--  <td>컨트롤러 수 계산</td>  songlock, 2015-06-203-->
 				<td>
-					<form name="farmEquipListInfoForm">
+					<form name="farmEquipListInfo">
 						<input type="hidden" name="m_farmId" value="${farmEquipList.farmId}"> 
 						<input type="hidden" name="farmSectionId" value="${farmEquipList.farmSectionId}">
 						<input type="submit" value="조회" onclick="javascript:farmEquipListInfoPop(this.form)">
 					</form>
+				<!--  songlock, 2015-06-04
 				<td>
 					<form action="farmEquipListModifyForm">
 						<input type="hidden" name="m_farmId" value="${farmEquipList.farmId}">
@@ -62,6 +63,7 @@
 						<input type="submit" value="수정" onclick="farmEquipListModifyPop(this.form)">
 					</form>
 				</td>
+				-->
 				<td>
 					<button
 						onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>

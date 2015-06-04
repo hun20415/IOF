@@ -23,6 +23,8 @@
 		<th scope="row">모델명</th>
 		<th scope="row">S/W version  </th>
 		<th scope="row">설명</th> 
+		<th scope="row">수정</th>
+		<th scope="row">삭제</th>
 	</tr>
 	<!-- songlock 2015-06-03 -->
 	<c:forEach items="${listFarmEquipListInfo}" var="farmEquipListInfo" >
@@ -35,6 +37,17 @@
 			<td scope="row">${farmEquipListInfo.eqModel}</td>		
 			<td scope="row">${farmEquipListInfo.eqSwVersion}</td>
 			<td scope="row">${farmEquipListInfo.eqDiscription}</td>
+			<td>
+				<form action="farmEquipListModify">
+					<input type="hidden" name="m_farmId" value="${farmInfo.farmId}">
+					<input type="hidden" name="farmSectionId" value="${farmSectionId}">
+					<input type="hidden" name="eqId" value="${farmEquipListInfo.eqId}">
+					<input type="submit" value="수정" onclick="farmEquipListModify(this.form)">
+				</form>
+			</td>
+			<td>
+				<button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
+			</td>
 		</tr>
 	</c:forEach>
 	

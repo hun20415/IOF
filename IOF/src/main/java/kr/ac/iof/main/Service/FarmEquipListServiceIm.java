@@ -77,4 +77,11 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
 		// TODO Auto-generated method stub
 		return this.farmEquipListDao.getByFarmIdAndSectionId(m_farmId, farmSectionId);
 	}
+
+	//songlock 2015-06-04
+	@Override
+	public FarmEquipList getById(int m_farmId, int farmSectionId, int eqId) {
+		// TODO Auto-generated method stub
+		return this.farmEquipListDao.getById(m_farmId, farmSectionId, eqId);
+	}
 }

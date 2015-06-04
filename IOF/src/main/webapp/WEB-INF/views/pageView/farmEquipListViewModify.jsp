@@ -9,248 +9,72 @@
 <link href="css/farmEquipList.css" rel="stylesheet" type="text/css">
 
 <!-- 본문 시작 -->
-<h1 style="position: absolute; top: 70px; left: 600px;">장비 상세 정보</h1>
+<h1 style="position: absolute; top: 70px; left: 546px;">장비 정보 수정</h1>
+<br><br><br>
 온실정보
-<table class="type02" style="width: 546px; ">
+<table class="type02" style="width: 650px; ">
 	<tr>
 		<th scope="row" style="width: 80px; ">온실 명</th>
-		<%-- <td style="width: 120px; ">${farmInfo.farmId}</td> --%>
-		<td><input type="text" name="m_farmId" value="${farmInfo.farmId}" style="width: 50%;" /></td>		
+		 
+		<td>${farmInfo.farmName}</td>		
 		<th scope="row" style="width: 107px; ">구역 ID</th>
-		<td> <input type="text" name="farmSectionId" value="${farmEquipList.farmSectionId}" style="width: 50%;" /></td>
+		<td>${farmSectionId}</td>
+		
 	</tr>
 	
 </table>
 <br>
 장비정보
+<!-- <form id="farmEquipListModifyForm" action="farmEquipListModify" method="post" onsubmit="return check()"> -->
+<form method="post" onsubmit="return check()">
 <table class="type02" style="width: 546px; ">
 	<tr>
 		<th scope="row">No  </th>
-		<th scope="row">센서  </th>
-		<th scope="row">개수  </th>
-		<th scope="row">  </th>
-		<th scope="row">No  </th>
-		<th scope="row">컨트롤러  </th>
-		<th scope="row">개수  </th> 
-	</tr>
-	<tr> 
-		<td scope="row">1  </td>
-		<td scope="row">외부 온도 센서</td>
-		<td>${farmEquipList.farmId}</td>
-		<td scope="row"></td>
-		<td scope="row">1  </td>		
-		<td scope="row">복합제어기</td>
-		<td scope="row">1</td>
+		<th scope="row">장비타입  </th>
+		<th scope="row">회사명 </th>
+		<th scope="row">모델명</th>
+		<th scope="row">S/W version </th>
+		<th scope="row">설명</th>
 	</tr>
 	<tr>
-		<td scope="row">2  </td>
-		<td scope="row" style="width: 117px; ">외부 습도 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">2</td>
-		<td scope="row" style="width: 137px; ">단일 천창</td>
-		<td scope="row" style="width: 73px; ">0</td>
-	</tr>
-	<tr>
-		<td scope="row">3  </td>
-		<td scope="row" style="width: 117px; ">외부 풍향 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">3</td>
-		<td scope="row" style="width: 137px; ">이중 천창</td>
-		<td scope="row" style="width: 73px; ">4</td>
-	</tr>
-	<tr>
-		<td scope="row">4  </td>
-		<td scope="row" style="width: 117px; ">외부 풍속 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">4</td>
-		<td scope="row" style="width: 137px; ">단일 측창</td>
-		<td scope="row" style="width: 73px; ">0</td>
-	</tr>
-	<tr>
-		<td scope="row">5  </td>
-		<td scope="row" style="width: 117px; ">외부 강우 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">5</td>
-		<td scope="row" style="width: 137px; ">이중 측창</td>
-		<td scope="row" style="width: 73px; ">4</td>
-	</tr>
-	<tr>
-		<td scope="row">6  </td>
-		<td scope="row" style="width: 117px; ">내부 온도 센서</td>
-		<td scope="row" style="width: 35px; ">2</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">6</td>
-		<td scope="row" style="width: 137px; ">차광막</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">7  </td>
-		<td scope="row" style="width: 117px; ">내부 습도 센서</td>
-		<td scope="row" style="width: 35px; ">2</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">7</td>
-		<td scope="row" style="width: 137px; ">보온막</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">8  </td>
-		<td scope="row" style="width: 117px; ">광 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">8</td>
-		<td scope="row" style="width: 137px; ">양액기</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">9  </td>
-		<td scope="row" style="width: 117px; ">급액 량 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">9</td>
-		<td scope="row" style="width: 137px; ">난방기</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">10  </td>
-		<td scope="row" style="width: 117px; ">급액 EC 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">10</td>
-		<td scope="row" style="width: 137px; ">유동팬</td>
-		<td scope="row" style="width: 73px; ">10</td>
-	</tr>
-	<tr>
-		<td scope="row">11  </td>
-		<td scope="row" style="width: 117px; ">급액 pH 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">11</td>
-		<td scope="row" style="width: 137px; ">배기팬</td>
-		<td scope="row" style="width: 73px; ">4</td>
-	</tr>
-	<tr>
-		<td scope="row">12  </td>
-		<td scope="row" style="width: 117px; ">배지 수분 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">12</td>
-		<td scope="row" style="width: 137px; ">환풍기</td>
-		<td scope="row" style="width: 73px; ">4</td>
-	</tr>
-	<tr>
-		<td scope="row">13  </td>
-		<td scope="row" style="width: 117px; ">배지 무게 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">13</td>
-		<td scope="row" style="width: 137px; ">훈증기</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">14  </td>
-		<td scope="row" style="width: 117px; ">배지 EC 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">14</td>
-		<td scope="row" style="width: 137px; ">분무기</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">15  </td>
-		<td scope="row" style="width: 117px; ">배지 pH 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">15</td>
-		<td scope="row" style="width: 137px; ">스프링쿨러</td>
-		<td scope="row" style="width: 73px; ">12</td>
-	</tr>
-	<tr>
-		<td scope="row">16  </td>
-		<td scope="row" style="width: 117px; ">폐액 량 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">16</td>
-		<td scope="row" style="width: 137px; ">2 Way 밸브</td>
-		<td scope="row" style="width: 73px; ">0</td>
-	</tr>
-	<tr>
-		<td scope="row">17  </td>
-		<td scope="row" style="width: 117px; ">폐액 EC 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">17</td>
-		<td scope="row" style="width: 137px; ">3 Way 밸브</td>
-		<td scope="row" style="width: 73px; ">1</td>
-	</tr>
-	<tr>
-		<td scope="row">  18</td>
-		<td scope="row" style="width: 117px; ">폐액 pH 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">18</td>
-		<td scope="row" style="width: 137px; ">보광등</td>
-		<td scope="row" style="width: 73px; ">10</td>
-	</tr>
-	<tr>
-		<td scope="row">  19</td>
-		<td scope="row" style="width: 117px; ">CO2 센서</td>
-		<td scope="row" style="width: 35px; ">1</td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">19</td>
-		<td scope="row" style="width: 137px; ">차광커튼</td>
-		<td scope="row" style="width: 73px; ">  1</td>
-	</tr>
-	<tr>
-		<td scope="row">  </td>
-		<td scope="row" style="width: 117px; "></td>
-		<td scope="row" style="width: 35px; "></td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">20</td>
-		<td scope="row" style="width: 137px; ">보온커튼</td>
-		<td scope="row" style="width: 73px; ">  1</td>
-	</tr>
-	<tr>
-		<td scope="row">  </td>
-		<td scope="row" style="width: 117px; "></td>
-		<td scope="row" style="width: 35px; "></td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; ">21</td>
-		<td scope="row" style="width: 137px; ">냉방기</td>
-		<td scope="row" style="width: 73px; ">0</td>
-	</tr>
-	<tr>
-		<td scope="row">  </td>
-		<td scope="row" style="width: 117px; "></td>
-		<td scope="row" style="width: 35px; ">  </td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; "></td>
-		<td scope="row" style="width: 137px; "></td>
-		<td scope="row" style="width: 73px; "></td>
-	</tr>
-	<tr>
-		<td scope="row">  </td>
-		<td scope="row" style="width: 117px; "></td>
-		<td scope="row" style="width: 35px; "></td>
-		<td scope="row" style="width: 1px; ">  </td>
-		<td scope="row" style="width: 2px; "></td>
-		<td scope="row" style="width: 137px; "></td>
-		<td scope="row" style="width: 73px; "></td>
-	</tr>
 	
+		<th scope="row" >
+		<input type="text" name="eqId" value="${farmEquipList.eqId}" style="width: 50px">
+		</th>
+		<th scope="row" >
+			<select name="m_eqTypeId" style="width: 120px" >
+					<c:forEach items="${listFarmEquipType}" var="farmEquipType">
+						<c:out value="asdfasdf~~~~~~~~~~~~~~ ${farmEquipList.eqTypeName}"/>
+						<c:if test='${farmEquipType.eqTypeId}.equals(m_eqTypeId)'>
+							<option value="${farmEquipType.eqTypeId}" selected>${farmEquipType.eqTypeId}</option>
+						</c:if>
+						<option value="${farmEquipType.eqTypeId}">${farmEquipType.eqTypeName}</option>
+					</c:forEach>
+			</select>
+		</th>
+		<th scope="row" >
+		<input type="text" name="eqCompany" value="${farmEquipList.eqCompany}" style="width: 80px">
+		</th>
+		<th scope="row">
+		<input type="text" name="eqModel" value="${farmEquipList.eqModel}" style="width: 80px">
+		</th>
+		<th scope="row">
+		<input type="text" name="eqSwVersion" value="${farmEquipList.eqSwVersion}" style="width: 80px">
+		</th>
+		<th scope="row">
+		<input type="text" name="eqDiscription" value="${farmEquipList.eqDiscription}" style="width: 100px">
+		</th>
 	
+	</tr>
+
 </table>
 
-<tr>
-	<center>
-		<button type="submit">확인</button>
-		<button type="send">취소</button>
-</tr>
-</center>
-
+	<tr>
+		<center>
+			<input type="submit" value="확인">
+		</center>
+	</tr>
+</form>
 <!--  본문 끝 -->
 
 

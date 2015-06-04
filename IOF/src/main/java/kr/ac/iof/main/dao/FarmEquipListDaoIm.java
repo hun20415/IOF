@@ -32,7 +32,7 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		Transaction trns = null;
 		
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();//main db에 대한 session 호출
-		
+		System.out.println("DAO~~~~~~~~~~~~~~~~~");
 		try {
 			trns = session.beginTransaction();
 			
@@ -87,7 +87,7 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 	//songlock: 2015-06-01
 	@Override
 	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList) {
-		System.out.println("update");
+		System.out.println("update!!!!!!!!!!!");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
@@ -207,5 +207,28 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		return farmEquipLists;
 	}
 
-	
+	//songlock 2015-06-04
+	@Override
+	public FarmEquipList getById(int m_farmId, int farmSectionId, int eqId) {
+		System.out.println("farmEquipListDaolm");
+		FarmEquipList farmEquipList = null;
+		Transaction trns = null;
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from FarmEquipList where (farmInfo = :fid and farmSectionId = :sid and eqId= :eid)";
+			Query query = session.createQuery(queryString);
+			query.setInteger("fid", m_farmId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("sid", farmSectionId);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("eid", eqId);//id로 매칭 특정 행을 불러온다.
+			farmEquipList = (FarmEquipList) query.uniqueResult();
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return farmEquipList;
+	}
+
 }
