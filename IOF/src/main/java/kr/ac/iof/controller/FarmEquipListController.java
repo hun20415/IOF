@@ -79,7 +79,28 @@ public class FarmEquipListController  {
 		model.addAttribute("m_farmId", m_farmId);
 		model.addAttribute("farmEquiplist", new FarmEquipList());
 		model.addAttribute("listfarmEquipList", farmEquipListService.getAll2(m_farmId)); 
+		
+		model.addAttribute("farmEquipType", new FarmEquipType());
+		model.addAttribute("listFarmEquipType", farmEquipTypeService.getAll()); 
+		
+		
 		/*model.addAttribute("listFarmEquipListAdd", this.farmEquipListService.getByFarmId(m_farmId));*/
+		return "farmEquipListAdd";
+	}	
+
+	//songlock: 2015-06-01
+	@RequestMapping(value = "/farmEquipListAdd", method = { RequestMethod.POST })
+	// 데이터를 받기위한 POST
+	public String farmEquipListAdd(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_eqTypeId") Integer m_eqTypeId, @ModelAttribute("farmEquipList") FarmEquipList farmEquipList,Model model)
+			throws Exception {
+		// 추가 입력된 데이터는 farmEquipList객체로 넘어온다.
+		model.addAttribute("farmEquipType", new FarmEquipType());
+		model.addAttribute("listFarmEquipType", farmEquipTypeService.getAll()); 
+		
+		this.farmEquipListService.add(m_farmId, m_eqTypeId, farmEquipList);
+
+		// return "redirect:/farmEquipListList";
+		// oak : 저장이 확인 단추가 아니고 '추가'이므로 다시 자기 페이지로 돌아와야 함
 		return "farmEquipListAdd";
 	}
 	
@@ -96,18 +117,6 @@ public class FarmEquipListController  {
 		return "farmEquipListInfo";
 	}  
 
-	//songlock: 2015-06-01
-	@RequestMapping(value = "/farmEquipListAdd", method = { RequestMethod.POST })
-	// 데이터를 받기위한 POST
-	public String farmEquipListAdd(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_eqTypeId") Integer m_eqTypeId, @ModelAttribute("farmEquipList") FarmEquipList farmEquipList)
-			throws Exception {
-		// 추가 입력된 데이터는 farmEquipList객체로 넘어온다.
-
-		
-		this.farmEquipListService.add(m_farmId, m_eqTypeId, farmEquipList);
-
-		return "redirect:/farmEquipListList";
-	}
 
 	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListList", method = RequestMethod.GET)

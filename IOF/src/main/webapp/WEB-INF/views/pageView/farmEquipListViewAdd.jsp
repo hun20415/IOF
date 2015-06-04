@@ -48,14 +48,18 @@
 	</tr>
 	<tr>
 		<td scope="row">1</td>
-		<td><select name="">
-				<option>내부 습도 센서</option>
+		<td>
+		<select name="m_eqTypeId">					
+					<c:forEach items="${listFarmEquipType}" var="farmEquipType">
+						<option value="${farmEquipType.eqTypeId}">${farmEquipType.eqTypeName}</option>							
+					</c:forEach> 
 		</select></td>
-		<td><input type="text" name="eqCompany" style="width: 50%;" /></td>
-		<td><input type="text" name="eqModel" style="width: 50%;" /></td>
-		<td><input type="text" name="eqSwVersion" style="width: 50%;" /></td>
-		<td><input type="text" name="eqDiscription" style="width: 50%;" /></td>
-		<td><button >추가</button></td>
+		
+		<td><input type="text" name="eqCompany" style="width: 100%;" /></td>
+		<td><input type="text" name="eqModel" style="width: 100%;" /></td>
+		<td><input type="text" name="eqSwVersion" style="width: 100%;" /></td>
+		<td><input type="text" name="eqDiscription" style="width: 100%;" /></td>
+		<td><input type="submit" value="추가" /></td>   <!-- <button >추가</button></td> -->
 	</tr>
 
 
@@ -68,4 +72,5 @@
  -->
  		<div style="text-align: center; padding-bottom: 15px;">
 			<input type="submit" value="확인" />
+			<!-- <input type="send" value="취소" /> -->
 		</div>
