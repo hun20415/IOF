@@ -148,7 +148,7 @@ function farmEquipListModifyPop(farmEquipListModifyForm) {
 
 function farmEquipListInfoPop(farmEquipListInfoForm) {
 	var popUrl = "farmEquipListInfo"; // 팝업창에 출력될 페이지 URL
-	var popOption = "width=650, height=500, resizable=no, scrollbars=no, status=no;"; // 팝업창
+	var popOption = "width=650, height=800, resizable=no, scrollbars=no, status=no;"; // 팝업창
 
 	window.open("", "farmEquipListInfoPop", popOption);
 	
