@@ -1,38 +1,24 @@
 package kr.ac.iof.controller ;
 
-import java.text.DateFormat ;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import kr.ac.iof.DBUser;
 import kr.ac.iof.main.Service.FarmEquipListService;
 import kr.ac.iof.main.Service.FarmEquipTypeService;
 import kr.ac.iof.main.Service.FarmInfoService;
-import kr.ac.iof.model.User;
+import kr.ac.iof.main.Service.FarmSectionInfoService;
 import kr.ac.iof.model.Main.FarmEquipList;
 import kr.ac.iof.model.Main.FarmEquipType;
 import kr.ac.iof.model.Main.FarmInfo;
-import kr.ac.iof.service.UserService;
-import kr.ac.iof.util.HibernateUtil;
+import kr.ac.iof.model.Main.FarmSectionInfo;
+
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import bsh.This;
 
 
 /**
@@ -49,6 +35,8 @@ public class FarmEquipListController  {
 	private FarmInfoService farmInfoService; //songlock: 2015-06-01 farmId, farmNamed을 위하여
 	@Autowired//꼭 추가해야함
 	private FarmEquipTypeService farmEquipTypeService; //songlock: 2015-06-01 farmEquipTypeID를 위하여
+	@Autowired//꼭 추가해야함
+	private FarmSectionInfoService farmSectionInfoService; //songlock: 2015-06-01 farmEquipTypeID를 위하여
 	
 	
 	public void setFarmEquipListService(FarmEquipListService ps) {
@@ -65,6 +53,15 @@ public class FarmEquipListController  {
 		model.addAttribute("farmInfoList", farmInfoService.getAll());
 		model.addAttribute("farmEquipType", new FarmEquipType());
 		model.addAttribute("farmEquipTypeList", farmEquipTypeService.getAll()); 
+		
+		
+		
+		
+		model.addAttribute("farmSection", new FarmSectionInfo());
+		model.addAttribute("farmSectionList", farmSectionInfoService.getAll()); 
+		
+		
+		
 		return "farmEquipListAdd";
 	}
 /*	
@@ -108,6 +105,9 @@ public class FarmEquipListController  {
 				model.addAttribute("listFarmEquipListInfo", this.farmEquipListService.getByFarmIdAndSectionId(m_farmId, farmSectionId));
 			}
 			
+			model.addAttribute("farmSection", new FarmSectionInfo());
+			model.addAttribute("farmSectionList", farmSectionInfoService.getAll()); 
+			
 			/*model.addAttribute("listFarmEquipListAdd", this.farmEquipListService.getByFarmId(m_farmId));*/
 			return "farmEquipListAdd";
 		}	
@@ -131,6 +131,7 @@ public class FarmEquipListController  {
 		// oak : 저장이 확인 단추가 아니고 '추가'이므로 다시 자기 페이지로 돌아와야 함
 		//return "farmEquipListAdd";
 	}
+	
 	
 	//songlock: 2015-06-03
 	@RequestMapping(value = "/farmEquipListInfo", method = RequestMethod.GET)

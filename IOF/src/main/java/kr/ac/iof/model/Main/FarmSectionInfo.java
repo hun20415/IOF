@@ -67,5 +67,8 @@ public class FarmSectionInfo {
 	public void setDiscription(String discription) {
 		this.discription = discription;
 	}
+	public int getFarmId(){
+		return farmInfo.getFarmId();
+	}
 	
 }
