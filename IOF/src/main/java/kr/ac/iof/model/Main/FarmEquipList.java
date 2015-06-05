@@ -75,19 +75,19 @@ public class FarmEquipList {
 	}
 	
 	//set farmName to FarmInfo table
-	public void setFarmName(String farmName) {
+	/*public void setFarmName(String farmName) {
 		farmInfo.setFarmName(farmName);
 	}
-	
+	*/
 	//get farmID from FarmInfo table
 	public int getFarmId() {
 		return farmInfo.getFarmId();
 	}
 	
 	//set farmID to FarmInfo table
-	public void getFarmName(int farmId) {
+	/*public void getFarmName(int farmId) {
 		farmInfo.setFarmId(farmId);
-	}
+	}*/
 	
 	//get eqTypeName from FarmEquipType table
 	public String getFarmEquipTypeName() {
@@ -95,9 +95,9 @@ public class FarmEquipList {
 	}
 	
 	//set eqTypeName to FarmEquipType table
-	public void setFarmEquipTypeName(String eqTypeName) {
+	/*public void setFarmEquipTypeName(String eqTypeName) {
 		eqType.setEqTypeName(eqTypeName);
-	} 
+	} */
 	
 	//get eqTypeId from FarmEquipType table
 	public int getEqTypeId() {
@@ -105,9 +105,9 @@ public class FarmEquipList {
 	}
 	
 	//set eqTypeId to FarmEquipType table
-	public void setEqTypeId(int eqTypeId) {
+	/*public void setEqTypeId(int eqTypeId) {
 		eqType.setEqTypeId(eqTypeId);
-	}
+	}*/ // 이렇게 안될껍니다
 	
 	//get controlSensor from FarmEquipType table
 	public String getControlSensor() {
@@ -115,9 +115,9 @@ public class FarmEquipList {
 	}
 	
 	//set controlSensor to FarmEquipType table
-	public void setControlSensor(String controlSensor) {
+	/*public void setControlSensor(String controlSensor) {
 		eqType.setControlSensor(controlSensor);
-	}
+	}*/
 	
 	public FarmInfo getFarmInfo() {
 		return farmInfo;

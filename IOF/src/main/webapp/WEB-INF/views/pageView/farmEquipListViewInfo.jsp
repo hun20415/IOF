@@ -42,6 +42,8 @@
 					<input type="hidden" name="m_farmId" value="${farmInfo.farmId}">
 					<input type="hidden" name="farmSectionId" value="${farmSectionId}">
 					<input type="hidden" name="eqId" value="${farmEquipListInfo.eqId}">
+					<input type="hidden" name="eqTypeId" value="${farmEquipListInfo.eqTypeId}"> <%-- oak --%>
+					
 					<input type="submit" value="수정" onclick="farmEquipListModify(this.form)">
 				</form>
 			</td>

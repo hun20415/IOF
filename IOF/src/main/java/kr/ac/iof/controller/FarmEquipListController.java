@@ -154,13 +154,18 @@ public class FarmEquipListController  {
 	@RequestMapping(value = "/farmEquipListModify", method = RequestMethod.GET)
 	public String farmEquipListModify(@RequestParam("m_farmId") Integer m_farmId, 
 			@RequestParam("farmSectionId") Integer farmSectionId, 
-			@RequestParam("eqId") Integer eqId, Model model) throws Exception {
+			@RequestParam("eqId") Integer eqId, @RequestParam("eqTypeId") Integer eqTypeId, Model model) throws Exception {
 		logger.info("farmEquipListModify 리스트");
 		System.out.println("Modifying~~~~~~~~~~~~~~~~~~~");
 		// 리스트 출력
 		model.addAttribute("farmInfo", this.farmInfoService.getById(m_farmId));
 		model.addAttribute("farmSectionId", farmSectionId);
+		
 		model.addAttribute("eqId", eqId);
+		model.addAttribute("eqTypeId", eqTypeId);
+		
+		model.addAttribute("farmEquipType", new FarmEquipType());  //oak 20150605
+		
 		model.addAttribute("listFarmEquipType", farmEquipTypeService.getAll());
 		model.addAttribute("farmEquipList", this.farmEquipListService.getById(m_farmId, farmSectionId, eqId));
 		//model.addAttribute("m_farmId", new Integer(m_farmId));
@@ -179,9 +184,11 @@ public class FarmEquipListController  {
 			@RequestParam("m_farmId") int m_farmId, 
 			@RequestParam("m_eqTypeId") int m_eqTypeId, 
 			@ModelAttribute("farmEquipList") FarmEquipList farmEquipList) {
+		
 		System.out.println("Modify POST Controller~!!!!!!");
 		//System.out.println("eqID: " + farmEquipList.getEqId());
 		//System.out.println("sensor, control: " + farmEquipList.getEqTypeName());
+		
 		this.farmEquipListService.update(m_farmId, m_eqTypeId, farmEquipList);
 		return "farmEquipListModify";
 	}

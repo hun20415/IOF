@@ -42,13 +42,18 @@
 		<input type="text" name="eqId" value="${farmEquipList.eqId}" style="width: 50px">
 		</th>
 		<th scope="row" >
-			<select name="m_eqTypeId" style="width: 120px" >
+			<select name="m_eqTypeId" style="width: 120px"  >
 					<c:forEach items="${listFarmEquipType}" var="farmEquipType">
-						<c:out value="asdfasdf~~~~~~~~~~~~~~ ${farmEquipList.eqTypeName}"/>
-						<c:if test='${farmEquipType.eqTypeId}.equals(m_eqTypeId)'>
+						<%-- <c:out value="asdfasdf~~~~~~~~~~~~~~ ${farmEquipList.farmEquipTypeName}"/>   <!--  eqTypeName}"/> --> --%>
+						
+						  <option value="${farmEquipType.eqTypeId}" 
+						${eqTypeId == farmEquipType.eqTypeId ? 'selected' : ''}>${farmEquipType.eqTypeName}</option> 
+						
+						
+						<%-- <c:if test='${farmEquipType.eqTypeId == eqTypeId}'>
 							<option value="${farmEquipType.eqTypeId}" selected>${farmEquipType.eqTypeId}</option>
 						</c:if>
-						<option value="${farmEquipType.eqTypeId}">${farmEquipType.eqTypeName}</option>
+						<option value="${farmEquipType.eqTypeId}">${farmEquipType.eqTypeName}</option> --%>
 					</c:forEach>
 			</select>
 		</th>
@@ -72,6 +77,7 @@
 	<tr>
 		<center>
 			<input type="submit" value="확인">
+			<button onclick="window.close()">확인</button>
 		</center>
 	</tr>
 </form>
