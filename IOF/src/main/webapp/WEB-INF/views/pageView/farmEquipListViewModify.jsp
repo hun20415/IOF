@@ -77,7 +77,7 @@
 	<tr>
 		<center>
 			<input type="submit" value="확인">
-			<button onclick="window.close()">확인</button>
+			<button onclick="window.close()">취소</button>
 		</center>
 	</tr>
 </form>
