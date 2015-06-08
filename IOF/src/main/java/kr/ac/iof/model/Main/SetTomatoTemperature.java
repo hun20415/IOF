@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "set_tomato_temperature")
-public class SetTomatoTemperature {
+public class SetTomatoTemperature { 
 	
 	@Id
 	@Column(name = "TNO")//4, PK
