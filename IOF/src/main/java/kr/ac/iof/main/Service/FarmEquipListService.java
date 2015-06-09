@@ -15,7 +15,7 @@ public interface FarmEquipListService {
  
 	public void add(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
-	public void delete(int m_farmId, int m_eqTypeId);
+	public void delete(int eqId); // m_farmId, int m_eqTypeId);
 
 	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 

@@ -48,7 +48,9 @@
 				</form>
 			</td>
 			<td>
-				<button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
+				<%-- <button onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>oak , ${farmEquipListInfo.eqId}'">Delete</button> --%>
+				<button onclick="window.location.href='/farmEquipListRemove/${farmEquipListInfo.eqId}'">Delete</button>
+				
 			</td>
 		</tr>
 	</c:forEach>

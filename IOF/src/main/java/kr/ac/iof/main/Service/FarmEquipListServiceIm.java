@@ -67,8 +67,8 @@ public class FarmEquipListServiceIm implements FarmEquipListService{
  
     @Override
     @Transactional
-    public void delete(int m_farmId, int m_eqTypeId) {
-        this.farmEquipListDao.delete(m_farmId, m_eqTypeId);
+    public void delete(int eqId) {
+        this.farmEquipListDao.delete(eqId);
     }
 
     //songlock 2015-06-03

@@ -10,12 +10,14 @@ import kr.ac.iof.model.Main.FarmInfo;
 import kr.ac.iof.model.Main.FarmSectionInfo;
 
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -194,9 +196,9 @@ public class FarmEquipListController  {
 	}
 	
 	@RequestMapping("/farmEquipListRemove/{id}")
-	public String farmEquipListDelete(@RequestParam("m_farmId") int m_farmId, @RequestParam("m_eqTypeId") int m_eqTypeId) {
+	public String farmEquipListDelete(@PathVariable("id") int id) { //oak, @RequestParam("m_eqTypeId") int m_eqTypeId) {
 
-		this.farmEquipListService.delete(m_farmId, m_eqTypeId);// id로 검색해서 삭제
+		this.farmEquipListService.delete(id); // oak id로 검색해서 삭제 , m_eqTypeId);
 		return "redirect:/farmEquipListList";// list 페이지를 부르면서 새로고침
 	}
 

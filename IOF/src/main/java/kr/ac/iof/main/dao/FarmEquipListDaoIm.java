@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import kr.ac.iof.model.User;
+import kr.ac.iof.model.Main.FarmCultivateInfo;
 import kr.ac.iof.model.Main.FarmEquipList;
 import kr.ac.iof.model.Main.FarmEquipType;
 import kr.ac.iof.model.Main.FarmInfo;
@@ -56,23 +57,21 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 
 	//songlock: 2015-06-01   
 	@Override
-	public void delete(int m_farmId, int m_eqTypeId) {
+	public void delete(int eqId) {
 		System.out.println("farmEquipListDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
-		FarmEquipList farmEquipList = null;
+		
 		try {
 			trns = session.beginTransaction();
-			/*FarmEquipList farmEquipList = (FarmEquipList) session.load(FarmEquipList.class,
-					new Integer(farmEquipListId));//id로 db에서 삭제해야 할 row을 불러온다. */
-			String queryString = "from FarmEquipList where (farmId = :fid and eqId = :eid)";
-			Query query = session.createQuery(queryString);
-			query.setInteger("fid", m_farmId);//id로 매칭 특정 행을 불러온다.
-			query.setInteger("eid", m_eqTypeId);//id로 매칭 특정 행을 불러온다.
-			farmEquipList = (FarmEquipList) query.uniqueResult();
-
+			
+			trns = session.beginTransaction();
+			FarmEquipList farmEquipList = (FarmEquipList) session.load(FarmEquipList.class,
+					new Integer(eqId));//id로 db에서 삭제해야 할 row을 불러온다.
 			session.delete(farmEquipList);//삭제 쿼리문 
 			session.getTransaction().commit();
+			
+			
 		} catch (RuntimeException e) {
 			if (trns != null) {
 				trns.rollback();
