@@ -1,28 +1,23 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link href="css/farmEquipListAdd.css" rel="stylesheet" type="text/css">
-<script src="../js/newWindow.js" type="text/javascript"
-	, charset="utf-8"></script>
+<script src="../js/newWindow.js" type="text/javascript" charset="utf-8"></script>
 <!-- 본문 시작 -->
 <h1 style="position: absolute; top: 70px; left: 300px;">장비 신규 정보</h1>
 <br>
 <br>
 <br>
+<form>
 <table class="type02" style="width: 720px;">
 	<tr>
 		<th scope="row" style="width: 80px;">온실 명</th>		
 		<td>
-			<form>
-				<select name="m_farmId" onchange="this.form.submit()">
-
-					<option value=""></option>
-					<c:forEach items="${farmInfoList}" var="farmInfo">
-						<option value="${farmInfo.farmId}"
-							${m_farmId == farmInfo.farmId ? 'selected' :''}>${farmInfo.farmName}</option>
-					</c:forEach>
-				</select>
-
-			
+			<select name="m_farmId" onchange="this.form.submit()">
+				<option value=""></option>
+				<c:forEach items="${farmInfoList}" var="farmInfo">
+					<option value="${farmInfo.farmId}"${m_farmId == farmInfo.farmId ? 'selected' :''}>${farmInfo.farmName}</option>
+				</c:forEach>
+			</select>
 		</td>
 		<%-- <c:forEach items="${listUser}" var="user"> --%>
 		<th scope="row" style="width: 107px;">구역</th>
@@ -38,9 +33,10 @@
 				</c:forEach>
 		</select>
 		
-		</td></form>
+		</td>
 	</tr>
 </table>
+</form>
 <form method="post">
 	<table class="type02" style="width: 700px;">
 		<tr>

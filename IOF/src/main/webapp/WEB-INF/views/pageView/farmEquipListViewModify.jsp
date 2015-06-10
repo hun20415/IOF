@@ -39,7 +39,7 @@
 	<tr>
 	
 		<th scope="row" >
-		<input type="text" name="eqId" value="${farmEquipList.eqId}" style="width: 50px">
+		<input type="text" name="eqId" readonly="readonly" value="${farmEquipList.eqId}" style="width: 50px">
 		</th>
 		<th scope="row" >
 			<select name="m_eqTypeId" style="width: 120px"  >
