@@ -35,7 +35,7 @@
 			<!--  <th width="100px">컨트롤러 종류</th>  songlock, 2015-06-203-->
 			<th width="40px">조회</th>
 			<!--  <th width="40px">수정</th>   songlock, 2015-06-04-->
-			<th width="50px">Delete</th>
+			<!--  <th width="50px">Delete</th> songlock, 2015-06-11 -->
 		</tr>
 	</thead>
 	<tbody>
@@ -64,10 +64,12 @@
 					</form>
 				</td>
 				-->
+				<!--  songlock, 2015-06-11 
 				<td>
 					<button
 						onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
 				</td>
+				-->
 			</tr>
 			
 		</c:forEach>

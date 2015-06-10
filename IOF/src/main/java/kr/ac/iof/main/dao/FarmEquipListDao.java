@@ -14,7 +14,7 @@ import kr.ac.iof.model.Main.FarmInfo;
 public interface FarmEquipListDao {
 	public void add(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
-	public void delete(int eqId);
+	public void delete(int m_farmId, int eqId);
 
 	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 	

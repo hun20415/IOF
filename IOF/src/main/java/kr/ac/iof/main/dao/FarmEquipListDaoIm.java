@@ -55,9 +55,9 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		}
 	}
 
-	//songlock: 2015-06-01   
+	//songlock: 2015-06-11   
 	@Override
-	public void delete(int eqId) {
+	public void delete(int m_farmId, int eqId) {
 		System.out.println("farmEquipListDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
@@ -65,9 +65,20 @@ public class FarmEquipListDaoIm implements FarmEquipListDao {
 		try {
 			trns = session.beginTransaction();
 			
-			trns = session.beginTransaction();
-			FarmEquipList farmEquipList = (FarmEquipList) session.load(FarmEquipList.class,
-					new Integer(eqId));//id로 db에서 삭제해야 할 row을 불러온다.
+			
+			String queryString = "from FarmEquipList where (farmInfo = :fid and eqId = :qid) ";
+			Query query = session.createQuery(queryString);
+			query.setInteger("fid", m_farmId);
+			query.setInteger("qid", eqId);
+			FarmEquipList farmEquipList = (FarmEquipList) query.uniqueResult();
+			System.out.println("farm: " + farmEquipList.getFarmName() + "eq: " + farmEquipList.getEqId());
+			
+			/*FarmInfo farmInfo = (FarmInfo)session.load(FarmInfo.class, new Integer(m_farmId));
+			System.out.println("farmInfoID: " + farmInfo.getFarmName());
+			FarmEquipList farmEquipList;
+			farmEquipList.setFarmInfo(farmInfo);
+			farmEquipList = (FarmEquipList) session.load(FarmEquipList.class, new Integer(eqId));//id로 db에서 삭제해야 할 row을 불러온다.
+			System.out.println("eqid: " + farmEquipList.getEqId());*/
 			session.delete(farmEquipList);//삭제 쿼리문 
 			session.getTransaction().commit();
 			

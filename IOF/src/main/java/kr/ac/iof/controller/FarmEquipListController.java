@@ -195,10 +195,14 @@ public class FarmEquipListController  {
 		return "farmEquipListModify";
 	}
 	
-	@RequestMapping("/farmEquipListRemove/{id}")
-	public String farmEquipListDelete(@PathVariable("id") int id) { //oak, @RequestParam("m_eqTypeId") int m_eqTypeId) {
-
-		this.farmEquipListService.delete(id); // oak id로 검색해서 삭제 , m_eqTypeId);
+	//songlock: 2015-06-11
+	//@RequestMapping("/farmEquipListRemove/{id}")
+	@RequestMapping("/farmEquipListRemove/{m_farmId}/{eqId}")
+	//public String farmEquipListDelete(@PathVariable("id") int id, ) { //oak, @RequestParam("m_eqTypeId") int m_eqTypeId) {
+	public String farmEquipListDelete(@PathVariable("m_farmId") int m_farmId, 
+			@PathVariable("eqId") int eqId) {
+		System.out.println("DELETEING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+m_farmId+","+eqId);
+		this.farmEquipListService.delete(m_farmId, eqId); // oak id로 검색해서 삭제 , m_eqTypeId);
 		return "redirect:/farmEquipListList";// list 페이지를 부르면서 새로고침
 	}
 
