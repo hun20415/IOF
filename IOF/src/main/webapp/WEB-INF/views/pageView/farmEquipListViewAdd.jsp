@@ -7,7 +7,7 @@
 <br>
 <br>
 <br>
-<form>
+<form name="farmNameAndSectionId">
 <table class="type02" style="width: 720px;">
 	<tr>
 		<th scope="row" style="width: 80px;">온실 명</th>		

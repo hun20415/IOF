@@ -4,11 +4,18 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import javax.servlet.http.HttpSession;
+
+import kr.ac.iof.Chart.DifferenceChartDemo2;
 import kr.ac.iof.graph.demo.LineChart;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.servlet.ServletUtilities;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.xy.XYSeries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -63,5 +70,48 @@ public class ChartController {
 
 		return "userTestGraph";
 	}
+	@RequestMapping(value = "/userTestGraph2", method = RequestMethod.GET)
+	public String userTestGraph3(){
+		return "userTestGraph2";
+	}
+	
+	@RequestMapping(value = "/userTestGraph2", method = RequestMethod.GET, params = {"type"})
+	public String userTestGraph5(HttpServletRequest request, HttpServletResponse response ) {
+		
+		JFreeChart chart = null;
+		final DifferenceChartDemo2 demo = new DifferenceChartDemo2("Difference Chart Demo 2");
+		final TimeSeries series1 = demo.createSunriseSeries();
+        final TimeSeries series2 = demo.createSunsetSeries();
+        final TimeSeries  series3 = demo.createlineSeries();
+        final TimeSeriesCollection dataset = new TimeSeriesCollection();
+        dataset.addSeries(series1);
+        dataset.addSeries(series2);
+        dataset.addSeries(series3);
+        
+        
+        
+        JFreeChart chart1 = null; 
+        
+		if (request.getParameter("type").equals("linechart")) {
+			
+			chart1 = demo.createChart(dataset);
+		}
+		
+		String filename = null;
+		try {
+			filename = ServletUtilities.saveChartAsPNG(chart1, 800, 400, null, request.getSession());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String graphURL = request.getContextPath() + "/DisplayChart?filename="
+				+ filename;
+		request.setAttribute("imgurl", graphURL);
+		
+
+		return "userTestGraph2";
+	}
+	
 
 }
