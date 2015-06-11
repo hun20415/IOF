@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<h3 align="center">JFreeChart 예제</h3>
   	<center>
 	  	<div class="main_div">
-	  		<button onclick="chart('linechart');">di 차트</button>
+	  		<button onclick="chart('linechart');">Line Chart</button>
 	  	</div>
   	  	
 	  	<div style="margin-left: auto;margin-right: auto;width: 800px;height: 400px;">

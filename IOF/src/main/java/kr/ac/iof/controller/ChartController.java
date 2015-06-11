@@ -4,24 +4,25 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import javax.servlet.http.HttpSession;
 
 import kr.ac.iof.Chart.DifferenceChartDemo2;
 import kr.ac.iof.graph.demo.LineChart;
+
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.servlet.ServletUtilities;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.time.Day;
+import org.jfree.data.xy.XYSeriesCollection;
 import org.jfree.data.xy.XYSeries;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.jfree.data.time.*;
+import org.jfree.data.xy.XYDataset;
 
 /**
  * Handles requests for the application user page.
@@ -80,13 +81,18 @@ public class ChartController {
 		
 		JFreeChart chart = null;
 		final DifferenceChartDemo2 demo = new DifferenceChartDemo2("Difference Chart Demo 2");
-		final TimeSeries series1 = demo.createSunriseSeries();
-        final TimeSeries series2 = demo.createSunsetSeries();
-        final TimeSeries  series3 = demo.createlineSeries();
-        final TimeSeriesCollection dataset = new TimeSeriesCollection();
+		final XYSeries series1 = demo.createSunriseSeries();// data
+        final XYSeries series2 = demo.createSunsetSeries();
+        final XYSeries  series3 = demo.createlineSeries();
+        final XYSeriesCollection  dataset = new XYSeriesCollection ();
+        
+      
         dataset.addSeries(series1);
         dataset.addSeries(series2);
         dataset.addSeries(series3);
+        
+        
+        
         
         
         
@@ -94,7 +100,7 @@ public class ChartController {
         
 		if (request.getParameter("type").equals("linechart")) {
 			
-			chart1 = demo.createChart(dataset);
+			chart1 = demo.createChart(dataset);  // draw graph
 		}
 		
 		String filename = null;
