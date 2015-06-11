@@ -15,12 +15,22 @@ public interface FarmEquipListService {
  
 	public void add(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
-	public void delete(int m_farmId, int m_eqTypeId);
+	public void delete(int m_farmId, int eqId); // m_farmId, int m_eqTypeId);
 
 	public void update(int m_farmId, int m_eqTypeId, FarmEquipList farmEquipList);
 
 	public List<FarmEquipList> getAll();
 
 	public FarmEquipList getById(int m_farmId, int m_eqTypeId);
+		
+	//songlock 2015-06-04
+	public FarmEquipList getById(int m_farmId, int farmSectionId, int eqId);
+	
+	//songlock 2015-06-03
+	public List<FarmEquipList> getByFarmIdAndSectionId(int m_farmId, int farmSectionId);
+	
+	
+	public List<FarmEquipList> getAll2(int farmId);
+	
 	
 }

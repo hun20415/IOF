@@ -77,7 +77,9 @@
 		</table>
 		<div style="text-align: center; padding-bottom: 15px;">
 			<input type="submit" value="확인" />
+			<button onclick="window.close()">취소</button>
 		</div>
 	</form>
+	
 	<!--  본문 끝 -->
 </div>

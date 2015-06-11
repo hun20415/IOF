@@ -16,6 +16,7 @@ import javax.persistence.ManyToOne;
 public class FarmEquipListPK implements Serializable{
 		
 	private FarmInfo farmInfo;	
+	
 	private int eqId;
 
 	public FarmEquipListPK() {

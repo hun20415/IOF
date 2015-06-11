@@ -44,6 +44,10 @@
 	</tr>
 </table>
 
+<a href=""> <input type="button"
+			class="button" value="온실 상세 정보 보기" style="position: relative; left: 460px;" />
+		</a>
+<!--  
 <left><h2># 온실정보</h2></left>
 <table class="type02">
 	<tr>
@@ -140,7 +144,7 @@
 		<td></td>
 	</tr>	
 </table>
-
+-->
 <!--  본문 끝 -->
 
 

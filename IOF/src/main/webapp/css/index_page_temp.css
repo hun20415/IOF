@@ -65,10 +65,11 @@ background: #fff;
 color: #003;
 }
 			/*MAIN CONTAINER*/
-#container {
+#container { 
 width: 1300px;      /*770->950수정(수영)*/
 margin: 0 auto;
 padding: 0;
+
 }
 #box {
 padding: 10px;
@@ -93,12 +94,7 @@ text-transform: uppercase;
 color: #06a; 
 }
 			
-#content_right {
-width: 200px;
-float: right;
-margin: 50px 10px 0 0;
-padding-bottom: 30px;
-}
+
 /*CONTENT_left*/
 #content_left {
 width: 200px;

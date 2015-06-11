@@ -12,7 +12,7 @@
 
 
 <!-- 본문 시작 -->
-<h1 style="position: absolute; top: 70px; left: 550px;">온실 구역별 장비
+<h1 style="position: absolute; top: 70px; left: 450px;">온실 구역별 장비
 	List</h1>
 
 <table>
@@ -22,65 +22,56 @@
 			style="position: relative; left: 520px;">신규</button> -->
 
 		<a href="javascript:farmEquipListAddPop()"> <input type="button"
-			class="button" value="신규" style="position: relative; left: 520px;" />
+			class="button" value="신규" style="position: relative; left: 290px;" />
 		</a>
 	</p>
 	<thead style="background: #d2f4ec;">
 		<tr>
-			<th width="50px">번호</th>
+			<!-- <th width="50px">번호</th>  songlock, 2015-06-203-->
 			<th width="50px">온실</th>
 			<th width="60px">온실ID</th>
 			<th width="60px">구역ID</th>
-			<th width="70px">센서 종류</th>
-			<th width="100px">컨트롤러 종류</th>
+			<!--  <th width="70px">센서 종류</th>  songlock, 2015-06-203-->
+			<!--  <th width="100px">컨트롤러 종류</th>  songlock, 2015-06-203-->
 			<th width="40px">조회</th>
-			<th width="40px">수정</th>
-			<th width="50px">Delete</th>
+			<!--  <th width="40px">수정</th>   songlock, 2015-06-04-->
+			<!--  <th width="50px">Delete</th> songlock, 2015-06-11 -->
 		</tr>
 	</thead>
 	<tbody>
-		<!-- 		<tr>
-			<td>1</td>
-			<td>딸기네</td>
-			<td>0001</td>
-			<td>1</td>
-			<td>15</td>
-			<td>21</td> -->
 
-		<c:forEach items="${listFarmEquipList}" var="farmEquipList">
+		<c:forEach items="${listFarmEquipList}" var="farmEquipList" >		
 			<tr>
-				<td>1</td>
+				<!--  <td> 1 </td>  songlock, 2015-06-203-->
 				<td>${farmEquipList.farmName}</td>
 				<td>${farmEquipList.farmId}</td>
 				<td>${farmEquipList.farmSectionId}</td>
-				<%-- <c:if test="${farmEquipList.controlSensor == 'C'}"> --%>
-
-				<td>센서 수 계산</td>
-				<td>컨트롤러 수 계산</td>
+				
+				<!--  <td>센서 수 계산</td>  songlock, 2015-06-203-->
+				<!--  <td>컨트롤러 수 계산</td>  songlock, 2015-06-203-->
 				<td>
-					<form name="farmEquipListInfoForm">
-						<input type="hidden" name="farmId"
-							value="${farmEquipList.farmId}"> <input type="hidden"
-							name="farmSectionId" value="${farmEquipList.farmSectionId}">
-
-						<input type="submit" value="조회"
-							onclick="javascript:farmEquipListInfoPop(this.form)">
+					<form name="farmEquipListInfo">
+						<input type="hidden" name="m_farmId" value="${farmEquipList.farmId}"> 
+						<input type="hidden" name="farmSectionId" value="${farmEquipList.farmSectionId}">
+						<input type="submit" value="조회" onclick="javascript:farmEquipListInfoPop(this.form)">
 					</form>
+				<!--  songlock, 2015-06-04
 				<td>
 					<form action="farmEquipListModifyForm">
-						<input type="hidden" name="farmId" value="${farmEquipList.farmId}">
-						<input type="hidden" name="farmSectionId"
-							value="${farmEquipList.farmSectionId}"> <input
-							type="submit" value="수정"
-							onclick="farmEquipListModifyPop(this.form)">
+						<input type="hidden" name="m_farmId" value="${farmEquipList.farmId}">
+						<input type="hidden" name="farmSectionId" value="${farmEquipList.farmSectionId}">
+						<input type="submit" value="수정" onclick="farmEquipListModifyPop(this.form)">
 					</form>
 				</td>
+				-->
+				<!--  songlock, 2015-06-11 
 				<td>
 					<button
 						onclick="window.location.href='/farmEquipListRemove/${farmEquipList.farmId}'">Delete</button>
 				</td>
-
+				-->
 			</tr>
+			
 		</c:forEach>
 	</tbody>
 </table>

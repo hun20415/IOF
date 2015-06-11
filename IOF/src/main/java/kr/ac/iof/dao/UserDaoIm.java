@@ -30,7 +30,7 @@ public class UserDaoIm implements UserDao {
 		Transaction trns = null;
 	
 		Session session = HibernateUtil.getSessionFactory().openSession();//sys db에 대한 session 호출
-		
+		System.out.println("USER DAO~~~~~~~~~~~~~");
 		try {
 			trns = session.beginTransaction();
 			//2줄 userGroup 추가
