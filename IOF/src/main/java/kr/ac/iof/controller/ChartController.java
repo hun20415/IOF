@@ -46,7 +46,7 @@ public class ChartController {
 			CategoryDataset dataset = DatasetUtilities.createCategoryDataset(
 					rowKeys, columnKeys, data);
 			chart = LineChart.createLineChart("Line Chart", "x축", "y축", dataset);
-		}
+		} 
 
 		String filename = null;
 		try {
