@@ -45,8 +45,7 @@ public class ChartController {
 			String[] columnKeys = { "북경", "상해", "광주", "성도", "심수", "길림" };
 			CategoryDataset dataset = DatasetUtilities.createCategoryDataset(
 					rowKeys, columnKeys, data);
-			chart = LineChart
-					.createLineChart("Line Chart", "x축", "y축", dataset);
+			chart = LineChart.createLineChart("Line Chart", "x축", "y축", dataset);
 		}
 
 		String filename = null;
