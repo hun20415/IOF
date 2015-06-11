@@ -11,8 +11,12 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
+import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
+import org.jfree.data.KeyedValues2D;
 import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.xy.XYDataset;
 
 /**
  * 折线图
@@ -66,6 +70,13 @@ public class LineChart {
 		categoryplot.setDomainGridlinePaint(Color.WHITE);// 虚线色彩
 		categoryplot.setBackgroundPaint(Color.lightGray);// 折线图的背景颜色
 
+		// Taegoon add color ###############################
+		categoryplot.getRenderer().setSeriesPaint(0, Color.YELLOW);
+		categoryplot.getRenderer().setSeriesPaint(1, Color.RED);
+		categoryplot.getRenderer().setSeriesPaint(2, Color.RED);
+		categoryplot.getRenderer().setSeriesPaint(3, Color.GREEN);
+		
+			
 		// 设置轴和面板之间的距离
 		// categoryplot.setAxisOffset(new RectangleInsets(5D, 5D, 5D, 5D));
 

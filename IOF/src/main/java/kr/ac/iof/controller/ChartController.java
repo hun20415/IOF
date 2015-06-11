@@ -57,15 +57,16 @@ public class ChartController {
 
 		if (request.getParameter("type").equals("linechart")) {
 			double[][] data = new double[][] { 
-					{ 672, 766, 223, 540, 126 , 222},
-					{ 325, 521, 210, 340, 106 , 412}, 
-					{ 332, 256, 523, 240, 526 , 231} };
-			String[] rowKeys = { "사과", "배", "포도" };
-			String[] columnKeys = { "북경", "상해", "광주", "성도", "심수", "길림" };
+					{ 15, 17, 24, 25, 24 , 20, 18, 15},
+					{ 17, 19, 26, 28, 26 , 22, 20, 17}, 
+					{ 12, 15, 21, 22, 21 , 17, 15, 12},
+					{ 16, 18, 27, 25, 21 , 18, 16, 14}};
+			String[] rowKeys = { "설정온도", "상한 경고 온도", "하한 경고 온도", "실시간 온도" };
+			String[] columnKeys = { "0:00시", "6:00시", "8:00시","10:00시", "14:00시", "17:00시", "19:00시", "22:00시" };
 			CategoryDataset dataset = DatasetUtilities.createCategoryDataset(
 					rowKeys, columnKeys, data);
 			chart = LineChart
-					.createLineChart("Line Chart", "x축", "y축", dataset);
+					.createLineChart("온도 모니터", "시간 / h", "온도 / °C", dataset);
 		}
 		// ServletUtilities是面向web开发的工具类，返回一个字符串文件名,文件名自动生成，生成好的图片会自动放在服务器（tomcat）的临时文件下（temp）
 		String filename = null;

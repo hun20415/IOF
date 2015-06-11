@@ -8,7 +8,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <link href="css/" rel="stylesheet" type="text/css">
-<script src="../js/newWindow.js" type="text/javascript" , charset="utf-8"></script>
+<script src="../js/newWindow.js" type="text/javascript" charset="utf-8"></script>
 
 
 <!-- 본문 시작 -->
@@ -30,9 +30,11 @@
 		</form>
 		<!-- 검색 끝 -->
 
-		<a href="javascript:FarmInfoAddPop()"> 
+		<a href="javascript:farmInfoAddPop()"> 
 		<input type="button" class="button" value="신규" style="position: relative; left: 830px;" /></a>
+		
 		<!-- <button onclick="window.location.href='/farmInfoAdd'" >신규</button> -->
+		
 		</p>
 		<thead style="background: #d2f4ec;">
 			<tr>

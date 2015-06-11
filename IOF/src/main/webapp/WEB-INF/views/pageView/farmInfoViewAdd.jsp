@@ -20,7 +20,7 @@
 			<td style="width: 390px"> 
 			<select name=ownerId> 
 				   <c:forEach items="${farmAllId}" var="farmInfo"> 			        
-						 <option value= ${farmInfo.ownerId}"></option>	 				    
+						 <option value= "${farmInfo.ownerId}"></option>	 				    
 				   </c:forEach> 
 			 </select>
 			
