@@ -1,5 +1,6 @@
 package kr.ac.iof.graph.demo;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -11,12 +12,8 @@ import org.jfree.chart.axis.NumberAxis;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.LineAndShapeRenderer;
-import org.jfree.chart.renderer.xy.XYDifferenceRenderer;
-import org.jfree.data.KeyedValues2D;
 import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.xy.XYDataset;
 
 /**
  * 折线图
@@ -113,6 +110,8 @@ public class LineChart {
 				.setBaseItemLabelGenerator(new StandardCategoryItemLabelGenerator());
 		lineandshaperenderer.setBaseItemLabelsVisible(true);
 
+		
+		
 		return chart;
 	}
 }
