@@ -50,8 +50,7 @@ public class ChartController {
 
 		String filename = null;
 		try {
-			filename = ServletUtilities.saveChartAsPNG(chart, 800, 400,
-					null, request.getSession());
+			filename = ServletUtilities.saveChartAsPNG(chart, 800, 400, null, request.getSession());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
