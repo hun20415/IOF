@@ -71,8 +71,7 @@ public class ChartController {
 		// ServletUtilities是面向web开发的工具类，返回一个字符串文件名,文件名自动生成，生成好的图片会自动放在服务器（tomcat）的临时文件下（temp）
 		String filename = null;
 		try {
-			filename = ServletUtilities.saveChartAsPNG(chart, 800, 400,
-					null, request.getSession());
+			filename = ServletUtilities.saveChartAsPNG(chart, 800, 400, null, request.getSession());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
