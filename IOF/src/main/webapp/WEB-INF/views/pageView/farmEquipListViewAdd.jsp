@@ -40,7 +40,7 @@
 <form method="post">
 	<table class="type02" style="width: 700px;">
 		<tr>
-			<th scope="row">No</th>
+			<!--  <th scope="row">No</th> songlock-->
 			<th scope="row">장비</th>
 			<th scope="row">회사명</th>
 			<th scope="row">모델명</th>
@@ -49,7 +49,7 @@
 			<th scope="row">장비추가</th>
 		</tr>
 		<tr>
-			<td><input type="text" name="eqId" style="width: 100%;" /></td>
+			<!--  <td><input type="text" name="eqId" style="width: 100%;" /></td> songlock-->
 			<td><select name="m_eqTypeId">
 					<c:forEach items="${listFarmEquipType}" var="farmEquipType">
 						<option value="${farmEquipType.eqTypeId}">${farmEquipType.eqTypeName}</option>
