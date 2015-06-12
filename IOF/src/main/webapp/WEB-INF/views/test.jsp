@@ -1,4 +1,4 @@
-﻿<jsp:forward page="newWindow.jsp">
-    <jsp:param name="CONTENT" value="pageView/test.jsp" />
+﻿<jsp:forward page="template.jsp">
+    <jsp:param name="CONTENT" value="pageView/testView.jsp" />
     <jsp:param name="PAGENAME" value="test" />
 </jsp:forward>

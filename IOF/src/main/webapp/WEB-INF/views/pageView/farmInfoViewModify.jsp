@@ -59,7 +59,9 @@
 		<tr>
 			<th scope="row">*재배면적(평)</th>
 
-			<td style="width: 390px"><input type="text" id = "farmPyeong" name="areaPyung" value="${farmInfo.areaPyung}" style="width: 50%;" /></td> 
+			<td style="width: 390px">
+			<input type="text" id = "farmPyeong" name="areaPyung" value="${farmInfo.areaPyung}" style="width: 50%;" onchage="calculate();"/>
+			</td> 
 
 			<th scope="row">*재배면적(제곱미터)</th>
 
@@ -125,6 +127,11 @@
 	
 
 </form>
+<script language="javascript">
+function calculate() {
+	
+}
+</script>
 <!--  본문 끝 -->
 
 
