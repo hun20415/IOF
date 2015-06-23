@@ -111,7 +111,7 @@ public class FarmCultivateInfoController  {
 	}
 	
 	//songlock: 2015-06-03
-	@RequestMapping(value = "/farmCultivateInfoModify")
+	@RequestMapping(value = "/farmCultivateInfoModify", params={"m_farmId", "m_userId", "m_cropSpeciesId","tno"})
 	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
 			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @RequestParam("tno") int tno, Model model) {
 		System.out.println("MODIFYING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");

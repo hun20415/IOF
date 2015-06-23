@@ -13,8 +13,7 @@
 	<h1>재배 정보 수정</h1>
 </center>
 
-<!--  <form id="farmCultivateInfoModifyForm" action="farmCultivateModify" method="post" onsubmit="return check()">-->
-<form method="post" onsubmit="return check()">
+<form id="farmCultivateInfoModifyForm" action="farmCultivateInfoModify"><!-- onsubmit="return check()"> -->
 	<table class="type02 ">
 		<tr>
 			<th scope="row">*온실 ID</th>
@@ -64,7 +63,8 @@
 		<center>
 			<input type="submit" value="확인">			
 			<button type="send">취소</button>
+			</center>
 	</tr>
-	</center>
+	
 </form>
 	<!--  본문 끝 -->
