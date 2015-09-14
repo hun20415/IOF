@@ -13,26 +13,28 @@
 	<h1>재배 정보 수정</h1>
 </center>
 
-<form id="farmCultivateInfoModifyForm" action="farmCultivateModify" method="post" onsubmit="return check()">
-
+<form id="farmCultivateInfoModifyForm" action="farmCultivateInfoModify"><!-- onsubmit="return check()"> -->
 	<table class="type02 ">
 		<tr>
 			<th scope="row">*온실 ID</th>
 			<td style="width: 390px">${farmCultivateInfo.farmId}</td>
-			<th scope="row">*구역 ID</th>
-			<td style="width: 390px">${farmCultivateInfo.farmSectionId}</td>
+			<th scope="row">온실명</th>
+			<td style="width: 390px">${farmCultivateInfo.farmName}</td>
+			
 			<!-- <td><select name="">
 					<option>전체/1/2...</option></td> -->
 		</tr>
 		<tr>
-			<th scope="row">온실명</th>
-			<td style="width: 390px">${farmCultivateInfo.farmName}</td>	
-			
+			<th scope="row">*구역 ID</th>
+			<td style="width: 390px">${farmCultivateInfo.farmSectionId}</td>	
 			<th scope="row">온실주명</th>
 			<td style="width: 390px">${farmCultivateInfo.userName}</td>		
 			
 		</tr>
 		<tr>
+			<th scope="row">*재배작물</th>
+			<td style="width: 390px"><input type="hidden" name="m_cropId" value = "${farmCultivateInfo.cropId}"/><input type="text" name="tno" value="${farmCultivateInfo.cropName}" style="width: 50%;" />
+				<button type="submit">검색</button></td>
 			<th scope="row">*재배품종</th>
 			<td style="width: 390px"><input type="hidden" name="m_cropSpeciesId" value = "${farmCultivateInfo.cropSpeciesId}"/><input type="text" name="tno" value="${farmCultivateInfo.cropSpeciesName}" style="width: 50%;" />
 				<button type="submit">검색</button></td>
@@ -61,7 +63,8 @@
 		<center>
 			<input type="submit" value="확인">			
 			<button type="send">취소</button>
+			</center>
 	</tr>
-	</center>
+	
 </form>
 	<!--  본문 끝 -->

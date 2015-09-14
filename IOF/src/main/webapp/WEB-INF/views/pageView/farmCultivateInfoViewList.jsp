@@ -17,8 +17,6 @@
 
 <table class="type10"> 
 	<p>
-
-
 		<a href="javascript:farmCultivateInfoAddPop()">
 		<input type="button" class="button" value="신규" style="position: relative; left: 780px;" /> 
 		</a>
@@ -65,28 +63,20 @@
 						<form name="farmCultivateInfoInfoForm">
 							<!-- action="farmCultivateInfoInfo"> -->
 							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
-							<input type="button" value="조회"
-								onclick="javascript:farmCultivateInfoInfoPop(this.form);">
+							<input type="button" value="조회" onclick="javascript:farmCultivateInfoInfoPop(this.form);">
 						</form>
 					</td>
 					<td>
 						<form name="farmCultivateInfoModifyForm">
 							<!-- action="farmCultivateInfoModify"> -->
-
 							<!-- </form> 추가하지 말것!!! -->
 							<input type="hidden" name="tno" value="${farmCultivateInfo.tno}">
 							<input type="hidden" name="m_farmId" value="${farmCultivateInfo.farmId}"> 
-							<input
-								type="hidden" name="m_userId"
-								value="${farmCultivateInfo.userId}"> <input
-								type="hidden" name="m_cropSpeciesId"
-								value="${farmCultivateInfo.cropSpeciesId}"> <input
-								type="submit" value="수정"
-								onclick="javascript:farmCultivateInfoModifyPop(this.form);">
-
+							<input type="hidden" name="m_userId" value="${farmCultivateInfo.userId}">
+							<input type="hidden" name="m_cropSpeciesId" value="${farmCultivateInfo.cropSpeciesId}">
+							<input type="submit" value="수정" onclick="javascript:farmCultivateInfoModifyPop(this.form);">
 						</form>
 					</td>
-
 					<td><input type="checkbox"></td>
 					<td><button
 							onclick="window.location.href='/farmCultivateInfoRemove/${farmCultivateInfo.tno}'">

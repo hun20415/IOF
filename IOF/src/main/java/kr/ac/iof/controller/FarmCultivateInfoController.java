@@ -98,9 +98,12 @@ public class FarmCultivateInfoController  {
 
 	//songlock: 2015-05-28
 	@RequestMapping(value = "/farmCultivateInfoModify", method = RequestMethod.POST)
-	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
-			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
+	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, 
+			@RequestParam("m_userId") String m_userId, 
+			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, 
+			@ModelAttribute("farmCultivateInfo") FarmCultivateInfo farmCultivateInfo)
 			throws Exception {
+		System.out.println("Modifying POST !!!!");
 
 		this.farmCultivateInfoService.update(m_farmId, m_userId, m_cropSpeciesId, farmCultivateInfo);
 		
@@ -108,10 +111,10 @@ public class FarmCultivateInfoController  {
 	}
 	
 	//songlock: 2015-06-03
-	@RequestMapping(value = "/farmCultivateInfoModify")
+	@RequestMapping(value = "/farmCultivateInfoModify", params={"m_farmId", "m_userId", "m_cropSpeciesId","tno"})
 	public String farmCultivateInfoModify(@RequestParam("m_farmId") Integer m_farmId, @RequestParam("m_userId") String m_userId, 
 			@RequestParam("m_cropSpeciesId") Integer m_cropSpeciesId, @RequestParam("tno") int tno, Model model) {
-		
+		System.out.println("MODIFYING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		model.addAttribute("farmCultivateInfo", this.farmCultivateInfoService.getById(tno));
 		model.addAttribute("m_farmId", new Integer(m_farmId));
 		model.addAttribute("m_userId", new String(m_userId));

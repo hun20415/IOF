@@ -82,22 +82,29 @@ public class FarmCultivateInfoDaoIm implements FarmCultivateInfoDao {
 	//songlock: 2015-05-28
 	@Override
 	public void update(Integer m_farmId, String m_userId, Integer m_cropSpeciesId, FarmCultivateInfo farmCultivateInfo) {
-		System.out.println("update");
+		System.out.println("1. farmID: " + m_farmId + " 2. userId: " + m_userId + " 3. cropSpeciesId: " + m_cropSpeciesId + " 4. plantTime" + farmCultivateInfo.getPlantTime());
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
 			
 			FarmInfo farmInfo = (FarmInfo)session.load(FarmInfo.class, new Integer(m_farmId));
-			User user = (User)session.load(User.class, new Integer(m_userId));
+			User user = (User)session.load(User.class, new String(m_userId));
 			CropSpeciesInfo cropSpeciesInfo = (CropSpeciesInfo)session.load(CropSpeciesInfo.class, new Integer(m_cropSpeciesId));
+			if(farmCultivateInfo.getEndTime()==null) {
+				farmCultivateInfo.setActiveYn("Y");
+			}
+			else {
+				farmCultivateInfo.setActiveYn("N");
+			}
 			farmCultivateInfo.setFarmInfo(farmInfo);
 			farmCultivateInfo.setUser(user);
-			
 			farmCultivateInfo.setCropSpeciesInfo(cropSpeciesInfo);
 			
 			session.update(farmCultivateInfo);//update 쿼리문
 			session.getTransaction().commit();
+			if (!trns.wasCommitted())
+				trns.commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
 				trns.rollback();

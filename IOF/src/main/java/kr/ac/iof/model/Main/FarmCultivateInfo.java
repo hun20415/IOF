@@ -42,16 +42,16 @@ public class FarmCultivateInfo {
 	private CropSpeciesInfo cropSpeciesInfo;
 	
 	@Column(name = "PLANT_TIME")//
-	private Date plantTime;
+	private String plantTime;
 	
 	@Column(name = "PRODUCT_TIME_PLAN")//
-	private Date productTimePlan;
+	private String productTimePlan;
 	
 	@Column(name = "PRODUCT_TIME_REAL")//
-	private Date productTimeReal;
+	private String productTimeReal;
 	
 	@Column(name = "END_TIME")//
-	private Date endTime;
+	private String endTime;
 	
 	@Column(name = "ACTIVE_YN")//1
 	private String activeYn;
@@ -61,8 +61,8 @@ public class FarmCultivateInfo {
 	}
 
 	public FarmCultivateInfo(int tno, User user, FarmInfo farmInfo,
-			int farmSectionId, CropSpeciesInfo cropSpeciesInfo, Date plantTime,
-			Date productTimePlan, Date productTimeReal, Date endTime,
+			int farmSectionId, CropSpeciesInfo cropSpeciesInfo, String plantTime,
+			String productTimePlan, String productTimeReal, String endTime,
 			String activeYn) {
 		super();
 		this.tno = tno;
@@ -117,35 +117,35 @@ public class FarmCultivateInfo {
 		this.cropSpeciesInfo = cropSpeciesInfo;
 	}
 
-	public Date getPlantTime() {
+	public String getPlantTime() {
 		return plantTime;
 	}
 
-	public void setPlantTime(Date plantTime) {
+	public void setPlantTime(String plantTime) {
 		this.plantTime = plantTime;
 	}
 
-	public Date getProductTimePlan() {
+	public String getProductTimePlan() {
 		return productTimePlan;
 	}
 
-	public void setProductTimePlan(Date productTimePlan) {
+	public void setProductTimePlan(String productTimePlan) {
 		this.productTimePlan = productTimePlan;
 	}
 
-	public Date getProductTimeReal() {
+	public String getProductTimeReal() {
 		return productTimeReal;
 	}
 
-	public void setProductTimeReal(Date productTimeReal) {
+	public void setProductTimeReal(String productTimeReal) {
 		this.productTimeReal = productTimeReal;
 	}
 
-	public Date getEndTime() {
+	public String getEndTime() {
 		return endTime;
 	}
 
-	public void setEndTime(Date endTime) {
+	public void setEndTime(String endTime) {
 		this.endTime = endTime;
 	}
 
@@ -179,6 +179,14 @@ public class FarmCultivateInfo {
 	}
 	public int getCropSpeciesId() {
 		return cropSpeciesInfo.getSpeciesId();
+	} 
+	
+	//get cropSpeciesName from CropSpecies table
+	public String getCropName() {
+		return cropSpeciesInfo.getCropInfo().getCropName();
+	}
+	public int getCropId() {
+		return cropSpeciesInfo.getCropInfo().getCropId();
 	} 
 	
 	
