@@ -20,7 +20,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "hist_environ_raw")
-@IdClass(HistEnvironRawPK.class)
+//@IdClass(HistEnvironRawPK.class)
 public class HistEnvironRaw {
 	
 	@Id
@@ -39,9 +39,12 @@ public class HistEnvironRaw {
 	@Column(name = "DATA_INQ_DATE") //DATETIME
 	private Date dataInqDate;
 	
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name = "EQ_ID", referencedColumnName = "EQ_ID") //4 , FOREIGN KEY
 	private FarmEquipList farmEquipList;
+	*/
+	@Column(name = "EQ_ID") //DOUBLE(10,2)
+	private int eqId;
 	
 	@Column(name = "EQ_VALUE") //DOUBLE(10,2)
 	private double eqValue;
@@ -55,16 +58,24 @@ public class HistEnvironRaw {
 	}
 
 	public HistEnvironRaw(int seqNo, FarmInfo farmInfo, int farmSectionId,
-			Date dataInqDate, FarmEquipList farmEquipList, double eqValue,
+			Date dataInqDate, int eqId, double eqValue,
 			Date sysDate) {
 		super();
 		this.seqNo = seqNo;
 		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
 		this.dataInqDate = dataInqDate;
-		this.farmEquipList = farmEquipList;
+		this.eqId = eqId;
 		this.eqValue = eqValue;
 		this.sysDate = sysDate;
+	}
+
+	public int getEqId() {
+		return eqId;
+	}
+
+	public void setEqId(int eqId) {
+		this.eqId = eqId;
 	}
 
 	public int getSeqNo() {
@@ -95,13 +106,13 @@ public class HistEnvironRaw {
 		this.farmInfo = farmInfo;
 	}
 
-	public FarmEquipList getFarmEquipList() {
+	/*public FarmEquipList getFarmEquipList() {
 		return farmEquipList;
 	}
 
 	public void setFarmEquipList(FarmEquipList farmEquipList) {
 		this.farmEquipList = farmEquipList;
-	}
+	}*/
 
 	public void setSeqNo(int seqNo) {
 		this.seqNo = seqNo;

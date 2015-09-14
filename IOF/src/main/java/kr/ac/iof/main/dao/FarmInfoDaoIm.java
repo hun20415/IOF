@@ -147,7 +147,7 @@ public class FarmInfoDaoIm implements FarmInfoDao {
 	
 	// 오너 아이디 검색 DAO
 	@Override
-	public List<FarmInfo> getOwnerIdList(String ownerId) { // 컬럼에 속해있는 모든 데이터를 불러온다.
+	public List<FarmInfo> getOwnerIdList(String ownerId) {
 		List<FarmInfo> farmInfos = new ArrayList<FarmInfo>();
 		
 		Transaction trns = null;

@@ -21,5 +21,7 @@ public interface HistEnvironRawService {
 	public List<HistEnvironRaw> getAll();
 
 	public HistEnvironRaw getById(int histEnvironRawId);
+	
+	public List<HistEnvironRaw> getSelectEq(String farmId, String sectionId, String eqId);
      
 }

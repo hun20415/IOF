@@ -6,6 +6,8 @@
 /**					                                                                                             **/
 package kr.ac.iof.controller;
 
+import java.util.List;
+
 import kr.ac.iof.main.Service.HistEnvironRawService;
 import kr.ac.iof.model.Main.HistEnvironRaw;
 
@@ -19,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Handles requests for the application user page.
@@ -88,6 +91,36 @@ public class HistEnvironRawController {
 
 		return "histEnvironRawModify";
 	}
+	
+	@RequestMapping(value = "/histEnvironRawG", method = RequestMethod.POST,  params= {"farmId","sectionId","eqId"})
+	// 서비스 호출
+	public String histEnvironRawG(String farmId, String sectionId, String eqId, Model model) throws Exception {
+		
+		logger.info("histEnvironRaw Graphic View2");
+		
+		this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+		return "histEnvironRawG";
+	}
+	@RequestMapping(value = "/histEnvironRawG", method = RequestMethod.GET)
+	public String histEnvironRawG(Model model) throws Exception {
+		
+		logger.info("histEnvironRaw Graphic View44");
+		model.addAttribute("histEnvironRaw", new HistEnvironRaw());
+		model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getAll());
+		
+		//this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+		return "histEnvironRawG";
+	}
+	
+	/*@RequestMapping("/histEnvironRawG.do")
+	public @ResponseBody List<HistEnvironRaw> histJsonList(@RequestParam(value="farmId") String farmId,
+			@RequestParam(value="sectionId") String sectionId, @RequestParam(value="eqId") String eqId){
+		
+		//model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId));
+		return this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+	}*/
+	
+	
 	
 
 }

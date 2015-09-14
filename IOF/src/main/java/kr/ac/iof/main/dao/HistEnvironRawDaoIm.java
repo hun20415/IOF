@@ -9,6 +9,7 @@ package kr.ac.iof.main.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.iof.model.Main.FarmInfo;
 import kr.ac.iof.model.Main.HistEnvironRaw;
 import kr.ac.iof.util.HibernateUtil;
 
@@ -114,7 +115,7 @@ public class HistEnvironRawDaoIm implements HistEnvironRawDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from HistEnvironRaw where histEnvironRawId = :id";
+			String queryString = "from HistEnvironRaw where farm_id = :id";
 			Query query = session.createQuery(queryString);
 			query.setInteger("id", histEnvironRawId);//id로 매칭 특정 행을 불러온다.
 			histEnvironRaw = (HistEnvironRaw) query.uniqueResult();
@@ -125,6 +126,35 @@ public class HistEnvironRawDaoIm implements HistEnvironRawDao {
 			session.close();
 		}
 		return histEnvironRaw;
+	}
+	
+	public List<HistEnvironRaw> getSelectEq(String farmId, String sectionId, String eqId){
+		System.out.println("histEnvironRawDaolm, select eq");
+		
+		
+		List<HistEnvironRaw> histEnvironRaws = new ArrayList<HistEnvironRaw>();
+		
+		Transaction trns = null;		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
+		
+		try {
+			trns = session.beginTransaction();
+			String queryString = "from HistEnvironRaw where farm_id=:farmId and farm_section_id = :sectionId and eq_id=:eqId";
+			Query query = session.createQuery(queryString);
+			query.setString("farmId", farmId);//id로 매칭 특정 행을 불러온다.
+			query.setString("sectionId", sectionId);//id로 매칭 특정 행을 불러온다.
+			query.setString("eqId", eqId);//id로 매칭 특정 행을 불러온다.
+			histEnvironRaws = query.list();
+			
+		} catch (RuntimeException e) {
+			e.printStackTrace();
+		} finally {
+			session.flush();
+			session.close();
+		}
+		return histEnvironRaws;//리스트로 반환
+		
+		
 	}
 	
 }
