@@ -7,6 +7,7 @@
 package kr.ac.iof.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import kr.ac.iof.main.Service.HistEnvironRawService;
 import kr.ac.iof.model.Main.HistEnvironRaw;
@@ -16,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -106,18 +108,32 @@ public class HistEnvironRawController {
 		
 		logger.info("histEnvironRaw Graphic View44");
 		model.addAttribute("histEnvironRaw", new HistEnvironRaw());
-		model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getAll());
+		//model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getAll());
 		
-		//this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+		String farmId = "2";
+		String sectionId = "1";
+		String eqId = "4";
+		model.addAttribute("listHistEnvironRaw",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId));
+		
 		return "histEnvironRawG";
 	}
-	
+	/*@RequestMapping(value = "/histEnvironRawG")
+	public List<HistEnvironRaw> histEnvironRawG() throws Exception {
+		
+		String farmId = "2";
+		String sectionId = "1";
+		String eqId = "1";
+		List<HistEnvironRaw> list = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+		System.out.print("aaa");
+		
+		return list;
+	}*/
 	/*@RequestMapping("/histEnvironRawG.do")
-	public @ResponseBody List<HistEnvironRaw> histJsonList(@RequestParam(value="farmId") String farmId,
-			@RequestParam(value="sectionId") String sectionId, @RequestParam(value="eqId") String eqId){
+	public @ResponseBody Map<?,?> histJsonList(ModelMap model){
 		
 		//model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId));
-		return this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
+		model.put("results", histEnvironRawService.getAll());
+		return model;
 	}*/
 	
 	
