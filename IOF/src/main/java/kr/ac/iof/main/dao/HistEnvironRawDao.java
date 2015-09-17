@@ -20,4 +20,6 @@ public interface HistEnvironRawDao {
 	public List<HistEnvironRaw> getAll();
 
 	public HistEnvironRaw getById(int histEnvironRawId);
+	
+	public List<HistEnvironRaw> getSelectEq(String farmId, String sectionId, String eqId);
 }

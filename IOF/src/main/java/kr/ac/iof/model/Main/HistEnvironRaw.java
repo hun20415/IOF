@@ -12,8 +12,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.JoinColumnOrFormula;
+import org.hibernate.annotations.JoinColumnsOrFormulas;
+import org.hibernate.annotations.JoinFormula;
 
 import java.util.Date;
 
@@ -40,8 +45,16 @@ public class HistEnvironRaw {
 	private Date dataInqDate;
 	
 	@ManyToOne
-	@JoinColumn(name = "EQ_ID", referencedColumnName = "EQ_ID") //4 , FOREIGN KEY
+	@JoinColumnsOrFormulas(value = {
+		//@JoinColumn(name = "FARM_ID", referencedColumnName = "FARM_ID", insertable = false, updatable=false), //4 , FOREIGN KEY
+			@JoinColumnOrFormula(formula = @JoinFormula(value="FARM_ID", referencedColumnName="FARM_ID")),
+			@JoinColumnOrFormula(column = @JoinColumn(name = "EQ_ID", referencedColumnName="EQ_ID"))
+					
+	})
 	private FarmEquipList farmEquipList;
+	/*
+	@Column(name = "EQ_ID") //DOUBLE(10,2)
+	private int eqId;*/
 	
 	@Column(name = "EQ_VALUE") //DOUBLE(10,2)
 	private double eqValue;
@@ -53,7 +66,6 @@ public class HistEnvironRaw {
 	public HistEnvironRaw () {
 
 	}
-
 	public HistEnvironRaw(int seqNo, FarmInfo farmInfo, int farmSectionId,
 			Date dataInqDate, FarmEquipList farmEquipList, double eqValue,
 			Date sysDate) {
@@ -61,11 +73,33 @@ public class HistEnvironRaw {
 		this.seqNo = seqNo;
 		this.farmInfo = farmInfo;
 		this.farmSectionId = farmSectionId;
-		this.dataInqDate = dataInqDate;
+		this.dataInqDate = dataInqDate;//데이터상 시간
 		this.farmEquipList = farmEquipList;
+		this.eqValue = eqValue;
+		this.sysDate = sysDate;//기록시간
+	}
+	/*public HistEnvironRawbak(int seqNo, FarmInfo farmInfo, int farmSectionId,
+			Date dataInqDate, int eqId, double eqValue,
+			Date sysDate) {
+		super();
+		this.seqNo = seqNo;
+		this.farmInfo = farmInfo;
+		this.farmSectionId = farmSectionId;
+		this.dataInqDate = dataInqDate;
+		this.eqId = eqId;
 		this.eqValue = eqValue;
 		this.sysDate = sysDate;
 	}
+
+	public int getEqId() {
+		return eqId;
+	}
+
+	public void setEqId(int eqId) {
+		this.eqId = eqId;
+	}*/
+	
+	
 
 	public int getSeqNo() {
 		return seqNo;

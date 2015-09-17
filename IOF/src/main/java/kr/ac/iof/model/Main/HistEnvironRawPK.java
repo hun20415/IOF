@@ -9,19 +9,25 @@ package kr.ac.iof.model.Main;
 
 import java.io.Serializable;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class HistEnvironRawPK implements Serializable {
+	
 	private int seqNo ;
 	private FarmInfo farmInfo;
+	private int farmSectionId;
 	
 	public HistEnvironRawPK() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public HistEnvironRawPK(int seqNo, FarmInfo farmInfo) {
+	public HistEnvironRawPK(int seqNo, FarmInfo farmInfo, int farmSectionId) {
 		super();
 		this.seqNo = seqNo;
 		this.farmInfo = farmInfo;
+		this.farmSectionId = farmSectionId;
 	}
 	
 	public int getSeqNo() {
@@ -39,17 +45,26 @@ public class HistEnvironRawPK implements Serializable {
 	public void setFarmInfo(FarmInfo farmInfo) {
 		this.farmInfo = farmInfo;
 	}
-	
+
+	public int getFarmSectionId() {
+		return farmSectionId;
+	}
+
+	public void setFarmSectionId(int farmSectionId) {
+		this.farmSectionId = farmSectionId;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
 				+ ((farmInfo == null) ? 0 : farmInfo.hashCode());
+		result = prime * result + farmSectionId;
 		result = prime * result + seqNo;
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -64,9 +79,15 @@ public class HistEnvironRawPK implements Serializable {
 				return false;
 		} else if (!farmInfo.equals(other.farmInfo))
 			return false;
+		if (farmSectionId != other.farmSectionId)
+			return false;
 		if (seqNo != other.seqNo)
 			return false;
 		return true;
 	}
+
+	
+	
+	
 	
 }

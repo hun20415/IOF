@@ -43,4 +43,11 @@ public class TestController {
 		return "test";
 
 	}
+	@RequestMapping(value = "/gT", method = RequestMethod.GET)
+	public String gT() {
+		logger.info("gt");
+
+		return "gT";
+
+	}
 }

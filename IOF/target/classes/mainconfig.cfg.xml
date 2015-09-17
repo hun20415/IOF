@@ -47,9 +47,9 @@
         
          <mapping class="kr.ac.iof.model.Main.FarmSectionInfo"/>
         <mapping class="kr.ac.iof.model.Main.HarvestInfo"/>
-        <!-- <mapping class="kr.ac.iof.model.Main.HarvestShipment"/>
+        <!-- <mapping class="kr.ac.iof.model.Main.HarvestShipment"/>-->
         <mapping class="kr.ac.iof.model.Main.HistEnvironRaw"/>
-        <mapping class="kr.ac.iof.model.Main.HistEnvironSum"/> -->
+       <!--  <mapping class="kr.ac.iof.model.Main.HistEnvironSum"/>  -->
         
         <mapping class="kr.ac.iof.model.Main.HistWater"/> 
         <mapping class="kr.ac.iof.model.User"/>

@@ -1,8 +1,7 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <link href="../css/" rel="stylesheet" type="text/css">
-<script src="../js/newWindow.js" type="text/javascript"
-	, charset="utf-8"></script>
+<script src="../js/newWindow.js" type="text/javascript" charset="utf-8"></script>
 <!--                                                                                                    -->
 <!--                                File Name   : userFarmCultivateInfoList.jsp                                   -->
 <!--                                Description : userList 페이지   새창으로 출력                                                                                              -->

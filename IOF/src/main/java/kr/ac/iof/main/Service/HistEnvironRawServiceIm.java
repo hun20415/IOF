@@ -10,6 +10,7 @@ package kr.ac.iof.main.Service;
 import java.util.List;
 
 
+
 import kr.ac.iof.main.dao.HistEnvironRawDao;
 import kr.ac.iof.model.Main.HistEnvironRaw;
 
@@ -59,6 +60,12 @@ public class HistEnvironRawServiceIm implements HistEnvironRawService{
     @Transactional
     public void delete(int histEnvironRawId) {
         this.histEnvironRawDao.delete(histEnvironRawId);
+    }
+    
+    @Override
+    @Transactional
+    public List<HistEnvironRaw> getSelectEq(String farmId, String sectionId, String eqId){
+    	return this.histEnvironRawDao.getSelectEq(farmId, sectionId, eqId);
     }
 
 }
