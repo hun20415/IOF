@@ -77,7 +77,7 @@
 					<td><input type="text" name="setDegree7" value=""  style="height:20px; width:100px;">&nbsp;도
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<button type="send" style="width:70px;height:30px;">추가</button></td>
-					
+					  
 				</tr>
 			
 		</tr>

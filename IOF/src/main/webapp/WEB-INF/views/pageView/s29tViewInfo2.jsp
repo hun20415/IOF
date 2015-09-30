@@ -1,12 +1,14 @@
 ﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link href="css/farmEquipList.css" rel="stylesheet" type="text/css">
-
+<div id=testT>
 <!-- 본문 시작 -->
 
 	<p align = "center">
 		온도 기준표 설정<br>
 	</p>
+	<form id="cropForm" action="cropCateAdd" method="post"
+        onsubmit="return check()">
 	
 	<p align = "center">
 	<input type = radio name = "group1" value = "cherry tomato">방울토마토
