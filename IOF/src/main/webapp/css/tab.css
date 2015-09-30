@@ -1,0 +1,190 @@
+﻿#css_tabs, #css_tabs2, #css_tabs3, #css_tabs4{
+	font-family: 'nanumgothic', '나눔고딕', 'malgun gothic', '맑은 고딕', 'dotum',
+		'돋움', sans-serif;
+	margin-bottom: 10px;	
+}
+
+/* 탭 선택 시 표시할 요소(div) 정의(1번 탭 선택 시 첫 번째 div 요소 표시) */
+#css_tabs input:nth-of-type(1), #css_tabs input:nth-of-type(1) ~ div:nth-of-type(1),
+	#css_tabs input:nth-of-type(2), #css_tabs input:nth-of-type(2) ~ div:nth-of-type(2),
+	#css_tabs input:nth-of-type(3), #css_tabs input:nth-of-type(3) ~ div:nth-of-type(3),
+	#css_tabs input:nth-of-type(4), #css_tabs input:nth-of-type(4) ~ div:nth-of-type(4)
+	{
+	display: none;
+}
+#css_tabs2 input:nth-of-type(1), #css_tabs2 input:nth-of-type(1) ~ div:nth-of-type(1),
+    #css_tabs2 input:nth-of-type(2), #css_tabs2 input:nth-of-type(2) ~ div:nth-of-type(2)   
+    {
+    display: none;
+}
+#css_tabs3 input:nth-of-type(1), #css_tabs3 input:nth-of-type(1) ~ div:nth-of-type(1)      
+    {
+    display: none;
+}
+#css_tabs4 input:nth-of-type(1), #css_tabs4 input:nth-of-type(1) ~ div:nth-of-type(1)      
+    {
+    display: none;
+}
+
+#css_tabs input:nth-of-type(1):checked ~ div:nth-of-type(1),
+#css_tabs input:nth-of-type(2):checked ~ div:nth-of-type(2), 
+#css_tabs input:nth-of-type(3):checked ~ div:nth-of-type(3),
+#css_tabs input:nth-of-type(4):checked ~ div:nth-of-type(4){
+	display: block;
+}
+
+#css_tabs2 input:nth-of-type(1):checked ~ div:nth-of-type(1),
+#css_tabs2 input:nth-of-type(2):checked ~ div:nth-of-type(2){
+	display: block;
+}
+#css_tabs3 input:nth-of-type(1):checked ~ div:nth-of-type(1){
+    display: block;
+}
+#css_tabs4 input:nth-of-type(1):checked ~ div:nth-of-type(1){
+    display: block;
+}
+
+/* 라벨 기본 스타일 지정 */
+#css_tabs>label,
+#css_tabs2>label,
+#css_tabs4>label,
+#css_tabs3>label {
+	display: inline-block;
+	font-variant: small-caps;
+	font-size: .9em;
+	padding: 5px;
+	text-align: center;
+	width: 12%;
+	line-height: 1.8em;
+	font-weight: 700;
+	border-radius: 3px 3px 0 0;
+	background: #eee;
+	color: #777;
+	border: 1px solid #ccc;
+	border-width: 1px 1px 0;
+}
+
+#css_tabs>label:hover, #css_tabs2>label:hover, #css_tabs3>label:hover , #css_tabs4>label:hover{
+	cursor: pointer;
+}
+
+#css_tabs label[for=tab1], #css_tabs2 label[for=tab5],  #css_tabs3 label[for=tab7], #css_tabs4 label[for=tab8] {
+	margin-left: 1.5em;
+}
+/* 선택된 라벨, 커서를 올린 라벨 스타일 지정 */
+#css_tabs input:nth-of-type(1):checked ~ label:nth-of-type(1), #css_tabs>label[for=tab1]:hover
+	{
+	background: tomato;
+	color: #fff;
+}
+
+#css_tabs input:nth-of-type(2):checked ~ label:nth-of-type(2), #css_tabs>label[for=tab2]:hover
+	{
+	background: gold;
+	color: #fff;
+}
+
+#css_tabs input:nth-of-type(3):checked ~ label:nth-of-type(3), #css_tabs>label[for=tab3]:hover
+	{
+	background: green;
+	color: #fff;
+}
+
+#css_tabs input:nth-of-type(4):checked ~ label:nth-of-type(4), #css_tabs>label[for=tab4]:hover
+	{
+	background: blue;
+	color: #fff;
+}
+
+#css_tabs2 input:nth-of-type(1):checked ~ label:nth-of-type(1), #css_tabs2>label[for=tab5]:hover{
+	background: tomato;
+	color: #fff;
+}
+
+#css_tabs2 input:nth-of-type(2):checked ~ label:nth-of-type(2), #css_tabs2>label[for=tab6]:hover {
+	background: gold;
+	color: #fff;
+}
+#css_tabs3 input:nth-of-type(1):checked ~ label:nth-of-type(1), #css_tabs3>label[for=tab7]:hover {
+	
+    background: tomato;
+    color: #fff;
+}
+#css_tabs4 input:nth-of-type(1):checked ~ label:nth-of-type(1), #css_tabs4>label[for=tab8]:hover {
+    
+    background: tomato;
+    color: #fff;
+}
+/* 실제 내용이 담긴 div 요소 스타일 지정 */
+#css_tabs .tab1_content, #css_tabs .tab2_content, #css_tabs .tab3_content,
+	#css_tabs .tab4_content
+	{
+	padding: 2em;
+	border: 1px solid #ddd;
+	width: 700px;
+	height: 400px;
+}
+#css_tabs2 .tab1_content, #css_tabs2 .tab2_content
+    {
+    padding: 2em;
+    border: 1px solid #ddd;
+    width: 700px;
+    height: 100%;
+}
+#css_tabs3 .tab1_content, #css_tabs4 .tab1_content{
+	width :19%;
+	padding: 2em;
+    border: 1px solid #ddd;
+    height: 400px;
+    float: left;
+    margin-bottom: 10px;
+}
+#css_tabs .tab1_table {
+	width: 15%;
+	float: left;
+	border: 1px solid #fff;
+	text-align: center;
+	font-weight: bolder;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#css_tabs .tab1_table2 {
+	width: 15%;
+	height: 25px;
+	float: left;
+	border: 1px solid #ddd;
+	font-weight: bolder;
+	background-color: #bbb;
+	margin-top: 2px;
+	margin-left: 2px;
+	margin-right: 2px;
+	text-align: center;
+}
+#top_bar{
+	
+    background-color: #82ecff;
+    font-weight: bolder;
+    color : black;
+    margin-bottom: 10px;
+}
+#top_bar .title{
+	
+	border-right: 1px solid #FFF;
+	margin:2px;
+    float: left;
+	width : 60px;
+	text-align: center;
+}
+
+#top_bar .contents{
+    
+    border-right: 1px solid #FFF;
+    margin:2px;
+    float: left;
+    width : 20px;
+    text-align: center;
+} 
+
+
+
