@@ -24,14 +24,14 @@
 	var resultList = new Array();
 	//var resultValue = new Array();
 
-	<c:forEach items="${listHistEnvironRaw}" var="result">
+	<c:forEach items="${listHistEnvironRaw}" var="result" end="360">
+	
 	var json = new Object();
 	json.eqId = "${result.farmEquipList.eqId}";
 	json.eqValue = "${result.eqValue}";
 	json.date = "${result.dataInqDate}";
-	/* resultList.push("${result.eqValue}");
-	 resultList.push("${result.farmEquipList.eqId}"); */
 	resultList.push(json);
+	
 	</c:forEach>
 
 	AmCharts.ready(function() {
@@ -180,10 +180,12 @@
 </script>
 </head>
 <body style="background-color: #FFFFFF">
-
-	<div id="chartdiv" style="width: 100%; height: 600px;"></div>
+    
+	<div id="chartdiv" style="width: 700px; height: 400px; margin-top: 10px;">
 	
-	<button onClick="window.location.reload()">데이터 갱신</a> 
+	</div>
+	<button onClick="window.location.reload()">데이터 갱신</button>
+	
 </body>
 
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>

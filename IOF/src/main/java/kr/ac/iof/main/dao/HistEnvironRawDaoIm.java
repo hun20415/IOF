@@ -139,11 +139,12 @@ public class HistEnvironRawDaoIm implements HistEnvironRawDao {
 		
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from HistEnvironRaw where farm_id=:farmId and farm_section_id = :sectionId and eq_id=:eqId";
+			String queryString = "from HistEnvironRaw envir where farm_id=:farmId and farm_section_id = :sectionId and eq_id=:eqId order by envir.seqNo desc";
 			Query query = session.createQuery(queryString);
 			query.setString("farmId", farmId);//id로 매칭 특정 행을 불러온다.
 			query.setString("sectionId", sectionId);//id로 매칭 특정 행을 불러온다.
 			query.setString("eqId", eqId);//id로 매칭 특정 행을 불러온다.
+			query.setMaxResults(500);
 			histEnvironRaws = query.list();
 			
 		} catch (RuntimeException e) {

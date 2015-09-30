@@ -115,27 +115,9 @@ public class HistEnvironRawController {
 		String eqId = "4";
 		model.addAttribute("listHistEnvironRaw",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId));
 		
+		
 		return "histEnvironRawG";
 	}
-	/*@RequestMapping(value = "/histEnvironRawG")
-	public List<HistEnvironRaw> histEnvironRawG() throws Exception {
-		
-		String farmId = "2";
-		String sectionId = "1";
-		String eqId = "1";
-		List<HistEnvironRaw> list = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId);
-		System.out.print("aaa");
-		
-		return list;
-	}*/
-	/*@RequestMapping("/histEnvironRawG.do")
-	public @ResponseBody Map<?,?> histJsonList(ModelMap model){
-		
-		//model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId));
-		model.put("results", histEnvironRawService.getAll());
-		return model;
-	}*/
-	
 	
 	
 
