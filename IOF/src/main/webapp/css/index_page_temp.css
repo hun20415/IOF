@@ -1,4 +1,4 @@
-ï»¿html,body {
+html,body {
 margin:0;
 padding:0;
 }
@@ -66,7 +66,7 @@ color: #003;
 }
 			/*MAIN CONTAINER*/
 #container { 
-width: 1300px;      /*770->950ìˆ˜ì •(ìˆ˜ì˜)*/
+width: 1300px;      /*770->950¼öÁ¤(¼ö¿µ)*/
 margin: 0 auto;
 padding: 0;
 
@@ -82,7 +82,7 @@ color: #06a;
 }
 			/*CONTENT*/
 #content {
-width: 1000px;     /*490->720ìˆ˜ì •(ìˆ˜ì˜)*/
+width: 1000px;     /*490->720¼öÁ¤(¼ö¿µ)*/
 float: left;
 margin: 50px 0 0 0;
 padding: 0 0 30px 10px;
@@ -99,7 +99,7 @@ color: #06a;
 #content_left {
 width: 200px;
 float: left;
-margin: 0px 0px 0 0;      /*margin 0ìœ¼ë¡œ ìˆ˜ì •(ìˆ˜ì˜,0520)*/
+margin: 0px 0px 0 0;      /*margin 0À¸·Î ¼öÁ¤(¼ö¿µ,0520)*/
 padding-bottom: 30px;
 }
 
@@ -158,4 +158,53 @@ background : inherit;
 color : #ff9933;
 margin : 5px 0 0 0;
 padding-left : 10px;
+}
+
+
+
+#content_left div {
+  width: 50px;
+}
+ 
+#content_left h2 {
+  font: 500 25px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+ 
+#content_left ul {
+  list-style-type: none;
+  margin: 25px;
+  padding: 0;
+}
+ 
+#content_left li {
+  font: 300 15px/2 Helvetica, Verdana, sans-serif;
+  
+  border-bottom: 1px solid #ccc;
+  
+ 
+}
+ 
+#content_left li:last-child {
+  border: none;
+}
+ 
+#content_left li a {
+  text-decoration: none;
+  color: #000;
+  display: black;
+  width: 5px;
+ 
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  
+}
+ 
+#content_left li a:hover {
+  font-size: 20px;
+  background: #f6f6f6;
 }
