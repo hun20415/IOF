@@ -16,7 +16,7 @@
 <link href="../css/index_page_temp.css" rel="stylesheet" type="text/css">
 <title><%=pagename%></title>
 </head>
-<body>
+<body style="background:#FAFAFA"> 
 
 	<jsp:include page="template/header.jsp"  />
 <%-- 	<center>
