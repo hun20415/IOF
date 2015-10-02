@@ -1,4 +1,15 @@
-﻿<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+﻿<%
+String link1 = "s30t";
+String link2 = "farmInfoList";
+String link3 = "farmEquipListList";
+String link4 = "farmCultivateInfoList";
+String link5 = "greenHouseEnviInfo";
+String link6 = "#";
+String link7 = "#";
+%>
+
+
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link href="css/farmEquipList.css" rel="stylesheet" type="text/css">
 <div id=testT>
@@ -16,7 +27,8 @@
 	<input type = radio name = "group1" value = "tomato">일반토마토
 	</p>
 	<p align = "center">
-	<button type="set1" style="width:210px;height:30px;">상한값 기준표 온도 설정</button><br><br>
+	
+	<input type="button" value="상한값 기준표 온도 설정" onclick="window.open('s30t')"style="width:210px;height:30px;"><br><br>
 	<button type="set2" style="width:210px;height:30px;">하한값 기준표 온도 설정</button><br><br>
 	<button type="set3" style="width:210px;height:30px;">영양생장 기준표 온도 설정</button><br><br>
 	<button type="set4" style="width:210px;height:30px;">생식생장 기준표 온도 설정</button><br><br>
