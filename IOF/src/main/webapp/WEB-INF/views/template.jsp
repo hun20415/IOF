@@ -19,20 +19,20 @@
 <body style="background:#FAFAFA"> 
 
 	<jsp:include page="template/header.jsp"  />
-<%-- 	<center>
+ 	<center>
 		<jsp:include page="template/navigationbar.jsp" flush="false"/>
-	</center> --%>
+	</center> 
 	
 	<div id="container">
 
-		<jsp:include page="template/sidebar.jsp" flush="false"/>
+		<%-- <jsp:include page="template/sidebar.jsp" flush="false"/> --%>
 		
-		
+		<center>
 		<div id="content">
 			<!-- 본문 content 입력 -->			
 			<jsp:include page="<%=content%>" flush="false"/>
 		</div>
-
+</center> 
 
 	</div>
 	<center>

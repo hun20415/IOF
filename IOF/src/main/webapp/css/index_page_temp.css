@@ -83,7 +83,8 @@ color: #06a;
 			/*CONTENT*/
 #content {
 width: 1000px;     /*490->720수정(수영)*/
-float: left;
+height:700px;
+
 margin: 50px 0 0 0;
 padding: 0 0 30px 10px;
 }
@@ -166,6 +167,7 @@ padding-left : 10px;
 	display:block; 
 	color: #fff; 
 	text-decoration:none; 
+	text-align:left;
 	
 }
 #menu > li,
