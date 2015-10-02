@@ -50,6 +50,7 @@
 				<th width="200px">농장주소</th>
 				<th width="90px">건립일</th>
 				<th width="40px">조회</th>
+				<th width="40px">현황</th>
 				<th width="40px">수정</th>
 				<th width="50px">Delete</th>
 			</tr>
@@ -79,6 +80,12 @@
 							<input type="button" value="조회" onclick="javascript:farmInfoInfoPop(this.form);">
 						</form>
 					</td>
+					<td>
+                        <form name="farmInfoInfoForm">
+                            <input type="hidden" name="farmId" value="${farmInfo.farmId}">
+                            <input type="button" value="현황" onclick="javascript:mainPagePop(this.form);">
+                        </form>
+                    </td>
 					<td>
 						<form name="farmInfoModifyForm">							
 							<input type="hidden" name="farmId" value="${farmInfo.farmId}">

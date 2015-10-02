@@ -8,7 +8,8 @@
 #css_tabs input:nth-of-type(1), #css_tabs input:nth-of-type(1) ~ div:nth-of-type(1),
 	#css_tabs input:nth-of-type(2), #css_tabs input:nth-of-type(2) ~ div:nth-of-type(2),
 	#css_tabs input:nth-of-type(3), #css_tabs input:nth-of-type(3) ~ div:nth-of-type(3),
-	#css_tabs input:nth-of-type(4), #css_tabs input:nth-of-type(4) ~ div:nth-of-type(4)
+	#css_tabs input:nth-of-type(4), #css_tabs input:nth-of-type(4) ~ div:nth-of-type(4),
+	#css_tabs input:nth-of-type(5), #css_tabs input:nth-of-type(5) ~ div:nth-of-type(5)
 	{
 	display: none;
 }
@@ -29,7 +30,8 @@
 #css_tabs input:nth-of-type(1):checked ~ div:nth-of-type(1),
 #css_tabs input:nth-of-type(2):checked ~ div:nth-of-type(2), 
 #css_tabs input:nth-of-type(3):checked ~ div:nth-of-type(3),
-#css_tabs input:nth-of-type(4):checked ~ div:nth-of-type(4){
+#css_tabs input:nth-of-type(4):checked ~ div:nth-of-type(4),
+#css_tabs input:nth-of-type(5):checked ~ div:nth-of-type(5){
 	display: block;
 }
 
@@ -95,6 +97,11 @@
 	background: blue;
 	color: #fff;
 }
+#css_tabs input:nth-of-type(5):checked ~ label:nth-of-type(5), #css_tabs>label[for=tab9]:hover
+    {
+    background: maroon;
+    color: #fff;
+}
 
 #css_tabs2 input:nth-of-type(1):checked ~ label:nth-of-type(1), #css_tabs2>label[for=tab5]:hover{
 	background: tomato;
@@ -117,12 +124,12 @@
 }
 /* 실제 내용이 담긴 div 요소 스타일 지정 */
 #css_tabs .tab1_content, #css_tabs .tab2_content, #css_tabs .tab3_content,
-	#css_tabs .tab4_content
+	#css_tabs .tab4_content, #css_tabs .tab9_content 
 	{
 	padding: 2em;
 	border: 1px solid #ddd;
 	width: 700px;
-	height: 400px;
+	height: 500px;
 }
 #css_tabs2 .tab1_content, #css_tabs2 .tab2_content
     {
@@ -132,10 +139,9 @@
     height: 100%;
 }
 #css_tabs3 .tab1_content, #css_tabs4 .tab1_content{
-	width :19%;
-	padding: 2em;
+	width :23%;
     border: 1px solid #ddd;
-    height: 400px;
+    height: 500px;
     float: left;
     margin-bottom: 10px;
 }
@@ -165,7 +171,6 @@
 	
     background-color: #82ecff;
     font-weight: bolder;
-    color : black;
     margin-bottom: 10px;
 }
 #top_bar .title{
@@ -178,13 +183,22 @@
 }
 
 #top_bar .contents{
-    
     border-right: 1px solid #FFF;
     margin:2px;
     float: left;
-    width : 20px;
+    width : 40px;
     text-align: center;
+    font-style: italic;
 } 
 
+#top_bar .contents2{
+   
+    border-right: 1px solid #FFF;
+    margin:2px;
+    float: left;
+    width : 120px;
+    text-align: center;
+    font-style: italic;
+} 
 
 

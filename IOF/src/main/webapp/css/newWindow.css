@@ -11,7 +11,7 @@ color: #666;
 
 			/*MAIN CONTAINER*/
 #container {
-width: 800px;      /*770->950수정(수영)*/
+/* width: 800px;      770->950수정(수영) */
 margin: 0 auto;
 padding: 0;
 }
@@ -26,7 +26,7 @@ color: #06a;
 }
 			/*CONTENT*/
 #content {
-width: 600px;     /*팝업창 별도 지정해야함 content id를 바꿔서*/
+ width: 1100px; 
 float: left;
 margin: 50px 0 0 0;
 padding: 0 0 30px 10px;

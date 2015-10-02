@@ -144,7 +144,7 @@ public class HistEnvironRawDaoIm implements HistEnvironRawDao {
 			query.setString("farmId", farmId);//id로 매칭 특정 행을 불러온다.
 			query.setString("sectionId", sectionId);//id로 매칭 특정 행을 불러온다.
 			query.setString("eqId", eqId);//id로 매칭 특정 행을 불러온다.
-			query.setMaxResults(500);
+			query.setMaxResults(1440);
 			histEnvironRaws = query.list();
 			
 		} catch (RuntimeException e) {
