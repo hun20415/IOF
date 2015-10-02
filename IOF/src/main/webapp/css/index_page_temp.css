@@ -66,7 +66,7 @@ color: #003;
 }
 			/*MAIN CONTAINER*/
 #container { 
-width: 1300px;      /*770->950����(����)*/
+width: 1300px;      /*770->950수정(수영)*/
 margin: 0 auto;
 padding: 0;
 
@@ -82,7 +82,7 @@ color: #06a;
 }
 			/*CONTENT*/
 #content {
-width: 1000px;     /*490->720����(����)*/
+width: 1000px;     /*490->720수정(수영)*/
 float: left;
 margin: 50px 0 0 0;
 padding: 0 0 30px 10px;
@@ -99,7 +99,7 @@ color: #06a;
 #content_left {
 width: 200px;
 float: left;
-margin: 0px 0px 0 0;      /*margin 0���� ����(����,0520)*/
+margin: 0px 0px 0 0;      /*margin 0으로 수정(수영,0520)*/
 padding-bottom: 30px;
 }
 
@@ -162,52 +162,59 @@ padding-left : 10px;
 
 
 
-#content_left div {
-  width: 50px;
+#menu a { 
+	display:block; 
+	color: #fff; 
+	text-decoration:none; 
+	
 }
- 
-#content_left h2 {
-  font: 500 25px/1.5 Helvetica, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
+#menu > li,
+#menu > li li {
+	position: relative;
+	display:inline-block;
+	width: 200px;
+	padding: 3px 20px;
+	background-color: #FAFAFA;
+	background-image: linear-gradient(#aaa, #888 50%, #777 50%,#999);
+
   
 font-family: inherit;
 font-weight: bolder;
 }
- 
-#content_left ul {
-  list-style-type: none;
-  margin: 25px;
-  padding: 0;
+#menu > li li { background: transparent none; }
+#menu > li li a { color: #444; } 
+#menu > li li:hover { background:#eee; } 
+#menu > li:first-child { 
+	border-right: 1px solid #777;
+	border-radius: 8px 0 0 8px;
+} 
+#menu > li + li {
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #777;
 }
- 
-#content_left li {
-  font: 300 15px/2 Helvetica, Verdana, sans-serif;
-  
-  border-bottom: 1px solid #ccc;
-  
- 
+#menu > li:last-child {
+	border-right: 0;
+	border-left: 1px solid #aaa;
+	border-radius: 0 8px 8px 0 ;
 }
- 
-#content_left li:last-child {
-  border: none;
+#menu > li:hover {
+	background-color: #999;
+	background-image: linear-gradient(#ccc, #aaa 50%, #999 50%,#bbb);
 }
- 
-#content_left li a {
-  text-decoration: none;
-  color: #000;
-  display: black;
-  width: 5px;
- 
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-  
+
+#menu ul {
+	position: absolute;
+	top: 2em; left: 0;
+	max-height:0em;	
+	margin: 0; padding: 0;
+	background-color: #ddd;
+	background-image: linear-gradient(#fff,#ddd);
+	overflow: hidden;
+	transition: 1s max-height 0.3s;
+	border-radius: 0 0 8px 8px;
 }
- 
-#content_left li a:hover {
-  font-size: 20px;
-  background: #f6f6f6;
+
+#menu > li:hover ul {
+	
+	max-height: 13em;
 }

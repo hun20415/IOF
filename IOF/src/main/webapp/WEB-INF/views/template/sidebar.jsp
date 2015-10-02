@@ -8,30 +8,31 @@ String link6 = "#";
 String link7 = "#";
 %>
 
-
-
-<div id="content_left">
- <p class="last">&nbsp;</p>
-  
-  
-  <h2>기본 정보</h2>
-  <ul>
-  				<li><a href="<%=link1%>">사용자 관리</a></li>
-				<li><a href="<%=link2%>">온실 정보 관리</a></li>
-				<li><a href="<%=link3%>">장비 정보 관리</a></li>
-				<li><a href="<%=link4%>">재배 정보</a></li>
-				<li><a href="<%=link5%>">환경 제어 정보</a></li>
-				<li><a href="<%=link6%>">기상 정보</a></li>
-				<li><a href="<%=link7%>">공지 사항</a></li>
-  </ul>
-  <p class="last">&nbsp;</p>
-  
-  <h2>온실현황</h2>
-  <ul>
-   <li><a href="<%=link1%>">사용자 관리</a></li>
-				<li><a href="#">온실 기본 정보</a></li>
-				<li><a href="#">제어 상태</a></li>
-				<li><a href="#">온실별 현황</a></li>
-  </ul>
-</div>
-
+<ul id="menu">
+	<li>
+		<a href="#">기본정보</a>
+		<ul>
+			<li><a href="#">▪ 시스템 환경설정</a></li>
+			<li><a href="#">▪ 코드관리</a></li>
+			<li><a href="#">▪ 사용자관리</a></li>
+			<li><a href="#">▪ 온실 기본정보</a></li>
+			<li><a href="#">▪ 온실 장비정보</a></li>
+			
+			
+		</ul>
+	</li><li><a href="#">생육모델관리</a>
+		<ul>
+			<li><a href="#">▪ 모델 파라메터 설정</a></li>
+			<li><a href="#">▪ 생육 시뮬레이션</a></li>
+			<li><a href="#">▪ 수확량 예측</a></li>
+		</ul>
+	</li><li><a href="#">생육데이터 입력</a>
+	</li><li><a href="#">온실모니터링</a>
+		<ul>
+			<li><a href="#">▪ 재배정보 입력(품종, 정식일자 기준값 설정)</a></li>
+			<li><a href="#">▪ 온실 리스트(모니터링)</a></li>
+		</ul>
+	</li><li><a href="#">빅데이터 분석</a>
+		
+	</li>
+</ul>
