@@ -168,19 +168,20 @@ padding-left : 10px;
 	color: #fff; 
 	text-decoration:none; 
 	text-align:left;
+	font-size: 13px;
 	
 }
 #menu > li,
 #menu > li li {
 	position: relative;
-	display:inline-block;
+	display:inline-block; 
 	width: 200px;
 	padding: 3px 20px;
 	background-color: #FAFAFA;
 	background-image: linear-gradient(#aaa, #888 50%, #777 50%,#999);
 
   
-font-family: inherit;
+font-family: inherit; 
 font-weight: bolder;
 }
 #menu > li li { background: transparent none; }
