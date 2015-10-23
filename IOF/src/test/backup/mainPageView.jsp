@@ -436,12 +436,10 @@
 	}
 
 	/************************************** 첫 번째 그래프 일반 그래프 end *********************************/
-	/************************************** 첫 번째 그래프 일반 그래프2 start  ********************************/
 
 	var chart = AmCharts.makeChart("chartdiv3", {
 		type : "stock",
 		"theme" : "light",
-		
 		
 		dataSets : [ {
 			title : "습도",
@@ -469,13 +467,7 @@
 				fillAlphas : 1,
 				useDataSetColors : false,
 				lineColor : "#FF6600"
-			} ],
-			 stockLegend: {
-				 useGraphSettings : true,
-			        valueTextRegular: undefined,
-			        periodValueTextComparing: "[[percents.value.close]]%",
-			        position : "right"
-			      }
+			} ]
 		}, {
 			id : "solar",
 			title : "일사량",

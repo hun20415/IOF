@@ -43,20 +43,10 @@ public class mainPageController {
 		this.histEnvironRawService = ps;
 	}
 
-	/*@RequestMapping(value = "/mainPage", method = RequestMethod.GET)
-	// 서비스 호출
-	public String mainPageView() throws Exception {
-		logger.info("mainPage 입력 View");
-
-		return "mainPage";
-	}*/
-	
-	@RequestMapping(value = "/mainPage", method = RequestMethod.GET)
-	public @ResponseBody Model mainPage(Model model) throws Exception {
-		
+	@RequestMapping(value = "/loadSensor", method = RequestMethod.GET)
+	public @ResponseBody List<List<HistEnvironRaw>> loadSensor(Model model) throws Exception {		
 		logger.info("main page loading");
 		model.addAttribute("histEnvironRaw", new HistEnvironRaw());
-		//model.addAttribute("listHistEnvironRaw", this.histEnvironRawService.getAll());
 		
 		String farmId = "2";
 		String sectionId = "1";
@@ -74,9 +64,50 @@ public class mainPageController {
 		String eqId12= "12";
 		String eqId13= "13";
 		String eqId14= "14";
-		ModelAndView modelAndView = new ModelAndView("sensorData");
-		modelAndView.setViewName("sensorDataView");
+				
+		List<List<HistEnvironRaw>> sensor = new ArrayList<List<HistEnvironRaw>>();
 		
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId1));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId2));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId3));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId4));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId5));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId6));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId7));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId8));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId9));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId10));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId11));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId12));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId13));
+		sensor.add(this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId14));
+		
+		return sensor;
+	}
+	
+	@RequestMapping(value = "/mainPage", method = RequestMethod.GET)
+	public void mainPage(Model model) throws Exception {
+		
+		logger.info("main page loading");
+		model.addAttribute("histEnvironRaw", new HistEnvironRaw());
+
+		
+		String farmId = "2";
+		String sectionId = "1";
+		String eqId1 = "1";
+		String eqId2 = "2";
+		String eqId3 = "3";
+		String eqId4 = "4";
+		String eqId5 = "5";
+		String eqId6 = "6";
+		String eqId7 = "7";
+		String eqId8 = "8";
+		String eqId9 = "9";
+		String eqId10= "10";
+		String eqId11= "11";
+		String eqId12= "12";
+		String eqId13= "13";
+		String eqId14= "14";		
 		
 		model.addAttribute("sensor1",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId1));
 		model.addAttribute("sensor2",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId2));
@@ -93,23 +124,7 @@ public class mainPageController {
 		model.addAttribute("sensor13",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId13));
 		model.addAttribute("sensor14",this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId14));
 		
-		/*List<HistEnvironRaw> sensor1 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId1);
-		List<HistEnvironRaw> sensor2 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId2);
-		List<HistEnvironRaw> sensor3 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId3);
-		List<HistEnvironRaw> sensor4 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId4);
-		List<HistEnvironRaw> sensor5 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId5);
-		List<HistEnvironRaw> sensor6 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId6);
-		List<HistEnvironRaw> sensor7 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId7);
-		List<HistEnvironRaw> sensor8 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId8);
-		List<HistEnvironRaw> sensor9 = this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId9);
-		List<HistEnvironRaw> sensor10= this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId10);
-		List<HistEnvironRaw> sensor11= this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId11);
-		List<HistEnvironRaw> sensor12= this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId12);
-		List<HistEnvironRaw> sensor13= this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId13);
-		List<HistEnvironRaw> sensor14= this.histEnvironRawService.getSelectEq(farmId, sectionId, eqId14);
-		
-		modelAndView.addObject("data", sensor1);*/
-				return model;
+		//return model;
 	}
 	
 }

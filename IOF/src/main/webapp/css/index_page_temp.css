@@ -66,7 +66,7 @@ color: #003;
 }
 			/*MAIN CONTAINER*/
 #container { 
-width: 1300px;      /*770->950수정(수영)*/
+width: 100%;      /*770->950수정(수영)*/
 margin: 0 auto;
 padding: 0;
 
@@ -82,7 +82,7 @@ color: #06a;
 }
 			/*CONTENT*/
 #content {
-width: 1000px;     /*490->720수정(수영)*/
+width: 100%;     /*490->720수정(수영)*/
 height:700px;
 
 margin: 50px 0 0 0;

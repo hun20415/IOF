@@ -5,7 +5,7 @@ padding:0;
 body {
 font: 73% helvetica, arial, sans-serif;
 line-height:1.8em;
-background: #fff url(../images/02.gif) repeat;
+/* background: #fff url(../images/02.gif) repeat; */
 color: #666;
 }
 
