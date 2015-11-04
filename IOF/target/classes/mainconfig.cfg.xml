@@ -44,7 +44,7 @@
         <mapping class="kr.ac.iof.model.Main.FarmEquipList"/>       
         <mapping class="kr.ac.iof.model.Main.FarmEquipType"/>        
         <mapping class="kr.ac.iof.model.Main.FarmInfo"/>
-        
+        <mapping class="kr.ac.iof.model.Main.Greentom"/>
         
          <mapping class="kr.ac.iof.model.Main.FarmSectionInfo"/>
         <mapping class="kr.ac.iof.model.Main.HarvestInfo"/>

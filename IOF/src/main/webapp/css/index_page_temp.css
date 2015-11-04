@@ -80,13 +80,14 @@ background: #e7f1f8;
 font-size: 2em;
 color: #06a;
 }
+
 			/*CONTENT*/
+
 #content {
 width: 100%;     /*490->720수정(수영)*/
-height:700px;
-
+height:100%;
 margin: 50px 0 0 0;
-padding: 0 0 30px 10px;
+padding: 0 0 30px 10px;	
 }
 #content h1 {
 font-size: 1.5em;

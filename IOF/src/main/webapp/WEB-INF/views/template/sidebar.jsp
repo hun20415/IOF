@@ -7,7 +7,8 @@ String link5 = "greenHouseEnviInfo";
 String link6 = "#";
 String link7 = "#";
 %>
-
+<ul style="height:700px; width: 1px; float:right;"></ul>
+<!-- 
 <ul id="menu">
 	<li>
 		<a href="#">기본정보</a>
@@ -35,4 +36,4 @@ String link7 = "#";
 	</li><li><a href="#">빅데이터 분석</a>
 		
 	</li>
-</ul>
+</ul> -->
