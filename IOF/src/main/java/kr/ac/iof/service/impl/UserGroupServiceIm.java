@@ -1,64 +1,64 @@
 /**                                                                                 	           		**/
-/**                                File Name   : BuyerInfoService.java                	               	**/  		
-/**                                Description : buyerInfo에 대한 service controller에서 처리되어야 하는 
+/**                                File Name   : UserGroupService.java                	               	**/  		
+/**                                Description : userGroup에 대한 service controller에서 처리되어야 하는 
  * 								            	 기능은 이곳에 서 처리 (데이터 처리 포함)dao와 메소드의 이름이 같다			     	**/ 
 /**                                Update      : 2015.05.07(박정훈)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
-package kr.ac.iof.main.Service;
+package kr.ac.iof.service.impl;
 
 import java.util.List;
 
-
-import kr.ac.iof.main.dao.BuyerInfoDao;
-import kr.ac.iof.model.Main.BuyerInfo;
+import kr.ac.iof.dao.UserGroupDao;
+import kr.ac.iof.model.UserGroup;
+import kr.ac.iof.service.UserGroupService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.annotation.Propagation;  
 
 @Service
 @Transactional(propagation = Propagation.SUPPORTS)  
-public class BuyerInfoServiceIm implements BuyerInfoService{
+public class UserGroupServiceIm implements UserGroupService{
 	
 	@Autowired
-	private BuyerInfoDao buyerInfoDao ;
+	private UserGroupDao userGroupDao ;
 	 
-    public void setBuyerInfoDao(BuyerInfoDao buyerInfoDao) {
-        this.buyerInfoDao = buyerInfoDao;
-    }
+    public void setUserGroupDao(UserGroupDao userGroupDao) {
+        this.userGroupDao = userGroupDao;
+    } 
  
     @Override
     @Transactional
-    public void add(BuyerInfo p) {
+    public void add(UserGroup p) {
     	System.out.println("addserviceimple");
-        this.buyerInfoDao.add(p);
+        this.userGroupDao.add(p);
     }
  
     @Override
     @Transactional
-    public void update(BuyerInfo p) {
-        this.buyerInfoDao.update(p);
+    public void update(UserGroup p) {
+        this.userGroupDao.update(p);
     }
  
     @Override
     @Transactional
-    public List<BuyerInfo> getAll() {
-    	System.out.println("buyerInfoServicelm");
-        return this.buyerInfoDao.getAll();
+    public List<UserGroup> getAll() {
+    	System.out.println("userGroupServicelm");
+        return this.userGroupDao.getAll();
     }
  
     @Override
     @Transactional
-    public BuyerInfo getById(int id) {
-        return this.buyerInfoDao.getById(id);
+    public UserGroup getById(int id) {
+        return this.userGroupDao.getById(id);
     }
  
     @Override
     @Transactional
-    public void delete(int buyerInfoId) {
-        this.buyerInfoDao.delete(buyerInfoId);
+    public void delete(int userGroupId) {
+        this.userGroupDao.delete(userGroupId);
     }
 
 }

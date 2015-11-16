@@ -5,11 +5,13 @@
 /**                                Update      : 2015.05.14(옥정윤)    	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
-package kr.ac.iof.main.Service;
+package kr.ac.iof.main.Service.impl;
 
 import java.util.List;
 
 
+
+import kr.ac.iof.main.Service.FarmCultivateInfoService;
 import kr.ac.iof.main.dao.FarmCultivateInfoDao;
 import kr.ac.iof.model.Main.FarmCultivateInfo;
 

@@ -5,12 +5,14 @@
 /**                                Update      : 2015.05.14(옥정윤)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
-package kr.ac.iof.main.Service;
+package kr.ac.iof.main.Service.impl;
 
 import java.util.List;
 
 
 
+
+import kr.ac.iof.main.Service.HistEnvironRawService;
 import kr.ac.iof.main.dao.HistEnvironRawDao;
 import kr.ac.iof.model.Main.HistEnvironRaw;
 

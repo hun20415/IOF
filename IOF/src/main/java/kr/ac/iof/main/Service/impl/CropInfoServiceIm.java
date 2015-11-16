@@ -2,7 +2,7 @@
 /*************************cropinfo에 대한 service controller에서 처리되어야 하는 기능은 이곳에 서 처리 (데이터 처리 포함*****************/
 /*************************2015-05-06 박정훈 *****************************************************************/
 /*********************************************************************************************************/
-package kr.ac.iof.main.Service;
+package kr.ac.iof.main.Service.impl;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import java.util.List;
 
 
 
+
+import kr.ac.iof.main.Service.CropInfoService;
 import kr.ac.iof.main.dao.CropInfoDao;
 import kr.ac.iof.model.Main.CropInfo;
 

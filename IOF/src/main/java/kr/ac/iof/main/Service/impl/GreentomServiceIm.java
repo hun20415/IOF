@@ -5,7 +5,7 @@
 /**                                Update      : 2015.05.07(박정훈)	                               		**/
 /**                                ETC         :                    	                           		**/
 /**                                                                     	                       		**/
-package kr.ac.iof.main.Service;
+package kr.ac.iof.main.Service.impl;
 
 import java.util.List;
 
@@ -13,6 +13,8 @@ import java.util.List;
 
 
 
+
+import kr.ac.iof.main.Service.GreentomService;
 import kr.ac.iof.main.dao.BuyerInfoDao;
 import kr.ac.iof.main.dao.FarmSectionInfoDao;
 import kr.ac.iof.main.dao.GreentomDao;
