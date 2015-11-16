@@ -4,11 +4,12 @@
 /**                                Update      : 2015.05.07(박정훈)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
-package kr.ac.iof.main.dao;
+package kr.ac.iof.main.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.iof.main.dao.GreentomDao;
 import kr.ac.iof.model.Main.Greentom;
 import kr.ac.iof.util.HibernateUtil;
 

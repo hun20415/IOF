@@ -4,11 +4,12 @@
 /**                                Update      : 2015.05.14(박정훈)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
-package kr.ac.iof.dao;
+package kr.ac.iof.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.iof.dao.UserDao;
 import kr.ac.iof.model.User;
 import kr.ac.iof.model.UserGroup;
 import kr.ac.iof.util.HibernateUtil;

@@ -1,15 +1,16 @@
 /**                                                                                 	           **/
 /**                                File Name   : HistWaterDaoIm.java                	               **/  		
-/**                                Description : histWater에 대한 Dao, 쿠리문 처리 		                   **/ 
-/**                                Update      : 2015.05.14(옥정윤)                               **/
+/**                                Description : histWater?? ???? Dao, �?리문 �?�? 		                   **/ 
+/**                                Update      : 2015.05.14(?��????)                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
-package kr.ac.iof.main.dao;
+package kr.ac.iof.main.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.ac.iof.model.Main.HistWater;
+import kr.ac.iof.main.dao.SetTomatoTemperatureDao;
+import kr.ac.iof.model.Main.SetTomatoTemperature;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.Query;
@@ -19,20 +20,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-@Repository("histWaterDao")
-public class HistWaterDaoIm implements HistWaterDao {
-	private static final Logger logger = LoggerFactory.getLogger(HistWaterDaoIm.class);
+@Repository("setTomatoTemperatureDao")
+public class SetTomatoTemperatureDaoIm implements SetTomatoTemperatureDao {
+	private static final Logger logger = LoggerFactory.getLogger(SetTomatoTemperatureDaoIm.class);
 
 	
 	@Override
-	public void add(HistWater histWater) {//insert
+	public void add(SetTomatoTemperature setTomatoTemperature) {//insert
 		Transaction trns = null;
 		
-		Session session = HibernateUtil.getSessionFactoryMain().openSession();//main db에 대한 session 호출
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();//main db?? ???? session ?��?
 		
 		try {
 			trns = session.beginTransaction();
-			session.save(histWater);//histWater 객체를 저장(insert 쿼리문)
+			session.save(setTomatoTemperature);//histWater �?체�?? ????(insert 쿼리�?)
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -47,23 +48,23 @@ public class HistWaterDaoIm implements HistWaterDao {
 
 	@Override
 	public void delete(int farmId, int seqNo) {
-		System.out.println("histWaterDaolm");
+		//System.out.println("histWaterDaolm");
 		Transaction trns = null;
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
-		HistWater histWater = null;
+		SetTomatoTemperature setTomatoTemperature = null;
 		try {
 			trns = session.beginTransaction();
 			
 			/*HistWater histWater = (HistWater) session.load(HistWater.class,
-					new Integer(int farmId, int seqNo));//id로 db에서 삭제해야 할 row을 불러온다.
+					new Integer(int farmId, int seqNo));//id�? db???? ?????��?? ?? row?? �??��?��??.
 			*/
 			String queryString = "from HistWater where (farmId = :id and seqNo = :id2)";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", farmId);//id로 매칭 특정 행을 불러온다.
-			query.setInteger("id2", seqNo);//id로 매칭 특정 행을 불러온다.
-			histWater = (HistWater) query.uniqueResult();
+			query.setInteger("id", farmId);//id�? 매칭 ?��?? ???? �??��?��??.
+			query.setInteger("id2", seqNo);//id�? 매칭 ?��?? ???? �??��?��??.
+			setTomatoTemperature = (SetTomatoTemperature) query.uniqueResult();
 			
-			session.delete(histWater);//삭제 쿼리문 
+			session.delete(setTomatoTemperature);//???? 쿼리�? 
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -75,7 +76,7 @@ public class HistWaterDaoIm implements HistWaterDao {
 			session.close();
 		}
 	}
-
+/*
 	@Override
 	public void update(HistWater histWater) {
 		System.out.println("update");
@@ -83,7 +84,7 @@ public class HistWaterDaoIm implements HistWaterDao {
 		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			session.update(histWater);//update 쿼리문
+			session.update(histWater);//update 쿼리�?
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -95,10 +96,11 @@ public class HistWaterDaoIm implements HistWaterDao {
 			session.close();
 		}
 	}
+	*/
 	@Override
-	public List<HistWater> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
+	public List<SetTomatoTemperature> getAll() { // 컬�?��?? ???��???? 모�?? ?��?��?��?? �??��?��??.
 		System.out.println("histWaterDaolm");
-		List<HistWater> histWaters = new ArrayList<HistWater>();
+		List<SetTomatoTemperature> histWaters = new ArrayList<SetTomatoTemperature>();
 		
 		Transaction trns = null;
 		
@@ -106,7 +108,7 @@ public class HistWaterDaoIm implements HistWaterDao {
 		try {
 			trns = session.beginTransaction();
 			
-			histWaters = session.createQuery("from HistWater").list();//list로 호출
+			histWaters = session.createQuery("from HistWater").list();//list�? ?��?
 			
 		} catch (RuntimeException e) {
 			e.printStackTrace();
@@ -114,9 +116,9 @@ public class HistWaterDaoIm implements HistWaterDao {
 			session.flush();
 			session.close();
 		}
-		return histWaters;//리스트로 반환
+		return histWaters;//리�?��?��? �???
 	}
-
+/*
 	@Override
 	public HistWater getById(int farmId, int seqNo) {
 		System.out.println("histWaterDaolm");
@@ -127,8 +129,8 @@ public class HistWaterDaoIm implements HistWaterDao {
 			trns = session.beginTransaction();
 			String queryString = "from HistWater where (farmId = :id and seqNo = :id2)";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", farmId);//id로 매칭 특정 행을 불러온다.
-			query.setInteger("id2", seqNo);//id로 매칭 특정 행을 불러온다.
+			query.setInteger("id", farmId);//id�? 매칭 ?��?? ???? �??��?��??.
+			query.setInteger("id2", seqNo);//id�? 매칭 ?��?? ???? �??��?��??.
 			histWater = (HistWater) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
@@ -137,6 +139,18 @@ public class HistWaterDaoIm implements HistWaterDao {
 			session.close();
 		}
 		return histWater;
+	}
+*/
+	@Override
+	public void update(SetTomatoTemperature setTomatoTemperature) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public SetTomatoTemperature getById(int farmId, int seqNo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

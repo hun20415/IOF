@@ -4,11 +4,12 @@
 /**                                Update      : 2015.05.14(옥정윤)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
-package kr.ac.iof.main.dao;
+package kr.ac.iof.main.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import kr.ac.iof.main.dao.FarmEquipTypeDao;
 import kr.ac.iof.model.Main.FarmEquipType;
 import kr.ac.iof.util.HibernateUtil;
 

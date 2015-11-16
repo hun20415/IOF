@@ -1,15 +1,16 @@
 /**                                                                                 	           **/
-/**                                File Name   : UserGroupDaoIm.java                	               **/  		
-/**                                Description : userGroup에 대한 Dao, 쿠리문 처리 		                   **/ 
+/**                                File Name   : CropInfoDaoIm.java                	               **/  		
+/**                                Description : cropCate에 대한 Dao, 쿠리문 처리 		                   **/ 
 /**                                Update      : 2015.05.07(박정훈)	                               **/
 /**                                ETC         :                    	                           **/
 /**                                                                     	                       **/
-package kr.ac.iof.dao;
+package kr.ac.iof.main.dao.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.ac.iof.model.UserGroup;
+import kr.ac.iof.main.dao.CropInfoDao;
+import kr.ac.iof.model.Main.CropInfo;
 import kr.ac.iof.util.HibernateUtil;
 
 import org.hibernate.Query;
@@ -19,20 +20,20 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-@Repository("userGroupDao")
-public class UserGroupDaoIm implements UserGroupDao {
-	private static final Logger logger = LoggerFactory.getLogger(UserGroupDaoIm.class);
+@Repository("cropInfoDao")
+public class CropInfoDaoIm implements CropInfoDao {
+	private static final Logger logger = LoggerFactory
+			.getLogger(CropInfoDaoIm.class);
 
 	
 	@Override
-	public void add(UserGroup userGroup) {//insert
+	public void add(CropInfo cropInfo) {
 		Transaction trns = null;
 		
-		Session session = HibernateUtil.getSessionFactory().openSession();//main db에 대한 session 호출
-		
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			session.save(userGroup);//userGroup 객체를 저장(insert 쿼리문)
+			session.save(cropInfo);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -46,15 +47,14 @@ public class UserGroupDaoIm implements UserGroupDao {
 	}
 
 	@Override
-	public void delete(int userGroupId) {
-		System.out.println("userGroupDaolm");
+	public void delete (int cropInfoId) {
 		Transaction trns = null;
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			UserGroup userGroup = (UserGroup) session.load(UserGroup.class,
-					new Integer(userGroupId));//id로 db에서 삭제해야 할 row을 불러온다.
-			session.delete(userGroup);//삭제 쿼리문 
+			CropInfo cropInfo = (CropInfo) session.load(CropInfo.class,
+					new Integer(cropInfoId));
+			session.delete(cropInfo);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -68,13 +68,13 @@ public class UserGroupDaoIm implements UserGroupDao {
 	}
 
 	@Override
-	public void update(UserGroup userGroup) {
-		System.out.println("update");
+	public void update(CropInfo cropInfo) {
+		
 		Transaction trns = null;
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			session.update(userGroup);//update 쿼리문
+			session.update(cropInfo);
 			session.getTransaction().commit();
 		} catch (RuntimeException e) {
 			if (trns != null) {
@@ -87,44 +87,44 @@ public class UserGroupDaoIm implements UserGroupDao {
 		}
 	}
 	@Override
-	public List<UserGroup> getAll() { // 컬럼에 속해있는 모든 데이터를 불러온다.
-		System.out.println("userGroupDaolm");
-		List<UserGroup> userGroups = new ArrayList<UserGroup>();
+	public List<CropInfo> getAll() {
+		System.out.println("cropInfoDaolm");
+		List<CropInfo> cropInfos = new ArrayList<CropInfo>();
 		
 		Transaction trns = null;
 		
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			userGroups = session.createQuery("from UserGroup").list();//list로 호출
+			cropInfos = session.createQuery("from CropInfo").list();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return userGroups;//리스트로 반환
+		return cropInfos;
 	}
 
 	@Override
-	public UserGroup getById(int userGroupId) {
-		System.out.println("userGroupDaolm");
-		UserGroup userGroup = null;
+	public CropInfo getById(int cropInfoId) {
+		
+		CropInfo cropInfo = null;
 		Transaction trns = null;
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateUtil.getSessionFactoryMain().openSession();
 		try {
 			trns = session.beginTransaction();
-			String queryString = "from UserGroup where userGroup = :id";
+			String queryString = "from CropInfo where cropInfoId = :id";
 			Query query = session.createQuery(queryString);
-			query.setInteger("id", userGroupId);//id로 매칭 특정 행을 불러온다.
-			userGroup = (UserGroup) query.uniqueResult();
+			query.setInteger("id", cropInfoId);
+			cropInfo = (CropInfo) query.uniqueResult();
 		} catch (RuntimeException e) {
 			e.printStackTrace();
 		} finally {
 			session.flush();
 			session.close();
 		}
-		return userGroup;
+		return cropInfo;
 	}
-	
+
 }
