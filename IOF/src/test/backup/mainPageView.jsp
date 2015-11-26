@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
 	var sensor = new Array(14);
-	sensor[0] = new Array();
+	//sensor[0] = new Array();
 	sensor[1] = new Array();
 	sensor[2] = new Array();
 	sensor[3] = new Array();
@@ -233,6 +233,9 @@
 		});
 	};
 	dataRoad('/loadSensor');
+	/* setInterval(function(){
+	dataRoad('/loadSensor');
+	}, 1000); */
 
 	function getTimeStamp(date) {
 		var d = date;
@@ -419,7 +422,6 @@
 			var humidity = sensor[7][sensor[1].length - i - 1].eqValue;
 			var solar = sensor[9][sensor[1].length - i - 1].eqValue;
 			var co2 = sensor[8][sensor[1].length - i - 1].eqValue;
-			
 
 			chartData.push({
 				date : newDate,
@@ -436,11 +438,12 @@
 	}
 
 	/************************************** 첫 번째 그래프 일반 그래프 end *********************************/
+	/************************************** 첫 번째 그래프 일반 그래프2 start  ********************************/
 
 	var chart = AmCharts.makeChart("chartdiv3", {
 		type : "stock",
 		"theme" : "light",
-		
+
 		dataSets : [ {
 			title : "습도",
 			fieldMappings : [ {
@@ -467,7 +470,13 @@
 				fillAlphas : 1,
 				useDataSetColors : false,
 				lineColor : "#FF6600"
-			} ]
+			} ],
+			stockLegend : {
+				useGraphSettings : true,
+				valueTextRegular : undefined,
+				periodValueTextComparing : "[[percents.value.close]]%",
+				position : "right"
+			}
 		}, {
 			id : "solar",
 			title : "일사량",
@@ -574,7 +583,7 @@
 		}
 
 	});
-
+	
 	chart2.addListener("dataUpdated", zoomChart);
 
 	function zoomChart2() {
@@ -650,20 +659,20 @@
 				<label for="tab6">시간 대별</label>
 
 				<div class="tab1_content">
-				    <div id="chartdiv" style="width: 1000px; height: 300px;"></div>
+					<div id="chartdiv" style="width: 1000px; height: 300px;"></div>
 					<div id="chartdiv3"
 						style="width: 805px; height: 200px; margin-left: 45px;"></div>
 
 				</div>
-                
+
 				<div class="tab2_content">
 					<div id="chartdiv2" style="width: 1000px; height: 480px;"></div>
-					
+
 				</div>
-				
-				
-				
-				
+
+
+
+
 			</div>
 
 			<!-- 메인그래프 end-->
@@ -686,7 +695,6 @@
 					<div class="tab1_table">CO2</div>
 					<div style="clear: both;"></div>
 					<div class="tab1_table2" id="data1"></div>
-
 					<div class="tab1_table2" id="data2"></div>
 					<div class="tab1_table2" id="data3"></div>
 					<div class="tab1_table2" id="data4"></div>

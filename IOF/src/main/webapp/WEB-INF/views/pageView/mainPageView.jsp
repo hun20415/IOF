@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
 	var sensor = new Array(14);
-	sensor[0] = new Array();
+	//sensor[0] = new Array();
 	sensor[1] = new Array();
 	sensor[2] = new Array();
 	sensor[3] = new Array();
@@ -36,138 +36,139 @@
 	sensor[13] = new Array();
 	sensor[14] = new Array();
 	var sensorF = new Array();
+	/* function dataReadWeb2() {
 
-	function dataReadWeb() {
+        <c:forEach items="${sensor1}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[1].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor1}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[1].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor2}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[2].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor2}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[2].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor3}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[3].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor3}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[3].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor4}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[4].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor4}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[4].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor5}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[5].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor5}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[5].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor6}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[6].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor6}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[6].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor7}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[7].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor7}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[7].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor8}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[8].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor8}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[8].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor9}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[9].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor9}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[9].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor10}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[10].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor10}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[10].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor11}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[11].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor11}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[11].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor12}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[12].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor12}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[12].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor13}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[13].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor13}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[13].push(json);
-		</c:forEach>
+        <c:forEach items="${sensor14}" var="result" end="1440">
+        var json = new Object();
+        json.eqId = "${result.farmEquipList.eqId}";
+        json.eqValue = "${result.eqValue}";
+        json.date = "${result.dataInqDate}";
+        sensor[14].push(json);
+        </c:forEach>
 
-		<c:forEach items="${sensor14}" var="result" end="1440">
-		var json = new Object();
-		json.eqId = "${result.farmEquipList.eqId}";
-		json.eqValue = "${result.eqValue}";
-		json.date = "${result.dataInqDate}";
-		sensor[14].push(json);
-		</c:forEach>
-
-		sensorF[1] = sensor[1][0].eqValue;
-		sensorF[2] = sensor[2][0].eqValue;
-		sensorF[3] = sensor[3][0].eqValue;
-		sensorF[4] = sensor[4][0].eqValue;
-		sensorF[5] = sensor[5][0].eqValue;
-		sensorF[6] = sensor[6][0].eqValue;
-		sensorF[7] = sensor[7][0].eqValue;
-		sensorF[8] = sensor[8][0].eqValue;
-		sensorF[9] = sensor[9][0].eqValue;
-		sensorF[10] = sensor[10][0].eqValue;
-		sensorF[11] = sensor[11][0].eqValue;
-		sensorF[12] = sensor[12][0].eqValue;
-		sensorF[13] = sensor[13][0].eqValue;
-		sensorF[14] = sensor[14][0].eqValue;
-	}
-
-	dataReadWeb();
+        sensorF[1] = sensor[1][0].eqValue;
+        sensorF[2] = sensor[2][0].eqValue;
+        sensorF[3] = sensor[3][0].eqValue;
+        sensorF[4] = sensor[4][0].eqValue;
+        sensorF[5] = sensor[5][0].eqValue;
+        sensorF[6] = sensor[6][0].eqValue;
+        sensorF[7] = sensor[7][0].eqValue;
+        sensorF[8] = sensor[8][0].eqValue;
+        sensorF[9] = sensor[9][0].eqValue;
+        sensorF[10] = sensor[10][0].eqValue;
+        sensorF[11] = sensor[11][0].eqValue;
+        sensorF[12] = sensor[12][0].eqValue;
+        sensorF[13] = sensor[13][0].eqValue;
+        sensorF[14] = sensor[14][0].eqValue;
+    }
+	dataReadWeb2(); */
+	
+	
+	dataReadWeb('/loadSensor');
 
 	function windDirection(windD) {
 
@@ -194,7 +195,7 @@
 		}
 	}
 
-	var dataRoad = function(url) {
+	var dataLoadLast = function(url) {
 
 		$.ajax({
 			url : url,
@@ -232,7 +233,10 @@
 			}
 		});
 	};
-	dataRoad('/loadSensor');
+	dataLoadLast('/loadSensor');
+    /* setInterval(function(){
+    dataRoad('/loadSensor');
+    }, 1000); */
 
 	function getTimeStamp(date) {
 		var d = date;
@@ -412,14 +416,13 @@
 		var sunset = new Date();//일몰
 
 		for (var i = 0; i < sensor[1].length; i++) {
+			
 			var newDate = new Date(sensor[4][sensor[1].length - i - 1].date);
-
 			var inTempare = sensor[4][sensor[1].length - i - 1].eqValue;
 			var outTempare = sensor[1][sensor[1].length - i - 1].eqValue;
 			var humidity = sensor[7][sensor[1].length - i - 1].eqValue;
 			var solar = sensor[9][sensor[1].length - i - 1].eqValue;
 			var co2 = sensor[8][sensor[1].length - i - 1].eqValue;
-			
 
 			chartData.push({
 				date : newDate,
@@ -434,15 +437,51 @@
 		}
 		return chartData;
 	}
+	setInterval(function () {
+		function dataReadWeb(url) {
+
+	        $.ajax({
+	            url : url,
+	            type : 'GET',
+	            data : "",
+	            contentType : "application/x-www-form-urlencoded; charset=utf-8",
+	            dataType : "json",
+	            success : function(data) {
+
+	                //var wind = windDirection(data[10][0].eqValue);
+	                sensor[1].push(data[0]);
+	                sensor[2] = data[1];
+	                sensor[3] = data[2];
+	                sensor[4] = data[3];
+	                sensor[5] = data[4];
+	                sensor[6] = data[5];
+	                sensor[7] = data[6];
+	                sensor[8] = data[7];
+	                sensor[9] = data[8];
+	                sensor[10] = data[9];
+	                sensor[11] = data[10];
+	                sensor[12] = data[11];
+	                sensor[13] = data[12];
+	                sensor[14] = data[13];
+	                chartData = generateChartData();
+	                chart.validateData();
+	                
+	            },
+	            error : function(request, status, error) {
+	                alert(error);
+	            }
+	        });
+	    }
+        
+    }, 10000);
 
 	/************************************** 첫 번째 그래프 일반 그래프 end *********************************/
 	/************************************** 첫 번째 그래프 일반 그래프2 start  ********************************/
 
-	var chart = AmCharts.makeChart("chartdiv3", {
+	var chart3 = AmCharts.makeChart("chartdiv3", {
 		type : "stock",
 		"theme" : "light",
-		
-		
+
 		dataSets : [ {
 			title : "습도",
 			fieldMappings : [ {
@@ -470,12 +509,12 @@
 				useDataSetColors : false,
 				lineColor : "#FF6600"
 			} ],
-			 stockLegend: {
-				 useGraphSettings : true,
-			        valueTextRegular: undefined,
-			        periodValueTextComparing: "[[percents.value.close]]%",
-			        position : "right"
-			      }
+			stockLegend : {
+				useGraphSettings : true,
+				valueTextRegular : undefined,
+				periodValueTextComparing : "[[percents.value.close]]%",
+				position : "right"
+			}
 		}, {
 			id : "solar",
 			title : "일사량",
@@ -658,20 +697,20 @@
 				<label for="tab6">시간 대별</label>
 
 				<div class="tab1_content">
-				    <div id="chartdiv" style="width: 1000px; height: 300px;"></div>
+					<div id="chartdiv" style="width: 1000px; height: 300px;"></div>
 					<div id="chartdiv3"
 						style="width: 805px; height: 200px; margin-left: 45px;"></div>
 
 				</div>
-                
+
 				<div class="tab2_content">
 					<div id="chartdiv2" style="width: 1000px; height: 480px;"></div>
-					
+
 				</div>
-				
-				
-				
-				
+
+
+
+
 			</div>
 
 			<!-- 메인그래프 end-->
@@ -693,13 +732,17 @@
 					<div class="tab1_table">일사량</div>
 					<div class="tab1_table">CO2</div>
 					<div style="clear: both;"></div>
-					<div class="tab1_table2" id="data1"></div>
-
-					<div class="tab1_table2" id="data2"></div>
-					<div class="tab1_table2" id="data3"></div>
-					<div class="tab1_table2" id="data4"></div>
-					<div class="tab1_table2" id="data9"></div>
-					<div class="tab1_table2" id="data8"></div>
+					<div class="tab1_table2" id="data1">
+					<script type="text/javascript">
+					document.write(sensorF[1])
+					</script></div>
+					<div class="tab1_table2" id="data2">
+					<script type="text/javascript">
+					document.write(sensorF[2])</script></div>
+					<div class="tab1_table2" id="data3"><script type="text/javascript">document.write(sensorF[3])</script></div>
+					<div class="tab1_table2" id="data4"><script type="text/javascript">document.write(sensorF[4])</script></div>
+					<div class="tab1_table2" id="data9"><script type="text/javascript">document.write(sensorF[9])</script></div>
+					<div class="tab1_table2" id="data8"><script type="text/javascript">document.write(sensorF[8])</script></div>
 					<br> <br> <br>
 					<div class="tab1_table">빗물감지</div>
 					<div class="tab1_table">좌측 습도</div>
@@ -708,18 +751,18 @@
 					<div class="tab1_table">지온</div>
 					<div class="tab1_table">지습</div>
 					<div style="clear: both;"></div>
-					<div class="tab1_table2" id="data10"></div>
-					<div class="tab1_table2" id="data5"></div>
-					<div class="tab1_table2" id="data6"></div>
-					<div class="tab1_table2" id="data7"></div>
-					<div class="tab1_table2" id="data13"></div>
-					<div class="tab1_table2" id="data14"></div>
+					<div class="tab1_table2" id="data10"><script type="text/javascript">document.write(sensorF[10])</script></div>
+					<div class="tab1_table2" id="data5"><script type="text/javascript">document.write(sensorF[5])</script></div>
+					<div class="tab1_table2" id="data6"><script type="text/javascript">document.write(sensorF[6])</script></div>
+					<div class="tab1_table2" id="data7"><script type="text/javascript">document.write(sensorF[7])</script></div>
+					<div class="tab1_table2" id="data13"><script type="text/javascript">document.write(sensorF[13])</script></div>
+					<div class="tab1_table2" id="data14"><script type="text/javascript">document.write(sensorF[14])</script></div>
 					<br> <br> <br>
 					<div class="tab1_table">풍 향</div>
 					<div class="tab1_table">풍 속</div>
 					<div style="clear: both;"></div>
-					<div class="tab1_table2" id="data11"></div>
-					<div class="tab1_table2" id="data12"></div>
+					<div class="tab1_table2" id="data11"><script type="text/javascript">document.write(sensorF[11])</script></div>
+					<div class="tab1_table2" id="data12"><script type="text/javascript">document.write(sensorF[12])</script></div>
 					<br> <br> <br>
 				</div>
 
